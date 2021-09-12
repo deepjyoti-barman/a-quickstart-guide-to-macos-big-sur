@@ -18,12 +18,13 @@
 - DBeaver Community Edition
 - Git
 - Google Chrome
-- Grammarly
+- Grammarly for Safari
 - Homebrew
 - IntelliJ IDEA Community Edition
 - iTerm2
 - Java SE Development Kit 8
 - Java SE Development Kit 11
+- Katalon Studio
 - Microsoft Teams
 - Node.js
 - Postman
@@ -33,6 +34,7 @@
 - The Unarchiver
 - Visual Studio Code
 - Vysor
+- XAMPP
 - WPS Office
 - Zoom
 
@@ -248,7 +250,7 @@ Recently the Github team has announced that for better protection and privacy us
 
 ## Setting up Visual Studio Code
 
-### Necessary Extensions
+### Necessary extensions
 
 - Auto Close Tag
 - Auto Import
@@ -293,6 +295,63 @@ Recently the Github team has announced that for better protection and privacy us
 
 ### Configuration for settings.json
 
+Click on the `Manage` (Screw) icon -> `Settings` (Shortcut: `Command + ,`) -> From the top right corner click on `Open Settings (JSON)`.
+
+```json
+{   
+    "c-cpp-compile-run.c-flags": "-Wall -Wextra -O0 -std=c18",
+    "c-cpp-compile-run.cpp-flags": "-Wall -Wextra -O0 -std=c++20",
+    "code-runner.clearPreviousOutput": true,
+    "code-runner.executorMap": {
+        "typescript": "tsc"
+    },
+    "code-runner.ignoreSelection": true,
+    "code-runner.runInTerminal": true,
+    "code-runner.saveFileBeforeRun": true,
+    "code-runner.showExecutionMessage": true,
+    "color-highlight.markerType": "dot-after",
+    "cSpell.ignoreWords": [
+        "deepjyoti"
+    ],
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.fontSize": 11,
+    "editor.suggestSelection": "first",
+    "editor.wordWrap": "on",
+    "explorer.compactFolders": false,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "files.autoSaveDelay": 5000,
+    "java.configuration.checkProjectSettingsExclusions": false,
+    "java.errors.incompleteClasspath.severity": "ignore",
+    "java.home": "/Library/Java/JavaVirtualMachines/jdk-11.0.11.jdk/Contents/Home/",
+    "java.configuration.runtimes": [
+        {
+          "name": "JavaSE-1.8",
+          "path": "/Library/Java/JavaVirtualMachines/jdk1.8.0_291.jdk/Contents/Home/"
+        },
+        {
+            "name": "JavaSE-11",
+            "path": "/Library/Java/JavaVirtualMachines/jdk-11.0.11.jdk/Contents/Home/",
+            "sources" : "/Library/Java/JavaVirtualMachines/jdk-11.0.11.jdk/Contents/Home/lib/src.zip",
+            "javadoc" : "https://docs.oracle.com/en/java/javase/11/docs/api",
+            "default":  true
+           }
+    ],
+    "prettier.singleQuote": false,
+    "prettier.tabWidth": 4,
+    "python.languageServer": "Microsoft",
+    "python.pythonPath": "/Library/Developer/CommandLineTools/usr/bin/python3",
+    "terminal.integrated.fontFamily": "Monaco",
+    "terminal.integrated.fontSize": 11,
+    "workbench.colorTheme": "Monokai Pro (Filter Spectrum)",
+    "workbench.iconTheme": "Monokai Pro (Filter Spectrum) Icons",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
+}
+```
+
 ## Setting up IntelliJ IDEA
 
 ### Configuring Appearance
@@ -312,7 +371,7 @@ Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Preferen
 - `Size`: `10`
 - `Line height`: `1.1`
 
-### Necessary Plugins
+### Necessary plugins
 
 Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Preferences` -> `Plugins`
 
@@ -327,6 +386,99 @@ Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Preferen
 Open up 'IntelliJ IDEA' -> Click on `File` on the menu bar -> `Project Structure` -> `Project`
 
 - `Project SDK`: Click on the dropdown and select any `Detected SDKs`. If the SDK of your choice is not available then select the `+ Add SDK` option and choose any option feasible to you. You may either go for `Download JDK` option or Click on `JDK` and locate a JDK from your local system.
+
+## Setting up Sublime Text
+
+### Installing Package Control
+
+- Open the command palette by pressing `Command + Shift + P`.
+- Type 'Install Package Control', press `Enter`
+- After successful installation click on the `OK` button.
+
+__Tip__: For manual installation of the plugin visit: <https://packagecontrol.io/installation>
+
+### Configuration for Preferences.sublime-settings.json
+
+Open up 'Sublime Text' -> Click on `Sublime Text` on the menu bar -> `Preferences` -> `Settings` (Shortcut: `Command + ,`)
+
+```json
+{
+    "ignored_packages":
+    [
+        "Vintage",
+    ],
+    "color_scheme": "Packages/ayu/ayu-dark.sublime-color-scheme",
+    "theme": "ayu-dark.sublime-theme",
+    "font_size": 11,
+}
+```
+
+### Necessary packages
+
+- A File Icon
+- All Autocomplete
+- AutoFileName
+- ayu
+- BracketHighlighter
+- Emmet
+- Package Control
+- SideBarEnhancements
+- SublimeREPL
+- Terminal
+- Terminus
+- zzz A File Icon zzz
+
+### Custom build systems
+
+Command to open the directory where all the user defined build systems are saved:
+`cd "~/Library/Application\ Support/Sublime\ Text/Packages/User" && open .`
+
+python3-runner-repl.sublime-build:
+
+```json
+{
+    "target": "run_existing_window_command", 
+    "id": "repl_python_run",
+    "selector": "source.python",
+    "file": "config/Python/Main.sublime-menu"
+}
+```
+
+python3-runner-terminal.sublime-build:
+
+```json
+{
+    "shell_cmd": "osascript -e 'tell app \"Terminal\" to do script \"cd $file_path && python3 -u $file\"'",
+    "working_dir": "$file_path",
+    "selector": "source.python",
+    "env": {"PYTHONIOENCODING": "utf-8"}
+}
+```
+
+python3-runner-terminus.sublime-build:
+
+```json
+{
+    "target": "terminus_exec",
+    "cancel": "terminus_cancel_build",
+    "cmd": [
+        "python3", "-u", "$file"
+    ],
+    "working_dir": "$file_path",
+    "file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+}
+```
+
+javac-compile-run-terminus.sublime-build:
+
+```json
+{
+    "target": "terminus_exec",
+    "cancel": "terminus_cancel_build",
+    "shell_cmd": "javac $file && java $file_base_name",
+    "working_dir": "$file_path"
+}
+```
 
 ## Shortcuts
 
