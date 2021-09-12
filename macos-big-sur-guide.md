@@ -36,6 +36,12 @@
 - WPS Office
 - Zoom
 
+## The necessary Trackpad tweak
+
+- Click on the `Apple` menu -> Go to `System Preferences` -> `Trackpad`
+    1. Check `Tap to click`.
+    2. Increase tracking speed to 5.
+
 ## Invert mouse scroll direction
 
 Click on the `Apple` menu -> Go to `System Preferences` -> `Mouse` -> Untick `Scroll direction: Natural`.
@@ -52,6 +58,50 @@ Open up `Finder` -> Click on `Finder` in the menu bar -> `Preferences` -> `Sideb
 - `Control + Left_Arrow` : To switch to the workspace on the left.
 - Open Mission Control by swiping up with three or four fingers to have an overview of all the workspaces running.
 
+## Reinstall MacOS from MacOS recovery
+
+__Note__: Make sure you have an active internet connection, Mac is plugged into the power / charger and it's turned off.
+
+- Key combinations:
+    1. `Command + R`  
+    Reinstall the latest version of MacOS installed on your Mac (Recommended for most users).
+    2. `Command + Option + R`  
+    Upgrade to the latest version of MacOS compatible to your device.
+    3. `Command + Option + Shift + R`  
+    Reinstall the version of MacOS that came with your Mac.
+- Turn on your Mac and immediately press and hold the key combinations of your choice until you see an Apple logo.
+- Enter the admin password.
+- Click on `Next`.
+- Select `Reinstall MacOS` from 'MacOS Utilities'.
+- Click on `Continue`.
+- Follow the on-screen options.
+- When it's done you will see a login window, enter the password and continue with the prompts.
+
+__Tip__: When to do factory reset / reinstall MacOS?  
+    - When you are selling your Mac.  
+    - Changing admin name.  
+    - To fix software issues.  
+
+## Granting Microsoft Teams, Zoom and other softwares resource and device access permissions
+
+Following are the steps to grant 'Microsoft Teams' permission for 'Screen Recording'.
+
+- Click on `Apple` menu -> `System Preferences` -> `Security and Privacy`.
+- Click on `Privacy` tab.
+- Click on `Screen Recording` from the LHS side bar.
+- Click on the lock icon to make changes.
+- Provide admin password / touch id.
+- Click on the checkbox next to 'Microsoft Teams'. If 'Microsoft Teams' is not there as an option then click on the '+' icon and add 'Microsoft Teams' from the Applications folder.
+- Click on the unlock icon to lock the changes you have made.
+- Close the `Security and Privacy` window.
+- Quit 'Microsoft Teams' and reopen it to enact the changes made.
+
+__Tip__: List of necessary permissions for apps,  
+    - Microsoft Teams: Accessibility, Camera, Microphone, Screen Recording.  
+    - Zoom: Accessibility, Screen Recording.  
+    - Terminal: Full Disk Access.  
+    - iTerm2: Full Disk Access.
+
 ## iTerm2 configuration
 
 Open up `iTerm2` -> Click on `iTerm2` in the menu bar -> `Preferences` -> `Profiles`
@@ -62,7 +112,7 @@ Open up `iTerm2` -> Click on `iTerm2` in the menu bar -> `Preferences` -> `Profi
     - `Title`: `Job + Args`
     - Select the newly created profile -> Click on `Other Actions` -> `Set  as Default`
 2. Text Tab:
-    - Check-in `Blinking Cursor`
+    - Check `Blinking Cursor`
     - Set `Font` as the following:  
     `Monaco` `Regular` `10` `100` `110`
     - Uncheck `Anti-aliased`
@@ -79,6 +129,45 @@ Open up `iTerm2` -> Click on `iTerm2` in the menu bar -> `Preferences` -> `Profi
 
 - Command for M1 chip:  
 `arch -x86_64 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+
+## Install and configure tools like Maven / JMeter / Oracle JDK etc. on Mac
+
+- Maven requires Java to execute. So we will have to first install Java and then maven into our Mac OS. Verify the JDK installation by opening the Terminal and run `java -version` command.
+
+- Go to the Maven Download site: <https://maven.apache.org/download.cgi> and download the “Binary tar.gz archive”
+
+- After downloading, extract it to '/opt' directory using the below command.  
+`tar -xvzf apache-maven-3.6.3-bin.tar.gz -C /opt`
+
+- The next step is to set up the environment variables – M2_HOME and Path. We have to add the Maven bin directory to the Path variable.
+    1. On macOS 10.5 Catalina or later, the default shell is zsh, and we can create the environment variables MAVEN_HOME and update the PATH in ~/.zshenv. Create .zshenv  and open the it in the default text editor by entering the following command:  
+    `touch ~/.zshenv && open ~/.zshenv`
+
+    2. For macOS 10.14 Mojave and before, the default Terminal shell is bash, and we can create the environment variables in ~/.bash_profile. Create .bash_profile and open the it in the default text editor by entering the following command:  
+    `touch ~/.bash_profile && open ~/.bash_profile`
+
+- Copy and paste the following content in the .zshenv / .bash_profile and save the changes:
+
+    ```bash
+    export M2_HOME=/opt/apache-maven/3.8.2
+    export PATH=$PATH:$M2_HOME/bin
+    ```
+
+- Source the ~/.zshenv or ~/.bash_profile to reflect the changes.  
+    1. `source ~/.zshenv`
+    2. `source ~/.bash_profile`
+
+- Finally, run the `mvn -version` command to check if Maven is installed successfully.
+
+__Extras__: My all in one ~/.zshenv config is given below,
+
+```bash
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_301.jdk/Contents/Home
+export M2_HOME=/opt/apache-maven/3.8.2
+export JMETER_HOME=/opt/apache-jmeter/5.4.1
+
+export PATH=$PATH:$JAVA_HOME/bin:$M2_HOME/bin:$JMETER_HOME/bin
+```
 
 ## Uninstalling Oracle JDK from Mac
 
@@ -97,6 +186,16 @@ To uninstall / remove Oracle JDK from Mac run the following commands one after a
 `sudo rm -rf "~/Library/Application\ Support/Oracle/Java"`  
 `sudo rm -rf "/Library/Application\ Support/Oracle/Java"`  
 `sudo rm -rf "~/Library/Application\ Support/Java"`
+
+## Capture a snapshot / record video the entire screen and actions in Mac
+
+- Open up 'Quick Time Player'
+- Click on `File` -> `New Screen Recording`
+    1. Select `Capture Entire Screen` option if you want to take a snapshot of the entire screen.
+    2. Select `Record Entire Screen` option if you want to record the video and actions.
+- Once the camera icon is visible, click on the screen to take the snapshot / start the recording.
+- If you are recording the then click on the 'Stop' icon on menu bar to stop the video recording.
+- The video will be saved on the desktop. Meanwhile, if you have captured a snapshot of the screen then the prompt will come up and let you decide the format and the destination to save the image you've captured.
 
 ## Resolve ChromeDriver opening failure in Mac
 
@@ -135,6 +234,7 @@ Recently the Github team has announced that for better protection and privacy us
 - `Command + M` : Minimize the focused window.
 - `Command + Shift + 3` : Capture a full size screenshot of the window.
 - `Command + Shift + 4` : Capture a portion of the screen.
+- `Command + Tab` : Switch between applications.
 - `Command + Delete` : __(Finder)__ Move selected items to bin.
 - `Command + C` : __(Finder)__ Copy the selected files and directories.
 - `Command + V` : __(Finder)__ Paste files and directories that has been copied into the current location.
