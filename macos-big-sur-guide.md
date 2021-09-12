@@ -288,6 +288,7 @@ Recently the Github team has announced that for better protection and privacy us
 - GitLens - Git supercharged
 - Jupyter
 - Language Support for Java(TM) by Red Hat
+- Live Sass Compiler
 - Live Server
 - Markdown Preview Github Styling
 - markdownlint
@@ -356,7 +357,7 @@ Click on the `Manage` (Screw) icon -> `Settings` (Shortcut: `Command + ,`) -> Fr
     ],
     "prettier.singleQuote": false,
     "prettier.tabWidth": 4,
-    "python.languageServer": "Microsoft",
+    "python.languageServer": "Default",
     "python.pythonPath": "/Library/Developer/CommandLineTools/usr/bin/python3",
     "terminal.integrated.fontFamily": "Monaco",
     "terminal.integrated.fontSize": 11,
