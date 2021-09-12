@@ -86,7 +86,7 @@ __Tip__: When to do factory reset / reinstall MacOS?
 
 Following are the steps to grant 'Microsoft Teams' permission for 'Screen Recording'.
 
-- Click on `Apple` menu -> `System Preferences` -> `Security and Privacy`.
+- Click on `Apple` menu -> `System Preferences` -> `Security and Privacy`
 - Click on `Privacy` tab.
 - Click on `Screen Recording` from the LHS side bar.
 - Click on the lock icon to make changes.
@@ -102,6 +102,25 @@ __Tip__: List of necessary permissions for apps,
     - Terminal: Full Disk Access.  
     - iTerm2: Full Disk Access.
 
+## How to format an external hard disk drive in Mac
+
+__Tip__: In this guide, we're using exFAT instead of FAT32, another filesystem that both Windows and Mac can read and write to, because FAT32 has a maximum 4GB file size limit whereas exFAT can work with files as large as 16EB (exabytes). exFAT also performs better than FAT32.
+
+You can format the drive from either Mac or Windows. However, if you want to use part of the drive for OS X's Time Machine backups, you should do this from the Mac, since there's an extra step to make the drive compatible for Time Machine.
+
+Formatting of the device can be done by following the steps given below:
+
+- Connect an external hard drive to your Mac.
+- Open 'Spotlight Search' by pressing `Command + Spacebar`, type in Disk Utility, and click the first option. This will open the Disk Utility app, where you will find all the internal and external drives that are connected to your Mac.
+- Choose `View` -> `Show All Devices`
+- In the sidebar, select the storage device you want to erase, then click the Erase button.
+- Click the Scheme pop-up menu, then choose GUID Partition Map.
+- Click the Format pop-up menu, then choose a file system format.
+- Enter a name.
+- (Optional) If available, click Security Options, use the slider to choose how many times to write over the erased data, then click OK.
+[Note: Secure erase options are available only for some types of storage devices. If the Security Options button is not available, Disk Utility cannot perform a secure erase on the storage device.]
+- Click Erase, then click Done.
+
 ## iTerm2 configuration
 
 Open up `iTerm2` -> Click on `iTerm2` in the menu bar -> `Preferences` -> `Profiles`
@@ -112,7 +131,7 @@ Open up `iTerm2` -> Click on `iTerm2` in the menu bar -> `Preferences` -> `Profi
     - `Title`: `Job + Args`
     - Select the newly created profile -> Click on `Other Actions` -> `Set  as Default`
 2. Text Tab:
-    - Check `Blinking Cursor`
+    - Check `Blinking Cursor`.
     - Set `Font` as the following:  
     `Monaco` `Regular` `10` `100` `110`
     - Uncheck `Anti-aliased`
@@ -134,7 +153,7 @@ Open up `iTerm2` -> Click on `iTerm2` in the menu bar -> `Preferences` -> `Profi
 
 - Maven requires Java to execute. So we will have to first install Java and then maven into our Mac OS. Verify the JDK installation by opening the Terminal and run `java -version` command.
 
-- Go to the Maven Download site: <https://maven.apache.org/download.cgi> and download the “Binary tar.gz archive”
+- Go to the Maven Download site: <https://maven.apache.org/download.cgi> and download the “Binary tar.gz archive”.
 
 - After downloading, extract it to '/opt' directory using the below command.  
 `tar -xvzf apache-maven-3.6.3-bin.tar.gz -C /opt`
@@ -189,7 +208,7 @@ To uninstall / remove Oracle JDK from Mac run the following commands one after a
 
 ## Capture a snapshot / record video the entire screen and actions in Mac
 
-- Open up 'Quick Time Player'
+- Open up 'Quick Time Player'.
 - Click on `File` -> `New Screen Recording`
     1. Select `Capture Entire Screen` option if you want to take a snapshot of the entire screen.
     2. Select `Record Entire Screen` option if you want to record the video and actions.
@@ -199,17 +218,17 @@ To uninstall / remove Oracle JDK from Mac run the following commands one after a
 
 ## Resolve ChromeDriver opening failure in Mac
 
-Click on the `Apple` menu -> `System Preferences` -> `System and Security` -> `General` -> Message will be shown as 'ChromeDriver is blocked' -> Click on `Allow Anyway`
+Click on the `Apple` menu -> `System Preferences` -> `System and Security` -> `General` -> Message will be shown as 'ChromeDriver is blocked' -> Click on `Allow Anyway`.
 
 ## Change Github username and password which are being used from terminal
 
 Recently the Github team has announced that for better protection and privacy users should not use their profile password to push or pull code changes from Github repositories instead they should start using Personal Access Tokens provided by Github. The following process will guide you how to replace your old password with new Personal Access Token generated from your own Github account.
 
-- Check whether credential helper is set or not  
+- Check whether credential helper is set or not.  
 `> git config --list`  
 `credential.helper = osxkeychain`
 
-- Update the credentials via Keychain Access  
+- Update the credentials via Keychain Access.  
     1. Open up 'Spotlight Search' by clicking on the icon in the menu bar or pressing `Command + Spacebar`.
     2. Type 'Keychain Access' and press `Enter` to launch the app.
     3. In 'Keychain Access' search for 'github.com'.
@@ -226,6 +245,88 @@ Recently the Github team has announced that for better protection and privacy us
 `host = github.com`  
 `protocol = https`  
 `> [Return]`
+
+## Setting up Visual Studio Code
+
+### Necessary Extensions
+
+- Auto Close Tag
+- Auto Import
+- Auto Rename Tag
+- Babel JavaScript
+- Bracket Pair Colorizer
+- C/C++
+- C/C++ Compile Run
+- Code Runner
+- Code Spell Checker
+- Color Highlight
+- CSS Peek
+- Debugger for Java
+- EditorConfig for VS Code
+- ESLint
+- Excel Viewer
+- Extension Pack for Java
+- GitLens - Git supercharged
+- Jupyter
+- Language Support for Java(TM) by Red Hat
+- Live Server
+- Markdown Preview Github Styling
+- markdownlint
+- Maven for Java
+- Monokai Pro
+- Paste and Indent
+- Path Intellisense
+- PHP Debug
+- PHP Extension Pack
+- PHP Intelephense
+- PHP IntelliSense
+- Prettier - Code formatter
+- Project Manager for Java
+- Pylance
+- Python
+- Sass
+- Test Runner for Java
+- Thunder Client
+- TSLint
+- Visual Studio IntelliCode
+- vscode-pdf
+
+### Configuration for settings.json
+
+## Setting up IntelliJ IDEA
+
+### Configuring Appearance
+
+Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Preferences` -> `Appearance`
+
+- `Theme`: `One Dark Vivid Italic`
+- Check `Use custom font`
+- `Use custom font`: `.SF NS Text`
+- `Size`: `11`
+
+### Configuring Editor
+
+Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Preferences` -> `Editor` -> `Font`
+
+- `Font`: `Monospaced`
+- `Size`: `10`
+- `Line height`: `1.1`
+
+### Necessary Plugins
+
+Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Preferences` -> `Plugins`
+
+- Create TestNG XML
+- Cucumber for Java
+- Gherkin
+- One Dark theme
+- SolarLint
+
+### Changing Java SDK in a project
+
+Open up 'IntelliJ IDEA' -> Click on `File` on the menu bar -> `Project Structure` -> `Project`
+
+- `Project SDK`: Click on the dropdown and select any `Detected SDKs`. If the SDK of your choice is not available then select the `+ Add SDK` option and choose any option feasible to you. You may either go for `Download JDK` option or Click on `JDK` and locate a JDK from your local system.
 
 ## Shortcuts
 
