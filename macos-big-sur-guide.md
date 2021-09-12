@@ -201,10 +201,10 @@ __Extras__: My all in one ~/.zshenv config is given below,
 
 ```bash
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_301.jdk/Contents/Home
-export M2_HOME=/opt/apache-maven/3.8.2
 export JMETER_HOME=/opt/apache-jmeter/5.4.1
+export M2_HOME=/opt/apache-maven/3.8.2
 
-export PATH=$PATH:$JAVA_HOME/bin:$M2_HOME/bin:$JMETER_HOME/bin
+export PATH=$PATH:$JAVA_HOME/bin:$JMETER_HOME/bin:$M2_HOME/bin
 ```
 
 ## Uninstalling Oracle JDK from Mac
@@ -397,7 +397,7 @@ Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Preferen
 - Cucumber for Java
 - Gherkin
 - One Dark theme
-- SolarLint
+- SonarLint
 
 ### Changing Java SDK in a project
 
@@ -441,6 +441,20 @@ Open up 'Sublime Text' -> Click on `Sublime Text` on the menu bar -> `Preference
 - Emmet
 - Package Control
 - SideBarEnhancements
+- SublimeLinter
+- [SublimeLinter](https://packagecontrol.io/search/SublimeLinter)
+- [SublimeLinter-javac](https://packagecontrol.io/packages/SublimeLinter-javac)
+- [SublimeLinter-jshint](https://packagecontrol.io/packages/SublimeLinter-jshint)
+- [Sublime​Linter-tslint](https://packagecontrol.io/packages/SublimeLinter-tslint)
+- [Sublime​Linter-pylint](https://packagecontrol.io/packages/SublimeLinter-pylint)
+- [SublimeLinter-php](https://packagecontrol.io/packages/SublimeLinter-php)
+- [Sublime​Linter-ruby](https://packagecontrol.io/packages/SublimeLinter-ruby)
+- [SublimeLinter-clang](https://packagecontrol.io/packages/SublimeLinter-clang)
+- [SublimeLinter-cpplint](https://packagecontrol.io/packages/SublimeLinter-cpplint)
+- [Sublime​Linter-html-tidy](https://packagecontrol.io/packages/SublimeLinter-html-tidy)
+- [Sublime​Linter-csslint](https://packagecontrol.io/packages/SublimeLinter-csslint)
+- [SublimeLinter-json](https://packagecontrol.io/packages/SublimeLinter-json)
+- [SublimeLinter-shellcheck](https://packagecontrol.io/packages/SublimeLinter-shellcheck)
 - SublimeREPL
 - Terminal
 - Terminus
