@@ -50,7 +50,7 @@ Click on the `Apple` menu -> Go to `System Preferences` -> `Mouse` -> Untick `Sc
 
 ## Display all sidebar items in Finder
 
-Open up `Finder` -> Click on `Finder` in the menu bar -> `Preferences` -> `Sidebar` -> Check all possible items you want to show on the sidebar.
+Open up 'Finder' -> Click on `Finder` in the menu bar -> `Preferences` -> `Sidebar` -> Check all possible items you want to show on the sidebar.
 
 ## Changing workspace
 
@@ -123,9 +123,26 @@ Formatting of the device can be done by following the steps given below:
 [Note: Secure erase options are available only for some types of storage devices. If the Security Options button is not available, Disk Utility cannot perform a secure erase on the storage device.]
 - Click Erase, then click Done.
 
+## Terminal configuration
+
+Open up 'Terminal' -> Click on `Terminal` in the menu bar -> `Preferences`
+
+- Select the `General` tab
+    1. `On startup, open`: `New window with profile` - `Pro`
+    2. `New windows open with`: `Same Profile`
+
+- Select the `Profiles` tab
+    1. `Text` tab
+        - Select profile `Pro` and click on `Default` button
+        - Check `Blink Cursor`
+        - Click on `Colors and Effects` -> `Opacity`: `80%`
+        - Click on `Change` button next to `Font` -> `Line Spacing`: `1.1`
+    2. `Window` tab
+        - `Columns`: `170`, `Rows`: `40`
+
 ## iTerm2 configuration
 
-Open up `iTerm2` -> Click on `iTerm2` in the menu bar -> `Preferences` -> `Profiles`
+Open up 'iTerm2' -> Click on `iTerm2` in the menu bar -> `Preferences` -> `Profiles`
 
 1. General Tab:  
     - Click on `+` icon to create a profile.  
