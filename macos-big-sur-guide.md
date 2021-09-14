@@ -149,6 +149,7 @@ Open up 'iTerm2' -> Click on `iTerm2` in the menu bar -> `Preferences` -> `Profi
     - `Name`: `Deepjyoti`
     - `Title`: `Job + Args`
     - Select the newly created profile -> Click on `Other Actions` -> `Set  as Default`
+    - (Optional) `Send text at start`: `sshpass -e ssh deepjb@192.168.30.15`
 2. Text Tab:
     - Check `Blinking Cursor`.
     - Set `Font` as the following:  
@@ -157,7 +158,7 @@ Open up 'iTerm2' -> Click on `iTerm2` in the menu bar -> `Preferences` -> `Profi
 3. Window Tab:
     - `Transparency`: `17`
     - `Blending`: `50`
-    - Settings for Windows:  
+    - `Settings for New Windows`:
     `Columns`: `170`, `Rows`: `40`
 
 ## Installing Homebrew on Mac Intel and M1 chip
@@ -200,11 +201,19 @@ Open up 'iTerm2' -> Click on `iTerm2` in the menu bar -> `Preferences` -> `Profi
 __Extras__: My all in one ~/.zshenv config is given below,
 
 ```bash
+export ANDROID_HOME=/Users/ins667/Library/Android/sdk 
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_301.jdk/Contents/Home
 export JMETER_HOME=/opt/apache-jmeter/5.4.1
 export M2_HOME=/opt/apache-maven/3.8.2
+export SSHPASS='xyz^&12ab&23'
 
-export PATH=$PATH:$JAVA_HOME/bin:$JMETER_HOME/bin:$M2_HOME/bin
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$JAVA_HOME/bin
+export PATH=$PATH:$JMETER_HOME/bin
+export PATH=$PATH:$M2_HOME/bin
 ```
 
 ## Uninstalling Oracle JDK from Mac
@@ -310,6 +319,7 @@ Recently the Github team has announced that for better protection and privacy us
 - TSLint
 - Visual Studio IntelliCode
 - vscode-pdf
+- XCode
 
 ### Configuration for settings.json
 
@@ -548,6 +558,8 @@ javac-compile-run-terminus.sublime-build:
 - `Control + C` : __(Terminal)__ Cancel the current command.
 - `Control + L` : __(Terminal)__ Clear the terminal screen.
 - `Control + R` : __(Terminal)__ Search in previous commands (history).
+- `Mouse1_Double_Click` (on any text): __(iTerm2)__ Select / highlight the text in iTerm2 and copy it to clipboard.
+- `Mouse3_Click` : __(iTerm2)__ Paste the content from the clipboard in iTerm2.
 
 ## Commands
 
