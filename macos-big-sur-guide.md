@@ -216,6 +216,39 @@ export PATH=$PATH:$JMETER_HOME/bin
 export PATH=$PATH:$M2_HOME/bin
 ```
 
+## Intalling sshpass - An Excellent Tool for Non-Interactive SSH Login
+
+In most cases, Linux system administrators login to remote Linux servers using SSH either by supplying a password, or passwordless SSH login, or keybased SSH authentication.
+
+sshpass is a simple and lightweight command line tool that enables us to provide password (non-interactive password authentication) to the command prompt itself, so that automated shell scripts can be executed.
+
+### Command to install sshpass in Mac
+
+We can install sshpass using any of the following command:
+
+- ```bash
+  brew install hudochenkov/sshpass/sshpass
+  ```
+  
+- ```bash
+  brew install esolitos/ipa/sshpass
+  ```
+
+### 3 ways of login via sshpass
+
+- ```bash
+  sshpass -p 'my_pass_here' ssh aaronkilik@10.42.0.1
+  ```
+
+- ```bash
+  export SSHPASS='my_pass_here'
+  sshpass -e ssh aaronkilik@10.42.0.1
+  ```
+
+- ```bash
+  sshpass -f password_filename ssh aaronkilik@10.42.0.1
+  ```
+
 ## Uninstalling Oracle JDK from Mac
 
 To uninstall / remove Oracle JDK from Mac run the following commands one after another or delete these files and directories manually.
@@ -243,6 +276,17 @@ To uninstall / remove Oracle JDK from Mac run the following commands one after a
 - Once the camera icon is visible, click on the screen to take the snapshot / start the recording.
 - If you are recording the then click on the 'Stop' icon on menu bar to stop the video recording.
 - The video will be saved on the desktop. Meanwhile, if you have captured a snapshot of the screen then the prompt will come up and let you decide the format and the destination to save the image you've captured.
+
+## Opening a file in TextEdit / any other application of our choice from Terminal
+
+```bash
+  open -a TextEdit 'filename'
+  ```
+
+The -a flag specifies any application you want, so it's applicable to any number of situations, including ones where TextEdit isn't the default editor. Other relevant options:
+
+- -t  opens in the default editor (i.e. if you use BBEdit, TextMate, etc.)
+- -e will open the file specifically in TextEdit
 
 ## Resolve ChromeDriver opening failure in Mac
 
@@ -273,6 +317,54 @@ Recently the Github team has announced that for better protection and privacy us
 `host = github.com`  
 `protocol = https`  
 `> [Return]`
+
+## Mobile Testing with Appium in Mac
+
+### Tools required
+
+- JDK
+- Maven
+- Android Studio
+- XCode
+- Node.js
+- Appium Desktop
+- Appium - Command Line Tool present in NPM (Optional)
+- Appium Doctor - Command Line Tool present in NPM  (Optional)
+- IntelliJ / Eclipse
+
+### Command to install Appium - Command Line Tool in Mac
+
+```bash
+sudo npm install -g appium --unsafe-perm=true --allow-root
+```
+
+### Fix for uiautomatorviewer2 in Mac
+
+- Search in Google 'Eclipse Project Downloads' or directly visit <https://download.eclipse.org/eclipse/downloads/>
+
+- Choose a 'Build Name' which has support for the Java version you have currently installed on your system.
+
+- Download the 'SWT Binary and Source' for 'Mac OSX (64 bit version)'
+
+  - Java 11 supported SWT: <https://download.eclipse.org/eclipse/downloads/drops4/R-4.21-202109060500/>
+  - Java 8 supported SWT: <https://archive.eclipse.org/eclipse/downloads/drops4/R-4.16-202006040540/>
+  - Site which has all different archive releases: <https://archive.eclipse.org/eclipse/downloads/>  
+
+- Extract the file you have downloaded (e.g. 'swt-4.21-cocoa-macosx-x86_64.zip'), open the extracted directory and rename 'swt.jar' to 'swt2.jar'.
+
+- Copy and paste the 'swt2.jar' in '/Users/ins667/Library/Android/sdk/tools/lib/x86' and in '/Users/ins667/Library/Android/sdk/tools/lib/x86_64'
+
+- Launch 'uiautomatorviewer2' to verify whether it's running without any issues.
+
+### Practice apps download
+
+- [Android_ApiDemos-debug.apk - Official](https://appium.io/docs/en/about-appium/getting-started/index.html#running-your-first-test)
+- [Android_ApiDemos-debug.apk - GitHub](https://github.com/appium/appium/tree/master/sample-code/apps)
+
+### Important Commands
+
+- `adb devices` : Get the UUID of the devices connected.
+- `adb shell dumpsys window | grep -E 'CurrentFocus|FocusedApp'` : Get the appPackage and appActivity of an app.
 
 ## Setting up Visual Studio Code
 
@@ -405,6 +497,7 @@ Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Preferen
 
 - Create TestNG XML
 - Cucumber for Java
+- ExcelReader
 - Gherkin
 - One Dark theme
 - SonarLint
