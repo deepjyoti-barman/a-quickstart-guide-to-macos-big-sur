@@ -226,28 +226,28 @@ sshpass is a simple and lightweight command line tool that enables us to provide
 
 We can install sshpass using any of the following command:
 
-- ```bash
-  brew install hudochenkov/sshpass/sshpass
-  ```
+```bash
+brew install hudochenkov/sshpass/sshpass
+```
   
-- ```bash
-  brew install esolitos/ipa/sshpass
-  ```
+```bash
+brew install esolitos/ipa/sshpass
+```
 
 ### 3 ways of login via sshpass
 
-- ```bash
-  sshpass -p 'my_pass_here' ssh aaronkilik@10.42.0.1
-  ```
+```bash
+sshpass -p 'my_pass_here' ssh aaronkilik@10.42.0.1
+```
 
-- ```bash
-  export SSHPASS='my_pass_here'
-  sshpass -e ssh aaronkilik@10.42.0.1
-  ```
+```bash
+export SSHPASS='my_pass_here'
+sshpass -e ssh aaronkilik@10.42.0.1
+```
 
-- ```bash
-  sshpass -f password_filename ssh aaronkilik@10.42.0.1
-  ```
+```bash
+sshpass -f password_filename ssh aaronkilik@10.42.0.1
+```
 
 ## Uninstalling Oracle JDK from Mac
 
@@ -280,8 +280,8 @@ To uninstall / remove Oracle JDK from Mac run the following commands one after a
 ## Opening a file in TextEdit / any other application of our choice from Terminal
 
 ```bash
-  open -a TextEdit 'filename'
-  ```
+open -a TextEdit 'filename'
+```
 
 The -a flag specifies any application you want, so it's applicable to any number of situations, including ones where TextEdit isn't the default editor. Other relevant options:
 
