@@ -363,7 +363,7 @@ sudo npm install -g appium --unsafe-perm=true --allow-root
 
 ### Important Commands
 
-- `adb devices` : Get the UUID of the devices connected.
+- `adb devices` : Get the UDID of the devices connected.
 - `adb shell dumpsys window | grep -E 'CurrentFocus|FocusedApp'` : Get the appPackage and appActivity of an app.
 
 ## Setting up Visual Studio Code
@@ -614,6 +614,55 @@ javac-compile-run-terminus.sublime-build:
     "working_dir": "$file_path"
 }
 ```
+
+## Setting up Charles
+
+### Register Charles
+
+- Open up 'Charles' -> `Help` -> `Register Charles`
+- Enter `Username` and `Password`.
+- Click on `OK`.
+- Restart 'Charles'.
+
+### Installing Charles Root Certificate on your Mac
+
+- Open up 'Charles' -> `Help` -> `SSL Proxying` -> `Install Charles Root Certificate`
+- Following the above step will open up 'Keychain Access'.
+- Search for 'Charles' in the search bar.
+- Once you are able to find the certificate after the search -> Double click on the certificate -> Click on the arrow mark next to `Trust` and change the details from the dropdown as listed down below,  
+`When using this certificate`: `Always Trust`
+- You will be asked to enter your computer / admin password -> `Update settings`
+- Once the changes are done close the window.
+
+### Installing Charles Root Certificate on your Mobile
+
+- Before installing 'Charles Root Certificate' on your mobile make sure that your laptop and your mobile is connected to the same WiFi network and proxying settings are setup correctly. To configure the proxying settings follow the given steps:
+  - While 'Charles' is open go to `Help` -> `Local IP Address` -> Get the `IP Address` for `Network Interface`: `en0` -> Close the window
+  - Go to `Proxy` -> `Proxy Settings` -> Get the `HTTP Proxy` port number
+  - Open up your mobile -> Settings -> WiFi -> Click on the `>` icon or long press on the network you are connected to -> `Manage network settings` -> `Show advanced options`
+  - Now change `Proxy`: `Manual`
+  - Under `Proxy host name` enter the internal IP address of your computer that you have noted down earlier.
+  - Under `Proxy port` enter the HTTP proxy port number that you have noted down earlier.
+  - Save the changes.
+  - Once you come back to Charles you will find a popup, click on the 'Allow' button of that popup.
+- Now open up any browser on your mobile and enter <http://chls.pro/ssl>.
+- Download the 'SSL certificate' and click on it to start the installation.
+- While installing it may ask you to setup a PIN.
+- Fill up the details as given below,  
+`Certificate Name`: `Charles Root Certificate`  
+`Used for`: `VPN and apps`
+- Click on `OK` button.
+
+### Enable and configure SSL Proxying Settings
+
+- Open up 'Charles' -> `Proxy` -> `SSL Proxying Settings`
+- Click on `Enable SSL Proxying`.
+- Click on the `Add` button which is present under the `Include` section.
+- In the `Host` field
+  - If you want to monitor all the traffic then type `*`.
+  - If you want to monitor only a specific set of traffic related to your host then enter `*hostname.extension` (i.e. `*makemytrip.com`).
+- In the `Port` field you may either enter `*` or enter `443`, anything of your choice.
+- Click on `OK` -> `OK`
 
 ## Shortcuts
 
