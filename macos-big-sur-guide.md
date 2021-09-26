@@ -828,7 +828,7 @@ As of macOS Sierra 10.12.1, the Caps Lock -> Escape remapping can be done native
 ### Vim modes
 
 - `Normal` mode:
-  - Vim starts up in ‘Normal Mode’.
+  - Vim starts up in `Normal` mode.
   - This mode is used for navigating around the file, reading contents, go from one file to another file.
   - Switch to `Normal` mode by pressing `Esc` while you are in any other mode.
 
