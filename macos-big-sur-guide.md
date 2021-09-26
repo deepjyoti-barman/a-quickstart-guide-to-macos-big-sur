@@ -14,8 +14,11 @@
 - Apache JMeter
 - Apache Maven
 - AppCleaner
+- [bat](https://github.com/sharkdp/bat) (install via `brew install bat`)
 - Charles
 - DBeaver Community Edition
+- [fd](https://github.com/sharkdp/fd) (install via `brew install fd`)
+- [fzf](https://github.com/junegunn/fzf) (install via `brew install fzf`, install key-bindings via `$(brew --prefix)/opt/fzf/install`)
 - Git
 - Google Chrome
 - Grammarly for Safari
@@ -29,9 +32,11 @@
 - Node.js
 - Postman
 - PyCharm Community Edition
-- Python
+- python3 (install via `brew install python3`)
+- [ripgrep](https://github.com/BurntSushi/ripgrep) (install via `brew install ripgrep`)
 - Sublime Text
 - The Unarchiver
+- Vim (install via `brew install vim` - not recommended to use the vim that comes bundled with preinstalled macOS)
 - Visual Studio Code
 - Vysor
 - XAMPP
@@ -201,8 +206,15 @@ Open up 'iTerm2' -> Click on `iTerm2` in the menu bar -> `Preferences` -> `Profi
 __Extras__: My all in one ~/.zshenv config is given below,
 
 ```bash
-export ANDROID_HOME=/Users/ins667/Library/Android/sdk 
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_301.jdk/Contents/Home
+export ANDROID_HOME=/Users/ins667/Library/Android/sdk
+export FZF_DEFAULT_COMMAND="fd --type=file --color=always --follow --hidden --exclude .git --exclude node_modules --exclude .m2"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_DEFAULT_OPTS="--height 40% --layout reverse --info inline --border \
+    --preview 'bat --color=always --style=numbers --line-range=:500 {}' \
+    --bind shift-up:preview-page-up,shift-down:preview-page-down \
+    --color 'fg:#bbccdd,fg+:#ddeeff,bg:#334455,preview-bg:#223344,border:#778899' \
+    --ansi"
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.12.jdk/Contents/Home
 export JMETER_HOME=/opt/apache-jmeter/5.4.1
 export M2_HOME=/opt/apache-maven/3.8.2
 export SSHPASS='xyz^&12ab&23'
@@ -394,6 +406,7 @@ sudo npm install -g appium --unsafe-perm=true --allow-root
 - Markdown Preview Github Styling
 - markdownlint
 - Maven for Java
+- Midnight Synth
 - Monokai Pro
 - Paste and Indent
 - Path Intellisense
@@ -443,19 +456,19 @@ Click on the `Manage` (Screw) icon -> `Settings` (Shortcut: `Command + ,`) -> Fr
     "files.autoSaveDelay": 5000,
     "java.configuration.checkProjectSettingsExclusions": false,
     "java.errors.incompleteClasspath.severity": "ignore",
-    "java.home": "/Library/Java/JavaVirtualMachines/jdk-11.0.11.jdk/Contents/Home/",
+    "java.home": "/Library/Java/JavaVirtualMachines/jdk-11.0.12.jdk/Contents/Home/",
     "java.configuration.runtimes": [
         {
-          "name": "JavaSE-1.8",
-          "path": "/Library/Java/JavaVirtualMachines/jdk1.8.0_291.jdk/Contents/Home/"
+            "name": "JavaSE-1.8",
+            "path": "/Library/Java/JavaVirtualMachines/jdk1.8.0_301.jdk/Contents/Home/"
         },
         {
             "name": "JavaSE-11",
-            "path": "/Library/Java/JavaVirtualMachines/jdk-11.0.11.jdk/Contents/Home/",
-            "sources" : "/Library/Java/JavaVirtualMachines/jdk-11.0.11.jdk/Contents/Home/lib/src.zip",
+            "path": "/Library/Java/JavaVirtualMachines/jdk-11.0.12.jdk/Contents/Home/",
+            "sources" : "/Library/Java/JavaVirtualMachines/jdk-11.0.12.jdk/Contents/Home/lib/src.zip",
             "javadoc" : "https://docs.oracle.com/en/java/javase/11/docs/api",
             "default":  true
-           }
+        }
     ],
     "prettier.singleQuote": false,
     "prettier.tabWidth": 4,
@@ -663,6 +676,145 @@ javac-compile-run-terminus.sublime-build:
   - If you want to monitor only a specific set of traffic related to your host then enter `*hostname.extension` (i.e. `*makemytrip.com`).
 - In the `Port` field you may either enter `*` or enter `443`, anything of your choice.
 - Click on `OK` -> `OK`
+
+## Vim - the ubiquitous and most powerful command line editor
+
+### Configuration for ~/.vimrc
+
+```vim
+set nocompatible                " Disable compatibility with vi which can cause unexpected issues.
+filetype on                     " Enable type file detection. Vim will be able to try to detect the type of file is use.
+filetype plugin on              " Enable plugins and load plugin for the detected file type.
+filetype indent on              " Load an indent file for the detected file type.
+
+
+syntax on                       " Turn syntax highlighting on.
+colorscheme onedark             " Select the 'Onedark' colorscheme for vim
+let g:lightline = {
+  \ 'colorscheme': 'onedark',
+  \ }
+" highlight Normal guibg=NONE ctermbg=NONE
+
+set noshowmode                  " Don't show what mode we're currently editing in
+set showcmd                     " Show partial command you type in the last line of the screen
+set laststatus=2                " 0, 1 or 2; when to use a status line for the last window
+set nowrap                      " Don't wrap lines
+set number                      " Add numbers to each line on the left-hand side
+set tabstop=4                   " A tab is four spaces
+set softtabstop=4               " When hitting <BS>, pretend like a tab is removed, even if spaces
+set shiftwidth=4                " Number of spaces to use for autoindenting
+set expandtab                   " Expand tabs by default (overloadable per file type later)
+set autoindent                  " Always set autoindenting on
+set copyindent                  " Copy the previous indentation on autoindenting
+set smartindent                 " Do clever auto indenting
+set backspace=indent,eol,start  " allow backspacing over everything in insert mode
+set exrc                        " Enable reading .vimrc/.exrc/.gvimrc in the current directory
+set hidden                      " Don't unload a buffer when no longer shown in a window
+set autowrite                   " Save on buffer switch
+set ignorecase                  " Ignore case when searching
+set smartcase                   " Ignore case if search pattern is all lowercase / override 'ignorecase' when pattern has upper case characters
+set noswapfile
+set nobackup
+set undodir=~/.vim/undodir      " List of directories for undo files
+set undofile                    " Automatically save and restore undo history
+set hlsearch                    " Use highlighting when doing a search
+set incsearch                   " Show match for partly typed search command
+set scrolloff=8                 " Number of screen lines to show around the cursor
+set signcolumn=auto             " Whether to show the signcolumn for error highlighting
+set colorcolumn=120             " Columns to highlight
+set visualbell                  " Don't beep
+set noerrorbells                " Don't beep
+set history=1000                " Set the commands to save in history default number is 20
+set encoding=utf8
+
+
+call plug#begin('~/.vim/plugged')         " Specify a directory for plugins
+
+Plug 'jiangmiao/auto-pairs'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'mattn/emmet-vim'
+Plug 'itchyny/lightline.vim'
+Plug 'preservim/nerdcommenter'
+Plug 'preservim/nerdtree'
+Plug 'farmergreg/vim-lastplace'
+Plug 'jremmen/vim-ripgrep'
+Plug 'mbbill/undotree'
+Plug 'ycm-core/YouCompleteMe'
+
+call plug#end()                           " Initialize plugin system
+
+
+" Configuring remaps to do extra key combinations
+let mapleader = " "
+let g:mapleader = " "
+
+" General remaps
+nnoremap <leader>w :w<cr>
+nnoremap <leader>q :q<cr>
+nnoremap <leader>e :q!<cr>
+nnoremap <leader>h :wincmd h<cr>
+nnoremap <leader>j :wincmd j<cr>
+nnoremap <leader>k :wincmd k<cr>
+nnoremap <leader>l :wincmd l<cr>
+nnoremap <silent><leader>+ :vertical resize +5<cr>
+nnoremap <silent><leader>- :vertical resize -5<cr>
+
+" 'nerdtree' remaps
+nnoremap <leader>n :NERDTreeToggle<cr>
+nnoremap <leader>f :NERDTreeFind<space>
+
+" 'nerdtree' config 
+let g:NERDTreeIgnore = ['^node_modules$']
+
+" Start 'nerdtree' when Vim is started without file arguments
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
+
+" 'neardtree' note: Bring up NERDTree and navigate to the directory where you want to create the new file. Press m to bring up the NERDTree Filesystem Menu. This menu allows you to create, rename, and delete files and directories. Type a to add a child node and then simply enter the filename. You’re done! To create a directory follow the same steps but append a / to the filename.
+
+" 'undotree' remaps
+nnoremap <leader>u :UndotreeToggle<cr>
+
+" 'YouCompleteMe' remaps
+nnoremap <silent><leader>gd :YcmCompleter GoTo<cr>
+nnoremap <silent><leader>gf :YcmCompleter FixIt<cr>
+
+" 'ctrlp' remaps
+let g:ctrlp_map = '<leader>p'
+let g:ctrlp_cmd = 'CtrlP'
+
+" 'ctrlp' config
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+let g:ctrlp_root_markers = ['pom.xml', '.p4ignore', '.gitignore', '.project', '.idea', 'package.json', 'node_modules']
+let g:ctrlp_use_caching = 0
+let g:ctrlp_show_hidden = 0
+
+" 'ripgrep' remaps
+" 'ripgrep' note: Install 'ripgrep' on your system (mac) by entering the command `brew install ripgrep` before making a use of this plugin
+" 'ripgrep' issues and fixes: https://github.com/jremmen/vim-ripgrep/issues
+nnoremap <leader>ps :Rg<space>
+
+" 'ripgrep' config
+if executable('rg')
+    let g:rg_derive_root='true'
+endif
+
+" 'emmet' cofig
+" 'emmet' guidelines: https://raw.githubusercontent.com/mattn/emmet-vim/master/TUTORIAL
+let g:user_emmet_mode='a'
+let g:user_emmet_leader_key='<leader>a'
+
+" 'nerdcommenter' remaps
+vmap <leader>/ <plug>NERDCommenterToggle
+nmap <leader>/ <plug>NERDCommenterToggle
+
+" 'nerdcommenter' config
+let g:NERDSpaceDelims = 1
+let g:NERDCompactSexyComs = 1
+let g:NERDDefaultAlign = 'left'
+let g:NERDCommentEmptyLines = 1
+let g:NERDTrimTrailingWhitespace = 1
+```
 
 ## Shortcuts
 
