@@ -30,6 +30,7 @@
 - Katalon Studio
 - Microsoft Teams
 - Node.js
+- Oh My Zsh
 - Postman
 - PyCharm Community Edition
 - python3 (install via `brew install python3`)
@@ -147,6 +148,8 @@ Open up 'Terminal' -> Click on `Terminal` in the menu bar -> `Preferences`
 
 ## iTerm2 configuration
 
+### General configuration
+
 Open up 'iTerm2' -> Click on `iTerm2` in the menu bar -> `Preferences` -> `Profiles`
 
 1. General Tab:  
@@ -160,11 +163,145 @@ Open up 'iTerm2' -> Click on `iTerm2` in the menu bar -> `Preferences` -> `Profi
     - Set `Font` as the following:  
     `Monaco` `Regular` `10` `100` `110`
     - Uncheck `Anti-aliased`
+    - Uncheck `Draw bold text in bold font`
 3. Window Tab:
     - `Transparency`: `17`
     - `Blending`: `50`
     - `Settings for New Windows`:
     `Columns`: `170`, `Rows`: `40`
+
+### Install a colorscheme for iTerm2
+
+- Pay a visit to [Iterm2-color-schemes](https://iterm2colorschemes.com).
+- Search and click on `Monokai Remastered` colorscheme.
+- Save the configuration in a file and name it 'monokai-remastered.itermcolors'.
+- Open up 'iTerm2' -> Click on `iTerm2` in the menu bar -> `Preferences` -> `Profiles`
+- Click on 'Colors' tab.
+- Click on the `Color Presents...` dropdown -> `Import`
+- Choose the 'monokai-remastered.itermcolors' file from your local system.
+- Select the theme.
+- Close the `Preferences` dialog box.
+
+__Resources__: The 'monokai-remastered.itermcolors' colorscheme file has been added in this repository.
+
+### Install the Oh-My-Zsh plugin
+
+- Pay a visit to [Oh-My-Zsh](https://github.com/ohmyzsh/ohmyzsh)  for detailed information.
+- Install the plugin via entering the following `curl` command:  
+`sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
+- Update this plugin manually by entering the following command:  
+`omz update`
+- Configure your ~/.zshrc as the following:
+
+    ```zsh
+    # If you come from bash you might have to change your $PATH.
+    # export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+    # Path to your oh-my-zsh installation.
+    export ZSH="/Users/ins667/.oh-my-zsh"
+
+    # Set name of the theme to load --- if set to "random", it will
+    # load a random theme each time oh-my-zsh is loaded, in which case,
+    # to know which specific one was loaded, run: echo $RANDOM_THEME
+    # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+    ZSH_THEME="pygmalion"
+
+    # Set list of themes to pick from when loading at random
+    # Setting this variable when ZSH_THEME=random will cause zsh to load
+    # a theme from this variable instead of looking in $ZSH/themes/
+    # If set to an empty array, this variable will have no effect.
+    # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+
+    # Uncomment the following line to use case-sensitive completion.
+    # CASE_SENSITIVE="true"
+
+    # Uncomment the following line to use hyphen-insensitive completion.
+    # Case-sensitive completion must be off. _ and - will be interchangeable.
+    # HYPHEN_INSENSITIVE="true"
+
+    # Uncomment the following line to disable bi-weekly auto-update checks.
+    DISABLE_AUTO_UPDATE="true"
+
+    # Uncomment the following line to automatically update without prompting.
+    DISABLE_UPDATE_PROMPT="true"
+
+    # Uncomment the following line to change how often to auto-update (in days).
+    # export UPDATE_ZSH_DAYS=13
+
+    # Uncomment the following line if pasting URLs and other text is messed up.
+    # DISABLE_MAGIC_FUNCTIONS="true"
+
+    # Uncomment the following line to disable colors in ls.
+    # DISABLE_LS_COLORS="true"
+
+    # Uncomment the following line to disable auto-setting terminal title.
+    # DISABLE_AUTO_TITLE="true"
+
+    # Uncomment the following line to enable command auto-correction.
+    # ENABLE_CORRECTION="true"
+
+    # Uncomment the following line to display red dots whilst waiting for completion.
+    # You can also set it to another string to have that shown instead of the default red dots.
+    # e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+    # Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
+    # COMPLETION_WAITING_DOTS="true"
+
+    # Uncomment the following line if you want to disable marking untracked files
+    # under VCS as dirty. This makes repository status check for large repositories
+    # much, much faster.
+    # DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+    # Uncomment the following line if you want to change the command execution time
+    # stamp shown in the history command output.
+    # You can set one of the optional three formats:
+    # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+    # or set a custom format using the strftime function format specifications,
+    # see 'man strftime' for details.
+    # HIST_STAMPS="mm/dd/yyyy"
+
+    # Would you like to use another custom folder than $ZSH/custom?
+    # ZSH_CUSTOM=/path/to/new-custom-folder
+
+    # Which plugins would you like to load?
+    # Standard plugins can be found in $ZSH/plugins/
+    # Custom plugins may be added to $ZSH_CUSTOM/plugins/
+    # Example format: plugins=(rails git textmate ruby lighthouse)
+    # Add wisely, as too many plugins slow down shell startup.
+    plugins=(git)
+
+    source $ZSH/oh-my-zsh.sh
+
+    # User configuration
+
+    # export MANPATH="/usr/local/man:$MANPATH"
+
+    # You may need to manually set your language environment
+    # export LANG=en_US.UTF-8
+
+    # Preferred editor for local and remote sessions
+    # if [[ -n $SSH_CONNECTION ]]; then
+    #   export EDITOR='vim'
+    # else
+    #   export EDITOR='mvim'
+    # fi
+
+    # Compilation flags
+    # export ARCHFLAGS="-arch x86_64"
+
+    # Set personal aliases, overriding those provided by oh-my-zsh libs,
+    # plugins, and themes. Aliases can be placed here, though oh-my-zsh
+    # users are encouraged to define aliases within the ZSH_CUSTOM folder.
+    # For a full list of active aliases, run `alias`.
+    #
+    # Example aliases
+    # alias zshconfig="mate ~/.zshrc"
+    # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+    # Configuration for FZF plugin
+    # Source the '.fzf.zsh' if it exists
+    [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+    ```
 
 ## Installing Homebrew on Mac Intel and M1 chip
 
@@ -673,11 +810,56 @@ javac-compile-run-terminus.sublime-build:
 - Click on the `Add` button which is present under the `Include` section.
 - In the `Host` field
   - If you want to monitor all the traffic then type `*`.
-  - If you want to monitor only a specific set of traffic related to your host then enter `*hostname.extension` (i.e. `*makemytrip.com`).
+  - If you want to monitor only a specific set of traffic related to your host then enter `*hostname.extension` (i.e. `*github.com`).
 - In the `Port` field you may either enter `*` or enter `443`, anything of your choice.
 - Click on `OK` -> `OK`
 
 ## Vim - the ubiquitous and most powerful command line editor
+
+### Remapping the Caps Lock key to Escape in macOS Sierra for easier access
+
+As of macOS Sierra 10.12.1, the Caps Lock -> Escape remapping can be done natively in the Keyboard System Preferences pane! To remap without any 3rd party software, do the following:
+
+- Open `System Preferences` and click on `Keyboard`
+- Click on `Modifier Keys...`
+- For `Caps Lock` key, choose `Escape`
+- Click `OK`
+
+### Vim modes
+
+- `Normal` mode:
+  - Vim starts up in ‘Normal Mode’.
+  - This mode is used for navigating around the file, reading contents, go from one file to another file.
+  - Switch to `Normal` mode by pressing `Esc` while you are in any other mode.
+
+- `Insert` mode:
+  - This mode is used for entering text into vim's buffer.
+  - Switch to `Insert` mode by pressing the following keys while you are in `Normal` mode:
+    - `i` : Switch to the `Insert` mode and move your cursor to the left of the cursor’s current position.
+    - `I` : Switch to the `Insert` mode and move your cursor to the beginning of the line.
+    - `a` : Switch to the `Insert` mode and move your cursor to the right of the cursor’s current position.
+    - `A` : Switch to the `Insert` mode and move your cursor to the end of the line.
+    - `o` : Switch to the `Insert` mode and move your cursor to a newline after your cursor’s current position.
+    - `O` : Switch to the `Insert` mode and move your cursor to a newline before your cursor’s current position.
+
+- `Replace` mode:
+  - This mode allows you replace existing text by directly typing over it.  
+  - Switch to `Replace` mode by pressing `R` (`Shift + r`) while you are in `Normal` mode.
+
+- `Visual` mode:
+  - This mode is used to make selections of text, similar to how clicking and dragging with a mouse behaves. Selecting text allows commands to apply only to the selection, such as copying, deleting, replacing, and so on.
+  - Switch to `Visual` mode by pressing `v` while you are in `Normal` mode.
+  - `Visual` mode has two different variants:
+    - `Visual Line` mode:
+      - This mode is used to make text selections by line.
+      - Switch to `Visual Line` mode by pressing `V` (`Shift + v`) while you are in `Normal` mode.
+    - `Visual Block` mode:
+      - This mode is used to make text selections by blocks; moving the cursor will make rectangle selections of the text.
+      - Switch to `Visual Block` mode by pressing `Control + v` while you are in `Normal` mode.
+
+- `Command` mode:
+  - Command mode has a wide variety of commands and can do things that normal mode can’t do as easily.
+  - Switch to `Command` mode by pressing `:` while you are in `Normal` mode.
 
 ### Configuration for ~/.vimrc
 
