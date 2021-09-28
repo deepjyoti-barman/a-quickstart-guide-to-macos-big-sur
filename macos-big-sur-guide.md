@@ -861,6 +861,27 @@ As of macOS Sierra 10.12.1, the Caps Lock -> Escape remapping can be done native
   - Command mode has a wide variety of commands and can do things that normal mode can’t do as easily.
   - Switch to `Command` mode by pressing `:` while you are in `Normal` mode.
 
+### Configuring vim like a real power user
+
+### Vim shortcuts
+
+#### Getting out of vim
+
+- `:q` / `:quit` : __\[COMMAND\]__ Quit vim.
+- `:q!` / `:quit!` : __\[COMMAND\]__ Quit vim without saving.
+- `:w` / `:write` : __\[COMMAND\]__ Write into a file.
+- `:w!` / `:write!` : __\[COMMAND\]__ Force write into a file even if the file has only read permission.
+- `:wq` : __\[COMMAND\]__ Write into a file and quit vim.
+- `:wq!` : __\[COMMAND\]__ Force write into a file and quit even if file has only read permission (i.e. if file does not have write permission).
+- `:x` / `:exit` : __\[COMMAND\]__ Write into a file and quit vim (similar to `:wq`, but only write if there are changes).
+- `:qa` / `:quitall` : __\[COMMAND\]__ Close all the instances/files open in vim.
+- `:qa!` / `:quitall!` : __\[COMMAND\]__ Close all the instances/files open in vim abandoning the changes.
+- `:cq` : __\[COMMAND\]__ Quit vim with an error code, so that the compiler will not compile the same file again.
+- `:wq <file-name>` : __\[COMMAND\]__ Write into the given file and quit vim (Tip: Mostly used when you open vim without giving filename as arguments initially).
+- `:<line-no-beg>,<line-no-end>wq!` : __\[COMMAND\]__ Write the text in between the line range given into a file, discarding other changes (e.g. `:5,10wq!` writes only the text from line no 5 to 10 into the file, discards other changes and exists vim).
+- `ZZ` : __\[NORMAL\]__ Write into a file and quit vim when there are changes (same as `:x`).
+- `ZQ` : __\[NORMAL\]__ Quit vim discarding changes (same as `:q!`). 
+
 ### Configuration for ~/.vimrc
 
 ```vim
@@ -875,7 +896,7 @@ colorscheme onedark             " Select the 'Onedark' colorscheme for vim
 let g:lightline = {
   \ 'colorscheme': 'onedark',
   \ }
-" highlight Normal guibg=NONE ctermbg=NONE
+highlight Normal guibg=NONE ctermbg=NONE
 
 set noshowmode                  " Don't show what mode we're currently editing in
 set showcmd                     " Show partial command you type in the last line of the screen
@@ -941,6 +962,14 @@ nnoremap <leader>l :wincmd l<cr>
 nnoremap <silent><leader>+ :vertical resize +5<cr>
 nnoremap <silent><leader>- :vertical resize -5<cr>
 
+" General cofigs
+" Change cursor to 'blinking vertical bar' in INSERT mode 
+" Change cursor to 'blinking underscore' in REPLACE mode
+" Change cursor to 'blinking block' in NORMAL mode
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+
 " 'nerdtree' remaps
 nnoremap <leader>n :NERDTreeToggle<cr>
 nnoremap <leader>f :NERDTreeFind<space>
@@ -984,7 +1013,9 @@ endif
 " 'emmet' cofig
 " 'emmet' guidelines: https://raw.githubusercontent.com/mattn/emmet-vim/master/TUTORIAL
 let g:user_emmet_mode='a'
-let g:user_emmet_leader_key='<leader>a'
+let g:user_emmet_leader_key='<C-a>'
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
 
 " 'nerdcommenter' remaps
 vmap <leader>/ <plug>NERDCommenterToggle
@@ -1036,6 +1067,26 @@ let g:NERDTrimTrailingWhitespace = 1
 - `Control + R` : __(Terminal)__ Search in previous commands (history).
 - `Mouse1_Double_Click` (on any text): __(iTerm2)__ Select / highlight the text in iTerm2 and copy it to clipboard.
 - `Mouse3_Click` : __(iTerm2)__ Paste the content from the clipboard in iTerm2.
+- `Command + D` : __(iTerm2)__ Split the current tab vertically with current profile.
+- `Command + Shift + D` : __(iTerm2)__ Split the current tab horizontally with current profile.
+- `Command + Option + Shift + V` : __(iTerm2)__ Split the current tab vertically with a profile of your choice.
+- `Command + Option + Shift + H` : __(iTerm2)__ Split the current tab horizontally with a profile of your choice.
+- `Command + Shift + Enter` : __(iTerm2)__ Maximize active pane.
+- `iTerm2` -> `Window` -> `Arrange split panes evenly` : __(iTerm2)__ Evenly split the panes present in current tab.
+- `Command + ]` : __(iTerm2)__ Select next pane.
+- `Command + [` : __(iTerm2)__ Select previous pane.
+- `Command + Option + Up_Arrow` : __(iTerm2)__ Select pane above.
+- `Command + Option + Down_Arrow` : __(iTerm2)__ Select pane below.
+- `Command + Option + Left_Arrow` : __(iTerm2)__ Select pane on the left.
+- `Command + Option + Right_Arrow` : __(iTerm2)__ Select pane on the right.
+- `Command + T` : __(iTerm2)__ Open a new tab.
+- `Command + Shift + ]` / `Command + Right_Arrow` : __(iTerm2)__ Select next tab.
+- `Command + Shift + [` / `Command + Left_Arrow` : __(iTerm2)__ Select previous tab.
+- `iTerm2` -> `Preferences` -> `Keys` -> `Navigation Shortcuts`  
+`Shortcut to select a tab`: `Option + Number`  
+`Shortcut to choose a split pane`: `Command + Number`  
+- `Option + Number-of-the-Tab` : Select a tab by number (with previous shortcut configuration).  
+- `Command + Number-of-the-Pane` : Select a pane within a tab by number (with previous shortcut configuration).
 
 ## Commands
 
