@@ -1085,8 +1085,8 @@ let g:NERDTrimTrailingWhitespace = 1
 - `iTerm2` -> `Preferences` -> `Keys` -> `Navigation Shortcuts`  
 `Shortcut to select a tab`: `Option + Number`  
 `Shortcut to choose a split pane`: `Command + Number`  
-- `Option + Number-of-the-Tab` : Select a tab by number (with previous shortcut configuration).  
-- `Command + Number-of-the-Pane` : Select a pane within a tab by number (with previous shortcut configuration).
+- `Option + Number-of-the-Tab` : __(iTerm2)__ Select a tab by number (with previous shortcut configuration).  
+- `Command + Number-of-the-Pane` : __(iTerm2)__ Select a pane within a tab by number (with previous shortcut configuration).
 
 ## Commands
 
