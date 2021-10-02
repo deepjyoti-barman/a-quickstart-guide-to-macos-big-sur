@@ -305,11 +305,55 @@ __Resources__: The 'monokai-remastered.itermcolors' colorscheme file has been ad
 
 ## Installing Homebrew on Mac Intel and M1 chip
 
-- Command for Intel chip:  
-`/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+### Command for Intel and M1 chip:  
 
-- Command for M1 chip:  
-`arch -x86_64 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+- `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+- Brew installation directory in Intel: /usr/local
+- Brew installation directory in M1 chip: /opt/homebrew
+
+### Essential Homebrew commands
+
+#### General Commands
+
+- `brew --version` : Display the version of Homebrew.
+- `brew help` : Print help information.
+- `brew help <sub-command>` : Print help info for a brew command.
+- `brew list` : Lists all the packages installed via Homebrew.
+- `brew list <package-name>` : Lists the files and directories that got downloaded during the installation of the package.
+- `brew list --versions <package-name>` : Check the versions of package you have installed.
+- `brew switch <package-name> <version>` : Change versions for a package.
+- `brew install <package-name` : Install the given package.
+- `brew uninstall <package-name>` : Uninstall the given package.
+- `brew upgrade <package-name>` : Upgrade the given package.
+- `brew link <package-name>` : Create symbolic links for the given package.
+- `brew unlink <package-name>` : Remove symbolic links for the given package.
+
+#### Cask Commands
+
+- `brew list --cask` : List installed applications (Note: Cask commands are used for interacting with graphical applications i.e. Firefox).
+- `brew install --cask <package-name>` : Install the given package.
+- `brew uninstall --cask <package-name>` : Uninstall the given package.
+- `brew reinstall --cask <package-name>` : Reinstall the given package.
+
+#### Additional Homebrew Commands
+
+- `brew info <package-name>` : Display information about the package.
+- `brew cleanup` : Remove older versions of all installed packages.
+- `brew cleanup -n` : Display all the package what will be removed (dry run).
+- `brew cleanup <package-name>` : Remove older versions of specified package.
+- `brew search <package-name>` : Perform a substring search of the package given.
+
+#### Global Homebrew Commands
+
+- `brew update` : Fetch latest version of Homebrew, cask and packages installed.
+- `brew upgrade` : Upgrade all packages.
+- `brew upgrade <package-name>` : Upgrade the specified package.
+- `brew pin <package-name>` : Prevent the specified package from being upgraded.
+- `brew unpin <package-name>` : Allow the specified package to be upgraded.
+- `brew list` : List installed packages.
+- `brew outdated` : Check what is due for upgrade.
+- `brew doctor` : Check system for potential problems.
+
 
 ## Install and configure tools like Maven / JMeter / Oracle JDK etc. on Mac
 
