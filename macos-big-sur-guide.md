@@ -33,10 +33,12 @@
 - Oh My Zsh
 - Postman
 - PyCharm Community Edition
-- python3 (install via `brew install python3`)
+- python@3.9 (install via `brew install python@3.9`)
+- python-tk@3.9 (Required to access `idle3` command from Terminal) (install via `brew install python-tk@3.9`)
 - [ripgrep](https://github.com/BurntSushi/ripgrep) (install via `brew install ripgrep`)
 - Sublime Text
 - The Unarchiver
+- tcl-tk (May require as a dependency of 'python-tk@3.9' package) (install via `brew install tcl-tk`)
 - Vim (install via `brew install vim` - not recommended to use the vim that comes bundled with preinstalled macOS)
 - Visual Studio Code
 - Vysor
@@ -387,7 +389,7 @@ __Resources__: The 'monokai-remastered.itermcolors' colorscheme file has been ad
 __Extras__: My all in one ~/.zshenv config is given below,
 
 ```bash
-export ANDROID_HOME=/Users/ins667/Library/Android/sdk
+export ANDROID_HOME=/Users/ins667/Library/Android/sdk 
 export FZF_DEFAULT_COMMAND="fd --type=file --color=always --follow --hidden --exclude .git --exclude node_modules --exclude .m2"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS="--height 40% --layout reverse --info inline --border \
@@ -398,7 +400,10 @@ export FZF_DEFAULT_OPTS="--height 40% --layout reverse --info inline --border \
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.12.jdk/Contents/Home
 export JMETER_HOME=/opt/apache-jmeter/5.4.1
 export M2_HOME=/opt/apache-maven/3.8.2
-export SSHPASS='xyz^&12ab&23'
+export LDFLAGS="-L/usr/local/opt/tcl-tk/lib"
+export CPPFLAGS="-I/usr/local/opt/tcl-tk/include"
+export SSHPASS='deep@$1234'
+
 
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
@@ -407,6 +412,7 @@ export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$JAVA_HOME/bin
 export PATH=$PATH:$JMETER_HOME/bin
 export PATH=$PATH:$M2_HOME/bin
+export PATH=$PATH:/usr/local/opt/tcl-tk/bin
 ```
 
 ## Installing sshpass - An Excellent Tool for Non-Interactive SSH Login
