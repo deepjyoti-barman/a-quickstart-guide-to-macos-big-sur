@@ -400,6 +400,8 @@ export FZF_DEFAULT_OPTS="--height 40% --layout reverse --info inline --border \
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.12.jdk/Contents/Home
 export JMETER_HOME=/opt/apache-jmeter/5.4.1
 export M2_HOME=/opt/apache-maven/3.8.2
+export POSTGRESQL_HOME=/Applications/Postgres.app/Contents/Versions/14
+export PYTHON_HOME=/usr/local/Cellar/python@3.10/3.10.1/Frameworks/Python.framework/Versions/3.10
 export LDFLAGS="-L/usr/local/opt/tcl-tk/lib"
 export CPPFLAGS="-I/usr/local/opt/tcl-tk/include"
 export SSHPASS='deep@$1234'
@@ -412,6 +414,8 @@ export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$JAVA_HOME/bin
 export PATH=$PATH:$JMETER_HOME/bin
 export PATH=$PATH:$M2_HOME/bin
+export PATH=$PATH:$POSTGRESQL_HOME/bin
+export PATH=$PATH:$PYTHON_HOME/bin
 export PATH=$PATH:/usr/local/opt/tcl-tk/bin
 ```
 
@@ -1087,6 +1091,10 @@ let g:NERDTrimTrailingWhitespace = 1
 - `Command + Shift + 3` : Capture a full size screenshot of the window.
 - `Command + Shift + 4` : Capture a portion of the screen.
 - `Command + Tab` : Switch between applications.
+- `Command + Option + Esc` : Force quit applications.
+- `Command + Control + Q` : Lock screen.
+- `Command + H` : Hide current application.
+- `Command + Option + H` : Hide all other applications.
 - `Command + Delete` : __(Finder)__ Move selected items to bin.
 - `Command + C` : __(Finder)__ Copy the selected files and directories.
 - `Command + V` : __(Finder)__ Paste files and directories that has been copied into the current location.
