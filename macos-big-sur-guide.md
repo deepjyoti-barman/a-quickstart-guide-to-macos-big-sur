@@ -592,7 +592,7 @@ export PATH=$PATH:$M2_HOME/bin
 export PATH=$PATH:$POSTGRESQL_HOME/bin
 ```
 
-## Installing sshpass - An Excellent Tool for Non-Interactive SSH Login
+## Installing sshpass - An excellent tool for non-interactive SSH login
 
 In most cases, Linux system administrators login to remote Linux servers using SSH either by supplying a password, or passwordless SSH login, or keybased SSH authentication.
 
