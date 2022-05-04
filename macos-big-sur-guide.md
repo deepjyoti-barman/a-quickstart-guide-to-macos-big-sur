@@ -10,51 +10,99 @@
 
 ## Applications to install
 
+### General installations and homebrew packages
+
+- Android Studio
 - AnyDesk
 - Apache JMeter
 - Apache Maven
 - AppCleaner
+- Appium Desktop
+- Brave Browser
 - [bat](https://github.com/sharkdp/bat) (install via `brew install bat`)
 - Charles
+- cmake (install via `brew install cmake`)
 - DBeaver Community Edition
+- Docker Desktop
+- Firefox Browser
+- [Fish Shell](https://fishshell.com/) (install via `brew install fish`)
 - [fd](https://github.com/sharkdp/fd) (install via `brew install fd`)
 - [fzf](https://github.com/junegunn/fzf) (install via `brew install fzf`, install key-bindings via `$(brew --prefix)/opt/fzf/install`)
 - Git
 - Google Chrome
+- go (install via `brew install go`)
 - Grammarly for Safari
 - Homebrew
 - IntelliJ IDEA Community Edition
 - iTerm2
 - Java SE Development Kit 8
 - Java SE Development Kit 11
-- Katalon Studio
 - Microsoft Teams
-- Node.js
-- Oh My Zsh
+- [mongodb-community](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/) (install via the following commands: `brew tap mongodb/brew`, `brew update`, `brew install mongodb-community`)
+- [Node.js](https://nodejs.org/en/download/) (download the .pkg file for macOS and upgrade via the following commands: `sudo npm cache clean -f`, `sudo npm install -g n`, `sudo n stable`)
+- [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish)
+- [Oh My Zsh](https://ohmyz.sh/)
+- Postgres.app
 - Postman
 - PyCharm Community Edition
-- python@3.9 (install via `brew install python@3.9`)
-- python-tk@3.9 (Required to access `idle3` command from Terminal) (install via `brew install python-tk@3.9`)
+- python@3.10 (install via `brew install python@3.10`) (to access from command prompt create a symbolic link using `brew link --overwrite python@3.10`, another command to do the same is `ln -s /opt/homebrew/Cellar/python@3.10/3.10.4/bin/python3 /opt/homebrew/bin/`)
+- python-tk@3.10 (required to access `idle3` command from Terminal) (install via `brew install python-tk@3.10`)
 - [ripgrep](https://github.com/BurntSushi/ripgrep) (install via `brew install ripgrep`)
+- Spring Tool Suite
 - Sublime Text
+- sshpass
 - The Unarchiver
-- tcl-tk (May require as a dependency of 'python-tk@3.9' package) (install via `brew install tcl-tk`)
+- tree (install via `brew install tree`)
 - Vim (install via `brew install vim` - not recommended to use the vim that comes bundled with preinstalled macOS)
 - Visual Studio Code
+- Visual Studio
+- VNC Viewer
 - Vysor
 - XAMPP
 - WPS Office
+- wget (install via `brew install wget`)
 - Zoom
 
-## The necessary Trackpad tweak
+### NPM global packages
+
+- appium
+- corepack
+- csslint
+- ffprobe
+- jshint
+- n
+- npm
+- typescript
+
+### PIP3 global packages
+
+- pip
+- setuptools
+- six
+- wheel
+
+## The necessary trackpad tweak
 
 - Click on the `Apple` menu -> Go to `System Preferences` -> `Trackpad`
     1. Check `Tap to click`.
     2. Increase tracking speed to 5.
 
+## Enable zoom feature
+
+- Click on the `Apple` menu -> Go to `System Preferences` -> `Accessibility` -> `Zoom`
+    1. Check `Use keyboard shortcuts to zoom`.
+    2. Check `Enable Hover Text` (check this only if its required).
+
 ## Invert mouse scroll direction
 
 Click on the `Apple` menu -> Go to `System Preferences` -> `Mouse` -> Untick `Scroll direction: Natural`.
+
+## Overwrite behavior of CAPS LOCK key with ESC
+
+- Click on the `Apple` menu -> Go to `System Preferences` -> `Keyboard`
+- Click on `Modifier Keys...`
+- Select the keyboard of your choice from the dropdown and assign the following value:
+  - `Caps Lock Key`: `Escape`
 
 ## Display all sidebar items in Finder
 
@@ -150,27 +198,56 @@ Open up 'Terminal' -> Click on `Terminal` in the menu bar -> `Preferences`
 
 ## iTerm2 configuration
 
+### Download and install powerline fonts
+
+- Visit: [powerline/fonts](https://github.com/powerline/fonts)
+- Installation guide:
+
+    ```sh
+    # clone
+    git clone https://github.com/powerline/fonts.git --depth=1
+    # install
+    cd fonts
+    ./install.sh
+    # clean-up a bit
+    cd ..
+    rm -rf fonts
+    ```
+
+- Un-installation guide:
+  - Run ./uninstall.sh to uninstall all Powerline Fonts.
+- Note: this installation is required to support sign and symbols present in oh-my-zsh / oh-my-fish themes.
+
 ### General configuration
 
-Open up 'iTerm2' -> Click on `iTerm2` in the menu bar -> `Preferences` -> `Profiles`
+Open up 'iTerm2' -> Click on `iTerm2` in the menu bar -> `Preferences`
+
+#### Profiles Tab
 
 1. General Tab:  
     - Click on `+` icon to create a profile.  
     - `Name`: `Deepjyoti`
-    - `Title`: `Job + Args`
+    - `Title`: `Profile: Name (Job + Args)`
     - Select the newly created profile -> Click on `Other Actions` -> `Set  as Default`
     - (Optional) `Send text at start`: `sshpass -e ssh deepjb@192.168.30.15`
 2. Text Tab:
     - Check `Blinking Cursor`.
     - Set `Font` as the following:  
-    `Monaco` `Regular` `10` `100` `110`
-    - Uncheck `Anti-aliased`
+    `DejaVu Sans Mono for Powerline` `Book` `10` `100` `110`
+    - Check `Anti-aliased`
     - Uncheck `Draw bold text in bold font`
 3. Window Tab:
-    - `Transparency`: `17`
+    - `Transparency`: `17` (Press `Command + U` to set transparency level to 0)
     - `Blending`: `50`
     - `Settings for New Windows`:
-    `Columns`: `170`, `Rows`: `40`
+    `Columns`: `200`, `Rows`: `55`
+
+#### Keys Tab
+
+- Click on `Navigation Shortcuts` and change the settings as the following:
+  - `Shortcut to activate a window`: `Option + Command + Number`
+  - `Shortcut to select a tab`: `Option + Number`
+  - `Shortcut to choose a split pane`: `Command + Number`
 
 ### Install a colorscheme for iTerm2
 
@@ -183,30 +260,63 @@ Open up 'iTerm2' -> Click on `iTerm2` in the menu bar -> `Preferences` -> `Profi
 - Choose the 'monokai-remastered.itermcolors' file from your local system.
 - Select the theme.
 - Close the `Preferences` dialog box.
+- __Resources__: The 'monokai-remastered.itermcolors' colorscheme file has been added in this repository.
 
-__Resources__: The 'monokai-remastered.itermcolors' colorscheme file has been added in this repository.
+### Some important iTerm2 shortcuts
 
-### Install the Oh-My-Zsh plugin
+- Split Horizontally with Current Profile: `Command + Shift + D`
+- Split Vertically with Current Profile: `Command + D`
+- Split Horizontally with Custom Profile:  `Command + Option + Shift + H`
+- Split Vertically with Custom Profile:  `Command + Option + Shift + V`
+- Switch Tabs: `Control + Number`
+- Switch Split Panes: `Command + Number`
+- Close Split Pane/Tab: `Command + W`
 
-- Pay a visit to [Oh-My-Zsh](https://github.com/ohmyzsh/ohmyzsh)  for detailed information.
+### Oh-My-Zsh plugin
+
+#### Installation (omz)
+
+- Pay a visit to [Oh-My-Zsh](https://github.com/ohmyzsh/ohmyzsh) for detailed information.
 - Install the plugin via entering the following `curl` command:  
 `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
-- Update this plugin manually by entering the following command:  
-`omz update`
-- Configure your ~/.zshrc as the following:
+
+#### Commands (omz)
+
+- Update this plugin: `omz update`
+- Prints out the help message: `omz help`
+- Manage Plugin: `omz plugin <plugin-name>`
+- Manage Theme: `omg theme <theme-name>`
+- Show the version of oh-my-zsh installed: `omz version`
+- Reload the current zsh session: `omz reload`
+
+#### Theme installation (omz)
+
+- Different type of themes can be downloaded from the following links:
+  - [Current Themes](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes)
+  - [Legacy Themes](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes-%28legacy%29)
+  - [External Themes](https://github.com/ohmyzsh/ohmyzsh/wiki/External-themes)
+- Current theme and legacy theme names can be directly used inside .zshrc as `ZSH_THEME="agnoster"` and it will work fine.
+- For external themes you need to download the theme, extract the .zip file, copy the .zsh-theme file inside `~/.oh-my-zsh/custom/themes` directory and then the name can be used inside .zshrc file.
+- __Resources__: The 'passion.zsh-theme' theme file has been added in this repository. Before you use this theme install 'coreutils' via `brew install coreutils` command.
+It is necessary as the theme needs gdate utility as its dependency which is available in this package.
+
+#### Complete Configuration (omz)
+
+- Configure your `~/.zshrc` as the following:
 
     ```zsh
     # If you come from bash you might have to change your $PATH.
     # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
     # Path to your oh-my-zsh installation.
-    export ZSH="/Users/ins667/.oh-my-zsh"
+    export ZSH="/Users/deepjyoti.barman/.oh-my-zsh"
 
     # Set name of the theme to load --- if set to "random", it will
     # load a random theme each time oh-my-zsh is loaded, in which case,
     # to know which specific one was loaded, run: echo $RANDOM_THEME
     # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-    ZSH_THEME="pygmalion"
+    # ZSH_THEME="pygmalion"
+    ZSH_THEME="passion"
 
     # Set list of themes to pick from when loading at random
     # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -299,15 +409,84 @@ __Resources__: The 'monokai-remastered.itermcolors' colorscheme file has been ad
     # alias zshconfig="mate ~/.zshrc"
     # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-    # Configuration for FZF plugin
-    # Source the '.fzf.zsh' if it exists
-    [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+    # Auto-load brew as a shell environment variable at startup 
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+    ```
 
+### Fish shell and Oh-My-Fish plugin
+
+#### Installation (Fish shell)
+
+- Install Fish shell: `brew install fish`
+- Switch to Fish shell: `fish`
+- End the session: `exit`
+- Remove greeting (optional): `set fish_greeting`
+- Set Fish shell as your default shell (optional): `chsh -s /usr/local/bin/fish`
+
+#### Installation (omf)
+
+- Pay a visit to [Oh-My-Fish](https://github.com/oh-my-fish/oh-my-fish) for detailed information.
+- Install the plugin via entering the following `curl` command:  
+`curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish`
+- Dependencies: git and fish shell
+
+#### Commands (omf)
+
+- Update Oh My Fish, all package repositories, and all installed packages: `omf update [omf] [<package>...]`
+- Install one or more packages: `omf install [<name>|<url>|<user/repo>]`
+- Manage user-installed package repositories: `omf repositories [list|add|remove]`
+- List installed packages: `omf list`
+- List available themes: `omf theme`
+- Apply a theme: `omf theme <theme>`
+- Remove a theme or package: `omf remove <name>`
+- Reload Oh My Fish shell: `omf reload`
+- Searches Oh My Fish's database for a given package, theme or both: `omf search -t|--theme / -p|--package <name>`
+- Use to troubleshoot before opening an issue: `omf doctor`
+- Uninstall Oh My Fish: `omf destroy`
+- Show help menu: `omf help`
+- Show installed version: `omf version`
+- Show information about a package: `omf describe <package>`
+
+#### Plugin/Theme installation
+
+- [Oh-My-Fish Themes](https://github.com/oh-my-fish/oh-my-fish/blob/master/docs/Themes.md)
+- [Oh-My-Fish Plugins](https://github.com/orgs/oh-my-fish/repositories?type=all)
+- Install bobthefish theme: `omf install bobthefish`
+- Use bobthefish theme: `omf theme bobthefish`
+- Install sublime plugin: `omf install sublime`
+
+#### Additional theme configuration / startup options
+
+- You can add startup, custom theme configuration, custom plugin configuration commands in the configuration file `~/.config/fish/config.fish`.
+- You need to go through the documentation of fish shell, themes and plugins to get useful configuration commands.
+- Configure your `config.fish` as the following:
+
+    ```sh
+    if status is-interactive
+        # Commands to run in interactive sessions can go here
+        set -g theme_color_scheme dracula
+
+        set -g theme_display_git_default_branch yes
+        set -g theme_git_default_branches master main
+        set -g theme_display_git_untracked yes
+        set -g theme_display_git_ahead_verbose yes
+        set -g theme_display_git_dirty_verbose yes
+        set -g theme_display_git_stashed_verbose yes
+
+        set -g theme_title_display_process yes
+        set -g theme_title_display_path yes
+        set -g theme_title_use_abbreviated_path no
+
+        set -g theme_display_user yes
+        set -g theme_display_hostname yes
+
+        set -g fish_prompt_pwd_dir_length 0
+    end
     ```
 
 ## Installing Homebrew on Mac Intel and M1 chip
 
-### Command for Intel and M1 chip:  
+### Command for Intel and M1 chip
 
 - `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 - Brew installation directory in Intel: /usr/local
@@ -315,7 +494,7 @@ __Resources__: The 'monokai-remastered.itermcolors' colorscheme file has been ad
 
 ### Essential Homebrew commands
 
-#### General Commands
+#### General commands
 
 - `brew --version` : Display the version of Homebrew.
 - `brew help` : Print help information.
@@ -330,14 +509,14 @@ __Resources__: The 'monokai-remastered.itermcolors' colorscheme file has been ad
 - `brew link <package-name>` : Create symbolic links for the given package.
 - `brew unlink <package-name>` : Remove symbolic links for the given package.
 
-#### Cask Commands
+#### Cask commands
 
 - `brew list --cask` : List installed applications (Note: Cask commands are used for interacting with graphical applications i.e. Firefox).
 - `brew install --cask <package-name>` : Install the given package.
 - `brew uninstall --cask <package-name>` : Uninstall the given package.
 - `brew reinstall --cask <package-name>` : Reinstall the given package.
 
-#### Additional Homebrew Commands
+#### Additional Homebrew commands
 
 - `brew info <package-name>` : Display information about the package.
 - `brew cleanup` : Remove older versions of all installed packages.
@@ -345,7 +524,7 @@ __Resources__: The 'monokai-remastered.itermcolors' colorscheme file has been ad
 - `brew cleanup <package-name>` : Remove older versions of specified package.
 - `brew search <package-name>` : Perform a substring search of the package given.
 
-#### Global Homebrew Commands
+#### Global Homebrew commands
 
 - `brew update` : Fetch latest version of Homebrew, cask and packages installed.
 - `brew upgrade` : Upgrade all packages.
@@ -355,7 +534,6 @@ __Resources__: The 'monokai-remastered.itermcolors' colorscheme file has been ad
 - `brew list` : List installed packages.
 - `brew outdated` : Check what is due for upgrade.
 - `brew doctor` : Check system for potential problems.
-
 
 ## Install and configure tools like Maven / JMeter / Oracle JDK etc. on Mac
 
@@ -401,9 +579,6 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.12.jdk/Contents/Home
 export JMETER_HOME=/opt/apache-jmeter/5.4.1
 export M2_HOME=/opt/apache-maven/3.8.2
 export POSTGRESQL_HOME=/Applications/Postgres.app/Contents/Versions/14
-export PYTHON_HOME=/usr/local/Cellar/python@3.10/3.10.1/Frameworks/Python.framework/Versions/3.10
-export LDFLAGS="-L/usr/local/opt/tcl-tk/lib"
-export CPPFLAGS="-I/usr/local/opt/tcl-tk/include"
 export SSHPASS='deep@$1234'
 
 
@@ -415,8 +590,6 @@ export PATH=$PATH:$JAVA_HOME/bin
 export PATH=$PATH:$JMETER_HOME/bin
 export PATH=$PATH:$M2_HOME/bin
 export PATH=$PATH:$POSTGRESQL_HOME/bin
-export PATH=$PATH:$PYTHON_HOME/bin
-export PATH=$PATH:/usr/local/opt/tcl-tk/bin
 ```
 
 ## Installing sshpass - An Excellent Tool for Non-Interactive SSH Login
