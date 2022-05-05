@@ -12,6 +12,7 @@
 
 ### General installations and homebrew packages
 
+- [ag](https://www.cyberciti.biz/open-source/command-line-hacks/ag-supercharge-string-search-through-directory-hierarchy/) (install via `brew install the_silver_searcher`) (This tool required as a dependency for peco plugin)
 - Android Studio
 - AnyDesk
 - Apache JMeter
@@ -24,6 +25,7 @@
 - cmake (install via `brew install cmake`)
 - DBeaver Community Edition
 - Docker Desktop
+- exa: [exa-official](https://the.exa.website/), [exa-github](https://github.com/ogham/exa) (install via `brew install exa`)
 - Firefox Browser
 - [Fish Shell](https://fishshell.com/) (install via `brew install fish`)
 - [fd](https://github.com/sharkdp/fd) (install via `brew install fd`)
@@ -42,6 +44,7 @@
 - [Node.js](https://nodejs.org/en/download/) (download the .pkg file for macOS and upgrade via the following commands: `sudo npm cache clean -f`, `sudo npm install -g n`, `sudo n stable`)
 - [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish)
 - [Oh My Zsh](https://ohmyz.sh/)
+- [peco](https://github.com/peco/peco) (install via `brew install peco`)
 - Postgres.app
 - Postman
 - PyCharm Community Edition
@@ -62,6 +65,7 @@
 - WPS Office
 - wget (install via `brew install wget`)
 - Zoom
+- [z](https://github.com/agkozak/zsh-z) (install via `git clone https://github.com/agkozak/zsh-z.git ~/.zprezto-contrib/zsh-z` and add this plugin name in .zshrc file)
 
 ### NPM global packages
 
@@ -198,10 +202,12 @@ Open up 'Terminal' -> Click on `Terminal` in the menu bar -> `Preferences`
 
 ## iTerm2 configuration
 
-### Download and install powerline fonts
+### Install Powerline and Nerd fonts
 
-- Visit: [powerline/fonts](https://github.com/powerline/fonts)
-- Installation guide:
+- Powerline fonts GitHub page: [powerline/fonts](https://github.com/powerline/fonts)
+- Nerd fonts official website: [NerdFonts](https://www.nerdfonts.com/)
+- Nerd fonts GitHub page: [ryanoasis/nerd-fonts](https://github.com/ryanoasis/nerd-fonts)
+- Installation guide for all Powerline fonts:
 
     ```sh
     # clone
@@ -214,8 +220,15 @@ Open up 'Terminal' -> Click on `Terminal` in the menu bar -> `Preferences`
     rm -rf fonts
     ```
 
-- Un-installation guide:
+- Un-installation guide for all Powerline fonts:
   - Run ./uninstall.sh to uninstall all Powerline Fonts.
+- Installation guide for 'Hack Nerd Font':
+  
+    ```sh
+    brew tap homebrew/cask-fonts
+    brew install --cask font-hack-nerd-font
+    ```
+
 - Note: this installation is required to support sign and symbols present in oh-my-zsh / oh-my-fish themes.
 
 ### General configuration
@@ -233,7 +246,7 @@ Open up 'iTerm2' -> Click on `iTerm2` in the menu bar -> `Preferences`
 2. Text Tab:
     - Check `Blinking Cursor`.
     - Set `Font` as the following:  
-    `DejaVu Sans Mono for Powerline` `Book` `10` `100` `110`
+    `Hack Nerd Font Mono` `Regular` `10` `100` `110`
     - Check `Anti-aliased`
     - Uncheck `Draw bold text in bold font`
 3. Window Tab:
@@ -379,7 +392,7 @@ It is necessary as the theme needs gdate utility as its dependency which is avai
     # Custom plugins may be added to $ZSH_CUSTOM/plugins/
     # Example format: plugins=(rails git textmate ruby lighthouse)
     # Add wisely, as too many plugins slow down shell startup.
-    plugins=(git)
+    plugins=(git zsh-z)
 
     source $ZSH/oh-my-zsh.sh
 
@@ -453,7 +466,9 @@ It is necessary as the theme needs gdate utility as its dependency which is avai
 - [Oh-My-Fish Plugins](https://github.com/orgs/oh-my-fish/repositories?type=all)
 - Install bobthefish theme: `omf install bobthefish`
 - Use bobthefish theme: `omf theme bobthefish`
-- Install sublime plugin: `omf install sublime`
+- Install sublime plugin: `omf install sublime` (To open files in Sublime Text editor enter command `subl <file-name>` after installation)
+- Install z plugin: `omf install z` [oh-my-fish/plugin-z](https://github.com/oh-my-fish/plugin-z) (This plugin is also available for zsh, for detailed documentation visit [agkozak/zsh-z](https://github.com/agkozak/zsh-z))
+- Download and install peco select functions for fish shell. Visit: [takashabe/fish-peco](https://github.com/takashabe/fish-peco), clone or download zipped content of this repository. Copy all the .fish files present in this repository to `~/.config/fish/functions` directory.
 
 #### Additional theme configuration / startup options
 
@@ -463,7 +478,7 @@ It is necessary as the theme needs gdate utility as its dependency which is avai
 
     ```sh
     if status is-interactive
-        # Commands to run in interactive sessions can go here
+        # bobthefish theme configuration
         set -g theme_color_scheme dracula
 
         set -g theme_display_git_default_branch yes
@@ -481,6 +496,23 @@ It is necessary as the theme needs gdate utility as its dependency which is avai
         set -g theme_display_hostname yes
 
         set -g fish_prompt_pwd_dir_length 0
+
+
+        # exa plugin configuration
+        alias ll "exa -hl --icons --git"
+        alias la "ll -a"
+        alias llt "ll --tree"
+        alias glog 'git log --pretty=format:"\"%Cgreen%h %Creset%cd %Cblue[%cn] %Creset%s%C(yellow)%d%C(reset)\"" --graph --date=relative --decorate --all'
+
+
+        # peco plugin configuration
+        function fish_user_key_bindings
+            bind \c] peco_select_ghq      # Ctrl-]
+            bind \cr peco_select_history  # Ctrl-r
+            bind \cj peco_select_z        # Ctrl-j
+            bind \cf peco_select_file     # Ctrl-f
+            bind \cd peco_select_cd       # Ctrl-d
+        end
     end
     ```
 
