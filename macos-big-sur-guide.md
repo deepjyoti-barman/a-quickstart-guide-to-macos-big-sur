@@ -66,6 +66,7 @@
 - wget (install via `brew install wget`)
 - Zoom
 - [z](https://github.com/agkozak/zsh-z) (install via `git clone https://github.com/agkozak/zsh-z.git ~/.zprezto-contrib/zsh-z` and add this plugin name in .zshrc file)
+- [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) (install via `git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions` and add this plugin name in .zshrc file)
 
 ### NPM global packages
 
@@ -392,7 +393,7 @@ It is necessary as the theme needs gdate utility as its dependency which is avai
     # Custom plugins may be added to $ZSH_CUSTOM/plugins/
     # Example format: plugins=(rails git textmate ruby lighthouse)
     # Add wisely, as too many plugins slow down shell startup.
-    plugins=(git zsh-z)
+    plugins=(git zsh-z zsh-autosuggestions)
 
     source $ZSH/oh-my-zsh.sh
 
