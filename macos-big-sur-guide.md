@@ -23,6 +23,7 @@
 - [bat](https://github.com/sharkdp/bat) (install via `brew install bat`)
 - Charles
 - cmake (install via `brew install cmake`)
+- composer (install via `brew install composer`)
 - DBeaver Community Edition
 - Docker Desktop
 - exa: [exa-official](https://the.exa.website/), [exa-github](https://github.com/ogham/exa) (install via `brew install exa`)
@@ -39,12 +40,14 @@
 - iTerm2
 - Java SE Development Kit 8
 - Java SE Development Kit 11
+- MAMP
 - Microsoft Teams
 - [mongodb-community](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/) (install via the following commands: `brew tap mongodb/brew`, `brew update`, `brew install mongodb-community`)
 - [Node.js](https://nodejs.org/en/download/) (download the .pkg file for macOS and upgrade via the following commands: `sudo npm cache clean -f`, `sudo npm install -g n`, `sudo n stable`)
 - [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish)
 - [Oh My Zsh](https://ohmyz.sh/)
 - [peco](https://github.com/peco/peco) (install via `brew install peco`)
+- php (install via `brew install php`)
 - Postgres.app
 - Postman
 - PyCharm Community Edition
@@ -61,7 +64,6 @@
 - Visual Studio
 - VNC Viewer
 - Vysor
-- XAMPP
 - WPS Office
 - wget (install via `brew install wget`)
 - Zoom
@@ -469,7 +471,7 @@ It is necessary as the theme needs gdate utility as its dependency which is avai
 - Use bobthefish theme: `omf theme bobthefish`
 - Install sublime plugin: `omf install sublime` (To open files in Sublime Text editor enter command `subl <file-name>` after installation)
 - Install z plugin: `omf install z` [oh-my-fish/plugin-z](https://github.com/oh-my-fish/plugin-z) (This plugin is also available for zsh, for detailed documentation visit [agkozak/zsh-z](https://github.com/agkozak/zsh-z))
-- Download and install peco select functions for fish shell. Visit: [takashabe/fish-peco](https://github.com/takashabe/fish-peco), clone or download zipped content of this repository. Copy all the .fish files present in this repository to `~/.config/fish/functions` directory.
+- Download and install peco select functions for fish shell. Visit [takashabe/fish-peco](https://github.com/takashabe/fish-peco), clone or download zipped content of this repository. Copy all the .fish files present in this repository to `~/.config/fish/functions` directory.
 
 #### Additional theme configuration / startup options
 
@@ -802,6 +804,7 @@ sudo npm install -g appium --unsafe-perm=true --allow-root
 - Live Server
 - Markdown Preview Github Styling
 - markdownlint
+- Material Icon Theme
 - Maven for Java
 - Midnight Synth
 - Monokai Pro
