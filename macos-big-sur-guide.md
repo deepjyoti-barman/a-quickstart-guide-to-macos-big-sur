@@ -66,6 +66,7 @@
 - Vysor
 - WPS Office
 - wget (install via `brew install wget`)
+- XCode
 - Zoom
 - [z](https://github.com/agkozak/zsh-z) (install via `git clone https://github.com/agkozak/zsh-z.git ~/.zprezto-contrib/zsh-z` and add this plugin name in .zshrc file)
 - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) (install via `git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions` and add this plugin name in .zshrc file)
@@ -785,7 +786,7 @@ sudo npm install -g appium --unsafe-perm=true --allow-root
 - Auto Import
 - Auto Rename Tag
 - Babel JavaScript
-- Bracket Pair Colorizer
+- Bracket Pair Colorizer 2
 - C/C++
 - C/C++ Compile Run
 - Code Runner
@@ -793,13 +794,22 @@ sudo npm install -g appium --unsafe-perm=true --allow-root
 - Color Highlight
 - CSS Peek
 - Debugger for Java
+- DotENV
 - EditorConfig for VS Code
 - ESLint
 - Excel Viewer
 - Extension Pack for Java
 - GitLens - Git supercharged
+- Go
+- IntelliCode
+- JavaScript (ES6) code snippets
 - Jupyter
+- Jupyter Keymap
+- Jupyter Notebook Renderers
 - Language Support for Java(TM) by Red Hat
+- Laravel Blade Snippets
+- Laravel Extra Intellisense
+- Laravel goto view
 - Live Sass Compiler
 - Live Server
 - Markdown Preview Github Styling
@@ -808,23 +818,28 @@ sudo npm install -g appium --unsafe-perm=true --allow-root
 - Maven for Java
 - Midnight Synth
 - Monokai Pro
+- Node.js Modules Intellisense
+- npm Intellisense
 - Paste and Indent
 - Path Intellisense
+- Peacock
 - PHP Debug
 - PHP Extension Pack
 - PHP Intelephense
-- PHP IntelliSense
+- PHP Namespace Resolver
 - Prettier - Code formatter
 - Project Manager for Java
 - Pylance
 - Python
 - Sass
+- Snapcode
 - Test Runner for Java
 - Thunder Client
+- Todo Tree
 - TSLint
 - Visual Studio IntelliCode
 - vscode-pdf
-- XCode
+- WebDriverIO snippets
 
 ### Configuration for settings.json
 
