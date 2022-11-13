@@ -34,6 +34,7 @@
 - Git
 - Google Chrome
 - go (install via `brew install go`)
+- Gradle (install via `brew install gradle`)
 - Grammarly for Safari
 - Homebrew
 - IntelliJ IDEA Community Edition
@@ -41,6 +42,7 @@
 - Java SE Development Kit 8
 - Java SE Development Kit 11
 - MAMP
+- Maven (install via `brew install maven`)
 - Microsoft Teams
 - [mongodb-community](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/) (install via the following commands: `brew tap mongodb/brew`, `brew update`, `brew install mongodb-community`)
 - [Node.js](https://nodejs.org/en/download/) (download the .pkg file for macOS and upgrade via the following commands: `sudo npm cache clean -f`, `sudo npm install -g n`, `sudo n stable`)
@@ -603,7 +605,8 @@ It is necessary as the theme needs gdate utility as its dependency which is avai
 __Extras__: My all in one ~/.zshenv config is given below,
 
 ```bash
-export ANDROID_HOME=/Users/ins667/Library/Android/sdk 
+export ALLURE_HOME=/opt/allure-2.14.0
+export ANDROID_HOME=/Users/deepjyoti.barman/Library/Android/sdk
 export FZF_DEFAULT_COMMAND="fd --type=file --color=always --follow --hidden --exclude .git --exclude node_modules --exclude .m2"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS="--height 40% --layout reverse --info inline --border \
@@ -611,20 +614,22 @@ export FZF_DEFAULT_OPTS="--height 40% --layout reverse --info inline --border \
     --bind shift-up:preview-page-up,shift-down:preview-page-down \
     --color 'fg:#bbccdd,fg+:#ddeeff,bg:#334455,preview-bg:#223344,border:#778899' \
     --ansi"
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.12.jdk/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_341.jdk/Contents/Home
+export JAVA11_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.16.1.jdk/Contents/Home
+export JAVA17_HOME=/Library/Java/JavaVirtualMachines/jdk-17.0.4.1.jdk/Contents/Home
+export GRADLE_HOME=/opt/homebrew/Cellar/gradle/7.5.1_1
 export JMETER_HOME=/opt/apache-jmeter/5.4.1
-export M2_HOME=/opt/apache-maven/3.8.2
+export M2_HOME=/opt/homebrew/Cellar/maven/3.8.6
 export POSTGRESQL_HOME=/Applications/Postgres.app/Contents/Versions/14
 export SSHPASS='deep@$1234'
 
-
+export PATH=$PATH:$ALLURE_HOME/bin
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$JAVA_HOME/bin
 export PATH=$PATH:$JMETER_HOME/bin
-export PATH=$PATH:$M2_HOME/bin
 export PATH=$PATH:$POSTGRESQL_HOME/bin
 ```
 
