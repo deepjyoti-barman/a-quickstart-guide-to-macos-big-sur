@@ -41,6 +41,7 @@
 - iTerm2
 - Java SE Development Kit 8
 - Java SE Development Kit 11
+- K6 (install via `brew install k6`)
 - MAMP
 - Maven (install via `brew install maven`)
 - Microsoft Teams
