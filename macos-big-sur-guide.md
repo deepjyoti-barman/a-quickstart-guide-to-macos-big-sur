@@ -93,16 +93,16 @@
 - `npm uninstall -g <package-name>`: Uninstall a globally accessible package
 - `npm uninstall <package-name>`: Uninstall a locally (within a directory) accessible package
 - `npm update -g <package-name>`: Updates the globally accessible package. Package name is optional. If no package is given then it updates all the globally accessible packages
-- `npm update <package-name>`: This command updates the specified package. Package name is optional. If no package is specified then it updates all the packages in the specified location.
-- `npm -g outdated`: Checks the registry if any (or specified) globally accessible package is outdated. It prints a list of all packages which are outdated.
-- `npm doctor`: Checks our environment so that our npm installation has what it needs to manage our JavaScript packages.
-- `npm init`: Creates a package.json file in our directory. It basically asks some questions and finally creates a package.json file in the current project directory.
-- `npm start`: Runs a command that is defined in the start property in the scripts. If not defined it will run the node server.js command.
-- `npm build`: It is used to build a package.
-- `npm -g ls` / `npm -g list`: Lists all the globally installed packages as well as their dependencies.
-- `npm help`: Searches npm help documentation for a specified topic. It is used whenever the user needs help to get some reference.
+- `npm update <package-name>`: This command updates the specified package. Package name is optional. If no package is specified then it updates all the packages in the specified location
+- `npm -g outdated`: Checks the registry if any (or specified) globally accessible package is outdated. It prints a list of all packages which are outdated
+- `npm doctor`: Checks our environment so that our npm installation has what it needs to manage our JavaScript packages
+- `npm init`: Creates a package.json file in our directory. It basically asks some questions and finally creates a package.json file in the current project directory
+- `npm start`: Runs a command that is defined in the start property in the scripts. If not defined it will run the node server.js command
+- `npm build`: It is used to build a package
+- `npm -g ls` / `npm -g list`: Lists all the globally installed packages as well as their dependencies
+- `npm help`: Searches npm help documentation for a specified topic. It is used whenever the user needs help to get some reference
 - `npm search <search-term>`: Searches the npm registry for packages matching the search terms
-- `npm version`: Bumps a package version.
+- `npm version`: Bumps a package version
 
 ### PIP3 global packages
 
@@ -114,11 +114,11 @@
 ### Commonly used pip commands
 
 - `pip3 list`: List all the packages
-- `pip list`: List all the packages (sometimes output of both the commands can be different in a mac machine)
+- `pip list`: List all the packages (sometimes output of pip3 and pip commands can be different in a mac machine)
 - `pip3 install --upgrade <package-name>`: Upgrade the given package
-- `pip install --upgrade pip`: Upgrade the given package (sometimes output of both the commands can be different in a mac machine)
+- `pip install --upgrade <package-name>`: Upgrade the given package
 - `pip3 list --outdated`: List all the outdated packages
-- `pip list --outdated`: List all the outdated packages (sometimes output of both the commands can be different in a mac machine)
+- `pip list --outdated`: List all the outdated packages
 
 ## The necessary trackpad tweak
 
