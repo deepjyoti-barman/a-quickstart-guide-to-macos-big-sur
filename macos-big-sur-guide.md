@@ -76,6 +76,7 @@
 
 ### NPM global packages
 
+- appium-doctor
 - appium
 - corepack
 - csslint
@@ -85,12 +86,39 @@
 - npm
 - typescript
 
+### Commonly used npm commands
+
+- `npm install -g <package-name>`: Install a package which is globally accessible
+- `npm install <package-name>`: Install a package which is accessible only in a local directory
+- `npm uninstall -g <package-name>`: Uninstall a globally accessible package
+- `npm uninstall <package-name>`: Uninstall a locally (within a directory) accessible package
+- `npm update -g <package-name>`: Updates the globally accessible package. Package name is optional. If no package is given then it updates all the globally accessible packages
+- `npm update <package-name>`: This command updates the specified package. Package name is optional. If no package is specified then it updates all the packages in the specified location.
+- `npm -g outdated`: Checks the registry if any (or specified) globally accessible package is outdated. It prints a list of all packages which are outdated.
+- `npm doctor`: Checks our environment so that our npm installation has what it needs to manage our JavaScript packages.
+- `npm init`: Creates a package.json file in our directory. It basically asks some questions and finally creates a package.json file in the current project directory.
+- `npm start`: Runs a command that is defined in the start property in the scripts. If not defined it will run the node server.js command.
+- `npm build`: It is used to build a package.
+- `npm -g ls` / `npm -g list`: Lists all the globally installed packages as well as their dependencies.
+- `npm help`: Searches npm help documentation for a specified topic. It is used whenever the user needs help to get some reference.
+- `npm search <search-term>`: Searches the npm registry for packages matching the search terms
+- `npm version`: Bumps a package version.
+
 ### PIP3 global packages
 
 - pip
 - setuptools
 - six
 - wheel
+
+### Commonly used pip commands
+
+- `pip3 list`: List all the packages
+- `pip list`: List all the packages (sometimes output of both the commands can be different in a mac machine)
+- `pip3 install --upgrade <package-name>`: Upgrade the given package
+- `pip install --upgrade pip`: Upgrade the given package (sometimes output of both the commands can be different in a mac machine)
+- `pip3 list --outdated`: List all the outdated packages
+- `pip list --outdated`: List all the outdated packages (sometimes output of both the commands can be different in a mac machine)
 
 ## The necessary trackpad tweak
 
@@ -548,6 +576,17 @@ It is necessary as the theme needs gdate utility as its dependency which is avai
 - `brew link <package-name>` : Create symbolic links for the given package.
 - `brew unlink <package-name>` : Remove symbolic links for the given package.
 
+#### Most commonly used brew commands
+
+- `brew list`
+- `brew update`
+- `brew upgrade`
+- `brew cleanup`
+- `brew install <package-name>`
+- `brew uninstall <package-name>`
+- `brew uninstall --ignore-dependencies <package-name>`
+- `brew link <package-name>`
+
 #### Cask commands
 
 - `brew list --cask` : List installed applications (Note: Cask commands are used for interacting with graphical applications i.e. Firefox).
@@ -738,25 +777,78 @@ Recently the Github team has announced that for better protection and privacy us
 
 ## Mobile Testing with Appium in Mac
 
-### Tools required
+### Android
 
-- JDK
-- Maven
-- Android Studio
-- XCode
-- Node.js
-- Appium Desktop
-- Appium - Command Line Tool present in NPM (Optional)
-- Appium Doctor - Command Line Tool present in NPM  (Optional)
-- IntelliJ / Eclipse
+#### Tools required
 
-### Command to install Appium - Command Line Tool in Mac
+- JDK 11 or above to support latest TestNG
+- Android Studio (For command line tools and emulator)
+- Node.js (For installing Appium CLI tool) via `brew install npm@18`
+- Appium Desktop (Outdated, as it is present for Appium v1.22.3, but not for v2.0.0-beta.55)
+- Appium - CLI tool present in NPM via `sudo npm install -g appium@next`
+- uiautomator2 driver for Appium via `appium driver install uiautomator2` [verify installation and list all installed drivers via `appium driver list`]
+- Appium Inspector
+- Maven via `brew install mvn`
+- IntelliJ / Eclipse IDE
+
+#### Environment variables configuration
+
+- Check the current shell being used using command: `echo $SHELL`
+- If the shell is: `zsh`, open the file `.zshenv` using `vim ~/.zshenv` (create the file if not present)
+- Paste the following content:
+
+    ```sh
+    export ANDROID_HOME=/Users/<username>/Library/Android/sdk
+    export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.16.1.jdk/Contents/Home
+    export M2_HOME=/opt/homebrew/Cellar/maven/3.8.6
+
+    export PATH=$PATH:$ANDROID_HOME/emulator
+    export PATH=$PATH:$ANDROID_HOME/platform-tools
+    export PATH=$PATH:$ANDROID_HOME/tools
+    export PATH=$PATH:$ANDROID_HOME/tools/bin
+    export PATH=$PATH:$JAVA_HOME/bin
+    ```
+
+#### Command to install Appium CLI Tool in Mac
 
 ```bash
 sudo npm install -g appium --unsafe-perm=true --allow-root
 ```
 
-### Fix for uiautomatorviewer2 in Mac
+#### Appium Inspector Configuration
+
+- `Remote Host`: 127.0.0.1 (default)
+- `Remote Port`: 4723 (default)
+- `Remote Path`: / (for Appium v2.0.0-beta.55), /wd/hub (for Appium 1.22.3)
+- `Desired Capabilities - Set 1`:
+
+    ```json
+    {
+    "platformName": "Android",
+    "appium:platformVersion": "12.0",
+    "appium:deviceName": "Redmi Note 10 Pro",
+    "appium:automationName": "UiAutomator2",
+    "appium:udid": "78aab321",
+    "appium:app": "/Users/deepjyoti.barman/Downloads/ApiDemos-debug.apk"
+    }
+    ```
+
+- `Desired Capabilites - Set 2`:
+
+    ```json
+    {
+    "platformName": "Android",
+    "platformVersion": "12.0",
+    "deviceName": "Redmi Note 10 Pro",
+    "automationName": "UiAutomator2",
+    "udid": "78aab321",
+    "appPackage": "com.flipkart.android",
+    "appActivity": "com.flipkart.android.activity.HomeFragmentHolderActivity",
+    "noReset": true
+    }
+    ```
+
+#### Fix for uiautomatorviewer2 in Mac
 
 - Search in Google 'Eclipse Project Downloads' or directly visit <https://download.eclipse.org/eclipse/downloads/>
 
@@ -774,15 +866,71 @@ sudo npm install -g appium --unsafe-perm=true --allow-root
 
 - Launch 'uiautomatorviewer2' to verify whether it's running without any issues.
 
-### Practice apps download
+#### Practice apps download
 
 - [Android_ApiDemos-debug.apk - Official](https://appium.io/docs/en/about-appium/getting-started/index.html#running-your-first-test)
 - [Android_ApiDemos-debug.apk - GitHub](https://github.com/appium/appium/tree/master/sample-code/apps)
 
-### Important Commands
+#### Important Commands
 
 - `adb devices` : Get the UDID of the devices connected.
 - `adb shell dumpsys window | grep -E 'CurrentFocus|FocusedApp'` : Get the appPackage and appActivity of an app.
+
+### iOS
+
+#### Installation Guide
+
+- Install JDK 11 or above to support latest version of TestNG
+- Install Maven via `brew install maven`
+- Check the current shell being used using command: `echo $SHELL`
+- If the shell is: `zsh`, open the file `.zshenv` using `vim ~/.zshenv` (create the file if not present)
+- Paste the following content in `~/.zshenv`:
+
+    ```sh
+    export ANDROID_HOME=/Users/<username>/Library/Android/sdk
+    export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.16.1.jdk/Contents/Home
+    export M2_HOME=/opt/homebrew/Cellar/maven/3.8.6
+
+    export PATH=$PATH:$ANDROID_HOME/emulator
+    export PATH=$PATH:$ANDROID_HOME/platform-tools
+    export PATH=$PATH:$ANDROID_HOME/tools
+    export PATH=$PATH:$ANDROID_HOME/tools/bin
+    export PATH=$PATH:$JAVA_HOME/bin
+    ```
+
+- Install Node.js LTS via `brew install node@18`
+- Install Appium 2.0 via `sudo npm install -g appium@next`
+- Install xcuitest driver for Appium 2.0 via `appium driver install xcuitest`
+- Verify the installation of the driver by listing down all the drivers via `appium driver list`
+- Login with Apple ID and Install Xcode from 'App Store' (If facing any issues upgrade your OS to latest version going to `System Settings -> General -> Software Update`)
+- Install Xcode command line tools via `xcode-select --install`
+- Install Xcode output prettier tool via `sudo gem install xcpretty`
+- Install carthage via `brew install carthage`
+- Open up the iPhone simulator from XCode: `Xcode -> Open Developer Tool -> Simulator`
+- Get the UDID of the simulator via any of the following methods:
+  - `xcrun simctl list`
+  - `xcrun xctrace list driver`
+  - `Xcode -> Window -> Devices and Simulators -> Simulators -> Select the name of the simulator on the left pane, udid will 'Identifier' be on the right hand side`)
+- If the previous commands to fetch the UDID of the simulator are getting failed enter `sudo xcode-select --switch /Applications/XCode.app/Contents/Developer/`, this will resolve the issue
+- Download testing app 'https://github.com/appium/ios-uicatalog' and get the build via any of the following two methods:
+  - Build the project in Xcode and get the UiKitCatalog.app from the shortcut (dragging the app under Product to Desktop, from the shortcut you can go and get the actual app)
+  - Go the root directory of the project and enter the command `npm build` and get the app inside `ios-uicatalog/UiKitCatalog/build/Release-iphonesimulator/` directory
+- Install `Appium Inspector` and set the following configuration:
+  - `Remote Host`: 127.0.0.1 (default)
+  - `Remote Port`: 4723 (default)
+  - `Remote Path`: / (for Appium v2.0.0-beta.55), /wd/hub (for Appium 1.22.3)
+  - `Desired Capabilities - Set 1`:
+
+    ```json
+    {
+    "platformName": "iOS",
+    "appium:platformVersion": "15.2",
+    "appium:deviceName": "iPhone 13",
+    "appium:automationName": "XCUITest",
+    "appium:udid": "2D634EC5-CBF8-4FA7-8B57-FB221E3D66CF",
+    "appium:app": "/Users/ins667/Documents/UIKitCatalog.app"
+    }
+    ```
 
 ## Setting up Visual Studio Code
 
