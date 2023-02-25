@@ -1112,7 +1112,9 @@ Open up 'Sublime Text' -> Click on `Sublime Text` on the menu bar -> `Preference
     ],
     "color_scheme": "Packages/ayu/ayu-dark.sublime-color-scheme",
     "theme": "ayu-dark.sublime-theme",
-    "font_size": 11,
+    "font_size": 10,
+    "spell_check": true,
+    "dictionary": "Packages/Language - English/en_US.dic",
 }
 ```
 
