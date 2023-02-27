@@ -34,19 +34,21 @@
 - Git
 - Google Chrome
 - go (install via `brew install go`)
-- Gradle (install via `brew install gradle`)
+- gradle (install via `brew install gradle`)
 - Grammarly for Safari
+- groovy (install via `brew install groovy`)
 - Homebrew
 - IntelliJ IDEA Community Edition
 - iTerm2
 - Java SE Development Kit 8
 - Java SE Development Kit 11
+- jmeter (install via `brew install jmeter`)
 - K6 (install via `brew install k6`)
 - MAMP
-- Maven (install via `brew install maven`)
+- maven (install via `brew install maven`)
 - Microsoft Teams
 - [mongodb-community](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/) (install via the following commands: `brew tap mongodb/brew`, `brew update`, `brew install mongodb-community`)
-- [Node.js](https://nodejs.org/en/download/) (download the .pkg file for macOS and upgrade via the following commands: `sudo npm cache clean -f`, `sudo npm install -g n`, `sudo n stable`)
+- [Node.js](https://nodejs.org/en/download/) (install via `brew install node@18`) (alternatively, download the .pkg file for macOS and upgrade via the following commands: `sudo npm cache clean -f`, `sudo npm install -g n`, `sudo n stable`)
 - [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish)
 - [Oh My Zsh](https://ohmyz.sh/)
 - [peco](https://github.com/peco/peco) (install via `brew install peco`)
@@ -54,15 +56,15 @@
 - Postgres.app
 - Postman
 - PyCharm Community Edition
-- python@3.10 (install via `brew install python@3.10`) (to access from command prompt create a symbolic link using `brew link --overwrite python@3.10`, another command to do the same is `ln -s /opt/homebrew/Cellar/python@3.10/3.10.4/bin/python3 /opt/homebrew/bin/`)
-- python-tk@3.10 (required to access `idle3` command from Terminal) (install via `brew install python-tk@3.10`)
+- python@3.11 (install via `brew install python@3.11`) (to access from command prompt create a symbolic link using `brew link --overwrite python@3.11`, another command to do the same is `ln -s /opt/homebrew/Cellar/python@3.10/3.10.4/bin/python3 /opt/homebrew/bin/`)
+- python-tk@3.11 (required to access `idle3` command from Terminal) (install via `brew install python-tk@3.11`)
 - [ripgrep](https://github.com/BurntSushi/ripgrep) (install via `brew install ripgrep`)
 - Spring Tool Suite
 - Sublime Text
 - sshpass
 - The Unarchiver
 - tree (install via `brew install tree`)
-- Vim (install via `brew install vim` - not recommended to use the vim that comes bundled with preinstalled macOS)
+- vim (install via `brew install vim` - not recommended to use the vim that comes bundled with preinstalled macOS)
 - Visual Studio Code
 - Visual Studio
 - VNC Viewer
@@ -580,6 +582,7 @@ It is necessary as the theme needs gdate utility as its dependency which is avai
 
 - `brew list`
 - `brew update`
+- `brew outdated`
 - `brew upgrade`
 - `brew cleanup`
 - `brew install <package-name>`
