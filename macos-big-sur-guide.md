@@ -84,6 +84,7 @@
 - csslint
 - ffprobe
 - jshint
+- localtunnel
 - n
 - npm
 - typescript
@@ -133,6 +134,14 @@
 - Click on the `Apple` menu -> Go to `System Preferences` -> `Accessibility` -> `Zoom`
     1. Check `Use keyboard shortcuts to zoom`.
     2. Check `Enable Hover Text` (check this only if its required).
+
+## Enable three finger drag or select feature
+
+- Click on the `Apple` menu -> Go to `System Preferences` -> `Accessibility` -> `Pointer Control`
+    1. Under `Mouse & Trackpad` click on `Trackpad Options...`
+    2. Enable `Use trackpad for dragging`
+    3. Select `Three-Finger Drag` from the drop down menu
+    4. Click on `OK` and close the menu
 
 ## Invert mouse scroll direction
 
