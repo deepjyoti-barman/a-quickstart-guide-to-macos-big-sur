@@ -13,6 +13,7 @@
 ### General installations and homebrew packages
 
 - [ag](https://www.cyberciti.biz/open-source/command-line-hacks/ag-supercharge-string-search-through-directory-hierarchy/) (install via `brew install the_silver_searcher`) (This tool required as a dependency for peco plugin)
+- Adobe Acrobat Reader
 - Android Studio
 - AnyDesk
 - Apache JMeter
