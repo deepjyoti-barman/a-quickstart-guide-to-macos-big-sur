@@ -150,8 +150,9 @@ Click on the `Apple` menu -> Go to `System Preferences` -> `Mouse` -> Untick `Sc
 
 ## Overwrite behavior of CAPS LOCK key with ESC
 
-- Click on the `Apple` menu -> Go to `System Preferences` -> `Keyboard`
-- Click on `Modifier Keys...`
+- Click on the `Apple` menu -> Go to `System Settings...` -> `Keyboard`
+- Click on `Keyboard Shortcuts...`
+- Click on `Modifier Keys`
 - Select the keyboard of your choice from the dropdown and assign the following value:
   - `Caps Lock Key`: `Escape`
 
