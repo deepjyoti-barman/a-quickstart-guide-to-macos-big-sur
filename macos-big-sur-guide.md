@@ -74,8 +74,8 @@
 - wget (install via `brew install wget`)
 - XCode
 - Zoom
-- [z](https://github.com/agkozak/zsh-z) (install via `git clone https://github.com/agkozak/zsh-z.git ~/.zprezto-contrib/zsh-z` and add this plugin name in .zshrc file)
-- [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) (install via `git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions` and add this plugin name in .zshrc file)
+- [z](https://github.com/agkozak/zsh-z) (install via `git clone https://github.com/agkozak/zsh-z.git ~/.zprezto-contrib/zsh-z`, search for the phrase 'plugins' inside .zshrc file and append the plugin name as following: `plugins=(git zsh-z)`)
+- [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) (install via `git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions`, search for the phrase 'plugins' inside .zshrc file and append the plugin name as following: `plugins=(git zsh-z zsh-autosuggestions)`)
 
 ### NPM global packages
 
@@ -127,22 +127,22 @@
 ## The necessary trackpad tweak
 
 - Click on the `Apple` menu -> Go to `System Preferences` -> `Trackpad`
-    1. Check `Tap to click`.
-    2. Increase tracking speed to 5.
+  1. Check `Tap to click`.
+  2. Increase tracking speed to 5.
 
 ## Enable zoom feature
 
 - Click on the `Apple` menu -> Go to `System Preferences` -> `Accessibility` -> `Zoom`
-    1. Check `Use keyboard shortcuts to zoom`.
-    2. Check `Enable Hover Text` (check this only if its required).
+  1. Check `Use keyboard shortcuts to zoom`.
+  2. Check `Enable Hover Text` (check this only if its required).
 
 ## Enable three finger drag or select feature
 
 - Click on the `Apple` menu -> Go to `System Preferences` -> `Accessibility` -> `Pointer Control`
-    1. Under `Mouse & Trackpad` click on `Trackpad Options...`
-    2. Enable `Use trackpad for dragging`
-    3. Select `Three-Finger Drag` from the drop down menu
-    4. Click on `OK` and close the menu
+  1. Under `Mouse & Trackpad` click on `Trackpad Options...`
+  2. Enable `Use trackpad for dragging`
+  3. Select `Three-Finger Drag` from the drop down menu
+  4. Click on `OK` and close the menu
 
 ## Invert mouse scroll direction
 
@@ -170,15 +170,15 @@ Open up 'Finder' -> Click on `Finder` in the menu bar -> `Preferences` -> `Sideb
 
 ## Reinstall MacOS from MacOS recovery
 
-__Note__: Make sure you have an active internet connection, Mac is plugged into the power / charger and it's turned off.
+**Note**: Make sure you have an active internet connection, Mac is plugged into the power / charger and it's turned off.
 
 - Key combinations:
-    1. `Command + R`  
-    Reinstall the latest version of MacOS installed on your Mac (Recommended for most users).
-    2. `Command + Option + R`  
-    Upgrade to the latest version of MacOS compatible to your device.
-    3. `Command + Option + Shift + R`  
-    Reinstall the version of MacOS that came with your Mac.
+  1. `Command + R`  
+     Reinstall the latest version of MacOS installed on your Mac (Recommended for most users).
+  2. `Command + Option + R`  
+     Upgrade to the latest version of MacOS compatible to your device.
+  3. `Command + Option + Shift + R`  
+     Reinstall the version of MacOS that came with your Mac.
 - Turn on your Mac and immediately press and hold the key combinations of your choice until you see an Apple logo.
 - Enter the admin password.
 - Click on `Next`.
@@ -187,10 +187,11 @@ __Note__: Make sure you have an active internet connection, Mac is plugged into 
 - Follow the on-screen options.
 - When it's done you will see a login window, enter the password and continue with the prompts.
 
-__Tip__: When to do factory reset / reinstall MacOS?  
-    - When you are selling your Mac.  
-    - Changing admin name.  
-    - To fix software issues.  
+**Tip**: When to do factory reset / reinstall MacOS?
+
+- When you are selling your Mac.
+- Changing admin name.
+- To fix software issues.
 
 ## Granting Microsoft Teams, Zoom and other softwares resource and device access permissions
 
@@ -206,15 +207,16 @@ Following are the steps to grant 'Microsoft Teams' permission for 'Screen Record
 - Close the `Security and Privacy` window.
 - Quit 'Microsoft Teams' and reopen it to enact the changes made.
 
-__Tip__: List of necessary permissions for apps,  
-    - Microsoft Teams: Accessibility, Camera, Microphone, Screen Recording.  
-    - Zoom: Accessibility, Screen Recording.  
-    - Terminal: Full Disk Access.  
-    - iTerm2: Full Disk Access.
+**Tip**: List of necessary permissions for apps,
+
+- Microsoft Teams: Accessibility, Camera, Microphone, Screen Recording.
+- Zoom: Accessibility, Screen Recording.
+- Terminal: Full Disk Access.
+- iTerm2: Full Disk Access.
 
 ## How to format an external hard disk drive in Mac
 
-__Tip__: In this guide, we're using exFAT instead of FAT32, another filesystem that both Windows and Mac can read and write to, because FAT32 has a maximum 4GB file size limit whereas exFAT can work with files as large as 16EB (exabytes). exFAT also performs better than FAT32.
+**Tip**: In this guide, we're using exFAT instead of FAT32, another filesystem that both Windows and Mac can read and write to, because FAT32 has a maximum 4GB file size limit whereas exFAT can work with files as large as 16EB (exabytes). exFAT also performs better than FAT32.
 
 You can format the drive from either Mac or Windows. However, if you want to use part of the drive for OS X's Time Machine backups, you should do this from the Mac, since there's an extra step to make the drive compatible for Time Machine.
 
@@ -228,7 +230,7 @@ Formatting of the device can be done by following the steps given below:
 - Click the Format pop-up menu, then choose a file system format.
 - Enter a name.
 - (Optional) If available, click Security Options, use the slider to choose how many times to write over the erased data, then click OK.
-[Note: Secure erase options are available only for some types of storage devices. If the Security Options button is not available, Disk Utility cannot perform a secure erase on the storage device.]
+  [Note: Secure erase options are available only for some types of storage devices. If the Security Options button is not available, Disk Utility cannot perform a secure erase on the storage device.]
 - Click Erase, then click Done.
 
 ## Terminal configuration
@@ -236,17 +238,18 @@ Formatting of the device can be done by following the steps given below:
 Open up 'Terminal' -> Click on `Terminal` in the menu bar -> `Preferences`
 
 - Select the `General` tab
-    1. `On startup, open`: `New window with profile` - `Pro`
-    2. `New windows open with`: `Same Profile`
+
+  1. `On startup, open`: `New window with profile` - `Pro`
+  2. `New windows open with`: `Same Profile`
 
 - Select the `Profiles` tab
-    1. `Text` tab
-        - Select profile `Pro` and click on `Default` button
-        - Check `Blink Cursor`
-        - Click on `Colors and Effects` -> `Opacity`: `80%`
-        - Click on `Change` button next to `Font` -> `Line Spacing`: `1.1`
-    2. `Window` tab
-        - `Columns`: `170`, `Rows`: `40`
+  1. `Text` tab
+     - Select profile `Pro` and click on `Default` button
+     - Check `Blink Cursor`
+     - Click on `Colors and Effects` -> `Opacity`: `80%`
+     - Click on `Change` button next to `Font` -> `Line Spacing`: `1.1`
+  2. `Window` tab
+     - `Columns`: `170`, `Rows`: `40`
 
 ## iTerm2 configuration
 
@@ -257,25 +260,25 @@ Open up 'Terminal' -> Click on `Terminal` in the menu bar -> `Preferences`
 - Nerd fonts GitHub page: [ryanoasis/nerd-fonts](https://github.com/ryanoasis/nerd-fonts)
 - Installation guide for all Powerline fonts:
 
-    ```sh
-    # clone
-    git clone https://github.com/powerline/fonts.git --depth=1
-    # install
-    cd fonts
-    ./install.sh
-    # clean-up a bit
-    cd ..
-    rm -rf fonts
-    ```
+  ```sh
+  # clone
+  git clone https://github.com/powerline/fonts.git --depth=1
+  # install
+  cd fonts
+  ./install.sh
+  # clean-up a bit
+  cd ..
+  rm -rf fonts
+  ```
 
 - Un-installation guide for all Powerline fonts:
   - Run ./uninstall.sh to uninstall all Powerline Fonts.
 - Installation guide for 'Hack Nerd Font':
-  
-    ```sh
-    brew tap homebrew/cask-fonts
-    brew install --cask font-hack-nerd-font
-    ```
+
+  ```sh
+  brew tap homebrew/cask-fonts
+  brew install --cask font-hack-nerd-font
+  ```
 
 - Note: this installation is required to support sign and symbols present in oh-my-zsh / oh-my-fish themes.
 
@@ -285,23 +288,23 @@ Open up 'iTerm2' -> Click on `iTerm2` in the menu bar -> `Preferences`
 
 #### Profiles Tab
 
-1. General Tab:  
-    - Click on `+` icon to create a profile.  
-    - `Name`: `Deepjyoti`
-    - `Title`: `Profile: Name (Job + Args)`
-    - Select the newly created profile -> Click on `Other Actions` -> `Set  as Default`
-    - (Optional) `Send text at start`: `sshpass -e ssh deepjb@192.168.30.15`
+1. General Tab:
+   - Click on `+` icon to create a profile.
+   - `Name`: `Deepjyoti`
+   - `Title`: `Profile: Name (Job + Args)`
+   - Select the newly created profile -> Click on `Other Actions` -> `Set  as Default`
+   - (Optional) `Send text at start`: `sshpass -e ssh deepjb@192.168.30.15`
 2. Text Tab:
-    - Check `Blinking Cursor`.
-    - Set `Font` as the following:  
-    `Hack Nerd Font Mono` `Regular` `10` `100` `110`
-    - Check `Anti-aliased`
-    - Uncheck `Draw bold text in bold font`
+   - Check `Blinking Cursor`.
+   - Set `Font` as the following:  
+     `Hack Nerd Font Mono` `Regular` `10` `100` `110`
+   - Check `Anti-aliased`
+   - Uncheck `Draw bold text in bold font`
 3. Window Tab:
-    - `Transparency`: `17` (Press `Command + U` to set transparency level to 0)
-    - `Blending`: `50`
-    - `Settings for New Windows`:
-    `Columns`: `200`, `Rows`: `55`
+   - `Transparency`: `17` (Press `Command + U` to set transparency level to 0)
+   - `Blending`: `50`
+   - `Settings for New Windows`:
+     `Columns`: `200`, `Rows`: `55`
 
 #### Keys Tab
 
@@ -321,14 +324,14 @@ Open up 'iTerm2' -> Click on `iTerm2` in the menu bar -> `Preferences`
 - Choose the 'monokai-remastered.itermcolors' file from your local system.
 - Select the theme.
 - Close the `Preferences` dialog box.
-- __Resources__: The 'monokai-remastered.itermcolors' colorscheme file has been added in this repository.
+- **Resources**: The 'monokai-remastered.itermcolors' colorscheme file has been added in this repository.
 
 ### Some important iTerm2 shortcuts
 
 - Split Horizontally with Current Profile: `Command + Shift + D`
 - Split Vertically with Current Profile: `Command + D`
-- Split Horizontally with Custom Profile:  `Command + Option + Shift + H`
-- Split Vertically with Custom Profile:  `Command + Option + Shift + V`
+- Split Horizontally with Custom Profile: `Command + Option + Shift + H`
+- Split Vertically with Custom Profile: `Command + Option + Shift + V`
 - Switch Tabs: `Control + Number`
 - Switch Split Panes: `Command + Number`
 - Close Split Pane/Tab: `Command + W`
@@ -339,7 +342,7 @@ Open up 'iTerm2' -> Click on `iTerm2` in the menu bar -> `Preferences`
 
 - Pay a visit to [Oh-My-Zsh](https://github.com/ohmyzsh/ohmyzsh) for detailed information.
 - Install the plugin via entering the following `curl` command:  
-`sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
+  `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
 
 #### Commands (omz)
 
@@ -358,121 +361,121 @@ Open up 'iTerm2' -> Click on `iTerm2` in the menu bar -> `Preferences`
   - [External Themes](https://github.com/ohmyzsh/ohmyzsh/wiki/External-themes)
 - Current theme and legacy theme names can be directly used inside .zshrc as `ZSH_THEME="agnoster"` and it will work fine.
 - For external themes you need to download the theme, extract the .zip file, copy the .zsh-theme file inside `~/.oh-my-zsh/custom/themes` directory and then the name can be used inside .zshrc file.
-- __Resources__: The 'passion.zsh-theme' theme file has been added in this repository. Before you use this theme install 'coreutils' via `brew install coreutils` command.
-It is necessary as the theme needs gdate utility as its dependency which is available in this package.
+- **Resources**: The 'passion.zsh-theme' theme file has been added in this repository. Before you use this theme install 'coreutils' via `brew install coreutils` command.
+  It is necessary as the theme needs gdate utility as its dependency which is available in this package.
 
 #### Complete Configuration (omz)
 
 - Configure your `~/.zshrc` as the following:
 
-    ```zsh
-    # If you come from bash you might have to change your $PATH.
-    # export PATH=$HOME/bin:/usr/local/bin:$PATH
+  ```zsh
+  # If you come from bash you might have to change your $PATH.
+  # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-    # Path to your oh-my-zsh installation.
-    export ZSH="/Users/deepjyoti.barman/.oh-my-zsh"
+  # Path to your oh-my-zsh installation.
+  export ZSH="/Users/deepjyoti.barman/.oh-my-zsh"
 
-    # Set name of the theme to load --- if set to "random", it will
-    # load a random theme each time oh-my-zsh is loaded, in which case,
-    # to know which specific one was loaded, run: echo $RANDOM_THEME
-    # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-    # ZSH_THEME="pygmalion"
-    ZSH_THEME="passion"
+  # Set name of the theme to load --- if set to "random", it will
+  # load a random theme each time oh-my-zsh is loaded, in which case,
+  # to know which specific one was loaded, run: echo $RANDOM_THEME
+  # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+  # ZSH_THEME="pygmalion"
+  ZSH_THEME="passion"
 
-    # Set list of themes to pick from when loading at random
-    # Setting this variable when ZSH_THEME=random will cause zsh to load
-    # a theme from this variable instead of looking in $ZSH/themes/
-    # If set to an empty array, this variable will have no effect.
-    # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+  # Set list of themes to pick from when loading at random
+  # Setting this variable when ZSH_THEME=random will cause zsh to load
+  # a theme from this variable instead of looking in $ZSH/themes/
+  # If set to an empty array, this variable will have no effect.
+  # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
-    # Uncomment the following line to use case-sensitive completion.
-    # CASE_SENSITIVE="true"
+  # Uncomment the following line to use case-sensitive completion.
+  # CASE_SENSITIVE="true"
 
-    # Uncomment the following line to use hyphen-insensitive completion.
-    # Case-sensitive completion must be off. _ and - will be interchangeable.
-    # HYPHEN_INSENSITIVE="true"
+  # Uncomment the following line to use hyphen-insensitive completion.
+  # Case-sensitive completion must be off. _ and - will be interchangeable.
+  # HYPHEN_INSENSITIVE="true"
 
-    # Uncomment the following line to disable bi-weekly auto-update checks.
-    DISABLE_AUTO_UPDATE="true"
+  # Uncomment the following line to disable bi-weekly auto-update checks.
+  DISABLE_AUTO_UPDATE="true"
 
-    # Uncomment the following line to automatically update without prompting.
-    DISABLE_UPDATE_PROMPT="true"
+  # Uncomment the following line to automatically update without prompting.
+  DISABLE_UPDATE_PROMPT="true"
 
-    # Uncomment the following line to change how often to auto-update (in days).
-    # export UPDATE_ZSH_DAYS=13
+  # Uncomment the following line to change how often to auto-update (in days).
+  # export UPDATE_ZSH_DAYS=13
 
-    # Uncomment the following line if pasting URLs and other text is messed up.
-    # DISABLE_MAGIC_FUNCTIONS="true"
+  # Uncomment the following line if pasting URLs and other text is messed up.
+  # DISABLE_MAGIC_FUNCTIONS="true"
 
-    # Uncomment the following line to disable colors in ls.
-    # DISABLE_LS_COLORS="true"
+  # Uncomment the following line to disable colors in ls.
+  # DISABLE_LS_COLORS="true"
 
-    # Uncomment the following line to disable auto-setting terminal title.
-    # DISABLE_AUTO_TITLE="true"
+  # Uncomment the following line to disable auto-setting terminal title.
+  # DISABLE_AUTO_TITLE="true"
 
-    # Uncomment the following line to enable command auto-correction.
-    # ENABLE_CORRECTION="true"
+  # Uncomment the following line to enable command auto-correction.
+  # ENABLE_CORRECTION="true"
 
-    # Uncomment the following line to display red dots whilst waiting for completion.
-    # You can also set it to another string to have that shown instead of the default red dots.
-    # e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
-    # Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
-    # COMPLETION_WAITING_DOTS="true"
+  # Uncomment the following line to display red dots whilst waiting for completion.
+  # You can also set it to another string to have that shown instead of the default red dots.
+  # e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+  # Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
+  # COMPLETION_WAITING_DOTS="true"
 
-    # Uncomment the following line if you want to disable marking untracked files
-    # under VCS as dirty. This makes repository status check for large repositories
-    # much, much faster.
-    # DISABLE_UNTRACKED_FILES_DIRTY="true"
+  # Uncomment the following line if you want to disable marking untracked files
+  # under VCS as dirty. This makes repository status check for large repositories
+  # much, much faster.
+  # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-    # Uncomment the following line if you want to change the command execution time
-    # stamp shown in the history command output.
-    # You can set one of the optional three formats:
-    # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-    # or set a custom format using the strftime function format specifications,
-    # see 'man strftime' for details.
-    # HIST_STAMPS="mm/dd/yyyy"
+  # Uncomment the following line if you want to change the command execution time
+  # stamp shown in the history command output.
+  # You can set one of the optional three formats:
+  # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+  # or set a custom format using the strftime function format specifications,
+  # see 'man strftime' for details.
+  # HIST_STAMPS="mm/dd/yyyy"
 
-    # Would you like to use another custom folder than $ZSH/custom?
-    # ZSH_CUSTOM=/path/to/new-custom-folder
+  # Would you like to use another custom folder than $ZSH/custom?
+  # ZSH_CUSTOM=/path/to/new-custom-folder
 
-    # Which plugins would you like to load?
-    # Standard plugins can be found in $ZSH/plugins/
-    # Custom plugins may be added to $ZSH_CUSTOM/plugins/
-    # Example format: plugins=(rails git textmate ruby lighthouse)
-    # Add wisely, as too many plugins slow down shell startup.
-    plugins=(git zsh-z zsh-autosuggestions)
+  # Which plugins would you like to load?
+  # Standard plugins can be found in $ZSH/plugins/
+  # Custom plugins may be added to $ZSH_CUSTOM/plugins/
+  # Example format: plugins=(rails git textmate ruby lighthouse)
+  # Add wisely, as too many plugins slow down shell startup.
+  plugins=(git zsh-z zsh-autosuggestions)
 
-    source $ZSH/oh-my-zsh.sh
+  source $ZSH/oh-my-zsh.sh
 
-    # User configuration
+  # User configuration
 
-    # export MANPATH="/usr/local/man:$MANPATH"
+  # export MANPATH="/usr/local/man:$MANPATH"
 
-    # You may need to manually set your language environment
-    # export LANG=en_US.UTF-8
+  # You may need to manually set your language environment
+  # export LANG=en_US.UTF-8
 
-    # Preferred editor for local and remote sessions
-    # if [[ -n $SSH_CONNECTION ]]; then
-    #   export EDITOR='vim'
-    # else
-    #   export EDITOR='mvim'
-    # fi
+  # Preferred editor for local and remote sessions
+  # if [[ -n $SSH_CONNECTION ]]; then
+  #   export EDITOR='vim'
+  # else
+  #   export EDITOR='mvim'
+  # fi
 
-    # Compilation flags
-    # export ARCHFLAGS="-arch x86_64"
+  # Compilation flags
+  # export ARCHFLAGS="-arch x86_64"
 
-    # Set personal aliases, overriding those provided by oh-my-zsh libs,
-    # plugins, and themes. Aliases can be placed here, though oh-my-zsh
-    # users are encouraged to define aliases within the ZSH_CUSTOM folder.
-    # For a full list of active aliases, run `alias`.
-    #
-    # Example aliases
-    # alias zshconfig="mate ~/.zshrc"
-    # alias ohmyzsh="mate ~/.oh-my-zsh"
+  # Set personal aliases, overriding those provided by oh-my-zsh libs,
+  # plugins, and themes. Aliases can be placed here, though oh-my-zsh
+  # users are encouraged to define aliases within the ZSH_CUSTOM folder.
+  # For a full list of active aliases, run `alias`.
+  #
+  # Example aliases
+  # alias zshconfig="mate ~/.zshrc"
+  # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-    # Auto-load brew as a shell environment variable at startup 
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-    ```
+  # Auto-load brew as a shell environment variable at startup
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+  ```
 
 ### Fish shell and Oh-My-Fish plugin
 
@@ -488,7 +491,7 @@ It is necessary as the theme needs gdate utility as its dependency which is avai
 
 - Pay a visit to [Oh-My-Fish](https://github.com/oh-my-fish/oh-my-fish) for detailed information.
 - Install the plugin via entering the following `curl` command:  
-`curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish`
+  `curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish`
 - Dependencies: git and fish shell
 
 #### Commands (omf)
@@ -524,45 +527,45 @@ It is necessary as the theme needs gdate utility as its dependency which is avai
 - You need to go through the documentation of fish shell, themes and plugins to get useful configuration commands.
 - Configure your `config.fish` as the following:
 
-    ```sh
-    if status is-interactive
-        # bobthefish theme configuration
-        set -g theme_color_scheme dracula
+  ```sh
+  if status is-interactive
+      # bobthefish theme configuration
+      set -g theme_color_scheme dracula
 
-        set -g theme_display_git_default_branch yes
-        set -g theme_git_default_branches master main
-        set -g theme_display_git_untracked yes
-        set -g theme_display_git_ahead_verbose yes
-        set -g theme_display_git_dirty_verbose yes
-        set -g theme_display_git_stashed_verbose yes
+      set -g theme_display_git_default_branch yes
+      set -g theme_git_default_branches master main
+      set -g theme_display_git_untracked yes
+      set -g theme_display_git_ahead_verbose yes
+      set -g theme_display_git_dirty_verbose yes
+      set -g theme_display_git_stashed_verbose yes
 
-        set -g theme_title_display_process yes
-        set -g theme_title_display_path yes
-        set -g theme_title_use_abbreviated_path no
+      set -g theme_title_display_process yes
+      set -g theme_title_display_path yes
+      set -g theme_title_use_abbreviated_path no
 
-        set -g theme_display_user yes
-        set -g theme_display_hostname yes
+      set -g theme_display_user yes
+      set -g theme_display_hostname yes
 
-        set -g fish_prompt_pwd_dir_length 0
-
-
-        # exa plugin configuration
-        alias ll "exa -hl --icons --git"
-        alias la "ll -a"
-        alias llt "ll --tree"
-        alias glog 'git log --pretty=format:"\"%Cgreen%h %Creset%cd %Cblue[%cn] %Creset%s%C(yellow)%d%C(reset)\"" --graph --date=relative --decorate --all'
+      set -g fish_prompt_pwd_dir_length 0
 
 
-        # peco plugin configuration
-        function fish_user_key_bindings
-            bind \c] peco_select_ghq      # Ctrl-]
-            bind \cr peco_select_history  # Ctrl-r
-            bind \cj peco_select_z        # Ctrl-j
-            bind \cf peco_select_file     # Ctrl-f
-            bind \cd peco_select_cd       # Ctrl-d
-        end
-    end
-    ```
+      # exa plugin configuration
+      alias ll "exa -hl --icons --git"
+      alias la "ll -a"
+      alias llt "ll --tree"
+      alias glog 'git log --pretty=format:"\"%Cgreen%h %Creset%cd %Cblue[%cn] %Creset%s%C(yellow)%d%C(reset)\"" --graph --date=relative --decorate --all'
+
+
+      # peco plugin configuration
+      function fish_user_key_bindings
+          bind \c] peco_select_ghq      # Ctrl-]
+          bind \cr peco_select_history  # Ctrl-r
+          bind \cj peco_select_z        # Ctrl-j
+          bind \cf peco_select_file     # Ctrl-f
+          bind \cd peco_select_cd       # Ctrl-d
+      end
+  end
+  ```
 
 ## Installing Homebrew on Mac Intel and M1 chip
 
@@ -634,29 +637,31 @@ It is necessary as the theme needs gdate utility as its dependency which is avai
 - Go to the Maven Download site: <https://maven.apache.org/download.cgi> and download the “Binary tar.gz archive”.
 
 - After downloading, extract it to '/opt' directory using the below command.  
-`tar -xvzf apache-maven-3.6.3-bin.tar.gz -C /opt`
+  `tar -xvzf apache-maven-3.6.3-bin.tar.gz -C /opt`
 
 - The next step is to set up the environment variables – M2_HOME and Path. We have to add the Maven bin directory to the Path variable.
-    1. On macOS 10.5 Catalina or later, the default shell is zsh, and we can create the environment variables MAVEN_HOME and update the PATH in ~/.zshenv. Create .zshenv  and open the it in the default text editor by entering the following command:  
-    `touch ~/.zshenv && open ~/.zshenv`
 
-    2. For macOS 10.14 Mojave and before, the default Terminal shell is bash, and we can create the environment variables in ~/.bash_profile. Create .bash_profile and open the it in the default text editor by entering the following command:  
-    `touch ~/.bash_profile && open ~/.bash_profile`
+  1. On macOS 10.5 Catalina or later, the default shell is zsh, and we can create the environment variables MAVEN_HOME and update the PATH in ~/.zshenv. Create .zshenv and open the it in the default text editor by entering the following command:  
+     `touch ~/.zshenv && open ~/.zshenv`
+
+  2. For macOS 10.14 Mojave and before, the default Terminal shell is bash, and we can create the environment variables in ~/.bash_profile. Create .bash_profile and open the it in the default text editor by entering the following command:  
+     `touch ~/.bash_profile && open ~/.bash_profile`
 
 - Copy and paste the following content in the .zshenv / .bash_profile and save the changes:
 
-    ```bash
-    export M2_HOME=/opt/apache-maven/3.8.2
-    export PATH=$PATH:$M2_HOME/bin
-    ```
+  ```bash
+  export M2_HOME=/opt/apache-maven/3.8.2
+  export PATH=$PATH:$M2_HOME/bin
+  ```
 
-- Source the ~/.zshenv or ~/.bash_profile to reflect the changes.  
-    1. `source ~/.zshenv`
-    2. `source ~/.bash_profile`
+- Source the ~/.zshenv or ~/.bash_profile to reflect the changes.
+
+  1. `source ~/.zshenv`
+  2. `source ~/.bash_profile`
 
 - Finally, run the `mvn -version` command to check if Maven is installed successfully.
 
-__Extras__: My all in one ~/.zshenv config is given below,
+**Extras**: My all in one ~/.zshenv config is given below,
 
 ```bash
 export ALLURE_HOME=/opt/allure-2.14.0
@@ -668,23 +673,24 @@ export FZF_DEFAULT_OPTS="--height 40% --layout reverse --info inline --border \
     --bind shift-up:preview-page-up,shift-down:preview-page-down \
     --color 'fg:#bbccdd,fg+:#ddeeff,bg:#334455,preview-bg:#223344,border:#778899' \
     --ansi"
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_341.jdk/Contents/Home
-export JAVA11_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.16.1.jdk/Contents/Home
-export JAVA17_HOME=/Library/Java/JavaVirtualMachines/jdk-17.0.4.1.jdk/Contents/Home
-export GRADLE_HOME=/opt/homebrew/Cellar/gradle/7.5.1_1
-export JMETER_HOME=/opt/apache-jmeter/5.4.1
-export M2_HOME=/opt/homebrew/Cellar/maven/3.8.6
-export POSTGRESQL_HOME=/Applications/Postgres.app/Contents/Versions/14
+export GRADLE_HOME=/opt/homebrew/Cellar/gradle/8.1.1
+export M2_HOME=/opt/homebrew/Cellar/maven/3.9.2
 export SSHPASS='deep@$1234'
+
+# Java environment variable configurations
+export JAVA8_HOME=$(/usr/libexec/java_home -v 1.8.0)
+export JAVA11_HOME=$(/usr/libexec/java_home -v 11)
+export JAVA17_HOME=$(/usr/libexec/java_home -v 17)
+export JAVA_HOME=$JAVA11_HOME
+alias java8='export JAVA_HOME=$JAVA8_HOME'
+alias java11='export JAVA_HOME=$JAVA11_HOME'
+alias java17='export JAVA_HOME=$JAVA17_HOME'
 
 export PATH=$PATH:$ALLURE_HOME/bin
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$JAVA_HOME/bin
-export PATH=$PATH:$JMETER_HOME/bin
-export PATH=$PATH:$POSTGRESQL_HOME/bin
 ```
 
 ## Installing sshpass - An excellent tool for non-interactive SSH login
@@ -700,7 +706,7 @@ We can install sshpass using any of the following command:
 ```bash
 brew install hudochenkov/sshpass/sshpass
 ```
-  
+
 ```bash
 brew install esolitos/ipa/sshpass
 ```
@@ -725,25 +731,25 @@ sshpass -f password_filename ssh aaronkilik@10.42.0.1
 To uninstall / remove Oracle JDK from Mac run the following commands one after another or delete these files and directories manually.
 
 - Removing JDK  
-`sudo rm -rf "/Library/Java/JavaVirtualMachines/jdk(version).jdk"`
+  `sudo rm -rf "/Library/Java/JavaVirtualMachines/jdk(version).jdk"`
 
 - Remove Java applet plugin  
-`sudo rm -rf "/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin"`
+  `sudo rm -rf "/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin"`
 
 - Remove Java control panel  
-`sudo rm -rf "/Library/PreferencePanes/JavaControlPanel.prefPane"`
+  `sudo rm -rf "/Library/PreferencePanes/JavaControlPanel.prefPane"`
 
 - Remove Applet, Web Start and installation related caches  
-`sudo rm -rf "~/Library/Application\ Support/Oracle/Java"`  
-`sudo rm -rf "/Library/Application\ Support/Oracle/Java"`  
-`sudo rm -rf "~/Library/Application\ Support/Java"`
+  `sudo rm -rf "~/Library/Application\ Support/Oracle/Java"`  
+  `sudo rm -rf "/Library/Application\ Support/Oracle/Java"`  
+  `sudo rm -rf "~/Library/Application\ Support/Java"`
 
 ## Capture a snapshot / record video the entire screen and actions in Mac
 
 - Open up 'Quick Time Player'.
 - Click on `File` -> `New Screen Recording`
-    1. Select `Capture Entire Screen` option if you want to take a snapshot of the entire screen.
-    2. Select `Record Entire Screen` option if you want to record the video and actions.
+  1. Select `Capture Entire Screen` option if you want to take a snapshot of the entire screen.
+  2. Select `Record Entire Screen` option if you want to record the video and actions.
 - Once the camera icon is visible, click on the screen to take the snapshot / start the recording.
 - If you are recording the then click on the 'Stop' icon on menu bar to stop the video recording.
 - The video will be saved on the desktop. Meanwhile, if you have captured a snapshot of the screen then the prompt will come up and let you decide the format and the destination to save the image you've captured.
@@ -768,26 +774,27 @@ Click on the `Apple` menu -> `System Preferences` -> `System and Security` -> `G
 Recently the Github team has announced that for better protection and privacy users should not use their profile password to push or pull code changes from Github repositories instead they should start using Personal Access Tokens provided by Github. The following process will guide you how to replace your old password with new Personal Access Token generated from your own Github account.
 
 - Check whether credential helper is set or not.  
-`> git config --list`  
-`credential.helper = osxkeychain`
+  `> git config --list`  
+  `credential.helper = osxkeychain`
 
-- Update the credentials via Keychain Access.  
-    1. Open up 'Spotlight Search' by clicking on the icon in the menu bar or pressing `Command + Spacebar`.
-    2. Type 'Keychain Access' and press `Enter` to launch the app.
-    3. In 'Keychain Access' search for 'github.com'.
-    4. Find the 'internet password' entry for 'github.com'.
-    5. Edit it by double clicking on it (you may delete it from here as well).
-    6. Click on 'Show Password' checkbox.
-    7. Enter your login password.
-    8. Replace the old password with new Personal Access Token once it's visible.
-    9. Save the changes.
-    10. Close the application.
+- Update the credentials via Keychain Access.
+
+  1. Open up 'Spotlight Search' by clicking on the icon in the menu bar or pressing `Command + Spacebar`.
+  2. Type 'Keychain Access' and press `Enter` to launch the app.
+  3. In 'Keychain Access' search for 'github.com'.
+  4. Find the 'internet password' entry for 'github.com'.
+  5. Edit it by double clicking on it (you may delete it from here as well).
+  6. Click on 'Show Password' checkbox.
+  7. Enter your login password.
+  8. Replace the old password with new Personal Access Token once it's visible.
+  9. Save the changes.
+  10. Close the application.
 
 - Deleting your credentials via command line.  
-`> git credential-osxkeychain erase`  
-`host = github.com`  
-`protocol = https`  
-`> [Return]`
+  `> git credential-osxkeychain erase`  
+  `host = github.com`  
+  `protocol = https`  
+  `> [Return]`
 
 ## Mobile Testing with Appium in Mac
 
@@ -811,17 +818,16 @@ Recently the Github team has announced that for better protection and privacy us
 - If the shell is: `zsh`, open the file `.zshenv` using `vim ~/.zshenv` (create the file if not present)
 - Paste the following content:
 
-    ```sh
-    export ANDROID_HOME=/Users/<username>/Library/Android/sdk
-    export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.16.1.jdk/Contents/Home
-    export M2_HOME=/opt/homebrew/Cellar/maven/3.8.6
+  ```sh
+  export ANDROID_HOME=/Users/<username>/Library/Android/sdk
+  export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.16.1.jdk/Contents/Home
+  export M2_HOME=/opt/homebrew/Cellar/maven/3.8.6
 
-    export PATH=$PATH:$ANDROID_HOME/emulator
-    export PATH=$PATH:$ANDROID_HOME/platform-tools
-    export PATH=$PATH:$ANDROID_HOME/tools
-    export PATH=$PATH:$ANDROID_HOME/tools/bin
-    export PATH=$PATH:$JAVA_HOME/bin
-    ```
+  export PATH=$PATH:$ANDROID_HOME/emulator
+  export PATH=$PATH:$ANDROID_HOME/platform-tools
+  export PATH=$PATH:$ANDROID_HOME/tools
+  export PATH=$PATH:$ANDROID_HOME/tools/bin
+  ```
 
 #### Command to install Appium CLI Tool in Mac
 
@@ -836,21 +842,21 @@ sudo npm install -g appium --unsafe-perm=true --allow-root
 - `Remote Path`: / (for Appium v2.0.0-beta.55), /wd/hub (for Appium 1.22.3)
 - `Desired Capabilities - Set 1`:
 
-    ```json
-    {
+  ```json
+  {
     "platformName": "Android",
     "appium:platformVersion": "12.0",
     "appium:deviceName": "Redmi Note 10 Pro",
     "appium:automationName": "UiAutomator2",
     "appium:udid": "78aab321",
     "appium:app": "/Users/deepjyoti.barman/Downloads/ApiDemos-debug.apk"
-    }
-    ```
+  }
+  ```
 
 - `Desired Capabilites - Set 2`:
 
-    ```json
-    {
+  ```json
+  {
     "platformName": "Android",
     "platformVersion": "12.0",
     "deviceName": "Redmi Note 10 Pro",
@@ -859,8 +865,8 @@ sudo npm install -g appium --unsafe-perm=true --allow-root
     "appPackage": "com.flipkart.android",
     "appActivity": "com.flipkart.android.activity.HomeFragmentHolderActivity",
     "noReset": true
-    }
-    ```
+  }
+  ```
 
 #### Fix for uiautomatorviewer2 in Mac
 
@@ -872,7 +878,7 @@ sudo npm install -g appium --unsafe-perm=true --allow-root
 
   - Java 11 supported SWT: <https://download.eclipse.org/eclipse/downloads/drops4/R-4.21-202109060500/>
   - Java 8 supported SWT: <https://archive.eclipse.org/eclipse/downloads/drops4/R-4.16-202006040540/>
-  - Site which has all different archive releases: <https://archive.eclipse.org/eclipse/downloads/>  
+  - Site which has all different archive releases: <https://archive.eclipse.org/eclipse/downloads/>
 
 - Extract the file you have downloaded (e.g. 'swt-4.21-cocoa-macosx-x86_64.zip'), open the extracted directory and rename 'swt.jar' to 'swt2.jar'.
 
@@ -900,17 +906,17 @@ sudo npm install -g appium --unsafe-perm=true --allow-root
 - If the shell is: `zsh`, open the file `.zshenv` using `vim ~/.zshenv` (create the file if not present)
 - Paste the following content in `~/.zshenv`:
 
-    ```sh
-    export ANDROID_HOME=/Users/<username>/Library/Android/sdk
-    export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.16.1.jdk/Contents/Home
-    export M2_HOME=/opt/homebrew/Cellar/maven/3.8.6
+  ```sh
+  export ANDROID_HOME=/Users/<username>/Library/Android/sdk
+  export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.16.1.jdk/Contents/Home
+  export M2_HOME=/opt/homebrew/Cellar/maven/3.8.6
 
-    export PATH=$PATH:$ANDROID_HOME/emulator
-    export PATH=$PATH:$ANDROID_HOME/platform-tools
-    export PATH=$PATH:$ANDROID_HOME/tools
-    export PATH=$PATH:$ANDROID_HOME/tools/bin
-    export PATH=$PATH:$JAVA_HOME/bin
-    ```
+  export PATH=$PATH:$ANDROID_HOME/emulator
+  export PATH=$PATH:$ANDROID_HOME/platform-tools
+  export PATH=$PATH:$ANDROID_HOME/tools
+  export PATH=$PATH:$ANDROID_HOME/tools/bin
+  export PATH=$PATH:$JAVA_HOME/bin
+  ```
 
 - Install Node.js LTS via `brew install node@18`
 - Install Appium 2.0 via `sudo npm install -g appium@next`
@@ -930,6 +936,7 @@ sudo npm install -g appium --unsafe-perm=true --allow-root
   - Build the project in Xcode and get the UiKitCatalog.app from the shortcut (dragging the app under Product to Desktop, from the shortcut you can go and get the actual app)
   - Go the root directory of the project and enter the command `npm build` and get the app inside `ios-uicatalog/UiKitCatalog/build/Release-iphonesimulator/` directory
 - Install `Appium Inspector` and set the following configuration:
+
   - `Remote Host`: 127.0.0.1 (default)
   - `Remote Port`: 4723 (default)
   - `Remote Path`: / (for Appium v2.0.0-beta.55), /wd/hub (for Appium 1.22.3)
@@ -937,12 +944,12 @@ sudo npm install -g appium --unsafe-perm=true --allow-root
 
     ```json
     {
-    "platformName": "iOS",
-    "appium:platformVersion": "15.2",
-    "appium:deviceName": "iPhone 13",
-    "appium:automationName": "XCUITest",
-    "appium:udid": "2D634EC5-CBF8-4FA7-8B57-FB221E3D66CF",
-    "appium:app": "/Users/ins667/Documents/UIKitCatalog.app"
+      "platformName": "iOS",
+      "appium:platformVersion": "15.2",
+      "appium:deviceName": "iPhone 13",
+      "appium:automationName": "XCUITest",
+      "appium:udid": "2D634EC5-CBF8-4FA7-8B57-FB221E3D66CF",
+      "appium:app": "/Users/ins667/Documents/UIKitCatalog.app"
     }
     ```
 
@@ -950,121 +957,108 @@ sudo npm install -g appium --unsafe-perm=true --allow-root
 
 ### Necessary extensions
 
-- Auto Close Tag
 - Auto Import
 - Auto Rename Tag
 - Babel JavaScript
-- Bracket Pair Colorizer 2
-- C/C++
-- C/C++ Compile Run
-- Code Runner
+- Better Comments
+- C/C++ (Optional)
+- C/C++ Compile Run (Optional)
+- Code Runner (Optional)
+- ChatGPT - EasyCode
+- ChatGPT - Genie AI
 - Code Spell Checker
+- CodeSnap
 - Color Highlight
 - CSS Peek
-- Debugger for Java
 - DotENV
 - EditorConfig for VS Code
+- ES7+ React/Redux/React-Native snippets
 - ESLint
-- Excel Viewer
-- Extension Pack for Java
-- GitLens - Git supercharged
-- Go
-- IntelliCode
+- Git Blame
+- Git Graph
+- Git History
+- Go (Optional)
+- Image Preview
+- Import Cost
+- Indent-rainbow
 - JavaScript (ES6) code snippets
-- Jupyter
-- Jupyter Keymap
-- Jupyter Notebook Renderers
-- Language Support for Java(TM) by Red Hat
-- Laravel Blade Snippets
-- Laravel Extra Intellisense
-- Laravel goto view
-- Live Sass Compiler
+- Live Sass Compiler (Optional)
 - Live Server
 - Markdown Preview Github Styling
 - markdownlint
 - Material Icon Theme
-- Maven for Java
-- Midnight Synth
-- Monokai Pro
-- Node.js Modules Intellisense
-- npm Intellisense
-- Paste and Indent
+- One Dark Pro
+- Output Calculator
 - Path Intellisense
-- Peacock
-- PHP Debug
-- PHP Extension Pack
-- PHP Intelephense
-- PHP Namespace Resolver
+- Postman
 - Prettier - Code formatter
-- Project Manager for Java
-- Pylance
-- Python
-- Sass
-- Snapcode
-- Test Runner for Java
-- Thunder Client
+- Project Manager
+- Python (Optional)
+- Quokka.js
+- Sass (Optional)
+- shell-format
+- Tabnine AI Autocomplete for Javascript, Python, TypeScript, PHP, Go, Java, Ruby & more
+- Tailwind CSS IntelliSense
+- Todo Highlight
 - Todo Tree
-- TSLint
-- Visual Studio IntelliCode
+- Turbo Console Log
+- TSLint (Optional)
 - vscode-pdf
-- WebDriverIO snippets
 
 ### Configuration for settings.json
 
 Click on the `Manage` (Screw) icon -> `Settings` (Shortcut: `Command + ,`) -> From the top right corner click on `Open Settings (JSON)`.
 
 ```json
-{   
-    "c-cpp-compile-run.c-flags": "-Wall -Wextra -O0 -std=c18",
-    "c-cpp-compile-run.cpp-flags": "-Wall -Wextra -O0 -std=c++20",
-    "code-runner.clearPreviousOutput": true,
-    "code-runner.executorMap": {
-        "typescript": "tsc"
-    },
-    "code-runner.ignoreSelection": true,
-    "code-runner.runInTerminal": true,
-    "code-runner.saveFileBeforeRun": true,
-    "code-runner.showExecutionMessage": true,
-    "color-highlight.markerType": "dot-after",
-    "cSpell.ignoreWords": [
-        "deepjyoti"
-    ],
-    "diffEditor.ignoreTrimWhitespace": false,
-    "editor.fontSize": 11,
-    "editor.suggestSelection": "first",
-    "editor.wordWrap": "on",
-    "explorer.compactFolders": false,
-    "explorer.confirmDelete": false,
-    "explorer.confirmDragAndDrop": false,
-    "files.autoSaveDelay": 5000,
-    "java.configuration.checkProjectSettingsExclusions": false,
-    "java.errors.incompleteClasspath.severity": "ignore",
-    "java.home": "/Library/Java/JavaVirtualMachines/jdk-11.0.12.jdk/Contents/Home/",
-    "java.configuration.runtimes": [
-        {
-            "name": "JavaSE-1.8",
-            "path": "/Library/Java/JavaVirtualMachines/jdk1.8.0_301.jdk/Contents/Home/"
-        },
-        {
-            "name": "JavaSE-11",
-            "path": "/Library/Java/JavaVirtualMachines/jdk-11.0.12.jdk/Contents/Home/",
-            "sources" : "/Library/Java/JavaVirtualMachines/jdk-11.0.12.jdk/Contents/Home/lib/src.zip",
-            "javadoc" : "https://docs.oracle.com/en/java/javase/11/docs/api",
-            "default":  true
-        }
-    ],
-    "prettier.singleQuote": false,
-    "prettier.tabWidth": 4,
-    "python.languageServer": "Default",
-    "python.pythonPath": "/Library/Developer/CommandLineTools/usr/bin/python3",
-    "terminal.integrated.fontFamily": "Monaco",
-    "terminal.integrated.fontSize": 11,
-    "workbench.colorTheme": "Monokai Pro (Filter Spectrum)",
-    "workbench.iconTheme": "Monokai Pro (Filter Spectrum) Icons",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "workbench.editorAssociations": {
-        "*.ipynb": "jupyter.notebook.ipynb"
-    },
+{
+  // "c-cpp-compile-run.c-flags": "-Wall -Wextra -O0 -std=c18",
+  // "c-cpp-compile-run.cpp-flags": "-Wall -Wextra -O0 -std=c++20",
+
+  // "code-runner.clearPreviousOutput": true,
+  // "code-runner.executorMap": {
+  //     "typescript": "tsc"
+  // },
+  // "code-runner.ignoreSelection": true,
+  // "code-runner.runInTerminal": true,
+  // "code-runner.saveFileBeforeRun": true,
+  // "code-runner.showExecutionMessage": true,
+
+  "color-highlight.markerType": "dot-after",
+  "cSpell.ignoreWords": ["deepjyoti"],
+
+  "diffEditor.ignoreTrimWhitespace": false,
+
+  "editor.fontSize": 11,
+  "editor.suggestSelection": "first",
+  "editor.wordWrap": "on",
+  "editor.minimap.scale": 2,
+  "editor.minimap.autohide": true,
+  "editor.minimap.renderCharacters": false,
+  "editor.fontFamily": "Cascadia Mono, Monolisa, Menlo, Monaco, 'Courier New', monospace, Consolas",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  "explorer.compactFolders": false,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 4000,
+
+  "prettier.singleQuote": false,
+  "prettier.tabWidth": 4,
+
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "One Dark Pro Mix",
+
+  "security.workspace.trust.untrustedFiles": "open",
+
+  "terminal.integrated.fontFamily": "Monaco",
+  "terminal.integrated.fontSize": 10,
+
+  "tabnine.experimentalAutoImports": true
 }
 ```
 
@@ -1112,7 +1106,7 @@ Open up 'IntelliJ IDEA' -> Click on `File` on the menu bar -> `Project Structure
 - Type 'Install Package Control', press `Enter`
 - After successful installation click on the `OK` button.
 
-__Tip__: For manual installation of the plugin visit: <https://packagecontrol.io/installation>
+**Tip**: For manual installation of the plugin visit: <https://packagecontrol.io/installation>
 
 ### Configuration for Preferences.sublime-settings.json
 
@@ -1120,15 +1114,12 @@ Open up 'Sublime Text' -> Click on `Sublime Text` on the menu bar -> `Preference
 
 ```json
 {
-    "ignored_packages":
-    [
-        "Vintage",
-    ],
-    "color_scheme": "Packages/ayu/ayu-dark.sublime-color-scheme",
-    "theme": "ayu-dark.sublime-theme",
-    "font_size": 10,
-    "spell_check": true,
-    "dictionary": "Packages/Language - English/en_US.dic",
+  "ignored_packages": ["Vintage"],
+  "color_scheme": "Packages/ayu/ayu-dark.sublime-color-scheme",
+  "theme": "ayu-dark.sublime-theme",
+  "font_size": 10,
+  "spell_check": true,
+  "dictionary": "Packages/Language - English/en_US.dic"
 }
 ```
 
@@ -1170,10 +1161,10 @@ python3-runner-repl.sublime-build:
 
 ```json
 {
-    "target": "run_existing_window_command", 
-    "id": "repl_python_run",
-    "selector": "source.python",
-    "file": "config/Python/Main.sublime-menu"
+  "target": "run_existing_window_command",
+  "id": "repl_python_run",
+  "selector": "source.python",
+  "file": "config/Python/Main.sublime-menu"
 }
 ```
 
@@ -1181,10 +1172,10 @@ python3-runner-terminal.sublime-build:
 
 ```json
 {
-    "shell_cmd": "osascript -e 'tell app \"Terminal\" to do script \"cd $file_path && python3 -u $file\"'",
-    "working_dir": "$file_path",
-    "selector": "source.python",
-    "env": {"PYTHONIOENCODING": "utf-8"}
+  "shell_cmd": "osascript -e 'tell app \"Terminal\" to do script \"cd $file_path && python3 -u $file\"'",
+  "working_dir": "$file_path",
+  "selector": "source.python",
+  "env": { "PYTHONIOENCODING": "utf-8" }
 }
 ```
 
@@ -1192,13 +1183,11 @@ python3-runner-terminus.sublime-build:
 
 ```json
 {
-    "target": "terminus_exec",
-    "cancel": "terminus_cancel_build",
-    "cmd": [
-        "python3", "-u", "$file"
-    ],
-    "working_dir": "$file_path",
-    "file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+  "target": "terminus_exec",
+  "cancel": "terminus_cancel_build",
+  "cmd": ["python3", "-u", "$file"],
+  "working_dir": "$file_path",
+  "file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)"
 }
 ```
 
@@ -1206,10 +1195,10 @@ javac-compile-run-terminus.sublime-build:
 
 ```json
 {
-    "target": "terminus_exec",
-    "cancel": "terminus_cancel_build",
-    "shell_cmd": "javac $file && java $file_base_name",
-    "working_dir": "$file_path"
+  "target": "terminus_exec",
+  "cancel": "terminus_cancel_build",
+  "shell_cmd": "javac $file && java $file_base_name",
+  "working_dir": "$file_path"
 }
 ```
 
@@ -1228,7 +1217,7 @@ javac-compile-run-terminus.sublime-build:
 - Following the above step will open up 'Keychain Access'.
 - Search for 'Charles' in the search bar.
 - Once you are able to find the certificate after the search -> Double click on the certificate -> Click on the arrow mark next to `Trust` and change the details from the dropdown as listed down below,  
-`When using this certificate`: `Always Trust`
+  `When using this certificate`: `Always Trust`
 - You will be asked to enter your computer / admin password -> `Update settings`
 - Once the changes are done close the window.
 
@@ -1247,8 +1236,8 @@ javac-compile-run-terminus.sublime-build:
 - Download the 'SSL certificate' and click on it to start the installation.
 - While installing it may ask you to setup a PIN.
 - Fill up the details as given below,  
-`Certificate Name`: `Charles Root Certificate`  
-`Used for`: `VPN and apps`
+  `Certificate Name`: `Charles Root Certificate`  
+  `Used for`: `VPN and apps`
 - Click on `OK` button.
 
 ### Enable and configure SSL Proxying Settings
@@ -1276,11 +1265,13 @@ As of macOS Sierra 10.12.1, the Caps Lock -> Escape remapping can be done native
 ### Vim modes
 
 - `Normal` mode:
+
   - Vim starts up in `Normal` mode.
   - This mode is used for navigating around the file, reading contents, go from one file to another file.
   - Switch to `Normal` mode by pressing `Esc` while you are in any other mode.
 
 - `Insert` mode:
+
   - This mode is used for entering text into vim's buffer.
   - Switch to `Insert` mode by pressing the following keys while you are in `Normal` mode:
     - `i` : Switch to the `Insert` mode and move your cursor to the left of the cursor’s current position.
@@ -1291,10 +1282,12 @@ As of macOS Sierra 10.12.1, the Caps Lock -> Escape remapping can be done native
     - `O` : Switch to the `Insert` mode and move your cursor to a newline before your cursor’s current position.
 
 - `Replace` mode:
-  - This mode allows you replace existing text by directly typing over it.  
+
+  - This mode allows you replace existing text by directly typing over it.
   - Switch to `Replace` mode by pressing `R` (`Shift + r`) while you are in `Normal` mode.
 
 - `Visual` mode:
+
   - This mode is used to make selections of text, similar to how clicking and dragging with a mouse behaves. Selecting text allows commands to apply only to the selection, such as copying, deleting, replacing, and so on.
   - Switch to `Visual` mode by pressing `v` while you are in `Normal` mode.
   - `Visual` mode has two different variants:
@@ -1315,20 +1308,20 @@ As of macOS Sierra 10.12.1, the Caps Lock -> Escape remapping can be done native
 
 #### Getting out of vim
 
-- `:q` / `:quit` : __\[COMMAND\]__ Quit vim.
-- `:q!` / `:quit!` : __\[COMMAND\]__ Quit vim without saving.
-- `:w` / `:write` : __\[COMMAND\]__ Write into a file.
-- `:w!` / `:write!` : __\[COMMAND\]__ Force write into a file even if the file has only read permission.
-- `:wq` : __\[COMMAND\]__ Write into a file and quit vim.
-- `:wq!` : __\[COMMAND\]__ Force write into a file and quit even if file has only read permission (i.e. if file does not have write permission).
-- `:x` / `:exit` : __\[COMMAND\]__ Write into a file and quit vim (similar to `:wq`, but only write if there are changes).
-- `:qa` / `:quitall` : __\[COMMAND\]__ Close all the instances/files open in vim.
-- `:qa!` / `:quitall!` : __\[COMMAND\]__ Close all the instances/files open in vim abandoning the changes.
-- `:cq` : __\[COMMAND\]__ Quit vim with an error code, so that the compiler will not compile the same file again.
-- `:wq <file-name>` : __\[COMMAND\]__ Write into the given file and quit vim (Tip: Mostly used when you open vim without giving filename as arguments initially).
-- `:<line-no-beg>,<line-no-end>wq!` : __\[COMMAND\]__ Write the text in between the line range given into a file, discarding other changes (e.g. `:5,10wq!` writes only the text from line no 5 to 10 into the file, discards other changes and exists vim).
-- `ZZ` : __\[NORMAL\]__ Write into a file and quit vim when there are changes (same as `:x`).
-- `ZQ` : __\[NORMAL\]__ Quit vim discarding changes (same as `:q!`). 
+- `:q` / `:quit` : **\[COMMAND\]** Quit vim.
+- `:q!` / `:quit!` : **\[COMMAND\]** Quit vim without saving.
+- `:w` / `:write` : **\[COMMAND\]** Write into a file.
+- `:w!` / `:write!` : **\[COMMAND\]** Force write into a file even if the file has only read permission.
+- `:wq` : **\[COMMAND\]** Write into a file and quit vim.
+- `:wq!` : **\[COMMAND\]** Force write into a file and quit even if file has only read permission (i.e. if file does not have write permission).
+- `:x` / `:exit` : **\[COMMAND\]** Write into a file and quit vim (similar to `:wq`, but only write if there are changes).
+- `:qa` / `:quitall` : **\[COMMAND\]** Close all the instances/files open in vim.
+- `:qa!` / `:quitall!` : **\[COMMAND\]** Close all the instances/files open in vim abandoning the changes.
+- `:cq` : **\[COMMAND\]** Quit vim with an error code, so that the compiler will not compile the same file again.
+- `:wq <file-name>` : **\[COMMAND\]** Write into the given file and quit vim (Tip: Mostly used when you open vim without giving filename as arguments initially).
+- `:<line-no-beg>,<line-no-end>wq!` : **\[COMMAND\]** Write the text in between the line range given into a file, discarding other changes (e.g. `:5,10wq!` writes only the text from line no 5 to 10 into the file, discards other changes and exists vim).
+- `ZZ` : **\[NORMAL\]** Write into a file and quit vim when there are changes (same as `:x`).
+- `ZQ` : **\[NORMAL\]** Quit vim discarding changes (same as `:q!`).
 
 ### Configuration for ~/.vimrc
 
@@ -1411,7 +1404,7 @@ nnoremap <silent><leader>+ :vertical resize +5<cr>
 nnoremap <silent><leader>- :vertical resize -5<cr>
 
 " General cofigs
-" Change cursor to 'blinking vertical bar' in INSERT mode 
+" Change cursor to 'blinking vertical bar' in INSERT mode
 " Change cursor to 'blinking underscore' in REPLACE mode
 " Change cursor to 'blinking block' in NORMAL mode
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
@@ -1422,7 +1415,7 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 nnoremap <leader>n :NERDTreeToggle<cr>
 nnoremap <leader>f :NERDTreeFind<space>
 
-" 'nerdtree' config 
+" 'nerdtree' config
 let g:NERDTreeIgnore = ['^node_modules$']
 
 " Start 'nerdtree' when Vim is started without file arguments
@@ -1477,6 +1470,35 @@ let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
 ```
 
+### Vim Plugin Manager installation
+
+- Vim-Plug official website: [https://github.com/junegunn/vim-plug](https://github.com/junegunn/vim-plug)
+- Once we have the above configuration for .vimrc, we can use the following command to install the plugin manager  
+   `curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim`
+- Reload .vimrc and use command `:PlugInstall` inside vim to install plugins
+
+### Vim Theme installation
+
+- Onedark theme official website: [https://github.com/joshdick/onedark.vim](https://github.com/joshdick/onedark.vim)
+- Once we have the above configuration for .vimrc, we can use the following steps to install the theme
+  - Installation via plugin manager
+  - Manual installation (recommended)
+    - Place `colors/onedark.vim` in your `~/.vim/colors/` directory
+    - Place `autoload/onedark.vim` in your `~/.vim/autoload/` directory
+
+### Vim Plugin - 'YouCompleteMe' installation
+
+- YouCompleteMe plugin official website: [https://github.com/ycm-core/YouCompleteMe](https://github.com/ycm-core/YouCompleteMe)
+- Pre-requisites: cmake, python (3.8 or later), go, java17, mono, node
+- Install `YouCompleteMe` plugin via `Vim-Plug` plugin manager
+- Use the following commands to install the plugin:
+
+  ```bash
+  cd ~/.vim/bundle/YouCompleteMe
+  python3 install.py --all
+  ```
+
 ## Shortcuts
 
 - `Command + Space` : Open up 'Spotlight Search' for searching any application, document etc. on your system or on the web.
@@ -1489,63 +1511,63 @@ let g:NERDTrimTrailingWhitespace = 1
 - `Command + Control + Q` : Lock screen.
 - `Command + H` : Hide current application.
 - `Command + Option + H` : Hide all other applications.
-- `Command + Delete` : __(Finder)__ Move selected items to bin.
-- `Command + C` : __(Finder)__ Copy the selected files and directories.
-- `Command + V` : __(Finder)__ Paste files and directories that has been copied into the current location.
-- `Command + Option + V` : __(Finder)__ Move files and directories that has been copied into the current location.
-- `Command + Down_Arrow` : __(Finder)__ Go one level inside the directory hierarchy / open up a file or directory.
-- `Command + Up_Arrow` : __(Finder)__ Go one level up in the directory hierarchy.
-- `Command + Control + T` : __(Finder)__ Add the currently open directory in the sidebar.
-- `Command + Control + S`: __(Finder)__ Show / Hide the sidebar.
-- `Command + Shift + .` : __(Finder)__ Show / Hide all the hidden files and directories.
-- `Command + S` : __(Text Editor)__ Save documents, files in text editor and IDEs.
-- `Command + Shift + Left_Arrow` : __(Text Editor)__ Select text from the cursor location to the beginning of the line.
-- `Command + Shift + Right_Arrow` : __(Text Editor)__ Select text from the cursor location to the end of the line.
-- `Delete` : __(Text Editor)__ Deletes a single character on the left of the cursor.
-- `Fn + Delete` : __(Text Editor)__ Deletes a single character on the right of the cursor.
-- `Option + Left_Arrow` : __(Text Editor)__ Move to the beginning of each word on the left.
-- `Option + Right_Arrow` : __(Text Editor)__ Move to the end of each word on the right.
-- `Control + A` : __(Terminal)__  Move cursor to the beginning of the line.
-- `Control + E` : __(Terminal)__ Move cursor to the end of the line.
-- `Esc + B` : __(Terminal)__ Move cursor one word forward.
-- `Esc + F`: __(Terminal)__  Move cursor one word backward.
-- `Control + W` : __(Terminal)__ Delete word on the left.
-- `Esc + D` : __(Terminal)__ Delete word on the right.
-- `Control + K` : __(Terminal)__ Delete all characters to the right of the cursor.
-- `Control + D` : __(Terminal)__ Delete the current character.
-- `Control + U` : __(Terminal)__ Delete entire line.
-- `Control + C` : __(Terminal)__ Cancel the current command.
-- `Control + L` : __(Terminal)__ Clear the terminal screen.
-- `Control + R` : __(Terminal)__ Search in previous commands (history).
-- `Mouse1_Double_Click` (on any text): __(iTerm2)__ Select / highlight the text in iTerm2 and copy it to clipboard.
-- `Mouse3_Click` : __(iTerm2)__ Paste the content from the clipboard in iTerm2.
-- `Command + D` : __(iTerm2)__ Split the current tab vertically with current profile.
-- `Command + Shift + D` : __(iTerm2)__ Split the current tab horizontally with current profile.
-- `Command + Option + Shift + V` : __(iTerm2)__ Split the current tab vertically with a profile of your choice.
-- `Command + Option + Shift + H` : __(iTerm2)__ Split the current tab horizontally with a profile of your choice.
-- `Command + Shift + Enter` : __(iTerm2)__ Maximize active pane.
-- `iTerm2` -> `Window` -> `Arrange split panes evenly` : __(iTerm2)__ Evenly split the panes present in current tab.
-- `Command + ]` : __(iTerm2)__ Select next pane.
-- `Command + [` : __(iTerm2)__ Select previous pane.
-- `Command + Option + Up_Arrow` : __(iTerm2)__ Select pane above.
-- `Command + Option + Down_Arrow` : __(iTerm2)__ Select pane below.
-- `Command + Option + Left_Arrow` : __(iTerm2)__ Select pane on the left.
-- `Command + Option + Right_Arrow` : __(iTerm2)__ Select pane on the right.
-- `Command + T` : __(iTerm2)__ Open a new tab.
-- `Command + Shift + ]` / `Command + Right_Arrow` : __(iTerm2)__ Select next tab.
-- `Command + Shift + [` / `Command + Left_Arrow` : __(iTerm2)__ Select previous tab.
+- `Command + Delete` : **(Finder)** Move selected items to bin.
+- `Command + C` : **(Finder)** Copy the selected files and directories.
+- `Command + V` : **(Finder)** Paste files and directories that has been copied into the current location.
+- `Command + Option + V` : **(Finder)** Move files and directories that has been copied into the current location.
+- `Command + Down_Arrow` : **(Finder)** Go one level inside the directory hierarchy / open up a file or directory.
+- `Command + Up_Arrow` : **(Finder)** Go one level up in the directory hierarchy.
+- `Command + Control + T` : **(Finder)** Add the currently open directory in the sidebar.
+- `Command + Control + S`: **(Finder)** Show / Hide the sidebar.
+- `Command + Shift + .` : **(Finder)** Show / Hide all the hidden files and directories.
+- `Command + S` : **(Text Editor)** Save documents, files in text editor and IDEs.
+- `Command + Shift + Left_Arrow` : **(Text Editor)** Select text from the cursor location to the beginning of the line.
+- `Command + Shift + Right_Arrow` : **(Text Editor)** Select text from the cursor location to the end of the line.
+- `Delete` : **(Text Editor)** Deletes a single character on the left of the cursor.
+- `Fn + Delete` : **(Text Editor)** Deletes a single character on the right of the cursor.
+- `Option + Left_Arrow` : **(Text Editor)** Move to the beginning of each word on the left.
+- `Option + Right_Arrow` : **(Text Editor)** Move to the end of each word on the right.
+- `Control + A` : **(Terminal)** Move cursor to the beginning of the line.
+- `Control + E` : **(Terminal)** Move cursor to the end of the line.
+- `Esc + B` : **(Terminal)** Move cursor one word forward.
+- `Esc + F`: **(Terminal)** Move cursor one word backward.
+- `Control + W` : **(Terminal)** Delete word on the left.
+- `Esc + D` : **(Terminal)** Delete word on the right.
+- `Control + K` : **(Terminal)** Delete all characters to the right of the cursor.
+- `Control + D` : **(Terminal)** Delete the current character.
+- `Control + U` : **(Terminal)** Delete entire line.
+- `Control + C` : **(Terminal)** Cancel the current command.
+- `Control + L` : **(Terminal)** Clear the terminal screen.
+- `Control + R` : **(Terminal)** Search in previous commands (history).
+- `Mouse1_Double_Click` (on any text): **(iTerm2)** Select / highlight the text in iTerm2 and copy it to clipboard.
+- `Mouse3_Click` : **(iTerm2)** Paste the content from the clipboard in iTerm2.
+- `Command + D` : **(iTerm2)** Split the current tab vertically with current profile.
+- `Command + Shift + D` : **(iTerm2)** Split the current tab horizontally with current profile.
+- `Command + Option + Shift + V` : **(iTerm2)** Split the current tab vertically with a profile of your choice.
+- `Command + Option + Shift + H` : **(iTerm2)** Split the current tab horizontally with a profile of your choice.
+- `Command + Shift + Enter` : **(iTerm2)** Maximize active pane.
+- `iTerm2` -> `Window` -> `Arrange split panes evenly` : **(iTerm2)** Evenly split the panes present in current tab.
+- `Command + ]` : **(iTerm2)** Select next pane.
+- `Command + [` : **(iTerm2)** Select previous pane.
+- `Command + Option + Up_Arrow` : **(iTerm2)** Select pane above.
+- `Command + Option + Down_Arrow` : **(iTerm2)** Select pane below.
+- `Command + Option + Left_Arrow` : **(iTerm2)** Select pane on the left.
+- `Command + Option + Right_Arrow` : **(iTerm2)** Select pane on the right.
+- `Command + T` : **(iTerm2)** Open a new tab.
+- `Command + Shift + ]` / `Command + Right_Arrow` : **(iTerm2)** Select next tab.
+- `Command + Shift + [` / `Command + Left_Arrow` : **(iTerm2)** Select previous tab.
 - `iTerm2` -> `Preferences` -> `Keys` -> `Navigation Shortcuts`  
-`Shortcut to select a tab`: `Option + Number`  
-`Shortcut to choose a split pane`: `Command + Number`  
-- `Option + Number-of-the-Tab` : __(iTerm2)__ Select a tab by number (with previous shortcut configuration).  
-- `Command + Number-of-the-Pane` : __(iTerm2)__ Select a pane within a tab by number (with previous shortcut configuration).
+  `Shortcut to select a tab`: `Option + Number`  
+  `Shortcut to choose a split pane`: `Command + Number`
+- `Option + Number-of-the-Tab` : **(iTerm2)** Select a tab by number (with previous shortcut configuration).
+- `Command + Number-of-the-Pane` : **(iTerm2)** Select a pane within a tab by number (with previous shortcut configuration).
 
 ## Commands
 
 - `sudo shutdown -h now` : Shuts down your system immediately.
 - `sudo shutdown -r now` : Restarts your system immediately.
 - `open .` : Open the current directory in Finder.
-- `ls > ~/Desktop/files.txt` : __(I/O Redirection)__ Redirects the output of 'ls' command to 'files.txt', overwrites the existing content if the file already exists.
-- `ls >> ~/Desktop/files.txt` : __(I/O Redirection)__ Redirects the output of 'ls' command to 'files.txt', appends to the existing content if the file already exists.
-- `ls | open -fe` : __(I/O Redirection)__ Redirects the output of 'ls' command and opens it in default text editor of the system (i.e. TextEdit).
-- `ls | pbcopy` : __(I/O Redirection)__ Redirects the output of 'ls' command to the clipboard.
+- `ls > ~/Desktop/files.txt` : **(I/O Redirection)** Redirects the output of 'ls' command to 'files.txt', overwrites the existing content if the file already exists.
+- `ls >> ~/Desktop/files.txt` : **(I/O Redirection)** Redirects the output of 'ls' command to 'files.txt', appends to the existing content if the file already exists.
+- `ls | open -fe` : **(I/O Redirection)** Redirects the output of 'ls' command and opens it in default text editor of the system (i.e. TextEdit).
+- `ls | pbcopy` : **(I/O Redirection)** Redirects the output of 'ls' command to the clipboard.
