@@ -1271,14 +1271,24 @@ javac-compile-run-terminus.sublime-build:
 ### How to install Plugins and Themes
 
 - Click on 'Discord' on the Apple menu
-- Click on Settings
-- On the left navigation bar find a section named "BETTERDISCORD"
+- Click on 'Settings'
+- On the left navigation bar find a section named 'BETTERDISCORD'
   - Click on 'Plugins'
   - On the right side click on 'Open Plugins Folder'
   - Paste all the plugins (.js) you have downloaded
   - Once the plugins are loaded, Download other required dependent plugins as well
   - Once everything is done enable all the plugins clicking on the slider next to each plugin
 - Repeat the last step clicking on 'Themes' to install custom themes
+
+### Appearance Settings
+
+- Click on 'Discord' on the Apple menu
+- Click on 'Settings'
+- On the left navigation bar find a section named 'APP SETTINGS'
+- Set the following:
+  - Chat Font Scaling: 15px
+  - Space Between Message Groups: 16px
+  - Zoom Level: 80
 
 ## Setting up Charles
 
