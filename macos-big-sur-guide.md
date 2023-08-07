@@ -963,7 +963,7 @@ sudo npm install -g appium --unsafe-perm=true --allow-root
 - Better Comments
 - C/C++ (Optional)
 - C/C++ Compile Run (Optional)
-- Code Runner (Optional)
+- Code Runner
 - ChatGPT - EasyCode
 - ChatGPT - Genie AI
 - Code Spell Checker
@@ -982,12 +982,14 @@ sudo npm install -g appium --unsafe-perm=true --allow-root
 - Import Cost
 - Indent-rainbow
 - JavaScript (ES6) code snippets
+- Language Support for Java(TM) by Red Hat
 - Live Sass Compiler (Optional)
 - Live Server
 - Markdown Preview Github Styling
 - markdownlint
 - Material Icon Theme
-- One Dark Pro
+- One Dark Darker
+- One Dark Pro Monokai Darker Theme
 - Output Calculator
 - Path Intellisense
 - Postman
@@ -1014,14 +1016,14 @@ Click on the `Manage` (Screw) icon -> `Settings` (Shortcut: `Command + ,`) -> Fr
   // "c-cpp-compile-run.c-flags": "-Wall -Wextra -O0 -std=c18",
   // "c-cpp-compile-run.cpp-flags": "-Wall -Wextra -O0 -std=c++20",
 
-  // "code-runner.clearPreviousOutput": true,
-  // "code-runner.executorMap": {
-  //     "typescript": "tsc"
-  // },
-  // "code-runner.ignoreSelection": true,
-  // "code-runner.runInTerminal": true,
-  // "code-runner.saveFileBeforeRun": true,
-  // "code-runner.showExecutionMessage": true,
+  "code-runner.clearPreviousOutput": true,
+  "code-runner.executorMap": {
+    "typescript": "tsc"
+  },
+  "code-runner.ignoreSelection": true,
+  "code-runner.runInTerminal": true,
+  "code-runner.saveFileBeforeRun": true,
+  "code-runner.showExecutionMessage": true,
 
   "color-highlight.markerType": "dot-after",
   "cSpell.ignoreWords": ["deepjyoti"],
@@ -1048,17 +1050,66 @@ Click on the `Manage` (Screw) icon -> `Settings` (Shortcut: `Command + ,`) -> Fr
   "files.autoSaveDelay": 4000,
 
   "prettier.singleQuote": false,
-  "prettier.tabWidth": 4,
+  // "prettier.tabWidth": 4,
 
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.colorTheme": "One Dark Pro Mix",
+  "workbench.colorTheme": "One Dark Pro Monokai Darker",
 
   "security.workspace.trust.untrustedFiles": "open",
 
   "terminal.integrated.fontFamily": "Monaco",
   "terminal.integrated.fontSize": 10,
 
-  "tabnine.experimentalAutoImports": true
+  "tabnine.experimentalAutoImports": true,
+
+  // Configuration for extension "Language Support for Java(TM) by Red Hat"
+  "redhat.telemetry.enabled": true,
+  "[java]": {
+    "editor.defaultFormatter": "redhat.java"
+  }
+}
+```
+
+### Create Custom User Snippets
+
+- Press `Command + Shift + P` to open up command pallete menu
+- Search and select "Snippets: Configure User Snippets"
+- Select your preffered language (i.e.Java)
+
+#### Java
+
+```json
+{
+  // Place your snippets for java here. Each snippet is defined under a snippet name and has a prefix, body and
+  // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
+  // same ids are connected.
+  // Example:
+  // "Print to console": {
+  // 	"prefix": "log",
+  // 	"body": [
+  // 		"console.log('$1');",
+  // 		"$2"
+  // 	],
+  // 	"description": "Log output to console"
+  // }
+
+  "Create Java Class": {
+    "prefix": "cjc",
+    "body": [
+      "import java.io.*;",
+      "import java.math.*;",
+      "import java.util.*;",
+      "",
+      "public class $TM_FILENAME_BASE {",
+      "    public static void main(String[] args) {",
+      "        $1",
+      "        System.out.println(${2});",
+      "    }",
+      "}"
+    ],
+    "description": "Create Java Class"
+  }
 }
 ```
 
@@ -1081,7 +1132,7 @@ Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Preferen
 - `Size`: `10`
 - `Line height`: `1.1`
 
-### Necessary plugins
+### Necessary Plugins
 
 Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Preferences` -> `Plugins`
 
@@ -1201,6 +1252,33 @@ javac-compile-run-terminus.sublime-build:
   "working_dir": "$file_path"
 }
 ```
+
+## Setting up Discord
+
+- Download Discord from the given link [https://discord.com/download](https://discord.com/download)
+- Download BetterDiscord modification from the given link: [https://betterdiscord.app/](https://betterdiscord.app/)
+
+### Plugins
+
+- [https://betterdiscord.app/plugin/ChannelTabs](https://betterdiscord.app/plugin/ChannelTabs)
+- [https://betterdiscord.app/plugin/PinDMs](https://betterdiscord.app/plugin/PinDMs)
+
+### Themes
+
+- [https://betterdiscord.app/theme/ClearVision](https://betterdiscord.app/theme/ClearVision)
+- [https://betterdiscord.app/theme/NotAnotherAnimeTheme](https://betterdiscord.app/theme/NotAnotherAnimeTheme)
+
+### How to install Plugins and Themes
+
+- Click on 'Discord' on the Apple menu
+- Click on Settings
+- On the left navigation bar find a section named "BETTERDISCORD"
+  - Click on 'Plugins'
+  - On the right side click on 'Open Plugins Folder'
+  - Paste all the plugins (.js) you have downloaded
+  - Once the plugins are loaded, Download other required dependent plugins as well
+  - Once everything is done enable all the plugins clicking on the slider next to each plugin
+- Repeat the last step clicking on 'Themes' to install custom themes
 
 ## Setting up Charles
 
