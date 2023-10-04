@@ -77,6 +77,69 @@
 - [z](https://github.com/agkozak/zsh-z) (install via `git clone https://github.com/agkozak/zsh-z.git ~/.zprezto-contrib/zsh-z`, search for the phrase 'plugins' inside .zshrc file and append the plugin name as following: `plugins=(git zsh-z)`)
 - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) (install via `git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions`, search for the phrase 'plugins' inside .zshrc file and append the plugin name as following: `plugins=(git zsh-z zsh-autosuggestions)`)
 
+## Installing Homebrew on Mac Intel and M1 chip
+
+### Command for Intel and M1 chip
+
+- `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+- Brew installation directory in Intel: /usr/local
+- Brew installation directory in M1 chip: /opt/homebrew
+
+### Essential Homebrew commands
+
+#### General commands
+
+- `brew --version` : Display the version of Homebrew.
+- `brew help` : Print help information.
+- `brew help <sub-command>` : Print help info for a brew command.
+- `brew list` : Lists all the packages installed via Homebrew.
+- `brew list <package-name>` : Lists the files and directories that got downloaded during the installation of the package.
+- `brew list --versions <package-name>` : Check the versions of package you have installed.
+- `brew switch <package-name> <version>` : Change versions for a package.
+- `brew install <package-name` : Install the given package.
+- `brew uninstall <package-name>` : Uninstall the given package.
+- `brew upgrade <package-name>` : Upgrade the given package.
+- `brew link <package-name>` : Create symbolic links for the given package.
+- `brew unlink <package-name>` : Remove symbolic links for the given package.
+
+#### Most commonly used brew commands
+
+- `brew list`
+- `brew update`
+- `brew outdated`
+- `brew upgrade`
+- `brew cleanup`
+- `brew install <package-name>`
+- `brew uninstall <package-name>`
+- `brew uninstall --ignore-dependencies <package-name>`
+- `brew link <package-name>`
+
+#### Cask commands
+
+- `brew list --cask` : List installed applications (Note: Cask commands are used for interacting with graphical applications i.e. Firefox).
+- `brew install --cask <package-name>` : Install the given package.
+- `brew uninstall --cask <package-name>` : Uninstall the given package.
+- `brew reinstall --cask <package-name>` : Reinstall the given package.
+
+#### Additional Homebrew commands
+
+- `brew info <package-name>` : Display information about the package.
+- `brew cleanup` : Remove older versions of all installed packages.
+- `brew cleanup -n` : Display all the package what will be removed (dry run).
+- `brew cleanup <package-name>` : Remove older versions of specified package.
+- `brew search <package-name>` : Perform a substring search of the package given.
+
+#### Global Homebrew commands
+
+- `brew update` : Fetch latest version of Homebrew, cask and packages installed.
+- `brew upgrade` : Upgrade all packages.
+- `brew upgrade <package-name>` : Upgrade the specified package.
+- `brew pin <package-name>` : Prevent the specified package from being upgraded.
+- `brew unpin <package-name>` : Allow the specified package to be upgraded.
+- `brew list` : List installed packages.
+- `brew outdated` : Check what is due for upgrade.
+- `brew doctor` : Check system for potential problems.
+
 ### NPM global packages
 
 - appium-doctor
@@ -92,6 +155,7 @@
 
 ### Commonly used npm commands
 
+- `npm list -g`: Lists all globally installed packages
 - `npm install -g <package-name>`: Install a package which is globally accessible
 - `npm install <package-name>`: Install a package which is accessible only in a local directory
 - `npm uninstall -g <package-name>`: Uninstall a globally accessible package
@@ -107,6 +171,55 @@
 - `npm help`: Searches npm help documentation for a specified topic. It is used whenever the user needs help to get some reference
 - `npm search <search-term>`: Searches the npm registry for packages matching the search terms
 - `npm version`: Bumps a package version
+
+## pyenv - Simple Python Version Management tool
+
+- pyenv lets you easily switch between multiple versions of Python. It's simple, unobtrusive, and follows the UNIX tradition of single-purpose tools that do one thing well.
+- Official documentation: [https://github.com/pyenv/pyenv](https://github.com/pyenv/pyenv)
+- Introduction to pyenv: [https://realpython.com/intro-to-pyenv/](https://realpython.com/intro-to-pyenv/)
+
+### Commonly used pyenv commands
+
+- `pyenv install --list`: This command lists all available python versions, you can use grep to find a specific Python version
+- `pyenv install --list | grep " 3\.[678]"`: List all the available CPython 3.6 through 3.8
+- `pyenv install 2.7.15`: This command can be used to install a specific version of Python.
+- `pyenv uninstall 2.7.15`: This command can be used to uninstall a specific version of Python.
+- `pyenv versions`: The versions command displays all currently installed Python versions
+- `pyenv version`: This command is similar to versions but only shows you the current active Python version.
+- `pyenv which python`: The which command is helpful for determining the full path to a system executable. Because pyenv works by using shims, this command allows you to see the full path to the executable pyenv is running. The output displays the full system path for pip. This can be helpful when you’ve installed command-line applications.
+
+### Installation and configuration to support multiple Python versions
+
+```bash
+# Install pyenv via brew
+brew install pyenv
+
+# Install the latest versions of python2 and python3
+pyenv install 2.7.18
+pyenv install 3.12.0
+
+# Set both python2 and python3 globally accessible
+pyenv global 2.7.18 3.12.0
+
+# Append the following line at the end of '.zshrc'/'.bashrc' file depending on your default shell
+# Note: Appending the following line may not work in '.zshenv' / '.bashenv' / '.bash_profile' etc. files
+export PATH=$(pyenv root)/shims:$PATH
+
+# Verification of configuration
+# python/python2 -> Should point to Python 2.7.18
+# python3 -> Should point to Python 3.12.0
+which python
+# /Users/deepjyoti.barman/.pyenv/shims/python
+
+which python3
+# /Users/deepjyoti.barman/.pyenv/shims/python3
+
+pyenv which python
+# /Users/deepjyoti.barman/.pyenv/versions/2.7.18/bin/python
+
+pyenv which python3
+# /Users/deepjyoti.barman/.pyenv/versions/3.12.0/bin/python3
+```
 
 ### PIP3 global packages
 
@@ -567,69 +680,6 @@ Open up 'iTerm2' -> Click on `iTerm2` in the menu bar -> `Preferences`
   end
   ```
 
-## Installing Homebrew on Mac Intel and M1 chip
-
-### Command for Intel and M1 chip
-
-- `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
-- Brew installation directory in Intel: /usr/local
-- Brew installation directory in M1 chip: /opt/homebrew
-
-### Essential Homebrew commands
-
-#### General commands
-
-- `brew --version` : Display the version of Homebrew.
-- `brew help` : Print help information.
-- `brew help <sub-command>` : Print help info for a brew command.
-- `brew list` : Lists all the packages installed via Homebrew.
-- `brew list <package-name>` : Lists the files and directories that got downloaded during the installation of the package.
-- `brew list --versions <package-name>` : Check the versions of package you have installed.
-- `brew switch <package-name> <version>` : Change versions for a package.
-- `brew install <package-name` : Install the given package.
-- `brew uninstall <package-name>` : Uninstall the given package.
-- `brew upgrade <package-name>` : Upgrade the given package.
-- `brew link <package-name>` : Create symbolic links for the given package.
-- `brew unlink <package-name>` : Remove symbolic links for the given package.
-
-#### Most commonly used brew commands
-
-- `brew list`
-- `brew update`
-- `brew outdated`
-- `brew upgrade`
-- `brew cleanup`
-- `brew install <package-name>`
-- `brew uninstall <package-name>`
-- `brew uninstall --ignore-dependencies <package-name>`
-- `brew link <package-name>`
-
-#### Cask commands
-
-- `brew list --cask` : List installed applications (Note: Cask commands are used for interacting with graphical applications i.e. Firefox).
-- `brew install --cask <package-name>` : Install the given package.
-- `brew uninstall --cask <package-name>` : Uninstall the given package.
-- `brew reinstall --cask <package-name>` : Reinstall the given package.
-
-#### Additional Homebrew commands
-
-- `brew info <package-name>` : Display information about the package.
-- `brew cleanup` : Remove older versions of all installed packages.
-- `brew cleanup -n` : Display all the package what will be removed (dry run).
-- `brew cleanup <package-name>` : Remove older versions of specified package.
-- `brew search <package-name>` : Perform a substring search of the package given.
-
-#### Global Homebrew commands
-
-- `brew update` : Fetch latest version of Homebrew, cask and packages installed.
-- `brew upgrade` : Upgrade all packages.
-- `brew upgrade <package-name>` : Upgrade the specified package.
-- `brew pin <package-name>` : Prevent the specified package from being upgraded.
-- `brew unpin <package-name>` : Allow the specified package to be upgraded.
-- `brew list` : List installed packages.
-- `brew outdated` : Check what is due for upgrade.
-- `brew doctor` : Check system for potential problems.
-
 ## Install and configure tools like Maven / JMeter / Oracle JDK etc. on Mac
 
 - Maven requires Java to execute. So we will have to first install Java and then maven into our Mac OS. Verify the JDK installation by opening the Terminal and run `java -version` command.
@@ -665,7 +715,7 @@ Open up 'iTerm2' -> Click on `iTerm2` in the menu bar -> `Preferences`
 
 ```bash
 export ALLURE_HOME=/opt/allure-2.14.0
-export ANDROID_HOME=/Users/deepjyoti.barman/Library/Android/sdk
+export ANDROID_HOME=$HOME/Library/Android/sdk
 export FZF_DEFAULT_COMMAND="fd --type=file --color=always --follow --hidden --exclude .git --exclude node_modules --exclude .m2"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS="--height 40% --layout reverse --info inline --border \
