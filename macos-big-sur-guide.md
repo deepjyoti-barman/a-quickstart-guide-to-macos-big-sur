@@ -61,6 +61,7 @@
 - python-tk@3.11 (required to access `idle3` command from Terminal) (install via `brew install python-tk@3.11`)
 - [ripgrep](https://github.com/BurntSushi/ripgrep) (install via `brew install ripgrep`)
 - Spring Tool Suite
+- Splashy (Wallpaper changing tool)
 - Sublime Text
 - sshpass
 - The Unarchiver
