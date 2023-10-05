@@ -184,10 +184,37 @@
 - `pyenv install --list`: This command lists all available python versions, you can use grep to find a specific Python version
 - `pyenv install --list | grep " 3\.[678]"`: List all the available CPython 3.6 through 3.8
 - `pyenv install 2.7.15`: This command can be used to install a specific version of Python.
+- `pyenv install -v 3.11.5`: The install command with -v flag ensures to display all the steps of installing the specified version of Python.
 - `pyenv uninstall 2.7.15`: This command can be used to uninstall a specific version of Python.
 - `pyenv versions`: The versions command displays all currently installed Python versions
 - `pyenv version`: This command is similar to versions but only shows you the current active Python version.
 - `pyenv which python`: The which command is helpful for determining the full path to a system executable. Because pyenv works by using shims, this command allows you to see the full path to the executable pyenv is running. The output displays the full system path for pip. This can be helpful when you’ve installed command-line applications.
+
+### Create Virtual Environments in VSCode
+
+#### Command-line approach
+
+- Open up the directory where you want the virtual environment to be created in Terminal
+- Type the command: `python3 -m venv <venv-directory-name>`
+- Above command will create a virtual environment with the default Python version installed on your system.
+- Alternatively if you want to create a virtual environment with a different Python version, you can use this command: `</path/to/python> -m venv <venv-directory-name>`
+- Activation and deactivation commands:
+
+  ```bash
+  python3 -m venv .venv
+  source .venv/bin/activate
+  deactivate
+  ```
+
+#### Create virtual environment using VSCode extension
+
+- Install a VSCode extension called 'Python' from marketplace
+- - Open up the directory where you want the virtual environment to be created in VSCode
+- Press `Command + Shift + P` to open up command palette
+- Search and select the option 'Python: Create Environment...'
+- Select environment type as 'venv'
+- Choose Python interpreter version
+- Virtual environment with the given Python interpreter version will be inside on the '.venv' directory
 
 ### Installation and configuration to support multiple Python versions
 
@@ -1043,6 +1070,7 @@ sudo npm install -g appium --unsafe-perm=true --allow-root
 - One Dark Pro Monokai Darker Theme
 - Output Calculator
 - Path Intellisense
+- Playwright Teste for VSCode (Optional)
 - Postman
 - Prettier - Code formatter
 - Project Manager
