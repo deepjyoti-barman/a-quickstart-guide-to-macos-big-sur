@@ -1098,6 +1098,7 @@ Click on the `Manage` (Screw) icon -> `Settings` (Shortcut: `Command + ,`) -> Fr
 
     "code-runner.clearPreviousOutput": true,
     "code-runner.executorMap": {
+        "python": "python3 -u",
         "typescript": "tsc"
     },
     "code-runner.ignoreSelection": true,
