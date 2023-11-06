@@ -1039,6 +1039,7 @@ sudo npm install -g appium --unsafe-perm=true --allow-root
 - Auto Rename Tag
 - Babel JavaScript
 - Better Comments
+- Black Formatter
 - C/C++ (Optional)
 - C/C++ Compile Run (Optional)
 - Code Runner
@@ -1092,60 +1093,73 @@ Click on the `Manage` (Screw) icon -> `Settings` (Shortcut: `Command + ,`) -> Fr
 
 ```json
 {
-  // "c-cpp-compile-run.c-flags": "-Wall -Wextra -O0 -std=c18",
-  // "c-cpp-compile-run.cpp-flags": "-Wall -Wextra -O0 -std=c++20",
+    // "c-cpp-compile-run.c-flags": "-Wall -Wextra -O0 -std=c18",
+    // "c-cpp-compile-run.cpp-flags": "-Wall -Wextra -O0 -std=c++20",
 
-  "code-runner.clearPreviousOutput": true,
-  "code-runner.executorMap": {
-    "typescript": "tsc"
-  },
-  "code-runner.ignoreSelection": true,
-  "code-runner.runInTerminal": true,
-  "code-runner.saveFileBeforeRun": true,
-  "code-runner.showExecutionMessage": true,
+    "code-runner.clearPreviousOutput": true,
+    "code-runner.executorMap": {
+        "typescript": "tsc"
+    },
+    "code-runner.ignoreSelection": true,
+    "code-runner.runInTerminal": true,
+    "code-runner.saveFileBeforeRun": true,
+    "code-runner.showExecutionMessage": true,
 
-  "color-highlight.markerType": "dot-after",
-  "cSpell.ignoreWords": ["deepjyoti"],
+    "color-highlight.markerType": "dot-after",
 
-  "diffEditor.ignoreTrimWhitespace": false,
+    "cSpell.ignoreWords": ["deepjyoti"],
 
-  "editor.fontSize": 11,
-  "editor.suggestSelection": "first",
-  "editor.wordWrap": "on",
-  "editor.minimap.scale": 2,
-  "editor.minimap.autohide": true,
-  "editor.minimap.renderCharacters": false,
-  "editor.fontFamily": "Cascadia Mono, Monolisa, Menlo, Monaco, 'Courier New', monospace, Consolas",
-  "editor.formatOnSave": true,
-  "editor.formatOnPaste": true,
-  "editor.bracketPairColorization.enabled": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "diffEditor.ignoreTrimWhitespace": false,
 
-  "explorer.compactFolders": false,
-  "explorer.confirmDelete": false,
-  "explorer.confirmDragAndDrop": false,
+    "editor.fontSize": 11,
+    "editor.suggestSelection": "first",
+    "editor.wordWrap": "on",
+    "editor.minimap.scale": 2,
+    "editor.minimap.autohide": true,
+    "editor.minimap.renderCharacters": false,
+    "editor.fontFamily": "Cascadia Mono, Monolisa, Menlo, Monaco, 'Courier New', monospace, Consolas",
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
 
-  "files.autoSave": "afterDelay",
-  "files.autoSaveDelay": 4000,
+    "explorer.compactFolders": false,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
 
-  "prettier.singleQuote": false,
-  // "prettier.tabWidth": 4,
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 4000,
 
-  "workbench.iconTheme": "material-icon-theme",
-  "workbench.colorTheme": "One Dark Pro Monokai Darker",
+    "prettier.singleQuote": false,
+    "prettier.tabWidth": 4,
 
-  "security.workspace.trust.untrustedFiles": "open",
+    "playwright.reuseBrowser": false,
 
-  "terminal.integrated.fontFamily": "Monaco",
-  "terminal.integrated.fontSize": 10,
+    "security.workspace.trust.untrustedFiles": "open",
 
-  "tabnine.experimentalAutoImports": true,
+    "terminal.integrated.fontFamily": "Monaco",
+    "terminal.integrated.fontSize": 10,
 
-  // Configuration for extension "Language Support for Java(TM) by Red Hat"
-  "redhat.telemetry.enabled": true,
-  "[java]": {
-    "editor.defaultFormatter": "redhat.java"
-  }
+    "tabnine.experimentalAutoImports": true,
+
+    "workbench.colorTheme": "One Dark Darker",
+    "workbench.iconTheme": "material-icon-theme",
+
+    // Configuration for extension "Language Support for Java(TM) by Red Hat"
+    "redhat.telemetry.enabled": true,
+    "[java]": {
+        "editor.defaultFormatter": "redhat.java"
+    },
+
+    // Configuration for extension "Black Formatter"
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "black-formatter.args": [
+        "--line-length",
+        "100",
+        "--skip-string-normalization"
+    ]
 }
 ```
 
