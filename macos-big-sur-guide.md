@@ -616,6 +616,10 @@ Open up 'iTerm2' -> Click on `iTerm2` in the menu bar -> `Preferences`
 
   # Auto-load brew as a shell environment variable at startup
   eval "$(/opt/homebrew/bin/brew shellenv)"
+
+  # Package: pyenv, node - path configurations
+  export PATH=/opt/homebrew/opt/node@20/bin:$PATH
+  export PATH=$(pyenv root)/shims:$PATH
   ```
 
 ### Fish shell and Oh-My-Fish plugin
@@ -758,11 +762,11 @@ export SSHPASS='deep@$1234'
 # Java environment variable configurations
 export JAVA8_HOME=$(/usr/libexec/java_home -v 1.8.0)
 export JAVA11_HOME=$(/usr/libexec/java_home -v 11)
-export JAVA17_HOME=$(/usr/libexec/java_home -v 17)
+export JAVA21_HOME=$(/usr/libexec/java_home -v 21)
 export JAVA_HOME=$JAVA11_HOME
 alias java8='export JAVA_HOME=$JAVA8_HOME'
 alias java11='export JAVA_HOME=$JAVA11_HOME'
-alias java17='export JAVA_HOME=$JAVA17_HOME'
+alias java21='export JAVA_HOME=$JAVA21_HOME'
 
 export PATH=$PATH:$ALLURE_HOME/bin
 export PATH=$PATH:$ANDROID_HOME/emulator
