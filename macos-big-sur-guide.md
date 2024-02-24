@@ -22,6 +22,7 @@
 - Appium Desktop
 - Brave Browser
 - [bat](https://github.com/sharkdp/bat) (install via `brew install bat`)
+- Box
 - Charles
 - cmake (install via `brew install cmake`)
 - composer (install via `brew install composer`)
@@ -33,6 +34,7 @@
 - [fd](https://github.com/sharkdp/fd) (install via `brew install fd`)
 - [fzf](https://github.com/junegunn/fzf) (install via `brew install fzf`, install key-bindings via `$(brew --prefix)/opt/fzf/install`)
 - Git
+- GitHub Desktop
 - Google Chrome
 - go (install via `brew install go`)
 - gradle (install via `brew install gradle`)
@@ -43,6 +45,7 @@
 - iTerm2
 - Java SE Development Kit 8
 - Java SE Development Kit 11
+- Java SE Development Kit 21
 - jmeter (install via `brew install jmeter`)
 - K6 (install via `brew install k6`)
 - MAMP
@@ -68,7 +71,6 @@
 - tree (install via `brew install tree`)
 - vim (install via `brew install vim` - not recommended to use the vim that comes bundled with preinstalled macOS)
 - Visual Studio Code
-- Visual Studio
 - VNC Viewer
 - Vysor
 - WPS Office
@@ -140,6 +142,12 @@
 - `brew list` : List installed packages.
 - `brew outdated` : Check what is due for upgrade.
 - `brew doctor` : Check system for potential problems.
+
+### Homebrew Installed Packages
+
+- List of packages installed via homebrew is given below:
+
+  ![brew-packages](images/brew-packages.png)
 
 ### NPM global packages
 
@@ -1046,13 +1054,14 @@ sudo npm install -g appium --unsafe-perm=true --allow-root
 - Black Formatter
 - C/C++ (Optional)
 - C/C++ Compile Run (Optional)
+- chai theme
 - Code Runner
-- ChatGPT - EasyCode
-- ChatGPT - Genie AI
 - Code Spell Checker
 - CodeSnap
 - Color Highlight
 - CSS Peek
+- Debugger for Java
+- Docker
 - DotENV
 - EditorConfig for VS Code
 - ES7+ React/Redux/React-Native snippets
@@ -1060,10 +1069,15 @@ sudo npm install -g appium --unsafe-perm=true --allow-root
 - Git Blame
 - Git Graph
 - Git History
+- GitHub Copilot
+- GitHub Copilot Chat
+- Gradle for Java
 - Go (Optional)
 - Image Preview
 - Import Cost
-- Indent-rainbow
+- indent-rainbow
+- IntelliCode
+- IntelliCode API Usage Examples
 - JavaScript (ES6) code snippets
 - Language Support for Java(TM) by Red Hat
 - Live Sass Compiler (Optional)
@@ -1071,6 +1085,8 @@ sudo npm install -g appium --unsafe-perm=true --allow-root
 - Markdown Preview Github Styling
 - markdownlint
 - Material Icon Theme
+- Maven for Java
+- MongoDB for VSCode
 - One Dark Darker
 - One Dark Pro Monokai Darker Theme
 - Output Calculator
@@ -1079,12 +1095,16 @@ sudo npm install -g appium --unsafe-perm=true --allow-root
 - Postman
 - Prettier - Code formatter
 - Project Manager
-- Python (Optional)
+- Project Manager for Java
+- Pylance
+- Python
+- Python Debugger
 - Quokka.js
 - Sass (Optional)
 - shell-format
-- Tabnine AI Autocomplete for Javascript, Python, TypeScript, PHP, Go, Java, Ruby & more
+- Spring Boot Extension Pack
 - Tailwind CSS IntelliSense
+- Test Runner for Java
 - Todo Highlight
 - Todo Tree
 - Turbo Console Log
@@ -1097,74 +1117,74 @@ Click on the `Manage` (Screw) icon -> `Settings` (Shortcut: `Command + ,`) -> Fr
 
 ```json
 {
-    // "c-cpp-compile-run.c-flags": "-Wall -Wextra -O0 -std=c18",
-    // "c-cpp-compile-run.cpp-flags": "-Wall -Wextra -O0 -std=c++20",
+  // Configuration for extension "Code Runner"
+  // "c-cpp-compile-run.c-flags": "-Wall -Wextra -O0 -std=c18",
+  // "c-cpp-compile-run.cpp-flags": "-Wall -Wextra -O0 -std=c++20",
+  "code-runner.clearPreviousOutput": true,
+  "code-runner.executorMap": {
+    "python": "python3 -u",
+    "typescript": "tsc"
+  },
+  "code-runner.ignoreSelection": true,
+  "code-runner.runInTerminal": true,
+  "code-runner.saveFileBeforeRun": true,
+  "code-runner.showExecutionMessage": true,
 
-    "code-runner.clearPreviousOutput": true,
-    "code-runner.executorMap": {
-        "python": "python3 -u",
-        "typescript": "tsc"
-    },
-    "code-runner.ignoreSelection": true,
-    "code-runner.runInTerminal": true,
-    "code-runner.saveFileBeforeRun": true,
-    "code-runner.showExecutionMessage": true,
+  "color-highlight.markerType": "dot-after",
 
-    "color-highlight.markerType": "dot-after",
+  "cSpell.ignoreWords": ["deepjyoti"],
 
-    "cSpell.ignoreWords": ["deepjyoti"],
+  "diffEditor.ignoreTrimWhitespace": false,
 
-    "diffEditor.ignoreTrimWhitespace": false,
+  "editor.fontSize": 11,
+  "editor.suggestSelection": "first",
+  "editor.wordWrap": "on",
+  "editor.minimap.scale": 2,
+  "editor.minimap.autohide": true,
+  "editor.minimap.renderCharacters": false,
+  "editor.fontFamily": "Cascadia Mono, Monolisa, Menlo, Monaco, 'Courier New', monospace, Consolas",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.inlineSuggest.showToolbar": "onHover",
+  "editor.inlineSuggest.suppressSuggestions": false,
 
-    "editor.fontSize": 11,
-    "editor.suggestSelection": "first",
-    "editor.wordWrap": "on",
-    "editor.minimap.scale": 2,
-    "editor.minimap.autohide": true,
-    "editor.minimap.renderCharacters": false,
-    "editor.fontFamily": "Cascadia Mono, Monolisa, Menlo, Monaco, 'Courier New', monospace, Consolas",
-    "editor.formatOnSave": true,
-    "editor.formatOnPaste": true,
-    "editor.bracketPairColorization.enabled": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "explorer.compactFolders": false,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
 
-    "explorer.compactFolders": false,
-    "explorer.confirmDelete": false,
-    "explorer.confirmDragAndDrop": false,
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 4000,
 
-    "files.autoSave": "afterDelay",
-    "files.autoSaveDelay": 4000,
+  "playwright.reuseBrowser": false,
 
-    "prettier.singleQuote": false,
-    "prettier.tabWidth": 4,
+  "prettier.singleQuote": false,
+  // "prettier.tabWidth": 4,
 
-    "playwright.reuseBrowser": false,
+  "security.workspace.trust.untrustedFiles": "open",
 
-    "security.workspace.trust.untrustedFiles": "open",
+  "terminal.integrated.fontFamily": "Monaco",
+  "terminal.integrated.fontSize": 10,
 
-    "terminal.integrated.fontFamily": "Monaco",
-    "terminal.integrated.fontSize": 10,
+  "workbench.colorTheme": "Dark Chai",
+  "workbench.iconTheme": "material-icon-theme",
 
-    "tabnine.experimentalAutoImports": true,
+  // Configuration for extension "Language Support for Java(TM) by Red Hat"
+  "redhat.telemetry.enabled": true,
+  "[java]": {
+    "editor.defaultFormatter": "redhat.java"
+  },
 
-    "workbench.colorTheme": "One Dark Darker",
-    "workbench.iconTheme": "material-icon-theme",
-
-    // Configuration for extension "Language Support for Java(TM) by Red Hat"
-    "redhat.telemetry.enabled": true,
-    "[java]": {
-        "editor.defaultFormatter": "redhat.java"
-    },
-
-    // Configuration for extension "Black Formatter"
-    "[python]": {
-        "editor.defaultFormatter": "ms-python.black-formatter"
-    },
-    "black-formatter.args": [
-        "--line-length",
-        "100",
-        "--skip-string-normalization"
-    ]
+  // Configuration for extension "Black Formatter"
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "black-formatter.args": [
+    "--line-length",
+    "100",
+    "--skip-string-normalization"
+  ]
 }
 ```
 
@@ -1219,8 +1239,8 @@ Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Preferen
 
 - `Theme`: `One Dark Vivid Italic`
 - Check `Use custom font`
-- `Use custom font`: `.SF NS Text`
-- `Size`: `11`
+- `Use custom font`: `.SF NS Text` (or `.AppleSystemUIFont`)
+- `Size`: `12.0`
 
 ### Configuring Editor
 
@@ -1234,18 +1254,34 @@ Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Preferen
 
 Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Preferences` -> `Plugins`
 
+- Atom Material Icons
+- CodeSnap
 - Create TestNG XML
+- Cucumber+
 - Cucumber for Java
-- ExcelReader
+- Docker
+- ExcelEditor
 - Gherkin
-- One Dark theme
+- GitHub Copilot
+- One Dark Theme
+- Package Search
+- Rainbow Brackets
+- Rainbow CSV
 - SonarLint
+
+### Enable Auto-Import
+
+Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Preferences` -> `Editor` -> `General` -> `Auto Import`
+
+- Check `Add unambiguous imports on the fly`
+- Check `Optimize imports on the fly`
 
 ### Changing Java SDK in a project
 
 Open up 'IntelliJ IDEA' -> Click on `File` on the menu bar -> `Project Structure` -> `Project`
 
-- `Project SDK`: Click on the dropdown and select any `Detected SDKs`. If the SDK of your choice is not available then select the `+ Add SDK` option and choose any option feasible to you. You may either go for `Download JDK` option or Click on `JDK` and locate a JDK from your local system.
+- Under `Platform Settings` -> `SDK` -> Delete the old / unused / uninstalled SDK's and then click on the `+` button to add new SDK -> Provide a `Name` and the `JDK home path`
+- Under `Project Settings` -> `Project` -> `SDK`: Click on the dropdown and select any `Detected SDKs`. If the SDK of your choice is not available then select the `+ Add SDK` option and choose any option feasible to you. You may either go for `Download JDK` option or Click on `JDK` and locate a JDK from your local system.
 
 ## Setting up Sublime Text
 
