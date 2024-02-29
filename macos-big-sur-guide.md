@@ -52,16 +52,18 @@
 - maven (install via `brew install maven`)
 - Microsoft Teams
 - [mongodb-community](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/) (install via the following commands: `brew tap mongodb/brew`, `brew update`, `brew install mongodb-community`)
-- [Node.js](https://nodejs.org/en/download/) (install via `brew install node@18`) (alternatively, download the .pkg file for macOS and upgrade via the following commands: `sudo npm cache clean -f`, `sudo npm install -g n`, `sudo n stable`)
+- nvm (install via `brew install nvm`)
+- [Node.js](https://nodejs.org/en/download/) (recommended: install via nvm, `nvm install --lts`) (alternative installation via brew, `brew install node@20`) (alternatively, download the .pkg file for macOS and upgrade via the following commands: `sudo npm cache clean -f`, `sudo npm install -g n`, `sudo n stable`)
 - [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish)
 - [Oh My Zsh](https://ohmyz.sh/)
 - [peco](https://github.com/peco/peco) (install via `brew install peco`)
 - php (install via `brew install php`)
+- Pieces for Developers
 - Postgres.app
 - Postman
 - PyCharm Community Edition
-- python@3.11 (install via `brew install python@3.11`) (to access from command prompt create a symbolic link using `brew link --overwrite python@3.11`, another command to do the same is `ln -s /opt/homebrew/Cellar/python@3.10/3.10.4/bin/python3 /opt/homebrew/bin/`)
-- python-tk@3.11 (required to access `idle3` command from Terminal) (install via `brew install python-tk@3.11`)
+- python@3.12 (recommended: install via pyenv, `pyenv install 3.12.2; pyenv global 3.12.2`) (alternative installation via brew, `brew install python@3.12`) (to access python from terminal create a symbolic link using `brew link --overwrite python@3.12`, another command to do the same is via creating the symbolic link using `ln -s /opt/homebrew/Cellar/python@3.12/3.12.2/bin/python3 /opt/homebrew/bin/`)
+- python-tk@3.12 (required to access `idle3` command from Terminal) (install via `brew install python-tk@3.12`)
 - [ripgrep](https://github.com/BurntSushi/ripgrep) (install via `brew install ripgrep`)
 - Spring Tool Suite
 - Splashy (Wallpaper changing tool)
@@ -147,7 +149,64 @@
 
 - List of packages installed via homebrew is given below:
 
-  ![brew-packages](images/brew-packages.png)
+  ![brew-packages](resources/brew-packages.png)
+
+## nvm - Node Version Manager
+
+nvm (Node Version Manager) is a tool that allows you to install and manage multiple versions of Node.js on your Mac. nvm is a version manager for node.js, designed to be installed per-user, and invoked per-shell.
+
+### Commonly used nvm commands
+
+- Check the version of nvm installed:  
+  `nvm -v`  
+  `nvm --version`
+- Install the latest version of Node.js:  
+  `nvm install node`  
+  `nvm install latest`
+- Install the LTS version of Node.js:  
+  `nvm install --lts`
+- View a list of all the remotely available Node.js versions that we can install with nvm:  
+  `nvm ls-remote`  
+  `nvm list-remote`
+- View a list of all the locally available Node.js versions that we can use:  
+  `nvm ls`  
+  `nvm list`
+- Install a specific version of Node.js, such as version 20:  
+  `nvm install 20`
+- Once the desired version of Node.js is installed, you can use it by running the following command:  
+  `nvm use 16` (Use the given version)  
+  `nvm use --lts` (Use the LTS version)  
+  `nvm use latest` (Use the latest version)  
+  `nvm use node` (Use the latest version)
+- Set the default version: If you want to use a specific version of Node.js by default, you can set it as the default version using the following command:  
+  `nvm alias default 20`
+- To uninstall a specific Node.js version, run:  
+  `nvm uninstall 14.18.1`
+
+### Installation and configuration of nvm and Node.js
+
+```bash
+# Install nvm via brew
+brew install nvm
+
+# If your system already has a Node.js installed, uninstall it first. If Node.js is installed node via Homebrew, uninstall using the following commands:
+brew uninstall --ignore-dependencies node
+brew uninstall --force node
+
+# Add nvm to your shell profile: To make nvm available every time you open a new terminal window, you will need to add the following lines to your shell profile (e.g., ~/.bash_profile or ~/.zshrc):
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
+# Verify nvm installation and check the version
+nvm --version
+
+# Install and use the LTS version of Node.js
+nvm install --lts
+
+# Verify Node.js installation and check the version
+node --version
+npm --version
+```
 
 ### NPM global packages
 
@@ -232,10 +291,10 @@ brew install pyenv
 
 # Install the latest versions of python2 and python3
 pyenv install 2.7.18
-pyenv install 3.12.0
+pyenv install 3.12.2
 
 # Set both python2 and python3 globally accessible
-pyenv global 2.7.18 3.12.0
+pyenv global 2.7.18 3.12.2
 
 # Append the following line at the end of '.zshrc'/'.bashrc' file depending on your default shell
 # Note: Appending the following line may not work in '.zshenv' / '.bashenv' / '.bash_profile' etc. files
@@ -625,9 +684,12 @@ Open up 'iTerm2' -> Click on `iTerm2` in the menu bar -> `Preferences`
   # Auto-load brew as a shell environment variable at startup
   eval "$(/opt/homebrew/bin/brew shellenv)"
 
-  # Package: pyenv, node - path configurations
-  export PATH=/opt/homebrew/opt/node@20/bin:$PATH
+  # Path configuration | Package: pyenv
   export PATH=$(pyenv root)/shims:$PATH
+
+  # Path configuration | Package: nvm
+  export NVM_DIR=~/.nvm
+  source $(brew --prefix nvm)/nvm.sh
   ```
 
 ### Fish shell and Oh-My-Fish plugin
@@ -1091,6 +1153,8 @@ sudo npm install -g appium --unsafe-perm=true --allow-root
 - One Dark Pro Monokai Darker Theme
 - Output Calculator
 - Path Intellisense
+- Peacock
+- Pieces for VS Code
 - Playwright Teste for VSCode (Optional)
 - Postman
 - Prettier - Code formatter
@@ -1263,8 +1327,10 @@ Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Preferen
 - ExcelEditor
 - Gherkin
 - GitHub Copilot
+- Indent Rainbow
 - One Dark Theme
 - Package Search
+- Pieces for Save, Search, Share and Reuse Code Snippets
 - Rainbow Brackets
 - Rainbow CSV
 - SonarLint
