@@ -1318,6 +1318,7 @@ Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Preferen
 
 Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Preferences` -> `Plugins`
 
+- AiXcoder Code Completer
 - Atom Material Icons
 - CodeSnap
 - Create TestNG XML
@@ -1325,15 +1326,19 @@ Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Preferen
 - Cucumber for Java
 - Docker
 - ExcelEditor
+- GenerateAllSetter
 - Gherkin
 - GitHub Copilot
 - Indent Rainbow
+- Maven Helper
 - One Dark Theme
 - Package Search
 - Pieces for Save, Search, Share and Reuse Code Snippets
 - Rainbow Brackets
 - Rainbow CSV
 - SonarLint
+- Spring Boot Helper (Paid) / Spring Boot Assistant (Free)
+- Spring Initializer
 
 ### Enable Auto-Import
 
