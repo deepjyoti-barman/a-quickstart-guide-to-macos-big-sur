@@ -79,7 +79,7 @@
 - wget (install via `brew install wget`)
 - XCode
 - Zoom
-- [z](https://github.com/agkozak/zsh-z) (install via `git clone https://github.com/agkozak/zsh-z.git ~/.zprezto-contrib/zsh-z`, search for the phrase 'plugins' inside .zshrc file and append the plugin name as following: `plugins=(git zsh-z)`)
+- [z](https://github.com/agkozak/zsh-z) (install via `git clone https://github.com/agkozak/zsh-z ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-z`, search for the phrase 'plugins' inside .zshrc file and append the plugin name as following: `plugins=(git zsh-z)`)
 - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) (install via `git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions`, search for the phrase 'plugins' inside .zshrc file and append the plugin name as following: `plugins=(git zsh-z zsh-autosuggestions)`)
 
 ## Installing Homebrew on Mac Intel and M1 chip
