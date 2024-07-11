@@ -19,14 +19,15 @@
 - Apache JMeter
 - Apache Maven
 - AppCleaner
-- Appium Desktop
+- Appium Inspector
 - Brave Browser
 - [bat](https://github.com/sharkdp/bat) (install via `brew install bat`)
-- Box
+- Box (Optional)
 - Charles
 - cmake (install via `brew install cmake`)
 - composer (install via `brew install composer`)
 - DBeaver Community Edition
+- Discord
 - Docker Desktop
 - exa: [exa-official](https://the.exa.website/), [exa-github](https://github.com/ogham/exa) (install via `brew install exa`)
 - Firefox Browser
@@ -48,9 +49,13 @@
 - Java SE Development Kit 21
 - jmeter (install via `brew install jmeter`)
 - K6 (install via `brew install k6`)
-- MAMP
 - maven (install via `brew install maven`)
+- MeetInOne
+- Microsoft Excel
+- Microsoft OneNote
+- Microsoft PowerPoint
 - Microsoft Teams
+- Microsoft Word
 - [mongodb-community](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/) (install via the following commands: `brew tap mongodb/brew`, `brew update`, `brew install mongodb-community`)
 - nvm (install via `brew install nvm`)
 - [Node.js](https://nodejs.org/en/download/) (recommended: install via nvm, `nvm install --lts`) (alternative installation via brew, `brew install node@20`) (alternatively, download the .pkg file for macOS and upgrade via the following commands: `sudo npm cache clean -f`, `sudo npm install -g n`, `sudo n stable`)
@@ -77,8 +82,11 @@
 - Vysor
 - WPS Office
 - wget (install via `brew install wget`)
+- XAMPP
 - XCode
-- Zoom
+- Warp
+- WhatsApp
+- Zoom.us
 - [z](https://github.com/agkozak/zsh-z) (install via `git clone https://github.com/agkozak/zsh-z ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-z`, search for the phrase 'plugins' inside .zshrc file and append the plugin name as following: `plugins=(git zsh-z)`)
 - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) (install via `git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions`, search for the phrase 'plugins' inside .zshrc file and append the plugin name as following: `plugins=(git zsh-z zsh-autosuggestions)`)
 
@@ -1109,6 +1117,7 @@ sudo npm install -g appium --unsafe-perm=true --allow-root
 
 ### Necessary extensions
 
+- \[Deprecated\] Browser Preview
 - Auto Import
 - Auto Rename Tag
 - Babel JavaScript
@@ -1152,6 +1161,7 @@ sudo npm install -g appium --unsafe-perm=true --allow-root
 - One Dark Darker
 - One Dark Pro Monokai Darker Theme
 - Output Calculator
+- PHP
 - Path Intellisense
 - Peacock
 - Pieces for VS Code
@@ -1169,11 +1179,14 @@ sudo npm install -g appium --unsafe-perm=true --allow-root
 - Spring Boot Extension Pack
 - Tailwind CSS IntelliSense
 - Test Runner for Java
+- Thunder Client (Optional)
 - Todo Highlight
 - Todo Tree
 - Turbo Console Log
 - TSLint (Optional)
 - vscode-pdf
+- vscode-pets
+- vscode-random
 
 ### Configuration for settings.json
 
@@ -1314,7 +1327,7 @@ Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Preferen
 - `Size`: `10`
 - `Line height`: `1.1`
 
-### Necessary Plugins
+### Necessary Plugins for IntelliJ
 
 Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Preferences` -> `Plugins`
 
@@ -1326,7 +1339,6 @@ Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Preferen
 - Cucumber for Java
 - Docker
 - ExcelEditor
-- GenerateAllSetter
 - Gherkin
 - GitHub Copilot
 - Indent Rainbow
@@ -1338,7 +1350,7 @@ Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Preferen
 - Rainbow CSV
 - SonarLint
 - Spring Boot Helper (Paid) / Spring Boot Assistant (Free)
-- Spring Initializer
+- Spring Initializer (Paid)
 
 ### Enable Auto-Import
 
@@ -1353,6 +1365,23 @@ Open up 'IntelliJ IDEA' -> Click on `File` on the menu bar -> `Project Structure
 
 - Under `Platform Settings` -> `SDK` -> Delete the old / unused / uninstalled SDK's and then click on the `+` button to add new SDK -> Provide a `Name` and the `JDK home path`
 - Under `Project Settings` -> `Project` -> `SDK`: Click on the dropdown and select any `Detected SDKs`. If the SDK of your choice is not available then select the `+ Add SDK` option and choose any option feasible to you. You may either go for `Download JDK` option or Click on `JDK` and locate a JDK from your local system.
+
+## Setting up PyCharm IDEA
+
+### Necessary Plugins for PyCharm
+
+Open up 'PyCharm IDEA' -> Click on `PyCharm IDEA` on the menu bar -> `Preferences` -> `Plugins`
+
+- Atom Materials Icons
+- Cyan Light Theme (Optional)
+- Docker
+- ExcelEditor
+- GitHub Copilot
+- One Dark Theme
+- Rainbow Brackets
+- Rainbow CSV
+- SonarLint
+- VSCode Theme
 
 ## Setting up Sublime Text
 
