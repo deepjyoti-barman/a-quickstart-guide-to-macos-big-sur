@@ -20,6 +20,7 @@
 - Apache Maven
 - AppCleaner
 - Appium Inspector
+- Apple Configurator 2
 - Brave Browser
 - [bat](https://github.com/sharkdp/bat) (install via `brew install bat`)
 - Box (Optional)
