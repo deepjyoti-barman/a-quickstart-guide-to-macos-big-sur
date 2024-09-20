@@ -1315,7 +1315,7 @@ Click on the `Manage` (Screw) icon -> `Settings` (Shortcut: `Command + ,`) -> Fr
 
 Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Preferences` -> `Appearance`
 
-- `Theme`: `One Dark Vivid Italic`
+- `Theme`: `VSCode Dark`
 - Check `Use custom font`
 - `Use custom font`: `.SF NS Text` (or `.AppleSystemUIFont`)
 - `Size`: `12.0`
@@ -1324,8 +1324,16 @@ Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Preferen
 
 Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Preferences` -> `Editor` -> `Font`
 
+#### First Setup
+
 - `Font`: `Monospaced`
 - `Size`: `10`
+- `Line height`: `1.1`
+
+#### Second Setup
+
+- `Font`: `Cascadia Mono`
+- `Size`: `11`
 - `Line height`: `1.1`
 
 ### Necessary Plugins for IntelliJ
@@ -1339,19 +1347,21 @@ Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Preferen
 - Cucumber+
 - Cucumber for Java
 - Docker
-- ExcelEditor
+- ExcelReader
 - Gherkin
 - GitHub Copilot
 - Indent Rainbow
+- Lombok
 - Maven Helper
 - One Dark Theme
 - Package Search
 - Pieces for Save, Search, Share and Reuse Code Snippets
-- Rainbow Brackets
+- Rainbow Brackets Lite
 - Rainbow CSV
 - SonarLint
 - Spring Boot Helper (Paid) / Spring Boot Assistant (Free)
 - Spring Initializer (Paid)
+- VSCode Theme
 
 ### Enable Auto-Import
 
