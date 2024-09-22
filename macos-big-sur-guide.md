@@ -1350,13 +1350,14 @@ Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Preferen
 - ExcelReader
 - Gherkin
 - GitHub Copilot
+- HighlightBracketPair
 - Indent Rainbow
 - Lombok
 - Maven Helper
 - One Dark Theme
 - Package Search
 - Pieces for Save, Search, Share and Reuse Code Snippets
-- Rainbow Brackets Lite
+- Rainbow Brackets
 - Rainbow CSV
 - SonarLint
 - Spring Boot Helper (Paid) / Spring Boot Assistant (Free)
