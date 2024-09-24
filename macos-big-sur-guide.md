@@ -12,8 +12,8 @@
 
 ### General installations and homebrew packages
 
-- [ag](https://www.cyberciti.biz/open-source/command-line-hacks/ag-supercharge-string-search-through-directory-hierarchy/) (install via `brew install the_silver_searcher`) (This tool required as a dependency for peco plugin)
 - Adobe Acrobat Reader
+- [Aerospike Tools](https://download.aerospike.com/artifacts/aerospike-tools/9.2.1/)
 - Android Studio
 - AnyDesk
 - Apache JMeter
@@ -21,9 +21,11 @@
 - AppCleaner
 - Appium Inspector
 - Apple Configurator 2
+- [ag](https://www.cyberciti.biz/open-source/command-line-hacks/ag-supercharge-string-search-through-directory-hierarchy/) (install via `brew install the_silver_searcher`) (This tool required as a dependency for peco plugin)
+- allure (install via `brew install allure`)
 - Brave Browser
-- [bat](https://github.com/sharkdp/bat) (install via `brew install bat`)
 - Box (Optional)
+- [bat](https://github.com/sharkdp/bat) (install via `brew install bat`)
 - Charles
 - cmake (install via `brew install cmake`)
 - composer (install via `brew install composer`)
@@ -38,9 +40,9 @@
 - Git
 - GitHub Desktop
 - Google Chrome
+- Grammarly for Safari
 - go (install via `brew install go`)
 - gradle (install via `brew install gradle`)
-- Grammarly for Safari
 - groovy (install via `brew install groovy`)
 - Homebrew
 - IntelliJ IDEA Community Edition
@@ -50,24 +52,24 @@
 - Java SE Development Kit 21
 - jmeter (install via `brew install jmeter`)
 - K6 (install via `brew install k6`)
-- maven (install via `brew install maven`)
 - MeetInOne
 - Microsoft Excel
 - Microsoft OneNote
 - Microsoft PowerPoint
 - Microsoft Teams
 - Microsoft Word
+- maven (install via `brew install maven`)
 - [mongodb-community](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/) (install via the following commands: `brew tap mongodb/brew`, `brew update`, `brew install mongodb-community`)
-- nvm (install via `brew install nvm`)
 - [Node.js](https://nodejs.org/en/download/) (recommended: install via nvm, `nvm install --lts`) (alternative installation via brew, `brew install node@20`) (alternatively, download the .pkg file for macOS and upgrade via the following commands: `sudo npm cache clean -f`, `sudo npm install -g n`, `sudo n stable`)
+- nvm (install via `brew install nvm`)
 - [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish)
 - [Oh My Zsh](https://ohmyz.sh/)
-- [peco](https://github.com/peco/peco) (install via `brew install peco`)
-- php (install via `brew install php`)
-- Pieces for Developers
 - Postgres.app
+- Pieces for Developers
 - Postman
 - PyCharm Community Edition
+- [peco](https://github.com/peco/peco) (install via `brew install peco`)
+- php (install via `brew install php`)
 - python@3.12 (recommended: install via pyenv, `pyenv install 3.12.2; pyenv global 3.12.2`) (alternative installation via brew, `brew install python@3.12`) (to access python from terminal create a symbolic link using `brew link --overwrite python@3.12`, another command to do the same is via creating the symbolic link using `ln -s /opt/homebrew/Cellar/python@3.12/3.12.2/bin/python3 /opt/homebrew/bin/`)
 - python-tk@3.12 (required to access `idle3` command from Terminal) (install via `brew install python-tk@3.12`)
 - [ripgrep](https://github.com/BurntSushi/ripgrep) (install via `brew install ripgrep`)
@@ -77,10 +79,10 @@
 - sshpass
 - The Unarchiver
 - tree (install via `brew install tree`)
-- vim (install via `brew install vim` - not recommended to use the vim that comes bundled with preinstalled macOS)
 - Visual Studio Code
 - VNC Viewer
 - Vysor
+- vim (install via `brew install vim` - not recommended to use the vim that comes bundled with preinstalled macOS)
 - WPS Office
 - wget (install via `brew install wget`)
 - XAMPP
@@ -98,6 +100,12 @@
 - `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 - Brew installation directory in Intel: /usr/local
 - Brew installation directory in M1 chip: /opt/homebrew
+- Add `brew` to your shell profile: To make `brew` available every time you open a new terminal window, you will need to add the following lines to your shell profile (e.g., ~/.bash_profile or ~/.zshrc):
+
+  ```bash
+  # Auto-load brew as a shell environment variable at startup
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+  ```
 
 ### Essential Homebrew commands
 
@@ -472,10 +480,11 @@ Open up 'Terminal' -> Click on `Terminal` in the menu bar -> `Preferences`
 
 ### Install Powerline and Nerd fonts
 
-- Powerline fonts GitHub page: [powerline/fonts](https://github.com/powerline/fonts)
-- Nerd fonts official website: [NerdFonts](https://www.nerdfonts.com/)
-- Nerd fonts GitHub page: [ryanoasis/nerd-fonts](https://github.com/ryanoasis/nerd-fonts)
-- Installation guide for all Powerline fonts:
+- **Powerline** fonts GitHub page: [powerline/fonts](https://github.com/powerline/fonts)
+- **Nerd Fonts** official website: [NerdFonts](https://www.nerdfonts.com/)
+- **Nerd Fonts** GitHub page: [ryanoasis/nerd-fonts](https://github.com/ryanoasis/nerd-fonts)
+- **Cascadia Code** fonts GitHub page: [microsoft/cascadia-code](https://github.com/microsoft/cascadia-code)
+- Installation guide for all **Powerline** fonts:
 
   ```sh
   # clone
@@ -488,13 +497,23 @@ Open up 'Terminal' -> Click on `Terminal` in the menu bar -> `Preferences`
   rm -rf fonts
   ```
 
-- Un-installation guide for all Powerline fonts:
+- Un-installation guide for all **Powerline** fonts:
   - Run ./uninstall.sh to uninstall all Powerline Fonts.
-- Installation guide for 'Hack Nerd Font':
+- Installation guide for **Hack Nerd Font**:
 
   ```sh
   brew tap homebrew/cask-fonts
   brew install --cask font-hack-nerd-font
+  ```
+
+- Installation guide for **Cascadia Code** fonts:
+
+  ```bash
+  brew tap homebrew/cask-fonts   # Optional step
+  brew install --cask font-cascadia-code
+  brew install --cask font-cascadia-code-pl
+  brew install --cask font-cascadia-mono
+  brew install --cask font-cascadia-mono-pl
   ```
 
 - Note: this installation is required to support sign and symbols present in oh-my-zsh / oh-my-fish themes.
@@ -513,14 +532,15 @@ Open up 'iTerm2' -> Click on `iTerm2` in the menu bar -> `Preferences`
    - (Optional) `Send text at start`: `sshpass -e ssh deepjb@192.168.30.15`
 2. Text Tab:
    - Check `Blinking Cursor`.
-   - Set `Font` as the following:  
-     `Hack Nerd Font Mono` `Regular` `10` `100` `110`
+   - Set `Font` as the one of the following:  
+     `Hack Nerd Font Mono` `Regular` `10` `100` `110`  
+     `MesloLGF NF` `Regular` `10` `100` `110`
    - Check `Anti-aliased`
    - Uncheck `Draw bold text in bold font`
 3. Window Tab:
    - `Transparency`: `17` (Press `Command + U` to set transparency level to 0)
    - `Blending`: `50`
-   - `Settings for New Windows`:
+   - `Settings for New Windows`:  
      `Columns`: `200`, `Rows`: `55`
 
 #### Keys Tab
@@ -1210,11 +1230,11 @@ Click on the `Manage` (Screw) icon -> `Settings` (Shortcut: `Command + ,`) -> Fr
 
   "color-highlight.markerType": "dot-after",
 
-  "cSpell.ignoreWords": ["deepjyoti"],
+  "cSpell.ignoreWords": ["deepjyoti", "pytest"],
 
   "diffEditor.ignoreTrimWhitespace": false,
 
-  "editor.fontSize": 11,
+  "editor.fontSize": 12,
   "editor.suggestSelection": "first",
   "editor.wordWrap": "on",
   "editor.minimap.scale": 2,
@@ -1227,6 +1247,9 @@ Click on the `Manage` (Screw) icon -> `Settings` (Shortcut: `Command + ,`) -> Fr
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.inlineSuggest.showToolbar": "onHover",
   "editor.inlineSuggest.suppressSuggestions": false,
+  "[ignore]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
 
   "explorer.compactFolders": false,
   "explorer.confirmDelete": false,
@@ -1235,6 +1258,13 @@ Click on the `Manage` (Screw) icon -> `Settings` (Shortcut: `Command + ,`) -> Fr
   "files.autoSave": "afterDelay",
   "files.autoSaveDelay": 4000,
 
+  "github.copilot.editor.enableAutoCompletions": true,
+
+  "liveServer.settings.donotShowInfoMsg": true,
+
+  "pieces.cloudCapabilities": "Blended",
+  "pieces.telemetry": true,
+
   "playwright.reuseBrowser": false,
 
   "prettier.singleQuote": false,
@@ -1242,11 +1272,12 @@ Click on the `Manage` (Screw) icon -> `Settings` (Shortcut: `Command + ,`) -> Fr
 
   "security.workspace.trust.untrustedFiles": "open",
 
-  "terminal.integrated.fontFamily": "Monaco",
+  "terminal.integrated.fontFamily": "MesloLGS NF, Monaco",
   "terminal.integrated.fontSize": 10,
 
   "workbench.colorTheme": "Dark Chai",
   "workbench.iconTheme": "material-icon-theme",
+  "workbench.sideBar.location": "right",
 
   // Configuration for extension "Language Support for Java(TM) by Red Hat"
   "redhat.telemetry.enabled": true,
@@ -1340,7 +1371,7 @@ Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Preferen
 
 Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Preferences` -> `Plugins`
 
-- AiXcoder Code Completer
+- AiXcoder Code Completer (Optional)
 - Atom Material Icons
 - CodeSnap
 - Create TestNG XML
