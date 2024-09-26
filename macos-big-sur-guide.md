@@ -37,16 +37,16 @@
 - [Fish Shell](https://fishshell.com/) (install via `brew install fish`)
 - [fd](https://github.com/sharkdp/fd) (install via `brew install fd`)
 - [fzf](https://github.com/junegunn/fzf) (install via `brew install fzf`, install key-bindings via `$(brew --prefix)/opt/fzf/install`)
-- Git
 - GitHub Desktop
 - Google Chrome
 - Grammarly for Safari
+- git (install via `brew install git`)
 - go (install via `brew install go`)
 - gradle (install via `brew install gradle`)
 - groovy (install via `brew install groovy`)
 - Homebrew
 - IntelliJ IDEA Community Edition
-- iTerm2
+- iTerm2 (install via `brew install --cask iterm2`)
 - Java SE Development Kit 8
 - Java SE Development Kit 11
 - Java SE Development Kit 21
@@ -470,11 +470,12 @@ Open up 'Terminal' -> Click on `Terminal` in the menu bar -> `Preferences`
 - Select the `Profiles` tab
   1. `Text` tab
      - Select profile `Pro` and click on `Default` button
+     - Check `Antialias text`
      - Check `Blink Cursor`
      - Click on `Colors and Effects` -> `Opacity`: `80%`
      - Click on `Change` button next to `Font` -> `Line Spacing`: `1.1`
   2. `Window` tab
-     - `Columns`: `170`, `Rows`: `40`
+     - `Columns`: `200`, `Rows`: `61`
 
 ## iTerm2 configuration
 
@@ -516,62 +517,16 @@ Open up 'Terminal' -> Click on `Terminal` in the menu bar -> `Preferences`
   brew install --cask font-cascadia-mono-pl
   ```
 
+- Installation guide for **Meslo Nerd** fonts:
+
+  - NOTE: If you are installing the theme [PowerLevel10K](https://github.com/romkatv/powerlevel10k) via oh-my-zsh then direct installation via the following approach is not required, the same font can be installed while installing the theme.
+
+  ```bash
+  brew tap homebrew/cask-fonts    # Optional
+  brew install font-meslo-lg-nerd-font
+  ```
+
 - Note: this installation is required to support sign and symbols present in oh-my-zsh / oh-my-fish themes.
-
-### General configuration
-
-Open up 'iTerm2' -> Click on `iTerm2` in the menu bar -> `Preferences`
-
-#### Profiles Tab
-
-1. General Tab:
-   - Click on `+` icon to create a profile.
-   - `Name`: `Deepjyoti`
-   - `Title`: `Profile: Name (Job + Args)`
-   - Select the newly created profile -> Click on `Other Actions` -> `Set  as Default`
-   - (Optional) `Send text at start`: `sshpass -e ssh deepjb@192.168.30.15`
-2. Text Tab:
-   - Check `Blinking Cursor`.
-   - Set `Font` as the one of the following:  
-     `Hack Nerd Font Mono` `Regular` `10` `100` `110`  
-     `MesloLGF NF` `Regular` `10` `100` `110`
-   - Check `Anti-aliased`
-   - Uncheck `Draw bold text in bold font`
-3. Window Tab:
-   - `Transparency`: `17` (Press `Command + U` to set transparency level to 0)
-   - `Blending`: `50`
-   - `Settings for New Windows`:  
-     `Columns`: `200`, `Rows`: `55`
-
-#### Keys Tab
-
-- Click on `Navigation Shortcuts` and change the settings as the following:
-  - `Shortcut to activate a window`: `Option + Command + Number`
-  - `Shortcut to select a tab`: `Option + Number`
-  - `Shortcut to choose a split pane`: `Command + Number`
-
-### Install a colorscheme for iTerm2
-
-- Pay a visit to [Iterm2-color-schemes](https://iterm2colorschemes.com).
-- Search and click on `Monokai Remastered` colorscheme.
-- Save the configuration in a file and name it 'monokai-remastered.itermcolors'.
-- Open up 'iTerm2' -> Click on `iTerm2` in the menu bar -> `Preferences` -> `Profiles`
-- Click on 'Colors' tab.
-- Click on the `Color Presents...` dropdown -> `Import`
-- Choose the 'monokai-remastered.itermcolors' file from your local system.
-- Select the theme.
-- Close the `Preferences` dialog box.
-- **Resources**: The 'monokai-remastered.itermcolors' colorscheme file has been added in this repository.
-
-### Some important iTerm2 shortcuts
-
-- Split Horizontally with Current Profile: `Command + Shift + D`
-- Split Vertically with Current Profile: `Command + D`
-- Split Horizontally with Custom Profile: `Command + Option + Shift + H`
-- Split Vertically with Custom Profile: `Command + Option + Shift + V`
-- Switch Tabs: `Control + Number`
-- Switch Split Panes: `Command + Number`
-- Close Split Pane/Tab: `Command + W`
 
 ### Oh-My-Zsh plugin
 
@@ -598,8 +553,73 @@ Open up 'iTerm2' -> Click on `iTerm2` in the menu bar -> `Preferences`
   - [External Themes](https://github.com/ohmyzsh/ohmyzsh/wiki/External-themes)
 - Current theme and legacy theme names can be directly used inside .zshrc as `ZSH_THEME="agnoster"` and it will work fine.
 - For external themes you need to download the theme, extract the .zip file, copy the .zsh-theme file inside `~/.oh-my-zsh/custom/themes` directory and then the name can be used inside .zshrc file.
-- **Resources**: The 'passion.zsh-theme' theme file has been added in this repository. Before you use this theme install 'coreutils' via `brew install coreutils` command.
-  It is necessary as the theme needs gdate utility as its dependency which is available in this package.
+- **Resources**: The 'passion.zsh-theme' theme file has been added in this repository. Before you use this theme install 'coreutils' via `brew install coreutils` command. It is necessary as the theme needs gdate utility as its dependency which is available in this package.
+- Our preferred theme is **PowerLevel10K**:
+
+  - Visit the GitHub page of [PowerLevel10K](https://github.com/romkatv/powerlevel10k) for more information.
+  - For the installation steps you can visit [PowerLevel10K - Installation](https://github.com/romkatv/powerlevel10k?tab=readme-ov-file#installation) or enter the following command:  
+    `git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k`
+  - Now that it’s installed, open the ”~/.zshrc” file with your preferred editor and change the value of “ZSH_THEME” as shown below:  
+    `ZSH_THEME="powerlevel10k/powerlevel10k"`
+  - To reflect this change on your terminal, restart **iTerm2** or run this command:  
+    `source ~/.zshrc`
+  - Install Meslo Nerd Font:  
+    When the prompt for installing the font appears press `y` and quit **iTerm2**.
+  - **Optional**: Update VSCode terminal font by opening settings.json in VSCode and adding or altering the following key-value pair:  
+    `"terminal.integrated.fontFamily": "MesloLGS NF"`
+  - Configure PowerLevel10K:
+    - Restart **iTerm2** and you should now be seeing the PowerLevel10K configuration process. If you don’t, run the following command:  
+      `p10k configure`
+  - Follow the instructions for the PowerLevel10K configuration to make your terminal look as desired:
+
+    ```h
+    Diamond: Press 'y'
+    Lock: Press 'y'
+    Debian Logo: Press 'y' (or) Pointer check: Press 'y'
+    Icon Check: Press 'y'
+    Prompt Style: Select 'Rainbow'
+    Character Set: Select 'Unicode'
+    Current Time: Select '12 hour format'
+    Prompt Separators: Select 'Angled'
+    Prompt Head: Select 'Sharp'
+    Prompt Tails: Select 'Round' (or) 'Blurred'
+    Prompt Height: Select 'Two lines'
+    Prompt Connection: Select 'solid'
+    Prompt Frame: Select 'Full'
+    Connection and Frame: Select 'Dark'
+    Prompt Spacing: Select 'Sparse'
+    Icons: Select 'Many icons'
+    Prompt Flow: Select 'Concise'
+    Enable Transient Prompt?: Choose 'No'
+    Instant Prompt Mode: Select 'Verbose'
+    Overwrite ~/.p10k.zsh?: Choose 'Yes'
+    ```
+
+#### Plugin installation (omz)
+
+- Plugin: `zsh-z`
+
+  - Github page: [zsh-z](https://github.com/agkozak/zsh-z)
+  - Installation with Oh-my-zsh: [zsh-z#installation](https://github.com/agkozak/zsh-z?tab=readme-ov-file#for-oh-my-zsh-users)
+
+- Plugin: `zsh-autosuggestions`
+
+  - Github page: [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+  - Installation with Oh-my-zsh: [zsh-autosuggestions#installation](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh)
+  - Command:  
+    `git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions`
+
+- Plugin: `zsh-syntax-highlighting`
+
+  - Github page: [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+  - Installation with Oh-my-zsh: [zsh-syntax-highlighting#installation](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh)
+  - Command:  
+    `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting`
+
+- Open the **~/.zshrc** file in your desired editor and modify the plugins line to what you see below:  
+  `plugins=(git z zsh-autosuggestions zsh-syntax-highlighting web-search sublime)`
+- Load these new plugins by running:  
+  `source ~/.zshrc`
 
 #### Complete Configuration (omz)
 
@@ -616,8 +636,7 @@ Open up 'iTerm2' -> Click on `iTerm2` in the menu bar -> `Preferences`
   # load a random theme each time oh-my-zsh is loaded, in which case,
   # to know which specific one was loaded, run: echo $RANDOM_THEME
   # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-  # ZSH_THEME="pygmalion"
-  ZSH_THEME="passion"
+  ZSH_THEME="powerlevel10k/powerlevel10k"
 
   # Set list of themes to pick from when loading at random
   # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -680,7 +699,14 @@ Open up 'iTerm2' -> Click on `iTerm2` in the menu bar -> `Preferences`
   # Custom plugins may be added to $ZSH_CUSTOM/plugins/
   # Example format: plugins=(rails git textmate ruby lighthouse)
   # Add wisely, as too many plugins slow down shell startup.
-  plugins=(git zsh-z zsh-autosuggestions)
+  plugins=(
+    git
+    z
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+    web-search
+    sublime
+  )
 
   source $ZSH/oh-my-zsh.sh
 
@@ -719,9 +745,74 @@ Open up 'iTerm2' -> Click on `iTerm2` in the menu bar -> `Preferences`
   # Path configuration | Package: nvm
   export NVM_DIR=~/.nvm
   source $(brew --prefix nvm)/nvm.sh
+
+  # To customize prompt, run 'p10k configure' or edit ~/.p10k.zsh.
+  [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
   ```
 
-### Fish shell and Oh-My-Fish plugin
+### Install a colorscheme for iTerm2
+
+- Colorscheme 1: **Monokai Remastered**
+  - Pay a visit to [Iterm2-color-schemes](https://iterm2colorschemes.com).
+  - Search and click on `Monokai Remastered` colorscheme.
+  - Save the configuration in a file and name it 'monokai-remastered.itermcolors'.
+- Colorscheme 2: **Coolnight**
+  - Github page: [Coolnight.itermcolors](https://github.com/josean-dev/dev-environment-files/blob/main/coolnight.itermcolors)
+  - Download the colorscheme by running the following command (to **Downloads** directory):  
+    `curl https://raw.githubusercontent.com/josean-dev/dev-environment-files/main/coolnight.itermcolors --output ~/Downloads/coolnight.itermcolors`
+- Open up **iTerm** -> Click on `iTerm2` in the menu bar -> `Preferences` -> `Profiles`
+- Click on **Colors** tab.
+- Click on the `Color Presents...` dropdown -> Click on `Import`
+- Choose the `coolnight.itermcolors` file from your **Downloads** directory.
+- Click on the `Color Presents...` dropdown once again and select the new colorscheme.
+- In **Colors** tab click on the `Foreground` color and drag the color selecting pointer to white color i.e.`#ffffff`.
+- Close the `Preferences` dialog box.
+- **Resources**: The `coolnight.itermcolor` colorscheme file has been added in this repository.
+
+### General configuration
+
+Open up 'iTerm2' -> Click on `iTerm2` in the menu bar -> `Preferences`
+
+#### Profiles Tab
+
+1. General Tab:
+   - Click on `+` icon to create a profile.
+   - `Name`: `Deepjyoti`
+   - `Title`: `Profile: Name (Job + Args)`
+   - Select the newly created profile -> Click on `Other Actions` -> `Set  as Default`
+   - (Optional) `Send text at start`: `sshpass -e ssh deepjb@192.168.30.15`
+2. Text Tab:
+   - Check `Blinking Cursor`.
+   - Set `Font` as the one of the following:  
+     `Hack Nerd Font Mono` `Regular` `10` `100` `110`  
+     `MesloLGF NF` `Regular` `10` `100` `110`
+   - Check `Anti-aliased`
+   - Check `Draw bold text in bold font`
+   - Check `Use built-in Powerline glyphs`
+3. Window Tab:
+   - `Transparency`: `17` (Press `Command + U` to set transparency level to 0)
+   - `Blending`: `50`
+   - `Settings for New Windows`:  
+     `Columns`: `200`, `Rows`: `61`
+
+#### Keys Tab
+
+- Click on `Navigation Shortcuts` and change the settings as the following:
+  - `Shortcut to activate a window`: `Option + Command + Number`
+  - `Shortcut to select a tab`: `Option + Number`
+  - `Shortcut to choose a split pane`: `Command + Number`
+
+### Some important iTerm2 shortcuts
+
+- Split Horizontally with Current Profile: `Command + Shift + D`
+- Split Vertically with Current Profile: `Command + D`
+- Split Horizontally with Custom Profile: `Command + Option + Shift + H`
+- Split Vertically with Custom Profile: `Command + Option + Shift + V`
+- Switch Tabs: `Control + Number`
+- Switch Split Panes: `Command + Number`
+- Close Split Pane/Tab: `Command + W`
+
+### Fish shell and Oh-My-Fish plugin (Optional)
 
 #### Installation (Fish shell)
 
@@ -1667,9 +1758,11 @@ As of macOS Sierra 10.12.1, the Caps Lock -> Escape remapping can be done native
   - Command mode has a wide variety of commands and can do things that normal mode can’t do as easily.
   - Switch to `Command` mode by pressing `:` while you are in `Normal` mode.
 
-### Configuring vim like a real power user
+### Vim key-strokes guide
 
-### Vim shortcuts
+#### Cheatsheets
+
+- To read the vim essenstials cheatsheet visit: [Josean - Vim Essenstials Cheatsheet](https://www.josean.com/posts/vim-essentials-cheatsheet)
 
 #### Getting out of vim
 
@@ -1688,7 +1781,9 @@ As of macOS Sierra 10.12.1, the Caps Lock -> Escape remapping can be done native
 - `ZZ` : **\[NORMAL\]** Write into a file and quit vim when there are changes (same as `:x`).
 - `ZQ` : **\[NORMAL\]** Quit vim discarding changes (same as `:q!`).
 
-### Configuration for ~/.vimrc
+### Configuring vim like a real power user
+
+#### Configuration for ~/.vimrc
 
 ```vim
 set nocompatible                " Disable compatibility with vi which can cause unexpected issues.
@@ -1704,6 +1799,7 @@ let g:lightline = {
   \ }
 highlight Normal guibg=NONE ctermbg=NONE
 
+set mouse=a                     " Enable mouse support for cursor movements within vim
 set noshowmode                  " Don't show what mode we're currently editing in
 set showcmd                     " Show partial command you type in the last line of the screen
 set laststatus=2                " 0, 1 or 2; when to use a status line for the last window
@@ -1835,32 +1931,38 @@ let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
 ```
 
-### Vim Plugin Manager installation
+#### Vim Plugin Manager installation
 
-- Vim-Plug official website: [https://github.com/junegunn/vim-plug](https://github.com/junegunn/vim-plug)
-- Once we have the above configuration for .vimrc, we can use the following command to install the plugin manager  
-   `curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim`
+- Vim-Plug official website: [vim-plug](https://github.com/junegunn/vim-plug)
+- Installation: [vim-plug#installation](https://github.com/junegunn/vim-plug?tab=readme-ov-file#unix)
+- Once we have the above configuration for .vimrc, we can use the following command to install the plugin manager:
+
+  ```bash
+   curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  ```
+
 - Reload .vimrc and use command `:PlugInstall` inside vim to install plugins
 
-### Vim Theme installation
+#### Vim Theme installation
 
-- Onedark theme official website: [https://github.com/joshdick/onedark.vim](https://github.com/joshdick/onedark.vim)
+- Onedark theme official website: [onedark.vim](https://github.com/joshdick/onedark.vim)
 - Once we have the above configuration for .vimrc, we can use the following steps to install the theme
   - Installation via plugin manager
   - Manual installation (recommended)
     - Place `colors/onedark.vim` in your `~/.vim/colors/` directory
     - Place `autoload/onedark.vim` in your `~/.vim/autoload/` directory
 
-### Vim Plugin - 'YouCompleteMe' installation
+#### Vim Plugin - 'YouCompleteMe' installation
 
-- YouCompleteMe plugin official website: [https://github.com/ycm-core/YouCompleteMe](https://github.com/ycm-core/YouCompleteMe)
-- Pre-requisites: cmake, python (3.8 or later), go, java17, mono, node
+- YouCompleteMe plugin official website: [YouCompleteMe](https://github.com/ycm-core/YouCompleteMe)
+- Pre-requisites: cmake, python (3.8 or later), go, java17+ (should be directly accessible via command line), mono, node
+- Installation guide: [YouCompleteMe#installation](https://github.com/ycm-core/YouCompleteMe?tab=readme-ov-file#macos)
 - Install `YouCompleteMe` plugin via `Vim-Plug` plugin manager
 - Use the following commands to install the plugin:
 
   ```bash
-  cd ~/.vim/bundle/YouCompleteMe
+  cd ~/.vim/plugged/YouCompleteMe
   python3 install.py --all
   ```
 
