@@ -27,11 +27,12 @@
 - Box (Optional)
 - [bat](https://github.com/sharkdp/bat) (install via `brew install bat`)
 - Charles
+- [ChatGPT for Desktop](https://openai.com/chatgpt/download/)
+- [Claude](https://claude.ai/download)
 - cmake (install via `brew install cmake`)
 - composer (install via `brew install composer`)
 - DBeaver Community Edition
 - Discord
-- Docker Desktop
 - exa: [exa-official](https://the.exa.website/), [exa-github](https://github.com/ogham/exa) (install via `brew install exa`)
 - Firefox Browser
 - [Fish Shell](https://fishshell.com/) (install via `brew install fish`)
@@ -52,6 +53,7 @@
 - Java SE Development Kit 21
 - jmeter (install via `brew install jmeter`)
 - K6 (install via `brew install k6`)
+- [LM Studio](https://lmstudio.ai/download) (You can install different LLMs locally via this)
 - MeetInOne
 - Microsoft Excel
 - Microsoft OneNote
@@ -64,6 +66,8 @@
 - nvm (install via `brew install nvm`)
 - [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish)
 - [Oh My Zsh](https://ohmyz.sh/)
+- OrbStack
+- [Ollama](https://ollama.com/download) (You can install different LLMs locally via this)
 - Postgres.app
 - Pieces for Developers
 - Postman
@@ -75,6 +79,7 @@
 - [ripgrep](https://github.com/BurntSushi/ripgrep) (install via `brew install ripgrep`)
 - Spring Tool Suite
 - Splashy (Wallpaper changing tool)
+- Studio 3T Community Edition
 - Sublime Text
 - sshpass
 - The Unarchiver
@@ -89,6 +94,7 @@
 - XCode
 - Warp
 - WhatsApp
+- Zed
 - Zoom.us
 - [z](https://github.com/agkozak/zsh-z) (install via `git clone https://github.com/agkozak/zsh-z ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-z`, search for the phrase 'plugins' inside .zshrc file and append the plugin name as following: `plugins=(git zsh-z)`)
 - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) (install via `git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions`, search for the phrase 'plugins' inside .zshrc file and append the plugin name as following: `plugins=(git zsh-z zsh-autosuggestions)`)
@@ -1244,11 +1250,13 @@ sudo npm install -g appium --unsafe-perm=true --allow-root
 - Color Highlight
 - CSS Peek
 - Debugger for Java
-- Docker
 - DotENV
 - EditorConfig for VS Code
+- Error Lens
 - ES7+ React/Redux/React-Native snippets
 - ESLint
+- Extension Pack for Java
+- Feature Syntax Highlight and Snippets (Cucumber/Gherkin)
 - Git Blame
 - Git Graph
 - Git History
@@ -1269,7 +1277,6 @@ sudo npm install -g appium --unsafe-perm=true --allow-root
 - markdownlint
 - Material Icon Theme
 - Maven for Java
-- MongoDB for VSCode
 - One Dark Darker
 - One Dark Pro Monokai Darker Theme
 - Output Calculator
@@ -1277,8 +1284,8 @@ sudo npm install -g appium --unsafe-perm=true --allow-root
 - Path Intellisense
 - Peacock
 - Pieces for VS Code
-- Playwright Teste for VSCode (Optional)
-- Postman
+- Playwright Tests for VSCode
+- Postman (Optional)
 - Prettier - Code formatter
 - Project Manager
 - Project Manager for Java
@@ -1325,8 +1332,9 @@ Click on the `Manage` (Screw) icon -> `Settings` (Shortcut: `Command + ,`) -> Fr
 
   "diffEditor.ignoreTrimWhitespace": false,
 
-  "editor.fontSize": 12,
+  "editor.fontSize": 14,
   "editor.suggestSelection": "first",
+  "editor.rulers": [100],
   "editor.wordWrap": "on",
   "editor.minimap.scale": 2,
   "editor.minimap.autohide": true,
@@ -1355,10 +1363,11 @@ Click on the `Manage` (Screw) icon -> `Settings` (Shortcut: `Command + ,`) -> Fr
 
   "pieces.cloudCapabilities": "Blended",
   "pieces.telemetry": true,
+  "pieces.OS.launchOnStartup": "Yes",
 
   "playwright.reuseBrowser": false,
 
-  "prettier.singleQuote": false,
+  // "prettier.singleQuote": false,
   // "prettier.tabWidth": 4,
 
   "security.workspace.trust.untrustedFiles": "open",
@@ -1366,9 +1375,8 @@ Click on the `Manage` (Screw) icon -> `Settings` (Shortcut: `Command + ,`) -> Fr
   "terminal.integrated.fontFamily": "MesloLGS NF, Monaco",
   "terminal.integrated.fontSize": 10,
 
-  "workbench.colorTheme": "Dark Chai",
+  "workbench.colorTheme": "One Dark Pro Monokai Darker",
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.sideBar.location": "right",
 
   // Configuration for extension "Language Support for Java(TM) by Red Hat"
   "redhat.telemetry.enabled": true,
@@ -1379,6 +1387,42 @@ Click on the `Manage` (Screw) icon -> `Settings` (Shortcut: `Command + ,`) -> Fr
   // Configuration for extension "Black Formatter"
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+
+  // Configuration for extension "Prettier - Code formatter" for JavaScript
+  "[javascript]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "prettier.singleQuote": true,
+    "prettier.tabWidth": 2,
+    "prettier.useTabs": false,
+    "prettier.printWidth": 80,
+    "prettier.semi": true
+  },
+
+  // Configuration for extension "Prettier - Code formatter" for React
+  "[javascriptreact]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "prettier.singleQuote": true,
+    "prettier.tabWidth": 2,
+    "prettier.useTabs": false,
+    "prettier.printWidth": 80,
+    "prettier.semi": true
+  },
+
+  // Configuration for extension "Prettier - Code formatter" for JSON
+  "[json]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "prettier.singleQuote": false,
+    "prettier.tabWidth": 2,
+    "prettier.useTabs": false,
+    "prettier.printWidth": 80,
+    "prettier.semi": true
   },
   "black-formatter.args": [
     "--line-length",
