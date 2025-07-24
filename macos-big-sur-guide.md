@@ -508,20 +508,40 @@ Open up 'Terminal' -> Click on `Terminal` in the menu bar -> `Preferences`
   - Run ./uninstall.sh to uninstall all Powerline Fonts.
 - Installation guide for **Hack Nerd Font**:
 
-  ```sh
-  brew tap homebrew/cask-fonts
-  brew install --cask font-hack-nerd-font
-  ```
+  - Deprecated:
+
+    ```sh
+    brew tap homebrew/cask-fonts
+    brew install --cask font-hack-nerd-font
+    ```
+
+  - New:
+
+    ```sh
+    brew list --cask # to see installed fonts
+    brew search nerd-font # search for available Nerd Fonts
+    brew install font-hack-nerd-font --cask  # to install the specific font
+    brew uninstall font-hack-nerd-font--cask # to remove the specific font
+    brew upgrade --cask # to update fonts
+    ```
 
 - Installation guide for **Cascadia Code** fonts:
 
-  ```bash
-  brew tap homebrew/cask-fonts   # Optional step
-  brew install --cask font-cascadia-code
-  brew install --cask font-cascadia-code-pl
-  brew install --cask font-cascadia-mono
-  brew install --cask font-cascadia-mono-pl
-  ```
+  - Old:
+
+    ```sh
+    brew tap homebrew/cask-fonts
+    brew install --cask font-cascadia-code
+    brew install --cask font-cascadia-code-pl
+    brew install --cask font-cascadia-mono
+    brew install --cask font-cascadia-mono-pl
+    ```
+
+  - New:
+
+    ```sh
+    brew install font-cascadia-code font-cascadia-code-pl font-cascadia-mono font-cascadia-mono-pl --cask
+    ```
 
 - Installation guide for **Meslo Nerd** fonts:
 
@@ -1248,8 +1268,10 @@ sudo npm install -g appium --unsafe-perm=true --allow-root
 - Code Spell Checker
 - CodeSnap
 - Color Highlight
+- Container Tools
 - CSS Peek
 - Debugger for Java
+- Docker
 - DotENV
 - EditorConfig for VS Code
 - Error Lens
@@ -1428,6 +1450,48 @@ Click on the `Manage` (Screw) icon -> `Settings` (Shortcut: `Command + ,`) -> Fr
     "--line-length",
     "100",
     "--skip-string-normalization"
+  ],
+  "peacock.favoriteColors": [
+    {
+      "name": "Angular Red",
+      "value": "#dd0531"
+    },
+    {
+      "name": "Azure Blue",
+      "value": "#007fff"
+    },
+    {
+      "name": "JavaScript Yellow",
+      "value": "#f9e64f"
+    },
+    {
+      "name": "Mandalorian Blue",
+      "value": "#1857a4"
+    },
+    {
+      "name": "Node Green",
+      "value": "#215732"
+    },
+    {
+      "name": "React Blue",
+      "value": "#61dafb"
+    },
+    {
+      "name": "Something Different",
+      "value": "#832561"
+    },
+    {
+      "name": "Svelte Orange",
+      "value": "#ff3d00"
+    },
+    {
+      "name": "Vue Green",
+      "value": "#42b883"
+    },
+    {
+      "name": "Bluish White",
+      "value": "#b6d6f7"
+    }
   ]
 }
 ```
