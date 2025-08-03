@@ -29,6 +29,7 @@
 - Charles
 - [ChatGPT for Desktop](https://openai.com/chatgpt/download/)
 - [Claude](https://claude.ai/download)
+- [Cursor](https://cursor.com/)
 - cmake (install via `brew install cmake`)
 - composer (install via `brew install composer`)
 - DBeaver Community Edition
@@ -69,7 +70,6 @@
 - OrbStack
 - [Ollama](https://ollama.com/download) (You can install different LLMs locally via this)
 - Postgres.app
-- Pieces for Developers
 - Postman
 - PyCharm Community Edition
 - [peco](https://github.com/peco/peco) (install via `brew install peco`)
@@ -231,7 +231,7 @@ node --version
 npm --version
 ```
 
-### NPM global packages
+## NPM global packages
 
 - appium-doctor
 - appium
@@ -244,24 +244,296 @@ npm --version
 - npm
 - typescript
 
-### Commonly used npm commands
+## NPM Commands Cheatsheet
 
-- `npm list -g`: Lists all globally installed packages
-- `npm install -g <package-name>`: Install a package which is globally accessible
-- `npm install <package-name>`: Install a package which is accessible only in a local directory
-- `npm uninstall -g <package-name>`: Uninstall a globally accessible package
-- `npm uninstall <package-name>`: Uninstall a locally (within a directory) accessible package
-- `npm update -g <package-name>`: Updates the globally accessible package. Package name is optional. If no package is given then it updates all the globally accessible packages
-- `npm update <package-name>`: This command updates the specified package. Package name is optional. If no package is specified then it updates all the packages in the specified location
-- `npm -g outdated`: Checks the registry if any (or specified) globally accessible package is outdated. It prints a list of all packages which are outdated
-- `npm doctor`: Checks our environment so that our npm installation has what it needs to manage our JavaScript packages
-- `npm init`: Creates a package.json file in our directory. It basically asks some questions and finally creates a package.json file in the current project directory
-- `npm start`: Runs a command that is defined in the start property in the scripts. If not defined it will run the node server.js command
-- `npm build`: It is used to build a package
-- `npm -g ls` / `npm -g list`: Lists all the globally installed packages as well as their dependencies
-- `npm help`: Searches npm help documentation for a specified topic. It is used whenever the user needs help to get some reference
-- `npm search <search-term>`: Searches the npm registry for packages matching the search terms
-- `npm version`: Bumps a package version
+### Initialization Commands
+
+1. **Initialize a New Project**  
+   Creates a new `package.json` file interactively:
+
+   ```bash
+   npm init
+   ```
+
+   Quickly create a default `package.json` file:
+
+   ```bash
+   npm init -y
+   ```
+
+### Installation Commands
+
+1. **Install Dependencies**  
+   Installs all dependencies listed in `package.json`:
+
+   ```bash
+   npm install
+   ```
+
+2. **Install a Specific Package**  
+   Installs a package and adds it to `dependencies` in `package.json`:
+
+   ```bash
+   npm install <package-name>
+   ```
+
+3. **Install a Package as Dev Dependency**  
+   Installs a package and adds it to `devDependencies` in `package.json`:
+
+   ```bash
+   npm install <package-name> --save-dev
+   ```
+
+4. **Install a Global Package**  
+   Installs a package which is accessible globally (available system-wide):
+
+   ```bash
+   npm install -g <package-name>
+   ```
+
+### Update Commands
+
+1. **Update All Dependencies**  
+   Updates dependencies to the latest versions allowed by `package.json`:
+
+   ```bash
+   npm update
+   ```
+
+   Updates all globally accessible packages to latest version:
+
+   ```bash
+   npm update -g
+   ```
+
+2. **Update a Specific Package**  
+   Updates a package to its latest version:
+
+   ```bash
+   npm install <package-name>@latest
+   ```
+
+   ```bash
+   npm update <package-name>
+   ```
+
+   Updates a globally accessible package to latest version:
+
+   ```bash
+   npm install -g <package-name>@latest
+   ```
+
+   ```bash
+   npm update -g <package-name>
+   ```
+
+3. **Check and Update Dependencies with `npm-check-updates`**  
+   Check for outdated dependencies:
+
+   ```bash
+   npx ncu
+   ```
+
+   Update dependencies in `package.json`:
+
+   ```bash
+   npx ncu -u && npm install
+   ```
+
+### Remove Packages
+
+1. **Uninstall a Package**  
+   Removes a package from `node_modules` and `package.json`:
+
+   ```bash
+   npm uninstall <package-name>
+   ```
+
+2. **Uninstall a Global Package**  
+   Removes a globally accessible package:
+
+   ```bash
+   npm uninstall -g <package-name>
+   ```
+
+### Search Commands
+
+1. **Search a Package**  
+   Looks for packages in the npm registry that match your search term (Note: The -g flag is used for global operations like installing or updating packages, but npm search only searches the npm registry and does not support the -g flag):
+
+   ```bash
+   npm search express
+   ```
+
+### Run Scripts
+
+1. **Run a Script**  
+   Runs a script defined in the `scripts` section of `package.json` (e.g., `start`, `test`):
+
+   ```bash
+   npm run <script-name>
+   ```
+
+   Example:
+
+   ```bash
+   npm run start
+   ```
+
+2. **Shortcut for Default Scripts**  
+   Runs the start script defined in package.json, defaulting to node server.js if no script is provided:
+
+   ```bash
+   npm start
+   ```
+
+   Runs the test script defined in package.json to execute automated tests (if not defined running npm test will result in an error message):
+
+   ```bash
+   npm test
+   ```
+
+   Compiles and bundles your project using the build script defined in package.json (if not defined running npm test will result in an error message):
+
+   ```bash
+   npm build
+   ```
+
+### View Packages
+
+1. **List Installed Packages**  
+   Lists all installed dependencies in the project:
+
+   ```bash
+   npm list
+   ```
+
+   Show only top-level dependencies:
+
+   ```bash
+   npm list --depth=0
+   ```
+
+   Lists all globally accessible packages:
+
+   ```bash
+   npm list -g
+   ```
+
+   ```bash
+   npm ls -g
+   ```
+
+2. **Check Outdated Packages**  
+   Lists all outdated dependencies in the project (if any):
+
+   ```bash
+   npm outdated
+   ```
+
+   List all globally accessible outdated packages (if any):
+
+   ```bash
+   npm outdated -g
+   ```
+
+### Cache Management
+
+1. **Clear Cache**  
+   Clears the NPM cache:
+
+   ```bash
+   npm cache clean --force
+   ```
+
+2. **Verify Cache**  
+   Validates the integrity of the cache:
+
+   ```bash
+   npm cache verify
+   ```
+
+### Audit and Security
+
+1. **Audit Dependencies**  
+   Checks for security vulnerabilities in dependencies:
+
+   ```bash
+   npm audit
+   ```
+
+2. **Fix Security Issues**  
+   Automatically attempts to fix vulnerabilities:
+
+   ```bash
+   npm audit fix
+   ```
+
+### Miscellaneous
+
+1. **Check NPM Version**  
+   Shows the installed version of NPM:
+
+   ```bash
+   npm -v
+   ```
+
+2. **Health Check**  
+   Checks your environment and installation for potential issues with npm and Node.js:
+
+   ```bash
+   npm doctor
+   ```
+
+3. **Display Documentation**  
+   Displays documentation and usage information for npm commands and topics:
+
+   ```bash
+   npm help
+   ```
+
+4. **Rebuild Dependencies**  
+   Rebuilds all dependencies:
+
+   ```bash
+   npm rebuild
+   ```
+
+5. **Prune Unused Packages**  
+   Removes extraneous packages from `node_modules`:
+
+   ```bash
+   npm prune
+   ```
+
+6. **Run a Package Without Installing Globally**  
+   Runs a package temporarily without globally installing it:
+
+   ```bash
+   npx <package-name>
+   ```
+
+7. **Troubleshoot Versioning Issues**
+
+   Displays the versions of npm, Node.js, and various dependencies used by Node.js (Note: This command provides a summary of the runtime environment and libraries bundled with your Node.js installation, helping you verify compatibility and troubleshoot issues):
+
+   ```bash
+   npm version
+   ```
+
+8. **Upgrade Version of Project**
+
+   Bumps the version number of your project in package.json and creates a new commit with the updated version:
+
+   ```bash
+   npm version <new-version>
+   ```
+
+   Example: The following command updates the version in your package.json to 1.2.0 and creates a new commit with the change.
+
+   ```bash
+   npm version 1.2.0
+   ```
 
 ## pyenv - Simple Python Version Management tool
 
@@ -1264,6 +1536,8 @@ sudo npm install -g appium --unsafe-perm=true --allow-root
 - C/C++ (Optional)
 - C/C++ Compile Run (Optional)
 - chai theme
+- ChatGPT - Work with Code on macOS
+- Claude Code for VSCode
 - Code Runner
 - Code Spell Checker
 - CodeSnap
@@ -1305,7 +1579,6 @@ sudo npm install -g appium --unsafe-perm=true --allow-root
 - PHP
 - Path Intellisense
 - Peacock
-- Pieces for VS Code
 - Playwright Tests for VSCode
 - Postman (Optional)
 - Prettier - Code formatter
@@ -1379,13 +1652,20 @@ Click on the `Manage` (Screw) icon -> `Settings` (Shortcut: `Command + ,`) -> Fr
   "files.autoSave": "afterDelay",
   "files.autoSaveDelay": 4000,
 
-  "github.copilot.editor.enableAutoCompletions": true,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+  "github.copilot.advanced": {
+    "inlineSuggest.enable": false,
+    "inlineSuggest.showToolbar": "onHover",
+    "inlineSuggest.suppressSuggestions": false
+  },
 
   "liveServer.settings.donotShowInfoMsg": true,
-
-  "pieces.cloudCapabilities": "Blended",
-  "pieces.telemetry": true,
-  "pieces.OS.launchOnStartup": "Yes",
+  "liveServer.settings.port": 5500,
 
   "playwright.reuseBrowser": false,
 
@@ -1586,7 +1866,6 @@ Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Preferen
 - Maven Helper
 - One Dark Theme
 - Package Search
-- Pieces for Save, Search, Share and Reuse Code Snippets
 - Rainbow Brackets
 - Rainbow CSV
 - SonarLint
