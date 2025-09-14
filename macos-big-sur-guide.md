@@ -2008,6 +2008,504 @@ javac-compile-run-terminus.sublime-build:
 }
 ```
 
+## Setting up Zed
+
+### Install Necessary Extensions
+
+Click on 'Zed' on the apple menu bar -> 'Extensions' (`Shift + Command + X`)
+
+- Dockerfile v0.0.5
+- GraphQL v1.0.2 (Optional)
+- HTML v0.2.2
+- Java v6.4.0
+- Java with Eclipse JDTLS v0.2.5
+- LOG v0.0.6
+- Material Icon Theme v1.0.0
+- One Dark Pro v0.0.10
+- Python Snippets v0.1.1
+- Rainbow CSV v1.1.0
+- SQL v1.1.4
+
+### Add Custom Settings
+
+Click on 'Zed' on the apple menu bar -> 'Settings' -> 'Open Settings' (`Command + ,`)
+
+```json
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run zed: open default settings from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "icon_theme": "Material Icon Theme",
+  "autosave": "off",
+  "ui_font_size": 15,
+  "buffer_font_size": 15,
+  "terminal": {
+    "dock": "right",
+    "font_family": "MesloLGS NF",
+    "font_size": 12
+  },
+  "theme": {
+    "mode": "system",
+    "light": "One Dark Pro",
+    "dark": "One Dark Pro"
+  },
+  "telemetry": {
+    "metrics": false,
+    "diagnostics": false
+  },
+  "soft_wrap": "editor_width",
+  "auto_indent_on_paste": true,
+  "use_autoclose": true
+}
+```
+
+## Setting up Code Watchers
+
+### Nodemon
+
+#### Nodemon :: Overview
+
+Nodemon is a utility that monitors for changes in your source code and automatically restarts your application. It's particularly useful during development to avoid manually restarting your application every time you make changes. Nodemon is built on Node.js and provides extensive configuration options.
+
+#### Nodemon :: Installation
+
+##### Global Installation
+
+Install nodemon globally to use it from anywhere in your system:
+
+```bash
+npm install -g nodemon
+```
+
+After global installation, you can use `nodemon` command directly from any directory.
+
+##### Local Installation
+
+Install nodemon as a development dependency in your project:
+
+```bash
+npm install --save-dev nodemon
+```
+
+When installed locally, you can run it using:
+
+- `npx nodemon` (recommended)
+- `./node_modules/.bin/nodemon`
+- Add it to your `package.json` scripts
+
+#### Nodemon :: JavaScript/TypeScript
+
+**JavaScript files:**
+
+```bash
+nodemon app.js
+```
+
+**TypeScript files:**
+
+```bash
+nodemon app.ts
+```
+
+**With npx (local installation):**
+
+```bash
+npx nodemon app.js
+npx nodemon app.ts
+```
+
+**Watch specific extensions:**
+
+```bash
+nodemon --ext js,ts,json app.js
+```
+
+##### Package.json Configuration
+
+Add scripts to your `package.json`:
+
+```json
+{
+  "scripts": {
+    "dev": "nodemon app.js",
+    "dev:ts": "nodemon app.ts",
+    "start": "nodemon server.js"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0"
+  }
+}
+```
+
+Run with:
+
+```bash
+npm run dev
+npm run dev:ts
+```
+
+##### Advanced Configuration
+
+Create a `nodemon.json` configuration file:
+
+```json
+{
+  "watch": ["src"],
+  "ext": "js,ts,json",
+  "ignore": ["src/**/*.test.js", "node_modules"],
+  "exec": "node src/app.js"
+}
+```
+
+**For TypeScript with ts-node:**
+
+```json
+{
+  "watch": ["src"],
+  "ext": "ts",
+  "ignore": ["src/**/*.test.ts"],
+  "exec": "ts-node src/app.ts"
+}
+```
+
+#### Nodemon :: Python
+
+**Watch Python files:**
+
+```bash
+nodemon --ext py --exec "python3 app.py"
+```
+
+**Alternative syntax:**
+
+```bash
+nodemon --exec "python3" app.py
+```
+
+**Watch specific directory:**
+
+```bash
+nodemon --watch src --ext py --exec "python3 src/main.py"
+```
+
+#### Nodemon :: Java
+
+**Single Java file:**
+
+```bash
+nodemon --ext java --exec "javac MyProgram.java && java MyProgram"
+```
+
+**Watch src directory with compilation:**
+
+```bash
+nodemon --ext java --watch src --exec "javac -cp src -d bin src/Main.java && java -cp bin Main"
+```
+
+**Java with package structure:**
+
+```bash
+nodemon --ext java --watch src --exec "javac -cp src -d bin src/com/example/App.java && java -cp bin com.example.App"
+```
+
+#### Nodemon :: Common Command Line Options
+
+| Option      | Description                  | Example                   |
+| ----------- | ---------------------------- | ------------------------- |
+| `--ext`     | File extensions to watch     | `--ext js,ts,json`        |
+| `--watch`   | Directories to watch         | `--watch src --watch lib` |
+| `--ignore`  | Files/directories to ignore  | `--ignore node_modules`   |
+| `--exec`    | Command to execute           | `--exec "python3 app.py"` |
+| `--delay`   | Delay restart (milliseconds) | `--delay 2000`            |
+| `--verbose` | Verbose output               | `--verbose`               |
+| `--quiet`   | Suppress nodemon output      | `--quiet`                 |
+
+#### Nodemon :: Troubleshooting Common Issues
+
+1. **High CPU usage**: Reduce watched directories or add more ignore patterns
+2. **Too many restarts**: Increase delay with `--delay` option
+3. **Command not found**: Ensure nodemon is installed globally or use `npx`
+4. **Java classpath issues**: Use absolute paths or proper classpath configuration
+5. **Debug Mode**: Use the following command to run nodemon in debug mode
+
+   ```bash
+   nodemon --verbose your-app
+   ```
+
+#### Nodemon :: Uninstallation
+
+**Global uninstall:**
+
+```bash
+npm uninstall -g nodemon
+```
+
+**Local uninstall:**
+
+```bash
+npm uninstall nodemon
+```
+
+#### Nodemon :: Conclusion
+
+Nodemon is a versatile tool that can significantly improve your development workflow across multiple programming languages. By properly configuring it for your specific needs, you can achieve automatic reloading and compilation for JavaScript/TypeScript, Java, and Python projects.
+
+### Watchexec
+
+#### Watchexec :: Overview
+
+Watchexec is a simple, standalone tool that watches a path and runs a command whenever it detects modifications. It's cross-platform, fast, and provides more advanced filtering options compared to other file watchers. Watchexec automatically handles file system events and can watch multiple file types simultaneously.
+
+#### Watchexec :: Installation
+
+**macOS (using Homebrew):**
+
+```bash
+brew install watchexec
+```
+
+**Linux (using cargo):**
+
+```bash
+cargo install watchexec-cli
+```
+
+**Windows (using cargo):**
+
+```bash
+cargo install watchexec-cli
+```
+
+**Download pre-built binaries:**
+Visit [https://github.com/watchexec/watchexec/releases](https://github.com/watchexec/watchexec/releases)
+
+#### Watchexec :: JavaScript/TypeScript
+
+**Watch JavaScript files:**
+
+```bash
+watchexec --exts js "node app.js"
+```
+
+**Watch TypeScript files:**
+
+```bash
+watchexec --exts ts "ts-node app.ts"
+```
+
+**Watch multiple extensions:**
+
+```bash
+watchexec --exts js,ts,json "node app.js"
+```
+
+**Watch specific directory:**
+
+```bash
+watchexec --watch src --exts js "node src/app.js"
+```
+
+#### Watchexec :: Python
+
+**Watch Python files:**
+
+```bash
+watchexec --exts py "python3 app.py"
+```
+
+**Watch Python files in specific directory:**
+
+```bash
+watchexec --watch src --exts py "python3 src/main.py"
+```
+
+**Watch Python with virtual environment:**
+
+```bash
+watchexec --exts py "source venv/bin/activate && python3 app.py"
+```
+
+#### Watchexec :: Java
+
+**Watch and compile single Java file:**
+
+```bash
+watchexec --exts java "javac MyProgram.java && java MyProgram"
+```
+
+**Watch Java files with classpath:**
+
+```bash
+watchexec --watch src --exts java "javac -cp src -d bin src/Main.java && java -cp bin Main"
+```
+
+**Watch Java files with package structure:**
+
+```bash
+watchexec --watch src --exts java "javac -cp src -d bin src/com/example/App.java && java -cp bin com.example.App"
+```
+
+#### Watchexec :: Command Line Options
+
+| Option                | Description                                     | Example                                  |
+| --------------------- | ----------------------------------------------- | ---------------------------------------- |
+| `--exts`              | File extensions to watch                        | `--exts js,ts,json`                      |
+| `--watch`             | Directories to watch                            | `--watch src --watch lib`                |
+| `--ignore`            | Ignore patterns                                 | `--ignore "*.tmp" --ignore node_modules` |
+| `--clear`             | Clear screen before executing                   | `--clear`                                |
+| `--restart`           | Restart the process instead of starting new one | `--restart`                              |
+| `--debounce`          | Set debounce duration in milliseconds           | `--debounce 1000`                        |
+| `--no-vcs-ignore`     | Don't use .gitignore files                      | `--no-vcs-ignore`                        |
+| `--no-default-ignore` | Don't ignore common patterns                    | `--no-default-ignore`                    |
+| `--verbose`           | Print verbose output                            | `--verbose`                              |
+| `--quiet`             | Suppress output                                 | `--quiet`                                |
+
+#### Watchexec :: Uninstallation
+
+**macOS (Homebrew):**
+
+```bash
+brew uninstall watchexec
+```
+
+**If installed via cargo:**
+
+```bash
+cargo uninstall watchexec-cli
+```
+
+**Manual installation:**
+Remove the binary from your system PATH.
+
+### Entr
+
+#### Entr :: Overview
+
+Entr is a lightweight utility that runs arbitrary commands when files change. It reads a list of files from stdin and executes a command whenever any of those files are modified. Entr is simple, fast, and works well with Unix pipes.
+
+#### Entr :: Installation
+
+**macOS (using Homebrew):**
+
+```bash
+brew install entr
+```
+
+**Linux (Ubuntu/Debian):**
+
+```bash
+sudo apt-get install entr
+```
+
+**Linux (CentOS/RHEL):**
+
+```bash
+sudo yum install entr
+```
+
+#### Entr :: JavaScript/TypeScript
+
+**Watch JavaScript files:**
+
+```bash
+ls *.js | entr node app.js
+```
+
+**Watch TypeScript files:**
+
+```bash
+ls *.ts | entr ts-node app.ts
+```
+
+**Watch files in subdirectories:**
+
+```bash
+find src -name "*.js" | entr node src/app.js
+find src -name "*.ts" | entr ts-node src/app.ts
+```
+
+**Watch multiple file types:**
+
+```bash
+find . -name "*.js" -o -name "*.ts" -o -name "*.json" | entr node app.js
+```
+
+#### Entr :: Python
+
+**Watch Python files:**
+
+```bash
+ls *.py | entr python3 app.py
+```
+
+**Watch Python files in subdirectories:**
+
+```bash
+find . -name "*.py" | entr python3 app.py
+```
+
+**Watch specific Python project structure:**
+
+```bash
+find src -name "*.py" | entr python3 src/main.py
+```
+
+#### Entr :: Java
+
+**Watch and compile single Java file:**
+
+```bash
+ls *.java | entr sh -c 'javac MyProgram.java && java MyProgram'
+```
+
+**Watch Java files in src directory:**
+
+```bash
+find src -name "*.java" | entr sh -c 'javac -cp src -d bin src/Main.java && java -cp bin Main'
+```
+
+**Watch Java files with package structure:**
+
+```bash
+find src -name "*.java" | entr sh -c 'javac -cp src -d bin src/com/example/App.java && java -cp bin com.example.App'
+```
+
+#### Entr :: Command Line Options
+
+| Option | Description                                       | Example                                  |
+| ------ | ------------------------------------------------- | ---------------------------------------- |
+| `-c`   | Clear screen before executing command             | `ls *.js \| entr -c node app.js`         |
+| `-d`   | Track directories and exit if new files are added | `ls *.js \| entr -d node app.js`         |
+| `-n`   | Non-interactive mode (don't read from keyboard)   | `ls *.js \| entr -n node app.js`         |
+| `-p`   | Postpone first execution until a file is modified | `ls *.js \| entr -p node app.js`         |
+| `-r`   | Reload a persistent child process                 | `ls *.js \| entr -r node server.js`      |
+| `-s`   | Evaluate the first argument using interpreter     | `ls *.js \| entr -s 'echo file changed'` |
+
+#### Entr :: Uninstallation
+
+**macOS (Homebrew):**
+
+```bash
+brew uninstall entr
+```
+
+**Linux (Ubuntu/Debian):**
+
+```bash
+sudo apt-get remove entr
+```
+
+**Linux (CentOS/RHEL):**
+
+```bash
+sudo yum remove entr
+```
+
 ## Setting up Discord
 
 - Download Discord from the given link [https://discord.com/download](https://discord.com/download)
