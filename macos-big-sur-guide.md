@@ -84,6 +84,7 @@
 - sshpass
 - The Unarchiver
 - tree (install via `brew install tree`)
+- uv (install via `brew install uv`)
 - Visual Studio Code
 - VNC Viewer
 - Vysor
@@ -99,9 +100,39 @@
 - [z](https://github.com/agkozak/zsh-z) (install via `git clone https://github.com/agkozak/zsh-z ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-z`, search for the phrase 'plugins' inside .zshrc file and append the plugin name as following: `plugins=(git zsh-z)`)
 - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) (install via `git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions`, search for the phrase 'plugins' inside .zshrc file and append the plugin name as following: `plugins=(git zsh-z zsh-autosuggestions)`)
 
-## Installing Homebrew on Mac Intel and M1 chip
+## Homebrew
 
-### Command for Intel and M1 chip
+**Homebrew** is a popular open-source package manager for macOS and Linux. It simplifies the installation, upgrade, and management of software by automating what would otherwise be manual, repetitive, and error-prone steps. Homebrew provides a unified command-line interface (brew) to install command-line tools, libraries, and even desktop applications (via Homebrew Cask).
+
+- Primary function: Automates downloading, compiling, and installing software packages that aren't included with your operating system
+- Installation directory: Installs packages to `/usr/local` on Intel Macs or `/opt/homebrew` on Apple Silicon Macs, keeping them separate from system files
+  - macOS (Intel)
+    - Formulae (CLI tools):
+      - `/usr/local/Cellar` – main installation
+      - `/usr/local/bin` – symlinks to executables
+    - Cask applications:
+      - `/Applications` (or sometimes `~/Applications` depending on permissions)
+  - macOS (Apple Silicon / M1+ chips)
+    - Formulae:
+      - `/opt/homebrew/Cellar` - main installation
+      - `/opt/homebrew/bin` - symlinks to executables
+    - Cask applications:
+      - Installed into `/Applications` via .app bundles
+- Two main types of packages:
+  - Formulae: Command-line tools and libraries
+  - Casks: Graphical applications (browsers, development tools, etc.)
+- Key uses:
+  - Installing development tools and programming languages (Python, Node.js, Git, PostgreSQL)
+  - Managing and updating installed software with simple commands
+  - Handling dependencies automatically
+  - Installing system utilities not included by default in macOS
+- Main advantages:
+  - Simple command-line interface via the brew command
+  - Clean installation and uninstallation of software
+  - Active community maintaining thousands of up-to-date packages
+  - Keeps installed software separate from system files
+
+### Installing Homebrew on Mac Intel and M1 chip
 
 - `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 - Brew installation directory in Intel: /usr/local
@@ -176,7 +207,20 @@
 
 ## nvm - Node Version Manager
 
-nvm (Node Version Manager) is a tool that allows you to install and manage multiple versions of Node.js on your Mac. nvm is a version manager for node.js, designed to be installed per-user, and invoked per-shell.
+Node Version Manager (NVM) is a version management tool for Node.js that allows you to install and switch between multiple Node.js versions on the same machine
+
+- Primary function: Enables developers to easily install, manage, and switch between different versions of Node.js for different projects
+- Installation directory: Installs Node.js versions in `~/.nvm` directory in your home folder
+- Key uses:
+  - Testing applications across different Node.js versions
+  - Working on multiple projects requiring different Node.js versions
+  - Quickly upgrading or downgrading Node.js versions
+  - Isolating Node.js environments per project
+- Main advantages:
+  - Simple commands to install and switch versions (e.g., `nvm install 18`, `nvm use 18`)
+  - No need for sudo/administrator privileges
+  - Prevents version conflicts between projects
+  - Easy rollback if a new Node.js version causes issues
 
 ### Commonly used nvm commands
 
@@ -231,24 +275,48 @@ node --version
 npm --version
 ```
 
-## NPM global packages
+## npm - Node Package Manager
 
-- appium-doctor
+Node Package Manager (NPM) is the default package manager for Node.js that manages JavaScript libraries and dependencies for projects
+
+- Primary function: Installs, updates, and manages JavaScript packages and their dependencies from the NPM registry (the world's largest software registry)
+
+- Installation: Automatically installed with Node.js
+- Package installation locations:
+  - Local packages: Installed in `node_modules` folder within your project directory
+  - Global packages: Installed in a system-wide directory (accessible from anywhere)
+- Key uses:
+  - Installing project dependencies listed in `package.json`
+  - Publishing and sharing your own JavaScript packages
+  - Managing project scripts and automation tasks
+  - Installing development tools and CLI utilities globally
+- Main advantages
+  - Automatic dependency management and version control
+  - Access to millions of open-source packages
+  - Simple commands (`npm install`, `npm update`, `npm run`)
+  - Handles transitive dependencies automatically
+  - Integrates seamlessly with Node.js projects
+
+### npm - Global Packages
+
+- appium-doctor (optional)
 - appium
 - corepack
 - csslint
-- ffprobe
+- ffprobe (optional) (use: ffprobe gathers information from multimedia streams and prints it in
+  human and machine-readable fashion)
 - jshint
-- localtunnel
-- n
+- localtunnel (optional) (use: localtunnel is a tool for developers to expose local web servers (running on your machine) to the internet with a public URL)
+- nodemon
 - npm
 - typescript
 
-## NPM Commands Cheatsheet
+### NPM Commands Cheatsheet
 
-### Initialization Commands
+#### Initialization Commands
 
-1. **Initialize a New Project**  
+1. **Initialize a New Project**
+
    Creates a new `package.json` file interactively:
 
    ```bash
@@ -261,39 +329,44 @@ npm --version
    npm init -y
    ```
 
-### Installation Commands
+#### Installation Commands
 
-1. **Install Dependencies**  
+1. **Install Dependencies**
+
    Installs all dependencies listed in `package.json`:
 
    ```bash
    npm install
    ```
 
-2. **Install a Specific Package**  
+2. **Install a Specific Package**
+
    Installs a package and adds it to `dependencies` in `package.json`:
 
    ```bash
    npm install <package-name>
    ```
 
-3. **Install a Package as Dev Dependency**  
+3. **Install a Package as Dev Dependency**
+
    Installs a package and adds it to `devDependencies` in `package.json`:
 
    ```bash
    npm install <package-name> --save-dev
    ```
 
-4. **Install a Global Package**  
+4. **Install a Global Package**
+
    Installs a package which is accessible globally (available system-wide):
 
    ```bash
    npm install -g <package-name>
    ```
 
-### Update Commands
+#### Update Commands
 
-1. **Update All Dependencies**  
+1. **Update All Dependencies**
+
    Updates dependencies to the latest versions allowed by `package.json`:
 
    ```bash
@@ -306,7 +379,8 @@ npm --version
    npm update -g
    ```
 
-2. **Update a Specific Package**  
+2. **Update a Specific Package**
+
    Updates a package to its latest version:
 
    ```bash
@@ -327,7 +401,8 @@ npm --version
    npm update -g <package-name>
    ```
 
-3. **Check and Update Dependencies with `npm-check-updates`**  
+3. **Check and Update Dependencies with `npm-check-updates`**
+
    Check for outdated dependencies:
 
    ```bash
@@ -340,9 +415,10 @@ npm --version
    npx ncu -u && npm install
    ```
 
-### Remove Packages
+#### Remove Packages
 
-1. **Uninstall a Package**  
+1. **Uninstall a Package**
+
    Removes a package from `node_modules` and `package.json`:
 
    ```bash
@@ -356,18 +432,20 @@ npm --version
    npm uninstall -g <package-name>
    ```
 
-### Search Commands
+#### Search Commands
 
-1. **Search a Package**  
+1. **Search a Package**
+
    Looks for packages in the npm registry that match your search term (Note: The -g flag is used for global operations like installing or updating packages, but npm search only searches the npm registry and does not support the -g flag):
 
    ```bash
    npm search express
    ```
 
-### Run Scripts
+#### Run Scripts
 
-1. **Run a Script**  
+1. **Run a Script**
+
    Runs a script defined in the `scripts` section of `package.json` (e.g., `start`, `test`):
 
    ```bash
@@ -380,7 +458,8 @@ npm --version
    npm run start
    ```
 
-2. **Shortcut for Default Scripts**  
+2. **Shortcut for Default Scripts**
+
    Runs the start script defined in package.json, defaulting to node server.js if no script is provided:
 
    ```bash
@@ -399,9 +478,10 @@ npm --version
    npm build
    ```
 
-### View Packages
+#### View Packages
 
-1. **List Installed Packages**  
+1. **List Installed Packages**
+
    Lists all installed dependencies in the project:
 
    ```bash
@@ -424,7 +504,8 @@ npm --version
    npm ls -g
    ```
 
-2. **Check Outdated Packages**  
+2. **Check Outdated Packages**
+
    Lists all outdated dependencies in the project (if any):
 
    ```bash
@@ -437,76 +518,86 @@ npm --version
    npm outdated -g
    ```
 
-### Cache Management
+#### Cache Management
 
-1. **Clear Cache**  
+1. **Clear Cache**
+
    Clears the NPM cache:
 
    ```bash
    npm cache clean --force
    ```
 
-2. **Verify Cache**  
+2. **Verify Cache**
+
    Validates the integrity of the cache:
 
    ```bash
    npm cache verify
    ```
 
-### Audit and Security
+#### Audit and Security
 
-1. **Audit Dependencies**  
+1. **Audit Dependencies**
+
    Checks for security vulnerabilities in dependencies:
 
    ```bash
    npm audit
    ```
 
-2. **Fix Security Issues**  
+2. **Fix Security Issues**
+
    Automatically attempts to fix vulnerabilities:
 
    ```bash
    npm audit fix
    ```
 
-### Miscellaneous
+#### Miscellaneous
 
-1. **Check NPM Version**  
+1. **Check NPM Version**
+
    Shows the installed version of NPM:
 
    ```bash
    npm -v
    ```
 
-2. **Health Check**  
+2. **Health Check**
+
    Checks your environment and installation for potential issues with npm and Node.js:
 
    ```bash
    npm doctor
    ```
 
-3. **Display Documentation**  
+3. **Display Documentation**
+
    Displays documentation and usage information for npm commands and topics:
 
    ```bash
    npm help
    ```
 
-4. **Rebuild Dependencies**  
+4. **Rebuild Dependencies**
+
    Rebuilds all dependencies:
 
    ```bash
    npm rebuild
    ```
 
-5. **Prune Unused Packages**  
+5. **Prune Unused Packages**
+
    Removes extraneous packages from `node_modules`:
 
    ```bash
    npm prune
    ```
 
-6. **Run a Package Without Installing Globally**  
+6. **Run a Package Without Installing Globally**
+
    Runs a package temporarily without globally installing it:
 
    ```bash
@@ -537,46 +628,34 @@ npm --version
 
 ## pyenv - Simple Python Version Management tool
 
-- pyenv lets you easily switch between multiple versions of Python. It's simple, unobtrusive, and follows the UNIX tradition of single-purpose tools that do one thing well.
+Python version management tool that allows you to install and switch between multiple Python versions on the same machine
+
 - Official documentation: [https://github.com/pyenv/pyenv](https://github.com/pyenv/pyenv)
 - Introduction to pyenv: [https://realpython.com/intro-to-pyenv/](https://realpython.com/intro-to-pyenv/)
+- Primary function: Enables developers to easily install, manage, and switch between different Python versions for different projects
+- Installation directory: Installs Python versions in `~/.pyenv` directory in your home folder
+- Key uses:
+  - Working on multiple projects requiring different Python versions
+  - Testing code across different Python versions (Python 2.x, 3.x, etc.)
+  - Installing specific Python versions not available through system package managers
+  - Isolating Python environments per project or per shell session
+- Main advantages:
+  - Simple commands to install and switch versions (e.g., `pyenv install 3.11.0`, `pyenv global 3.11.0`)
+  - No interference with system Python installation
+  - Per-project Python version configuration using `.python-version` files
+  - Works without requiring sudo/administrator privileges
+  - Supports virtual environments through pyenv-virtualenv plugin
 
 ### Commonly used pyenv commands
 
 - `pyenv install --list`: This command lists all available python versions, you can use grep to find a specific Python version
 - `pyenv install --list | grep " 3\.[678]"`: List all the available CPython 3.6 through 3.8
 - `pyenv install 2.7.15`: This command can be used to install a specific version of Python.
-- `pyenv install -v 3.11.5`: The install command with -v flag ensures to display all the steps of installing the specified version of Python.
+- `pyenv install -v 3.14.0`: The install command with -v flag ensures to display all the steps of installing the specified version of Python.
 - `pyenv uninstall 2.7.15`: This command can be used to uninstall a specific version of Python.
 - `pyenv versions`: The versions command displays all currently installed Python versions
 - `pyenv version`: This command is similar to versions but only shows you the current active Python version.
 - `pyenv which python`: The which command is helpful for determining the full path to a system executable. Because pyenv works by using shims, this command allows you to see the full path to the executable pyenv is running. The output displays the full system path for pip. This can be helpful when you’ve installed command-line applications.
-
-### Create Virtual Environments in VSCode
-
-#### Command-line approach
-
-- Open up the directory where you want the virtual environment to be created in Terminal
-- Type the command: `python3 -m venv <venv-directory-name>`
-- Above command will create a virtual environment with the default Python version installed on your system.
-- Alternatively if you want to create a virtual environment with a different Python version, you can use this command: `</path/to/python> -m venv <venv-directory-name>`
-- Activation and deactivation commands:
-
-  ```bash
-  python3 -m venv .venv
-  source .venv/bin/activate
-  deactivate
-  ```
-
-#### Create virtual environment using VSCode extension
-
-- Install a VSCode extension called 'Python' from marketplace
-- - Open up the directory where you want the virtual environment to be created in VSCode
-- Press `Command + Shift + P` to open up command palette
-- Search and select the option 'Python: Create Environment...'
-- Select environment type as 'venv'
-- Choose Python interpreter version
-- Virtual environment with the given Python interpreter version will be inside on the '.venv' directory
 
 ### Installation and configuration to support multiple Python versions
 
@@ -611,7 +690,28 @@ pyenv which python3
 # /Users/deepjyoti.barman/.pyenv/versions/3.12.0/bin/python3
 ```
 
-### PIP3 global packages
+## pip - Pip Installs Packages
+
+Pip is the standard package manager for Python that installs and manages Python libraries and dependencies from the Python Package Index (PyPI)
+
+- Primary function: Installs, updates, and manages Python packages and their dependencies for your projects
+- Installation: Comes pre-installed with Python (version 3.4+ and Python 2.7.9+)
+- Package installation locations:
+  - System/user packages: Installed in Python's site-packages directory
+  - Virtual environment packages: Installed within the specific virtual environment folder
+- Key uses:
+  - Installing project dependencies listed in `requirements.txt`
+  - Installing Python libraries for data science, web development, automation, etc.
+  - Managing package versions for compatibility
+  - Uninstalling and upgrading packages
+- Main advantages:
+  - Simple commands (`pip install`, `pip uninstall`, `pip list`)
+  - Access to hundreds of thousands of Python packages on PyPI
+  - Automatic dependency resolution and installation
+  - Works seamlessly with virtual environments
+  - Supports installation from various sources (PyPI, Git repositories, local files)
+
+### pip - Global Packages
 
 - pip
 - setuptools
@@ -626,6 +726,444 @@ pyenv which python3
 - `pip install --upgrade <package-name>`: Upgrade the given package
 - `pip3 list --outdated`: List all the outdated packages
 - `pip list --outdated`: List all the outdated packages
+
+## uv
+
+UV is an extremely fast Python package and project manager written in Rust, designed as a modern alternative to pip, pip-tools, and other Python tooling
+
+- Primary function: Installs Python packages, manages dependencies, handles Python versions, and manages virtual environments with significantly faster performance than traditional tools
+- Installation: Installed as a standalone tool via curl script, pip, or Homebrew (not bundled with Python)
+- Key features:
+  - 10-100x faster than pip for package installation
+  - Built-in Python version management (replaces pyenv)
+  - Integrated virtual environment management
+  - Drop-in replacement for pip commands
+- Key uses:
+  - Installing Python packages rapidly from PyPI
+  - Resolving and locking dependencies (replaces pip-tools)
+  - Managing multiple Python versions
+  - Creating and managing virtual environments
+  - Running Python scripts with automatic dependency resolution
+- Main advantages:
+  - Extremely fast performance due to Rust implementation
+  - All-in-one tool (combines pip, pyenv, virtualenv, pip-tools functionality)
+  - Compatible with pip commands and requirements.txt
+  - Better dependency resolution and conflict detection
+  - Modern project management with pyproject.toml support
+
+### Commonly used uv commands
+
+#### Installation
+
+```bash
+# Install uv using pip
+pip install uv
+
+# Install uv using brew
+brew install uv
+
+# Install uv using curl (recommended)
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+#### Project Initialization
+
+```bash
+# Create a new Python project
+uv init hello-world
+cd hello-world
+
+# Initialize a project in the current directory
+mkdir hello-world
+cd hello-world
+uv init
+
+# Initialize with a specific Python version
+uv init --python 3.11
+```
+
+#### Virtual Environment Management
+
+```bash
+# Create virtual environment (default name: .venv)
+uv venv
+
+# Create virtual environment with specific name
+uv venv .venv
+
+# Create virtual environment with specific Python version
+uv venv .venv --python 3.11
+
+# Create virtual environment with a different Python version
+uv venv --python 3.9
+
+# Activate virtual environment (manual activation)
+# macOS/Linux
+source .venv/bin/activate
+# Windows
+.venv\Scripts\activate
+
+# Deactivate virtual environment
+deactivate
+```
+
+#### Running Python Scripts
+
+```bash
+# Run Python script (auto-creates .venv if needed)
+uv run main.py
+
+# Run script with specific Python version
+uv run --python 3.11 main.py
+
+# Run with temporary dependencies (ephemeral environment)
+uv run --with flask --with requests script.py
+
+# Run any command in the project environment
+uv run pytest
+uv run python -m http.server
+```
+
+#### Dependency Management
+
+```bash
+# Add a dependency
+uv add requests
+
+# Add multiple dependencies
+uv add requests flask pandas
+
+# Add dependency with version constraint
+uv add 'requests==2.31.0'
+uv add 'flask>=2.0.0'
+
+# Add development dependency
+uv add --dev pytest
+uv add --dev black ruff
+
+# Add dependencies from requirements.txt
+uv add -r requirements.txt
+
+# Remove a dependency
+uv remove requests
+
+# Sync dependencies from pyproject.toml
+uv sync
+
+# Sync only production dependencies (exclude dev)
+uv sync --no-dev
+```
+
+#### Package Installation (pip-compatible)
+
+```bash
+# Install package (pip-style)
+uv pip install requests
+
+# Install from requirements.txt
+uv pip install -r requirements.txt
+
+# Install package globally
+uv pip install --system ruff
+
+# Uninstall package
+uv pip uninstall requests
+
+# List installed packages
+uv pip list
+
+# Show package information
+uv pip show requests
+
+# Freeze installed packages
+uv pip freeze > requirements.txt
+```
+
+#### Lock File & Updates
+
+```bash
+# Generate/update lock file
+uv lock
+
+# Upgrade a specific package
+uv lock --upgrade-package requests
+
+# Upgrade all packages
+uv lock --upgrade
+
+# Sync with updated lock file
+uv lock && uv sync
+```
+
+#### Python Version Management
+
+```bash
+# List available Python versions
+uv python list
+
+# Install a specific Python version
+uv python install 3.11
+
+# Install multiple Python versions
+uv python install 3.9 3.10 3.11
+
+# Pin Python version for project
+uv python pin 3.11
+
+# Show installed Python versions
+uv python list --only-installed
+```
+
+#### Script-Specific Dependencies
+
+```bash
+# Add dependencies to a specific script
+uv add --script my-script.py flask requests
+
+# Run script with its declared dependencies
+uv run my-script.py
+
+# Run script inline dependency declaration
+# Add this at the top of your script:
+# /// script
+# dependencies = ["flask", "requests"]
+# ///
+uv run my-script.py
+```
+
+#### Building & Publishing
+
+```bash
+# Build distribution packages (wheel and sdist)
+uv build
+
+# Build only wheel
+uv build --wheel
+
+# Build only source distribution
+uv build --sdist
+
+# Publish to PyPI
+uv publish
+
+# Publish to test PyPI
+uv publish --publish-url https://test.pypi.org/legacy/
+```
+
+#### Project Information
+
+```bash
+# Show project tree with dependencies
+uv tree
+
+# Export dependencies to requirements.txt format
+uv export --format requirements-txt > requirements.txt
+
+# Show uv version
+uv --version
+
+# Get help on any command
+uv help
+uv add --help
+```
+
+#### Cache Management
+
+```bash
+# Show cache directory
+uv cache dir
+
+# Clean cache
+uv cache clean
+
+# Clean cache for specific package
+uv cache clean requests
+```
+
+#### Tool Management
+
+```bash
+# Install a tool globally
+uv tool install ruff
+
+# Run a tool without installing
+uvx ruff check .
+
+# List installed tools
+uv tool list
+
+# Uninstall a tool
+uv tool uninstall ruff
+
+# Upgrade a tool
+uv tool upgrade ruff
+```
+
+#### Common Workflows
+
+- Starting a New Project
+
+  ```bash
+  uv init my-project
+  cd my-project
+  uv add flask sqlalchemy
+  uv run python app.py
+  ```
+
+- Working with Existing Project
+
+  ```bash
+  git clone
+  cd project
+  uv sync
+  uv run python main.py
+  ```
+
+- Quick Script Experiment
+
+  ```bash
+  uv run --with pandas --with matplotlib analyze.py
+  ```
+
+- Migrating from pip
+
+  ```bash
+  # Convert requirements.txt to pyproject.toml
+  uv add -r requirements.txt
+
+  # Continue using uv
+  uv sync
+  uv run python app.py
+  ```
+
+## Create Virtual Environments
+
+### Create virtual environment using VSCode extension
+
+- Install a VSCode extension called 'Python' from marketplace
+- Open up the directory where you want the virtual environment to be created in VSCode
+- Press `Command + Shift + P` to open up command palette
+- Search and select the option 'Python: Create Environment...'
+- Select environment type as 'venv'
+- Choose Python interpreter version
+- Virtual environment with the given Python interpreter version will be inside on the '.venv' directory
+
+### Create virtual environment using pip
+
+```bash
+# Create and enter project directory
+mkdir my-project
+cd my-project
+
+# Create virtual environment
+python -m venv .venv
+
+# macOS/Linux
+source venv/bin/activate
+
+# Upgrade pip
+pip install --upgrade pip
+
+# Install packages as you need them
+pip install requests
+pip install python-dotenv
+pip install locust
+
+# Or install packages from requirements.txt file
+pip install -r requirements.txt
+
+# After installing packages, freeze them
+pip freeze > requirements.txt
+
+# Deactivate virtual environment
+deactivate
+```
+
+### Create virtual environment using uv
+
+#### Without uv init
+
+```bash
+# Create and enter project directory
+mkdir my-project
+cd my-project
+
+# Create virtual environment
+uv venv
+
+# Activate virtual environment
+# macOS/Linux
+source .venv/bin/activate
+
+# Install packages as you need them
+uv pip install requests
+uv pip install python-dotenv
+uv pip install locust
+
+# Or install packages from requirements.txt file
+uv pip install -r requirements.txt
+
+# After installing packages, freeze them
+uv pip freeze > requirements.txt
+
+# Deactivate virtual environment
+deactivate
+```
+
+#### With uv init
+
+```bash
+# Initialize a new project with uv (creates directory and pyproject.toml)
+uv init my-project
+cd my-project
+
+# Virtual environment is created automatically when you add packages
+# No need for manual venv creation or activation
+
+# Add packages (automatically manages dependencies in pyproject.toml)
+uv add requests python-dotenv locust
+
+# Run Python scripts with the project environment (no manual activation needed)
+uv run python script.py
+
+# Or run any command in the project environment
+uv run locust
+
+# Sync or install all dependencies from pyproject.toml and uv.lock
+uv sync
+
+# To deactivate, just exit the uv run command or close terminal
+# (No manual deactivate needed since you're not manually activating)
+```
+
+#### uv init vs without uv init
+
+When to skip `uv init`:
+
+- When you just want a drop-in replacement for pip/venv
+- When working with existing projects that use `requirements.txt`
+- When you prefer the traditional virtual environment workflow
+
+When to use `uv init`:
+
+- Use it when you want uv to manage your project with `pyproject.toml` (modern Python project structure)
+- It enables features like `uv add` (automatic dependency tracking) and `uv run` (runs scripts with the project environment)
+
+Key differences with `uv init` approach:
+
+- No need to manually create or activate virtual environment
+- Dependencies are tracked in `pyproject.toml` instead of `requirements.txt`
+- Use `uv add` instead of `uv pip install` for automatic dependency tracking
+- Use `uv run` to execute scripts (automatically uses the project environment)
+- More modern, streamlined workflow
+
+Key points on committing code to repository:
+
+- Always commit `pyproject.toml` - Contains your dependency specifications
+- Always commit `uv.lock` - Ensures exact same versions are installed (like `package-lock.json` for npm)
+- Don't commit `.venv` folder - Add it to `.gitignore`
+- `uv sync` automatically creates the virtual environment and installs all dependencies
+- The `uv.lock` file is crucial for reproducible installations - it locks exact package versions so everyone gets the same environment.
 
 ## The necessary trackpad tweak
 
