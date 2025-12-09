@@ -2101,8 +2101,6 @@ sudo npm install -g appium --unsafe-perm=true --allow-root
 - Image Preview
 - Import Cost
 - indent-rainbow
-- IntelliCode
-- IntelliCode API Usage Examples
 - JavaScript (ES6) code snippets
 - Language Support for Java(TM) by Red Hat
 - Live Sass Compiler (Optional)
