@@ -98,6 +98,7 @@
 - Zed
 - Zoom.us
 - [z](https://github.com/agkozak/zsh-z) (install via `git clone https://github.com/agkozak/zsh-z ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-z`, search for the phrase 'plugins' inside .zshrc file and append the plugin name as following: `plugins=(git zsh-z)`)
+- zero-mq (install via `brew install zeromq pkg-config`)(A required dependency for ijavascript npm package, which inturn is required to install JavaScript kernel for JavaScript based Jupyter notebooks)
 - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) (install via `git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions`, search for the phrase 'plugins' inside .zshrc file and append the plugin name as following: `plugins=(git zsh-z zsh-autosuggestions)`)
 
 ## Homebrew
