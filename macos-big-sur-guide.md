@@ -52,6 +52,8 @@
 - Java SE Development Kit 8
 - Java SE Development Kit 11
 - Java SE Development Kit 21
+- Java SE Development Kit 25
+- JetBrains Toolkit
 - jmeter (install via `brew install jmeter`)
 - K6 (install via `brew install k6`)
 - [LM Studio](https://lmstudio.ai/download) (You can install different LLMs locally via this)
