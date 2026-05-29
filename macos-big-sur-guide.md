@@ -1282,7 +1282,6 @@ Formatting of the device can be done by following the steps given below:
 Open up 'Terminal' -> Click on `Terminal` in the menu bar -> `Preferences`
 
 - Select the `General` tab
-
   1. `On startup, open`: `New window with profile` - `Pro`
   2. `New windows open with`: `Same Profile`
 
@@ -1320,7 +1319,6 @@ Open up 'Terminal' -> Click on `Terminal` in the menu bar -> `Preferences`
 - Un-installation guide for all **Powerline** fonts:
   - Run ./uninstall.sh to uninstall all Powerline Fonts.
 - Installation guide for **Hack Nerd Font**:
-
   - Deprecated:
 
     ```sh
@@ -1339,7 +1337,6 @@ Open up 'Terminal' -> Click on `Terminal` in the menu bar -> `Preferences`
     ```
 
 - Installation guide for **Cascadia Code** fonts:
-
   - Old:
 
     ```sh
@@ -1357,7 +1354,6 @@ Open up 'Terminal' -> Click on `Terminal` in the menu bar -> `Preferences`
     ```
 
 - Installation guide for **Meslo Nerd** fonts:
-
   - NOTE: If you are installing the theme [PowerLevel10K](https://github.com/romkatv/powerlevel10k) via oh-my-zsh then direct installation via the following approach is not required, the same font can be installed while installing the theme.
 
   ```bash
@@ -1394,7 +1390,6 @@ Open up 'Terminal' -> Click on `Terminal` in the menu bar -> `Preferences`
 - For external themes you need to download the theme, extract the .zip file, copy the .zsh-theme file inside `~/.oh-my-zsh/custom/themes` directory and then the name can be used inside .zshrc file.
 - **Resources**: The 'passion.zsh-theme' theme file has been added in this repository. Before you use this theme install 'coreutils' via `brew install coreutils` command. It is necessary as the theme needs gdate utility as its dependency which is available in this package.
 - Our preferred theme is **PowerLevel10K**:
-
   - Visit the GitHub page of [PowerLevel10K](https://github.com/romkatv/powerlevel10k) for more information.
   - For the installation steps you can visit [PowerLevel10K - Installation](https://github.com/romkatv/powerlevel10k?tab=readme-ov-file#installation) or enter the following command:  
     `git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k`
@@ -1437,19 +1432,16 @@ Open up 'Terminal' -> Click on `Terminal` in the menu bar -> `Preferences`
 #### Plugin installation (omz)
 
 - Plugin: `zsh-z`
-
   - Github page: [zsh-z](https://github.com/agkozak/zsh-z)
   - Installation with Oh-my-zsh: [zsh-z#installation](https://github.com/agkozak/zsh-z?tab=readme-ov-file#for-oh-my-zsh-users)
 
 - Plugin: `zsh-autosuggestions`
-
   - Github page: [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
   - Installation with Oh-my-zsh: [zsh-autosuggestions#installation](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh)
   - Command:  
     `git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions`
 
 - Plugin: `zsh-syntax-highlighting`
-
   - Github page: [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
   - Installation with Oh-my-zsh: [zsh-syntax-highlighting#installation](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh)
   - Command:  
@@ -1751,7 +1743,6 @@ Open up 'iTerm2' -> Click on `iTerm2` in the menu bar -> `Preferences`
   `tar -xvzf apache-maven-3.6.3-bin.tar.gz -C /opt`
 
 - The next step is to set up the environment variables – M2_HOME and Path. We have to add the Maven bin directory to the Path variable.
-
   1. On macOS 10.5 Catalina or later, the default shell is zsh, and we can create the environment variables MAVEN_HOME and update the PATH in ~/.zshenv. Create .zshenv and open the it in the default text editor by entering the following command:  
      `touch ~/.zshenv && open ~/.zshenv`
 
@@ -1766,7 +1757,6 @@ Open up 'iTerm2' -> Click on `iTerm2` in the menu bar -> `Preferences`
   ```
 
 - Source the ~/.zshenv or ~/.bash_profile to reflect the changes.
-
   1. `source ~/.zshenv`
   2. `source ~/.bash_profile`
 
@@ -1876,7 +1866,25 @@ The -a flag specifies any application you want, so it's applicable to any numb
 - -t  opens in the default editor (i.e. if you use BBEdit, TextMate, etc.)
 - -e will open the file specifically in TextEdit
 
-## Resolve ChromeDriver opening failure in Mac
+## Resolve: Keyboard is entering Rupee symbol and not Backtick on macOS
+
+This happens because your Mac is using the `ABC - India` keyboard layout, which maps the tilde/backtick key (\`) to the Rupee symbol (₹).
+
+To fix this and restore the standard backtick key, you need to switch your input source to the standard `U.S.` or `ABC` layout.
+
+How to Fix the Layout, follow these quick steps to switch your keyboard input:
+
+1. Go to `System Settings` from the Apple menu.
+2. Click on `Keyboard` in the left sidebar.
+3. Under the `Text Input` section, click `Edit` next to `Input Sources`.
+4. Click the `+ (Add)` button in the bottom-left corner to add a new layout.
+5. Search for and add `ABC` or `U.S.` from the list.
+6. Select the `ABC - India` layout and click the `- (Remove)` button to delete it.
+7. Click `Done` to save your changes.
+
+Alternatively, you can quickly toggle between your installed keyboards at any time by pressing `Control + Spacebar`.
+
+## Resolve: ChromeDriver opening failure in Mac
 
 Click on the `Apple` menu -> `System Preferences` -> `System and Security` -> `General` -> Message will be shown as 'ChromeDriver is blocked' -> Click on `Allow Anyway`.
 
@@ -1889,7 +1897,6 @@ Recently the Github team has announced that for better protection and privacy us
   `credential.helper = osxkeychain`
 
 - Update the credentials via Keychain Access.
-
   1. Open up 'Spotlight Search' by clicking on the icon in the menu bar or pressing `Command + Spacebar`.
   2. Type 'Keychain Access' and press `Enter` to launch the app.
   3. In 'Keychain Access' search for 'github.com'.
@@ -1986,7 +1993,6 @@ sudo npm install -g appium --unsafe-perm=true --allow-root
 - Choose a 'Build Name' which has support for the Java version you have currently installed on your system.
 
 - Download the 'SWT Binary and Source' for 'Mac OSX (64 bit version)'
-
   - Java 11 supported SWT: <https://download.eclipse.org/eclipse/downloads/drops4/R-4.21-202109060500/>
   - Java 8 supported SWT: <https://archive.eclipse.org/eclipse/downloads/drops4/R-4.16-202006040540/>
   - Site which has all different archive releases: <https://archive.eclipse.org/eclipse/downloads/>
@@ -2047,7 +2053,6 @@ sudo npm install -g appium --unsafe-perm=true --allow-root
   - Build the project in Xcode and get the UiKitCatalog.app from the shortcut (dragging the app under Product to Desktop, from the shortcut you can go and get the actual app)
   - Go the root directory of the project and enter the command `npm build` and get the app inside `ios-uicatalog/UiKitCatalog/build/Release-iphonesimulator/` directory
 - Install `Appium Inspector` and set the following configuration:
-
   - `Remote Host`: 127.0.0.1 (default)
   - `Remote Port`: 4723 (default)
   - `Remote Path`: / (for Appium v2.0.0-beta.55), /wd/hub (for Appium 1.22.3)
@@ -2171,7 +2176,7 @@ Click on the `Manage` (Screw) icon -> `Settings` (Shortcut: `Command + ,`) -> Fr
   "editor.rulers": [100],
   "editor.wordWrap": "on",
   "editor.minimap.scale": 2,
-  "editor.minimap.autohide": true,
+  "editor.minimap.autohide": "mouseover",
   "editor.minimap.renderCharacters": false,
   "editor.fontFamily": "Cascadia Mono, Monolisa, Menlo, Monaco, 'Courier New', monospace, Consolas",
   "editor.formatOnSave": true,
@@ -2192,7 +2197,7 @@ Click on the `Manage` (Screw) icon -> `Settings` (Shortcut: `Command + ,`) -> Fr
   "files.autoSaveDelay": 4000,
 
   "github.copilot.enable": {
-    "*": true,
+    "*": false,
     "plaintext": false,
     "markdown": false,
     "scminput": false
@@ -2216,7 +2221,7 @@ Click on the `Manage` (Screw) icon -> `Settings` (Shortcut: `Command + ,`) -> Fr
   "terminal.integrated.fontFamily": "MesloLGS NF, Monaco",
   "terminal.integrated.fontSize": 10,
 
-  "workbench.colorTheme": "One Dark Pro Monokai Darker",
+  "workbench.colorTheme": "Light+",
   "workbench.iconTheme": "material-icon-theme",
 
   // Configuration for extension "Language Support for Java(TM) by Red Hat"
@@ -2364,7 +2369,7 @@ Click on the `Manage` (Screw) icon -> `Settings` (Shortcut: `Command + ,`) -> Fr
 
 Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Preferences` -> `Appearance`
 
-- `Theme`: `VSCode Dark`
+- `Theme`: `One Dark Night`
 - Check `Use custom font`
 - `Use custom font`: `.SF NS Text` (or `.AppleSystemUIFont`)
 - `Size`: `12.0`
@@ -2373,15 +2378,15 @@ Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Preferen
 
 Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Preferences` -> `Editor` -> `Font`
 
-#### First Setup
-
-- `Font`: `Monospaced`
-- `Size`: `10`
-- `Line height`: `1.1`
-
-#### Second Setup
+#### Editor Font - First Setup
 
 - `Font`: `Cascadia Mono`
+- `Size`: `20.5`
+- `Line height`: `1.1`
+
+#### Editor Font - Second Setup
+
+- `Font`: `Monospaced`
 - `Size`: `11`
 - `Line height`: `1.1`
 
@@ -2389,27 +2394,26 @@ Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Preferen
 
 Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Preferences` -> `Plugins`
 
-- AiXcoder Code Completer (Optional)
 - Atom Material Icons
+- CodeGlance Pro
 - CodeSnap
 - Create TestNG XML
-- Cucumber+
 - Cucumber for Java
-- Docker
 - ExcelReader
 - Gherkin
 - GitHub Copilot
+- GraphQL
 - HighlightBracketPair
 - Indent Rainbow
-- Lombok
 - Maven Helper
+- One Dark Darker
 - One Dark Theme
-- Package Search
 - Rainbow Brackets
 - Rainbow CSV
-- SonarLint
+- SonarQube for IDE
 - Spring Boot Helper (Paid) / Spring Boot Assistant (Free)
 - Spring Initializer (Paid)
+- Subversion
 - VSCode Theme
 
 ### Enable Auto-Import
@@ -2428,19 +2432,90 @@ Open up 'IntelliJ IDEA' -> Click on `File` on the menu bar -> `Project Structure
 
 ## Setting up PyCharm IDEA
 
+### Configuring Appearance for PyCharm
+
+Open up 'PyCharm IDEA' -> Click on `PyCharm IDEA` on the menu bar -> `Preferences` -> `Appearance`
+
+- `Theme`: `One Dark Night`
+- Check `Use custom font`
+- `Use custom font`: `.SF NS Text` (or `.AppleSystemUIFont`)
+- `Size`: `12.0`
+
+### Configuring Editor for PyCharm
+
+Open up 'PyCharm IDEA' -> Click on `PyCharm IDEA` on the menu bar -> `Preferences` -> `Editor` -> `Font`
+
+#### Editor Font Setup for PyCharm
+
+- `Font`: `Cascadia Mono`
+- `Size`: `20.5`
+- `Line height`: `1.1`
+
 ### Necessary Plugins for PyCharm
 
 Open up 'PyCharm IDEA' -> Click on `PyCharm IDEA` on the menu bar -> `Preferences` -> `Plugins`
 
 - Atom Materials Icons
-- Cyan Light Theme (Optional)
-- Docker
+- CodeGlance Pro
+- CodeSnap
 - ExcelEditor
 - GitHub Copilot
+- GraphQL
+- HighlightBracketPair
+- Indent Rainbow
+- One Dark Darker
 - One Dark Theme
+- Qt
 - Rainbow Brackets
 - Rainbow CSV
-- SonarLint
+- SonarQube for IDE
+- Space
+- VSCode Theme
+
+## Setting up WebStorm IDEA
+
+### Configuring Appearance for WebStorm
+
+Open up 'WebStorm IDEA' -> Click on `WebStorm IDEA` on the menu bar -> `Preferences` -> `Appearance`
+
+- `Theme`: `One Dark Night`
+- Check `Use custom font`
+- `Use custom font`: `.SF NS Text` (or `.AppleSystemUIFont`)
+- `Size`: `12.0`
+
+### Configuring Editor for WebStorm
+
+Open up 'WebStorm IDEA' -> Click on `WebStorm IDEA` on the menu bar -> `Preferences` -> `Editor` -> `Font`
+
+#### Editor Font Setup for WebStorm
+
+- `Font`: `Cascadia Mono`
+- `Size`: `20.5`
+- `Line height`: `1.1`
+
+### Necessary Plugins for WebStorm
+
+Open up 'WebStorm IDEA' -> Click on `WebStorm IDEA` on the menu bar -> `Preferences` -> `Plugins`
+
+- .env files
+- Catppuccin Icons
+- CodeGlance Pro
+- CodeSnap
+- ExcelEditor
+- GitHub Copilot
+- GraphQL
+- HighlightBracketPair
+- Indent Rainbow
+- Jupyter
+- Notebook Files
+- One Dark Darker
+- One Dark Theme
+- Qt
+- Rainbow Brackets
+- Rainbow CSV
+- SonarQube for IDE
+- Space
+- Subversion
 - VSCode Theme
 
 ## Setting up Sublime Text
@@ -3145,13 +3220,11 @@ As of macOS Sierra 10.12.1, the Caps Lock -> Escape remapping can be done native
 ### Vim modes
 
 - `Normal` mode:
-
   - Vim starts up in `Normal` mode.
   - This mode is used for navigating around the file, reading contents, go from one file to another file.
   - Switch to `Normal` mode by pressing `Esc` while you are in any other mode.
 
 - `Insert` mode:
-
   - This mode is used for entering text into vim's buffer.
   - Switch to `Insert` mode by pressing the following keys while you are in `Normal` mode:
     - `i` : Switch to the `Insert` mode and move your cursor to the left of the cursor’s current position.
@@ -3162,12 +3235,10 @@ As of macOS Sierra 10.12.1, the Caps Lock -> Escape remapping can be done native
     - `O` : Switch to the `Insert` mode and move your cursor to a newline before your cursor’s current position.
 
 - `Replace` mode:
-
   - This mode allows you replace existing text by directly typing over it.
   - Switch to `Replace` mode by pressing `R` (`Shift + r`) while you are in `Normal` mode.
 
 - `Visual` mode:
-
   - This mode is used to make selections of text, similar to how clicking and dragging with a mouse behaves. Selecting text allows commands to apply only to the selection, such as copying, deleting, replacing, and so on.
   - Switch to `Visual` mode by pressing `v` while you are in `Normal` mode.
   - `Visual` mode has two different variants:
