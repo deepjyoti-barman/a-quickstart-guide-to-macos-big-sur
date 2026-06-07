@@ -69,8 +69,8 @@
 - nvm (install via `brew install nvm`)
 - [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish)
 - [Oh My Zsh](https://ohmyz.sh/)
-- OrbStack
 - [Ollama](https://ollama.com/download) (You can install different LLMs locally via this)
+- OrbStack
 - Postgres.app
 - Postman
 - PyCharm Community Edition
@@ -2155,10 +2155,18 @@ Click on the `Manage` (Screw) icon -> `Settings` (Shortcut: `Command + ,`) -> Fr
   // Configuration for extension "Code Runner"
   // "c-cpp-compile-run.c-flags": "-Wall -Wextra -O0 -std=c18",
   // "c-cpp-compile-run.cpp-flags": "-Wall -Wextra -O0 -std=c++20",
+  "black-formatter.args": [
+    "--line-length",
+    "100",
+    "--skip-string-normalization"
+  ],
+
+  "chat.viewSessions.orientation": "stacked",
+
   "code-runner.clearPreviousOutput": true,
   "code-runner.executorMap": {
     "python": "python3 -u",
-    "typescript": "tsc"
+    "typescript": "npx tsx"
   },
   "code-runner.ignoreSelection": true,
   "code-runner.runInTerminal": true,
@@ -2171,7 +2179,7 @@ Click on the `Manage` (Screw) icon -> `Settings` (Shortcut: `Command + ,`) -> Fr
 
   "diffEditor.ignoreTrimWhitespace": false,
 
-  "editor.fontSize": 14,
+  "editor.fontSize": 18,
   "editor.suggestSelection": "first",
   "editor.rulers": [100],
   "editor.wordWrap": "on",
@@ -2185,6 +2193,11 @@ Click on the `Manage` (Screw) icon -> `Settings` (Shortcut: `Command + ,`) -> Fr
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.inlineSuggest.showToolbar": "onHover",
   "editor.inlineSuggest.suppressSuggestions": false,
+  "editor.quickSuggestions": {
+    "other": "inline",
+    "comments": "inline",
+    "strings": "inline"
+  },
   "[ignore]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
@@ -2202,14 +2215,52 @@ Click on the `Manage` (Screw) icon -> `Settings` (Shortcut: `Command + ,`) -> Fr
     "markdown": false,
     "scminput": false
   },
-  "github.copilot.advanced": {
-    "inlineSuggest.enable": false,
-    "inlineSuggest.showToolbar": "onHover",
-    "inlineSuggest.suppressSuggestions": false
-  },
 
   "liveServer.settings.donotShowInfoMsg": true,
   "liveServer.settings.port": 5500,
+
+  "peacock.favoriteColors": [
+    {
+      "name": "Angular Red",
+      "value": "#dd0531"
+    },
+    {
+      "name": "Azure Blue",
+      "value": "#007fff"
+    },
+    {
+      "name": "JavaScript Yellow",
+      "value": "#f9e64f"
+    },
+    {
+      "name": "Mandalorian Blue",
+      "value": "#1857a4"
+    },
+    {
+      "name": "Node Green",
+      "value": "#215732"
+    },
+    {
+      "name": "React Blue",
+      "value": "#61dafb"
+    },
+    {
+      "name": "Something Different",
+      "value": "#832561"
+    },
+    {
+      "name": "Svelte Orange",
+      "value": "#ff3d00"
+    },
+    {
+      "name": "Vue Green",
+      "value": "#42b883"
+    },
+    {
+      "name": "Bluish White",
+      "value": "#b6d6f7"
+    }
+  ],
 
   "playwright.reuseBrowser": false,
 
@@ -2221,7 +2272,7 @@ Click on the `Manage` (Screw) icon -> `Settings` (Shortcut: `Command + ,`) -> Fr
   "terminal.integrated.fontFamily": "MesloLGS NF, Monaco",
   "terminal.integrated.fontSize": 10,
 
-  "workbench.colorTheme": "Light+",
+  "workbench.colorTheme": "One Dark Darker",
   "workbench.iconTheme": "material-icon-theme",
 
   // Configuration for extension "Language Support for Java(TM) by Red Hat"
@@ -2269,56 +2320,25 @@ Click on the `Manage` (Screw) icon -> `Settings` (Shortcut: `Command + ,`) -> Fr
     "prettier.useTabs": false,
     "prettier.printWidth": 80,
     "prettier.semi": true
-  },
-  "black-formatter.args": [
-    "--line-length",
-    "100",
-    "--skip-string-normalization"
-  ],
-  "peacock.favoriteColors": [
-    {
-      "name": "Angular Red",
-      "value": "#dd0531"
-    },
-    {
-      "name": "Azure Blue",
-      "value": "#007fff"
-    },
-    {
-      "name": "JavaScript Yellow",
-      "value": "#f9e64f"
-    },
-    {
-      "name": "Mandalorian Blue",
-      "value": "#1857a4"
-    },
-    {
-      "name": "Node Green",
-      "value": "#215732"
-    },
-    {
-      "name": "React Blue",
-      "value": "#61dafb"
-    },
-    {
-      "name": "Something Different",
-      "value": "#832561"
-    },
-    {
-      "name": "Svelte Orange",
-      "value": "#ff3d00"
-    },
-    {
-      "name": "Vue Green",
-      "value": "#42b883"
-    },
-    {
-      "name": "Bluish White",
-      "value": "#b6d6f7"
-    }
-  ]
+  }
 }
 ```
+
+### Configure Inline Suggestion Shortcut in VS Code
+
+By default, accepting AI inline suggestions may require a different key combination. You can create a custom shortcut for quicker access.
+
+#### Steps
+
+1. Open the Command Palette: `Ctrl + Shift + P`
+2. Search for and select: `Preferences: Open Keyboard Shortcuts`
+3. In the Keyboard Shortcuts search box, search for: `Trigger Inline Suggestion`
+4. Click the Edit (pencil) icon or `+` icon next to the command.
+5. Press the desired key combination: `Control + I`
+6. Press Enter to save the shortcut.
+7. You can now press `Control + I` to trigger inline AI suggestions direclty from the editor.
+
+> Note: If `Control + I` is already assigned to another command, VS Code will display a warning and allow you to override the existing shortcut.
 
 ### Create Custom User Snippets
 
@@ -3119,6 +3139,121 @@ sudo apt-get remove entr
 ```bash
 sudo yum remove entr
 ```
+
+## Ollama - Quick Reference Guide
+
+### What is Ollama?
+
+Ollama is a lightweight tool that allows you to download, run, and manage Large Language Models (LLMs) locally on your computer without requiring cloud services or internet access after the model is downloaded.
+
+It provides a simple command-line interface (CLI) for running AI models such as Llama, Gemma, Qwen, Mistral, DeepSeek, and many others.
+
+### Why is Ollama Popular
+
+- Simple installation and setup.
+- Runs AI models completely on local hardware.
+- Protects privacy since data never leaves your machine.
+- Supports a large collection of open-source LLMs.
+- Works on macOS, Linux, and Windows.
+- Easy integration with development tools and applications.
+- Free to use.
+
+### Popular Free Models Supported by Ollama
+
+| Model       | Best For                                    |
+| ----------- | ------------------------------------------- |
+| Llama 3     | General-purpose conversations and reasoning |
+| Gemma 3     | Lightweight and efficient AI assistant      |
+| Qwen 3      | Strong reasoning and coding capabilities    |
+| DeepSeek-R1 | Advanced reasoning and problem solving      |
+| Mistral     | Fast general-purpose assistant              |
+| CodeLlama   | Code generation and programming help        |
+| Phi         | Small, lightweight model for local systems  |
+
+> Recommended for most users:
+>
+> - mistral
+> - llama3
+> - qwen3
+> - gemma3
+> - deepseek-r1
+
+### Installing a Model
+
+#### Download and Run a Model
+
+`bash ollama run llama3`
+
+If the model is not already installed, Ollama automatically downloads it and starts a chat session.
+
+---
+
+#### Download a Model Without Running It
+
+`bash ollama pull llama3`
+
+Downloads the model to your local machine without starting a chat session.
+
+---
+
+#### View Installed Models
+
+`bash ollama list`
+
+Displays all models currently installed on your system.
+
+---
+
+#### Start Chatting With a Model
+
+`bash ollama run llama3`
+
+Once loaded, simply type your prompts and press Enter.
+
+Example:
+
+text >>> Explain REST APIs
+
+---
+
+### Common Ollama Commands
+
+- Run a model interactively in the terminal. If the model is missing, Ollama downloads it automatically:  
+  `ollama run <model>`
+
+- Download a model without running it:  
+  `ollama pull <model>`
+
+- Remove a model from local storage:  
+  `ollama rm <model>`
+
+- List all installed models:  
+  `ollama list`
+
+- Show currently loaded/running models:  
+  `ollama ps`
+
+- Unload a specific running model from memory and free RAM/VRAM resources:  
+  `ollama stop <model>`
+
+- Start the Ollama server manually. This is useful when using APIs or external applications that connect to Ollama:  
+  `ollama serve`
+
+- Display the installed Ollama version:  
+  `ollama --version`
+
+### Commands Available During Chat
+
+When inside an interactive model session:
+
+- Exit the current chat session:  
+  `/bye`
+- Display available chat commands and help information:  
+  `/?`
+
+### Pro Tip
+
+Models remain loaded in memory for a short period after use (default keep-alive timeout). If you need to immediately free system resources, use: `bash ollama stop <model>`. This unloads the model from RAM/VRAM immediately.
 
 ## Setting up Discord
 
