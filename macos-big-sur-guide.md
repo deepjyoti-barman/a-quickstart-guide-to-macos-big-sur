@@ -64,6 +64,7 @@
 - Microsoft Teams
 - Microsoft Word
 - maven (install via `brew install maven`)
+- [micro](https://micro-editor.github.io/)
 - [mongodb-community](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/) (install via the following commands: `brew tap mongodb/brew`, `brew update`, `brew install mongodb-community`)
 - [Node.js](https://nodejs.org/en/download/) (recommended: install via nvm, `nvm install --lts`) (alternative installation via brew, `brew install node@20`) (alternatively, download the .pkg file for macOS and upgrade via the following commands: `sudo npm cache clean -f`, `sudo npm install -g n`, `sudo n stable`)
 - nvm (install via `brew install nvm`)
@@ -83,6 +84,7 @@
 - Splashy (Wallpaper changing tool)
 - Studio 3T Community Edition
 - Sublime Text
+- [sdkman](https://sdkman.io/)
 - sshpass
 - The Unarchiver
 - tree (install via `brew install tree`)
