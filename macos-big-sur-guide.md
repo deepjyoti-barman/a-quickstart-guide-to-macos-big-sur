@@ -3343,6 +3343,76 @@ Models remain loaded in memory for a short period after use (default keep-alive 
 - In the `Port` field you may either enter `*` or enter `443`, anything of your choice.
 - Click on `OK` -> `OK`
 
+## Micro - command line text editor
+
+### What is micro
+
+Micro is a modern terminal-based text editor designed to be easy to install, easy to use, and comfortable for people who edit files directly inside a terminal or over SSH.
+
+It is often described as a more modern, intuitive alternative to editors like `nano`, while still giving users more advanced editing features when needed.
+
+Official links:
+
+- Official home page: [https://micro-editor.github.io/](https://micro-editor.github.io/)
+- Plugin page: [https://micro-editor.github.io/plugins.html](https://micro-editor.github.io/plugins.html)
+- GitHub repository: [micro-editor/micro](https://github.com/micro-editor/micro)
+- Installation guide: [https://github.com/micro-editor/micro/wiki/Installing-Micro](https://github.com/micro-editor/micro/wiki/Installing-Micro)
+
+### What makes micro different?
+
+- Runs directly in the terminal.
+- Distributed as a single static binary.
+- Simple installation with very few dependencies.
+- Uses familiar keyboard shortcuts such as `Ctrl+S`, `Ctrl+C`, `Ctrl+V`, and `Ctrl+Z`.
+- Supports syntax highlighting.
+- Supports multiple cursors.
+- Includes mouse support in many terminals.
+- Has built-in help.
+- Supports plugins.
+- Can be customized with settings, keybindings, colorschemes, and Lua plugins.
+
+### Installation - Linux (Amazon Linux/CentOS etc.)
+
+- Download Micro using the install script:
+
+  ```bash
+  curl https://getmic.ro | bash
+  ```
+
+This downloads the `micro` binary into the current directory.
+
+- Make the binary owned by `root`:
+
+  ```bash
+  sudo chown root:root micro
+  ```
+
+- Move it into a system binary directory:
+
+  ```bash
+  sudo mv micro /usr/bin
+  ```
+
+- Check the installed version:
+
+  ```bash
+  micro --version
+  ```
+
+### Installation - macOS
+
+- Install Micro using Homebrew:
+
+  ```bash
+  brew install micro
+  ```
+
+- Check the installed version:
+
+  ```bash
+  micro --version
+  ```
+
 ## Vim - the ubiquitous and most powerful command line editor
 
 ### Remapping the Caps Lock key to Escape in macOS Sierra for easier access
