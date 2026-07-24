@@ -3413,6 +3413,443 @@ This downloads the `micro` binary into the current directory.
   micro --version
   ```
 
+### Basic Usage
+
+Start Micro with a file name:
+
+```bash
+micro filename.txt
+```
+
+If the file exists, Micro opens it. If the file does not exist, Micro creates a new buffer with that file name, and the file is written to disk when you save it.
+
+### Plugin Management
+
+Micro has a built-in plugin manager. You can install plugins from the shell:
+
+```bash
+micro -plugin install <plugin_name>
+```
+
+You can also install a plugin from inside Micro:
+
+```text
+Ctrl+E
+plugin install <plugin_name>
+Enter
+```
+
+After installing a plugin, restart Micro if the plugin does not appear immediately.
+
+Useful plugin commands:
+
+| Command                                      | Action                             |
+| -------------------------------------------- | ---------------------------------- |
+| `micro -plugin install <plugin_name>`        | Install a plugin from the terminal |
+| `micro -plugin remove <plugin_name>`         | Remove a plugin                    |
+| `micro -plugin update <plugin_name>`         | Update one plugin                  |
+| `micro -plugin update all`                   | Update all installed plugins       |
+| `Ctrl+E` then `plugin install <plugin_name>` | Install a plugin from inside Micro |
+| `Ctrl+E` then `help plugins`                 | Open Micro plugin help             |
+
+Official plugin page:
+
+- [https://micro-editor.github.io/plugins.html](https://micro-editor.github.io/plugins.html)
+
+### Installed Plugins and Usage
+
+The following plugins were installed from your command output.
+
+| Plugin         | Install command                      | Usage                                                                                      |
+| -------------- | ------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `aspell`       | `micro -plugin install aspell`       | Spellchecking using GNU Aspell. Highlights misspelled words while editing.                 |
+| `autofmt`      | `micro -plugin install autofmt`      | Formats code on save. Can also format manually with the `fmt` command.                     |
+| `misspell`     | `micro -plugin install misspell`     | Corrects commonly misspelled English words. Useful for comments, Markdown, and text files. |
+| `runit`        | `micro -plugin install runit`        | Run the current file or project from inside Micro with function keys.                      |
+| `quoter`       | `micro -plugin install quoter`       | Surround selected text with quotes or brackets.                                            |
+| `monokai-dark` | `micro -plugin install monokai-dark` | Adds the `monokai-dark` color scheme.                                                      |
+| `jump`         | `micro -plugin install jump`         | Jump to functions, classes, symbols, or Markdown headings.                                 |
+| `filemanager`  | `micro -plugin install filemanager`  | Adds a file-tree/file-manager panel.                                                       |
+
+#### Plugin: `aspell`
+
+Purpose: Spellchecking inside Micro.
+
+Install:
+
+```bash
+micro -plugin install aspell
+```
+
+Important: The plugin requires the external `aspell` program to be installed and available in your `PATH`.
+
+Install Aspell on macOS:
+
+```bash
+brew install aspell
+```
+
+Install Aspell on Amazon Linux / RHEL-style systems:
+
+```bash
+sudo yum search aspell
+sudo yum install aspell
+```
+
+If `aspell` is not available from the enabled repositories, enable the appropriate repository for your system, such as EPEL, then try the install command again.
+
+Enable spellchecking manually:
+
+```text
+Ctrl+E
+set aspell.check on
+Enter
+```
+
+Useful commands:
+
+| Command                 | Action                                                     |
+| ----------------------- | ---------------------------------------------------------- |
+| `togglecheck`           | Turn spellchecking on or off                               |
+| `addpersonal`           | Add the word under the cursor to your personal dictionary  |
+| `acceptsug`             | Accept a spelling suggestion for the word under the cursor |
+| `set aspell.check on`   | Enable spellcheck                                          |
+| `set aspell.check off`  | Disable spellcheck                                         |
+| `set aspell.check auto` | Enable spellcheck automatically for supported file types   |
+| `set aspell.lang en`    | Set language to English                                    |
+| `set aspell.lang en_US` | Set language to US English                                 |
+
+Example:
+
+```text
+Ctrl+E
+set aspell.check on
+Enter
+```
+
+#### Plugin: `autofmt`
+
+Purpose: Run code formatters from Micro, usually on save.
+
+Install:
+
+```bash
+micro -plugin install autofmt
+```
+
+Usage:
+
+| Command                        | Action                                                       |
+| ------------------------------ | ------------------------------------------------------------ |
+| `fmt`                          | Format the current file using the selected/default formatter |
+| `fmt <formatter_name>`         | Format the current file with a specific formatter            |
+| `set autofmt.onsave false`     | Disable format-on-save                                       |
+| `set autofmt.onsave true`      | Enable format-on-save                                        |
+| `set autofmt.for-python ruff`  | Use `ruff` as the Python formatter                           |
+| `set autofmt.for-python black` | Use `black` as the Python formatter                          |
+
+Example:
+
+```text
+Ctrl+E
+fmt
+Enter
+```
+
+Notes:
+
+- `autofmt` does not install formatters for you.
+- Install the formatter used by your language, such as `prettier`, `gofmt`, `black`, `ruff`, `rustfmt`, or `clang-format`.
+
+#### Plugin: `misspell`
+
+Purpose: Correct commonly misspelled English words.
+
+Install:
+
+```bash
+micro -plugin install misspell
+```
+
+Usage:
+
+- Use it when editing prose, comments, Markdown files, or documentation.
+- It is helpful for common typos, but it is not a full grammar checker.
+- After installation, open plugin help inside Micro if you need plugin-specific commands:
+
+```text
+Ctrl+E
+help misspell
+Enter
+```
+
+#### Plugin: `runit`
+
+Purpose: Quickly run the file or project you are editing.
+
+Install:
+
+```bash
+micro -plugin install runit
+```
+
+Usage:
+
+| Key   | Action                                                |
+| ----- | ----------------------------------------------------- |
+| `F5`  | Save and run the current file                         |
+| `F12` | Run `make`, searching upward for a Makefile if needed |
+| `F9`  | Run `make` in the background                          |
+
+Notes:
+
+- `F5` supports Go, Go tests, Python 3, Lua, and executable scripts.
+- For a script file, make it executable first:
+
+```bash
+chmod u+x script.sh
+```
+
+#### Plugin: `quoter`
+
+Purpose: surround selected text with quotes or matching brackets.
+
+Install:
+
+```bash
+micro -plugin install quoter
+```
+
+Enable:
+
+```text
+Ctrl+E
+set quoter.enable on
+Enter
+```
+
+Usage:
+
+1. Select some text.
+2. Press a quote or bracket key, such as `"`, `'`, `(`, `[`, or `{`.
+3. The selected text is wrapped with matching quotes or brackets.
+
+#### Plugin: `monokai-dark`
+
+Purpose: Add a dark Monokai color scheme.
+
+Install:
+
+```bash
+micro -plugin install monokai-dark
+```
+
+Use the color scheme:
+
+```text
+Ctrl+E
+set colorscheme monokai-dark
+Enter
+```
+
+#### Plugin: `jump`
+
+Purpose: Jump to functions, classes, symbols, and Markdown headings.
+
+Install:
+
+```bash
+micro -plugin install jump
+```
+
+Recommended dependencies on Debian/Ubuntu-style systems:
+
+```bash
+sudo apt-get update
+sudo apt-get -y install fzf exuberant-ctags
+```
+
+Usage:
+
+| Key             | Action                                                   |
+| --------------- | -------------------------------------------------------- |
+| `F4`            | Open the jump selector                                   |
+| `Up/Down Arrow` | Move through matches                                     |
+| Type text       | Filter the symbol list                                   |
+| `Enter`         | Jump to the selected function, class, symbol, or heading |
+
+#### Plugin `filemanager`
+
+Purpose: Add a file-tree/file-manager panel inside Micro.
+
+Install:
+
+```bash
+micro -plugin install filemanager
+```
+
+Open or close the file tree:
+
+```text
+Ctrl+E
+tree
+Enter
+```
+
+Usage:
+
+| Command / Key            | Action                                                           |
+| ------------------------ | ---------------------------------------------------------------- |
+| `tree`                   | Open or close the file tree                                      |
+| `Tab`                    | Open a file or enter a directory                                 |
+| Mouse left click         | Open a file or enter a directory                                 |
+| `Right Arrow`            | Expand a directory                                               |
+| `Left Arrow`             | Collapse a directory                                             |
+| `Shift+Up Arrow`         | Go to the parent directory                                       |
+| `rm`                     | Delete the file or directory under the cursor after confirmation |
+| `rename <new_name>`      | Rename the file or directory under the cursor                    |
+| `touch <file_name>`      | Create a new file                                                |
+| `mkdir <directory_name>` | Create a new directory                                           |
+
+Examples:
+
+```text
+Ctrl+E
+tree
+Enter
+```
+
+```text
+Ctrl+E
+touch notes.txt
+Enter
+```
+
+```text
+Ctrl+E
+mkdir docs
+Enter
+```
+
+### Keyboard Commands
+
+| Command  | Action              |
+| -------- | ------------------- |
+| `Ctrl+S` | Save                |
+| `Ctrl+Q` | Quit                |
+| `Ctrl+O` | Open file           |
+| `Ctrl+F` | Find                |
+| `Ctrl+N` | Find next           |
+| `Ctrl+G` | Help                |
+| `Ctrl+Z` | Undo                |
+| `Ctrl+Y` | Redo                |
+| `Ctrl+C` | Copy                |
+| `Ctrl+X` | Cut                 |
+| `Ctrl+V` | Paste               |
+| `Ctrl+A` | Select all          |
+| `Ctrl+W` | Switch between tabs |
+| `Ctrl+E` | Open command prompt |
+
+### Command Prompt
+
+Open the command prompt inside Micro with:
+
+```text
+Ctrl+E
+```
+
+Then type a command and press `Enter`.
+
+### Useful Command Prompt Commands
+
+| Command                         | Action                                  |
+| ------------------------------- | --------------------------------------- |
+| `goto 100`                      | Go to line 100                          |
+| `replace`                       | Find and replace                        |
+| `replaceall`                    | Find and replace all occurrences        |
+| `save`                          | Save file                               |
+| `quit`                          | Quit file                               |
+| `set softwrap on`               | Enable soft wrapping                    |
+| `set tabsize 4`                 | Set tab size to 4 spaces                |
+| `vsplit <file_name>`            | Open a file in a vertical split         |
+| `hsplit <file_name>`            | Open a file in a horizontal split       |
+| `set colorscheme <scheme_name>` | Set the editor colorscheme              |
+| `help defaultkeys`              | Show key combinations                   |
+| `help commands`                 | Show commands available in command mode |
+
+While typing commands such as `vsplit`, `hsplit`, or `set colorscheme`, press `Tab` to cycle through available file names or colorschemes.
+
+### Command Prompt Examples
+
+Go to line 100:
+
+```text
+Ctrl+E
+goto 100
+Enter
+```
+
+Replace all occurrences of `World` with `Youtube`:
+
+```text
+Ctrl+E
+replaceall World Youtube
+Enter
+```
+
+### Navigation Keys
+
+| Command          | Action                                  |
+| ---------------- | --------------------------------------- |
+| `Fn+Right Arrow` | Go to the end of the current line       |
+| `Fn+Left Arrow`  | Go to the beginning of the current line |
+| `Fn+Up Arrow`    | Move up the page by one fold/page       |
+| `Fn+Down Arrow`  | Move down the page by one fold/page     |
+
+### Quick Reference
+
+Install on Linux:
+
+```bash
+curl https://getmic.ro | bash
+sudo chown root:root micro
+sudo mv micro /usr/bin
+micro --version
+```
+
+Install on macOS:
+
+```bash
+brew install micro
+micro --version
+```
+
+Install useful plugins:
+
+```bash
+micro -plugin install aspell
+micro -plugin install autofmt
+micro -plugin install misspell
+micro -plugin install runit
+micro -plugin install quoter
+micro -plugin install monokai-dark
+micro -plugin install jump
+micro -plugin install filemanager
+```
+
+Open a file:
+
+```bash
+micro filename.txt
+```
+
+Save and quit:
+
+```text
+Ctrl+S
+Ctrl+Q
+```
+
 ## Vim - the ubiquitous and most powerful command line editor
 
 ### Remapping the Caps Lock key to Escape in macOS Sierra for easier access
