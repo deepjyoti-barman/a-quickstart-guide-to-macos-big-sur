@@ -210,6 +210,218 @@
 
   ![brew-packages](resources/brew-packages.png)
 
+## SDKMan - Software Development Kit Manager
+
+### Overview
+
+SDKMan is a command-line tool used to install and manage multiple versions of development tools, especially JVM-based tools such as Java, Gradle, Maven, JMeter, Kotlin, Scala, and Tomcat.
+
+It is useful when you need to switch between different Java versions for different projects.
+
+Official Home Page: [https://sdkman.io/](https://sdkman.io/)
+
+### Supported System
+
+These commands are suitable for:
+
+- Linux (Ubuntu, CentOS, MintLinux, Fedora etc.)
+- macOS
+
+### Install Required Packages on Ubuntu
+
+Before installing SDKMan on Ubuntu, install the required packages:
+
+```bash
+sudo apt update
+sudo apt install -y curl zip unzip
+```
+
+### Install Required Packages on macOS
+
+- macOS usually includes `curl` by default.
+- The easiest way to install `zip` and `unzip`, if needed, is through Homebrew.
+
+Install the required packages:
+
+```bash
+brew install zip unzip
+```
+
+### Install SDKMan: Universal (Linux/macOS)(Recommended)
+
+- Run the SDKMan installer:
+
+  ```bash
+  curl -s "https://get.sdkman.io" | bash
+  ```
+
+- Load SDKMan into the current shell session:
+
+  ```bash
+  source "$HOME/.sdkman/bin/sdkman-init.sh"
+  ```
+
+- The installer usually adds SDKMan initialization to your shell startup file automatically.
+- On macOS/Linux with Bash, if it does not, add the same lines to `~/.bash_profile` or `~/.bashrc`, depending on your shell setup:
+- On macOS with Zsh, if it does not, add the same lines to `~/.zshrc`:
+
+  ```bash
+  export SDKMAN_DIR="$HOME/.sdkman"
+  [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
+  ```
+
+- Verify the installation:
+
+  ```bash
+  sdk version
+  ```
+
+If the `sdk` command works, SDKMan is installed successfully.
+
+### Install SDKMan: macOS
+
+- Run a Homebrew tap containing the Formula for the SDKMan CLI:
+
+  ```bash
+  brew tap sdkman/tap
+  brew install sdkman-cli
+  ```
+
+- The installer usually adds SDKMan initialization to your shell startup file automatically.
+- On macOS with Zsh, if it does not, add the same lines to `~/.zshrc`:
+
+  ```bash
+  export SDKMAN_DIR=$(brew --prefix sdkman-cli)/libexec
+  [[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
+  ```
+
+- Verify the installation by opening a new terminal and type:
+
+  ```bash
+  sdk version
+  ```
+
+If the `sdk` command works, SDKMan is installed successfully.
+
+### Useful SDKMan Commands
+
+- Show SDKMan version:
+
+  ```bash
+  sdk version
+  ```
+
+- List all available SDKMan candidates:
+
+  ```bash
+  sdk list
+  ```
+
+- List versions for a specific candidate:
+
+  ```bash
+  sdk list java
+  sdk list gradle
+  sdk list maven
+  sdk list jmeter
+  ```
+
+- Install a tool:
+
+  ```bash
+  sdk install <candidate> <version>
+  ```
+
+  Example:
+
+  ```bash
+  sdk install java 21.0.11-tem
+  ```
+
+- Use a version temporarily in the current shell:
+
+  ```bash
+  sdk use <candidate> <version>
+  ```
+
+- Set a default version:
+
+  ```bash
+  sdk default <candidate> <version>
+  ```
+
+- Check the active version:
+
+  ```bash
+  sdk current <candidate>
+  ```
+
+  Example:
+
+  ```bash
+  sdk current java
+  ```
+
+- Uninstall a version:
+
+  ```bash
+  sdk uninstall <candidate> <version>
+  ```
+
+- Upgrade SDKMan itself:
+
+  ```bash
+  sdk selfupdate
+  ```
+
+- Flush SDKMan temporary archives and metadata:
+
+  ```bash
+  sdk flush
+  ```
+
+### Quick Reference
+
+```bash
+brew install zip unzip
+
+curl -s "https://get.sdkman.io" | bash
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+sdk version
+
+# List available Java versions
+sdk list java
+sdk install java 25.0.3-tem
+sdk install java 21.0.11-tem
+sdk install java 11.0.31-tem
+sdk install java 8.0.492-tem
+
+# Use a Java version only for the current terminal session
+sdk use java 21.0.11-tem
+java -version
+# Set a Java version as the default for all new terminal sessions
+sdk default java 21.0.11-tem
+# Check the currently active SDKMAN Java version
+sdk current java
+# List installed Java versions from the SDKMan directory
+ls ~/.sdkman/candidates/java
+
+sdk uninstall java 25.0.3-tem
+
+sdk list gradle
+sdk install gradle 9.6.1
+gradle --version
+
+sdk list maven
+sdk install maven 3.9.16
+mvn --version
+
+sdk list jmeter
+sdk install jmeter 5.6.3
+jmeter --version
+```
+
 ## nvm - Node Version Manager
 
 Node Version Manager (NVM) is a version management tool for Node.js that allows you to install and switch between multiple Node.js versions on the same machine
