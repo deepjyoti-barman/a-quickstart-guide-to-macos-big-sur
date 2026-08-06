@@ -291,6 +291,7 @@ If the `sdk` command works, SDKMan is installed successfully.
 - On macOS with Zsh, if it does not, add the same lines to `~/.zshrc`:
 
   ```bash
+  # Path configuration | Package: sdkman
   export SDKMAN_DIR=$(brew --prefix sdkman-cli)/libexec
   [[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
   ```
@@ -324,6 +325,30 @@ If the `sdk` command works, SDKMan is installed successfully.
   sdk list gradle
   sdk list maven
   sdk list jmeter
+  ```
+
+- List versions for a specific candidate that is installed:
+
+  ```bash
+  # First approach (Recommended)
+  sdk list <candidate> | grep installed
+  ```
+
+  ```bash
+  # Second approach
+  ls ~/.sdkman/candidates/<candidate>
+  ```
+
+  Example:
+
+  ```bash
+  # First approach (Recommended)
+  sdk list java | grep installed
+  ```
+
+  ```bash
+  # Second approach
+  ls ~/.sdkman/candidates/java
   ```
 
 - Install a tool:
@@ -371,6 +396,12 @@ If the `sdk` command works, SDKMan is installed successfully.
 - Upgrade SDKMan itself:
 
   ```bash
+  # First approach (Recommended)
+  sdk update
+  ```
+
+  ```bash
+  # Second approach
   sdk selfupdate
   ```
 
@@ -405,7 +436,7 @@ sdk default java 21.0.11-tem
 # Check the currently active SDKMAN Java version
 sdk current java
 # List installed Java versions from the SDKMan directory
-ls ~/.sdkman/candidates/java
+sdk list java | grep installed
 
 sdk uninstall java 25.0.3-tem
 
@@ -478,6 +509,7 @@ brew uninstall --ignore-dependencies node
 brew uninstall --force node
 
 # Add nvm to your shell profile: To make nvm available every time you open a new terminal window, you will need to add the following lines to your shell profile (e.g., ~/.bash_profile or ~/.zshrc):
+# Path configuration | Package: nvm
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
@@ -889,6 +921,7 @@ pyenv global 2.7.18 3.12.2
 
 # Append the following line at the end of '.zshrc'/'.bashrc' file depending on your default shell
 # Note: Appending the following line may not work in '.zshenv' / '.bashenv' / '.bash_profile' etc. files
+# Path configuration | Package: pyenv
 export PATH=$(pyenv root)/shims:$PATH
 
 # Verification of configuration
@@ -1671,6 +1704,13 @@ Open up 'Terminal' -> Click on `Terminal` in the menu bar -> `Preferences`
 - Configure your `~/.zshrc` as the following:
 
   ```zsh
+  # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+  # Initialization code that may require console input (password prompts, [y/n]
+  # confirmations, etc.) must go above this block; everything else may go below.
+  if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+  fi
+
   # If you come from bash you might have to change your $PATH.
   # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -1681,6 +1721,7 @@ Open up 'Terminal' -> Click on `Terminal` in the menu bar -> `Preferences`
   # load a random theme each time oh-my-zsh is loaded, in which case,
   # to know which specific one was loaded, run: echo $RANDOM_THEME
   # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+  # ZSH_THEME="passion"
   ZSH_THEME="powerlevel10k/powerlevel10k"
 
   # Set list of themes to pick from when loading at random
@@ -1745,12 +1786,15 @@ Open up 'Terminal' -> Click on `Terminal` in the menu bar -> `Preferences`
   # Example format: plugins=(rails git textmate ruby lighthouse)
   # Add wisely, as too many plugins slow down shell startup.
   plugins=(
-    git
-    z
-    zsh-autosuggestions
-    zsh-syntax-highlighting
-    web-search
-    sublime
+      docker
+      docker-compose
+      extract
+      git
+      sublime
+      web-search
+      z
+      zsh-autosuggestions
+      zsh-syntax-highlighting
   )
 
   source $ZSH/oh-my-zsh.sh
@@ -1791,8 +1835,13 @@ Open up 'Terminal' -> Click on `Terminal` in the menu bar -> `Preferences`
   export NVM_DIR=~/.nvm
   source $(brew --prefix nvm)/nvm.sh
 
-  # To customize prompt, run 'p10k configure' or edit ~/.p10k.zsh.
+  # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
   [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+  ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
+
+  # Path configuration | Package: sdkman
+  export SDKMAN_DIR="$HOME/.sdkman"
+  [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
   ```
 
 ### Install a colorscheme for iTerm2
