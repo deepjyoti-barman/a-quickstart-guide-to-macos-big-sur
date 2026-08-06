@@ -1699,6 +1699,200 @@ Open up 'Terminal' -> Click on `Terminal` in the menu bar -> `Preferences`
 - Load these new plugins by running:  
   `source ~/.zshrc`
 
+#### Check Availble Aliases for Plugins (omz)
+
+This document shows how to view the aliases and functions provided by the enabled Oh My Zsh plugins.
+
+**1. Docker**
+
+Display all Docker-related aliases:
+
+```bash
+alias | grep docker
+```
+
+or
+
+```bash
+alias | grep '^d'
+```
+
+Common aliases include:
+
+```text
+d           -> docker
+dps         -> docker ps
+dpa         -> docker ps -a
+di          -> docker images
+drm         -> docker rm
+drmi        -> docker rmi
+dex         -> docker exec -it
+```
+
+---
+
+**2.Docker Compose**
+
+Display Docker Compose aliases:
+
+```bash
+alias | grep dc
+```
+
+Common aliases include:
+
+```text
+dco         -> docker-compose
+dcu         -> docker-compose up
+dcud        -> docker-compose up -d
+dcd         -> docker-compose down
+dcl         -> docker-compose logs
+dcps        -> docker-compose ps
+```
+
+> NOTE: Depending on your Docker installation, aliases may use either `docker-compose` or `docker compose`.
+
+---
+
+**3. Extract**
+
+The `extract` plugin primarily provides a shell function rather than aliases.
+
+Check the function:
+
+```bash
+type x
+```
+
+or
+
+```bash
+alias | grep '^x='
+```
+
+Usage:
+
+```bash
+x archive.zip
+x archive.tar.gz
+x archive.tgz
+x archive.rar
+x archive.7z
+```
+
+---
+
+**4. Git**
+
+Display Git aliases:
+
+```bash
+alias | grep git
+```
+
+or
+
+```bash
+alias | grep '^g'
+```
+
+The Git plugin contains hundreds of aliases, including:
+
+```text
+g           -> git
+ga          -> git add
+gaa         -> git add --all
+gb          -> git branch
+gc          -> git commit -v
+gca         -> git commit -a -v
+gcam        -> git commit -a -m
+gco         -> git checkout
+gd          -> git diff
+gl          -> git pull
+gp          -> git push
+gst         -> git status
+glog        -> git log
+```
+
+---
+
+**5. Sublime**
+
+Display Sublime Text aliases:
+
+```bash
+alias | grep subl
+```
+
+or
+
+```bash
+alias | grep sublime
+```
+
+Typical alias:
+
+```text
+st -> subl
+```
+
+> NOTE: Availability depends on whether the `subl` command is installed.
+
+---
+
+**6. Web Search**
+
+The `web-search` plugin provides shell functions instead of aliases.
+
+Check the available functions:
+
+```bash
+type google
+type duckduckgo
+type github
+type stackoverflow
+```
+
+Examples:
+
+```bash
+google "playwright java"
+
+github "playwright"
+
+stackoverflow "docker compose"
+
+duckduckgo "sdkman java 21"
+```
+
+To list all search functions:
+
+```bash
+typeset -f | grep '^function '
+```
+
+---
+
+**7. Z**
+
+The `z` plugin provides the `z` command for quickly jumping to frequently visited directories.
+
+Check it:
+
+```bash
+type z
+```
+
+Example:
+
+```bash
+z projects
+```
+
+This jumps to the most frequently visited directory matching `projects`.
+
+---
+
 #### Complete Configuration (omz)
 
 - Configure your `~/.zshrc` as the following:
