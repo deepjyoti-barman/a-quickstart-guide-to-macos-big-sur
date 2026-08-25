@@ -22,8 +22,8 @@
 - Appium Inspector
 - Apple Configurator 2
 - [ag](https://www.cyberciti.biz/open-source/command-line-hacks/ag-supercharge-string-search-through-directory-hierarchy/) (install via `brew install the_silver_searcher`) (This tool required as a dependency for peco plugin)
-- allure (install via `brew install allure`)
-- Brave Browser
+- allure (install via `brew install allure` / `npm install -g allure`)
+- Brave
 - Box (Optional)
 - [bat](https://github.com/sharkdp/bat) (install via `brew install bat`)
 - Charles
@@ -35,10 +35,11 @@
 - DBeaver Community Edition
 - Discord
 - exa: [exa-official](https://the.exa.website/), [exa-github](https://github.com/ogham/exa) (install via `brew install exa`)
-- Firefox Browser
+- Firefox
 - [Fish Shell](https://fishshell.com/) (install via `brew install fish`)
 - [fd](https://github.com/sharkdp/fd) (install via `brew install fd`)
 - [fzf](https://github.com/junegunn/fzf) (install via `brew install fzf`, install key-bindings via `$(brew --prefix)/opt/fzf/install`)
+- Ghostty
 - GitHub Desktop
 - Google Chrome
 - Grammarly for Safari
@@ -67,12 +68,12 @@
 - [micro](https://micro-editor.github.io/)
 - [mongodb-community](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/) (install via the following commands: `brew tap mongodb/brew`, `brew update`, `brew install mongodb-community`)
 - [Node.js](https://nodejs.org/en/download/) (recommended: install via nvm, `nvm install --lts`) (alternative installation via brew, `brew install node@20`) (alternatively, download the .pkg file for macOS and upgrade via the following commands: `sudo npm cache clean -f`, `sudo npm install -g n`, `sudo n stable`)
+- Notion
 - nvm (install via `brew install nvm`)
 - [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish)
 - [Oh My Zsh](https://ohmyz.sh/)
 - [Ollama](https://ollama.com/download) (You can install different LLMs locally via this)
 - OrbStack
-- Postgres.app
 - Postman
 - PyCharm Community Edition
 - [peco](https://github.com/peco/peco) (install via `brew install peco`)
@@ -80,8 +81,8 @@
 - python@3.12 (recommended: install via pyenv, `pyenv install 3.12.2; pyenv global 3.12.2`) (alternative installation via brew, `brew install python@3.12`) (to access python from terminal create a symbolic link using `brew link --overwrite python@3.12`, another command to do the same is via creating the symbolic link using `ln -s /opt/homebrew/Cellar/python@3.12/3.12.2/bin/python3 /opt/homebrew/bin/`)
 - python-tk@3.12 (required to access `idle3` command from Terminal) (install via `brew install python-tk@3.12`)
 - [ripgrep](https://github.com/BurntSushi/ripgrep) (install via `brew install ripgrep`)
-- Spring Tool Suite
 - Splashy (Wallpaper changing tool)
+- Spotify
 - Studio 3T Community Edition
 - Sublime Text
 - [sdkman](https://sdkman.io/)
@@ -98,12 +99,10 @@
 - XAMPP
 - XCode
 - Warp
-- WhatsApp
+- WebStrom
 - Zed
 - Zoom.us
-- [z](https://github.com/agkozak/zsh-z) (install via `git clone https://github.com/agkozak/zsh-z ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-z`, search for the phrase 'plugins' inside .zshrc file and append the plugin name as following: `plugins=(git zsh-z)`)
 - zero-mq (install via `brew install zeromq pkg-config`)(A required dependency for ijavascript npm package, which inturn is required to install JavaScript kernel for JavaScript based Jupyter notebooks)
-- [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) (install via `git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions`, search for the phrase 'plugins' inside .zshrc file and append the plugin name as following: `plugins=(git zsh-z zsh-autosuggestions)`)
 
 ## Homebrew
 
@@ -1682,20 +1681,41 @@ Open up 'Terminal' -> Click on `Terminal` in the menu bar -> `Preferences`
   - Github page: [zsh-z](https://github.com/agkozak/zsh-z)
   - Installation with Oh-my-zsh: [zsh-z#installation](https://github.com/agkozak/zsh-z?tab=readme-ov-file#for-oh-my-zsh-users)
 
+- Plugin: `zsh-autocomplete`
+  - Github page: [zsh-autocomplete](https://github.com/marlonrichert/zsh-autocomplete)
+  - Installation with Oh-my-zsh: [zsh-autosuggestions#installation](https://github.com/marlonrichert/zsh-autocomplete#installation--setup)
+  - Command:  
+    `git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git $ZSH_CUSTOM/plugins/zsh-autocomplete`
+
 - Plugin: `zsh-autosuggestions`
   - Github page: [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
   - Installation with Oh-my-zsh: [zsh-autosuggestions#installation](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh)
   - Command:  
     `git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions`
 
-- Plugin: `zsh-syntax-highlighting`
-  - Github page: [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
-  - Installation with Oh-my-zsh: [zsh-syntax-highlighting#installation](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh)
+- Plugin: `fast-syntax-highlighting`
+  - Github page: [fast-syntax-highlighting](https://github.com/zdharma-continuum/fast-syntax-highlighting)
+  - Installation with Oh-my-zsh: [fast-syntax-highlighting#installation](https://github.com/zdharma-continuum/fast-syntax-highlighting#installation)
   - Command:  
-    `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting`
+    `git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting`
 
-- Open the **~/.zshrc** file in your desired editor and modify the plugins line to what you see below:  
-  `plugins=(git z zsh-autosuggestions zsh-syntax-highlighting web-search sublime)`
+- Open the **~/.zshrc** file in your desired editor and modify the plugins line to what you see below:
+
+  ```bash
+  plugins=(
+    docker
+    docker-compose
+    extract
+    fast-syntax-highlighting
+    git
+    sublime
+    web-search
+    z
+    zsh-autocomplete
+    zsh-autosuggestions
+  )`
+  ```
+
 - Load these new plugins by running:  
   `source ~/.zshrc`
 
@@ -2591,7 +2611,6 @@ sudo npm install -g appium --unsafe-perm=true --allow-root
 - Quokka.js
 - Sass (Optional)
 - shell-format
-- Spring Boot Extension Pack
 - Tailwind CSS IntelliSense
 - Test Runner for Java
 - Thunder Client (Optional)
@@ -2729,6 +2748,13 @@ Click on the `Manage` (Screw) icon -> `Settings` (Shortcut: `Command + ,`) -> Fr
   "terminal.integrated.fontFamily": "MesloLGS NF, Monaco",
   "terminal.integrated.fontSize": 10,
 
+  "todo-tree.ripgrep.ripgrep": "/opt/homebrew/bin/rg",
+
+  "turboConsoleLog.addSemicolonInTheEnd": true,
+  "turboConsoleLog.logMessagePrefix": " ",
+  "turboConsoleLog.quote": "'",
+  "turboConsoleLog.delimiterInsideMessage": " ",
+
   "workbench.colorTheme": "One Dark Darker",
   "workbench.iconTheme": "material-icon-theme",
 
@@ -2777,7 +2803,8 @@ Click on the `Manage` (Screw) icon -> `Settings` (Shortcut: `Command + ,`) -> Fr
     "prettier.useTabs": false,
     "prettier.printWidth": 80,
     "prettier.semi": true
-  }
+  },
+  "chat.tips.enabled": false
 }
 ```
 
