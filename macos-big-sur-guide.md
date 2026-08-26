@@ -966,6 +966,7 @@ Pip is the standard package manager for Python that installs and manages Python 
 - setuptools
 - six
 - wheel
+- pylint
 
 ### Commonly used pip commands
 
@@ -1740,13 +1741,20 @@ alias | grep '^d'
 Common aliases include:
 
 ```text
-d           -> docker
-dps         -> docker ps
-dpa         -> docker ps -a
-di          -> docker images
-drm         -> docker rm
-drmi        -> docker rmi
-dex         -> docker exec -it
+dpu       → docker pull
+dils      → docker image ls / docker images
+dps       → docker ps
+dpsa      → docker ps -a
+dr        → docker container run
+drit      → docker container run -it
+dxcit     → docker container exec -it
+dlo       → docker container logs
+dstp      → docker container stop
+dst       → docker container start
+drs       → docker container restart
+drm       → docker container rm
+dirm      → docker image rm
+dsprune   → docker system prune
 ```
 
 ---
@@ -1762,12 +1770,23 @@ alias | grep dc
 Common aliases include:
 
 ```text
-dco         -> docker-compose
-dcu         -> docker-compose up
-dcud        -> docker-compose up -d
-dcd         -> docker-compose down
-dcl         -> docker-compose logs
-dcps        -> docker-compose ps
+dco       → docker-compose
+dcup      → docker-compose up
+dcupd     → docker-compose up -d
+dcupb     → docker-compose up --build
+dcupdb    → docker-compose up -d --build
+dcdn      → docker-compose down
+dcps      → docker-compose ps
+dcl       → docker-compose logs
+dclf      → docker-compose logs -f
+dce       → docker-compose exec
+dcpull    → docker-compose pull
+dcstart   → docker-compose start
+dcstop    → docker-compose stop
+dcrestart → docker-compose restart
+dcr       → docker-compose run
+dcrm      → docker-compose rm
+dck       → docker-compose kill
 ```
 
 > NOTE: Depending on your Docker installation, aliases may use either `docker-compose` or `docker compose`.
@@ -1819,19 +1838,35 @@ alias | grep '^g'
 The Git plugin contains hundreds of aliases, including:
 
 ```text
-g           -> git
-ga          -> git add
-gaa         -> git add --all
-gb          -> git branch
-gc          -> git commit -v
-gca         -> git commit -a -v
-gcam        -> git commit -a -m
-gco         -> git checkout
-gd          -> git diff
-gl          -> git pull
-gp          -> git push
-gst         -> git status
-glog        -> git log
+g        → git
+gst      → git status
+gd       → git diff
+gds      → git diff --staged
+ga       → git add
+gaa      → git add --all
+gcmsg    → git commit --message
+gcam     → git commit --all --message
+gc!     → git commit --verbose --amend
+gcn!    → git commit --verbose --no-edit --amend
+glog     → git log --oneline --decorate --graph
+gf       → git fetch
+gl       → git pull
+gpr      → git pull --rebase
+gp       → git push
+gco      → git checkout
+gsw      → git switch
+gswc     → git switch --create
+gb       → git branch
+gm       → git merge
+grbi     → git rebase --interactive
+gsta     → git stash push
+gstaa    → git stash apply
+gstl     → git stash list
+gstp     → git stash pop
+gstd     → git stash drop
+gstc     → git stash clear
+gpf      → git push --force-with-lease --force-if-includes
+gcp      → git cherry-pick
 ```
 
 ---
@@ -3229,17 +3264,23 @@ javac-compile-run-terminus.sublime-build:
 
 Click on 'Zed' on the apple menu bar -> 'Extensions' (`Shift + Command + X`)
 
-- Dockerfile v0.0.5
-- GraphQL v1.0.2 (Optional)
-- HTML v0.2.2
-- Java v6.4.0
+- Dockerfile v0.3.0
+- Docker Compose v0.1.0
+- GraphQL v1.0.5 (Optional)
+- Go Snippets v0.1.5
+- HTML v0.3.1
+- Java v6.8.26
 - Java with Eclipse JDTLS v0.2.5
-- LOG v0.0.6
-- Material Icon Theme v1.0.0
-- One Dark Pro v0.0.10
-- Python Snippets v0.1.1
+- JavaScript Snippets v0.1.0
+- LOG v0.0.7
+- Markdown Snippets v0.1.0
+- Material Icon Theme v1.3.1
+- One Dark Pro v0.0.11
+- One Dark Pro Max v0.0.2
+- One Dark Pro Monokai Darker Theme v0.1.1
+- Python Snippets v0.1.3
 - Rainbow CSV v1.1.0
-- SQL v1.1.4
+- SQL v1.1.8
 
 ### Add Custom Settings
 
@@ -3266,12 +3307,13 @@ Click on 'Zed' on the apple menu bar -> 'Settings' -> 'Open Settings' (`Command 
   },
   "theme": {
     "mode": "system",
-    "light": "One Dark Pro",
-    "dark": "One Dark Pro"
+    "light": "One Dark Pro Glass",
+    "dark": "One Dark Pro Max"
   },
   "telemetry": {
     "metrics": false,
-    "diagnostics": false
+    "diagnostics": false,
+    "anthropic_retention": false
   },
   "soft_wrap": "editor_width",
   "auto_indent_on_paste": true,
@@ -3763,7 +3805,7 @@ It provides a simple command-line interface (CLI) for running AI models such as 
 
 #### Download and Run a Model
 
-`bash ollama run llama3`
+`ollama run qwen3:8b`
 
 If the model is not already installed, Ollama automatically downloads it and starts a chat session.
 
@@ -3771,7 +3813,7 @@ If the model is not already installed, Ollama automatically downloads it and sta
 
 #### Download a Model Without Running It
 
-`bash ollama pull llama3`
+`ollama pull qwen3:8b`
 
 Downloads the model to your local machine without starting a chat session.
 
@@ -3779,7 +3821,9 @@ Downloads the model to your local machine without starting a chat session.
 
 #### View Installed Models
 
-`bash ollama list`
+`ollama list`  
+or  
+`ollama ls`
 
 Displays all models currently installed on your system.
 
@@ -3787,7 +3831,7 @@ Displays all models currently installed on your system.
 
 #### Start Chatting With a Model
 
-`bash ollama run llama3`
+`ollama run qwen3:8b`
 
 Once loaded, simply type your prompts and press Enter.
 
@@ -3799,29 +3843,40 @@ text >>> Explain REST APIs
 
 ### Common Ollama Commands
 
-- Run a model interactively in the terminal. If the model is missing, Ollama downloads it automatically:  
-  `ollama run <model>`
-
 - Download a model without running it:  
   `ollama pull <model>`
 
-- Remove a model from local storage:  
-  `ollama rm <model>`
+- Run a model interactively in the terminal. If the model is missing, Ollama downloads it automatically:  
+  `ollama run <model>`
 
 - List all installed models:  
-  `ollama list`
+  `ollama list`  
+  or  
+  `ollama ls`
 
 - Show currently loaded/running models:  
   `ollama ps`
 
+- Show model information:  
+  `ollama show <model>`
+
 - Unload a specific running model from memory and free RAM/VRAM resources:  
   `ollama stop <model>`
+
+- Remove a model from local storage:  
+  `ollama rm <model>`
 
 - Start the Ollama server manually. This is useful when using APIs or external applications that connect to Ollama:  
   `ollama serve`
 
+- Check the status of ollama service:  
+  `curl http://127.0.0.1:11434`
+
 - Display the installed Ollama version:  
   `ollama --version`
+
+- Show Ollama's help menu:  
+  `ollama help`
 
 ### Commands Available During Chat
 
@@ -3834,7 +3889,7 @@ When inside an interactive model session:
 
 ### Pro Tip
 
-Models remain loaded in memory for a short period after use (default keep-alive timeout). If you need to immediately free system resources, use: `bash ollama stop <model>`. This unloads the model from RAM/VRAM immediately.
+Models remain loaded in memory for a short period after use (default keep-alive timeout). If you need to immediately free system resources, use: `ollama stop <model>`. This unloads the model from RAM/VRAM immediately.
 
 ## Setting up Discord
 
