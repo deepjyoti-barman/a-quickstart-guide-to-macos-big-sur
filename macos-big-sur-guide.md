@@ -2871,18 +2871,18 @@ By default, accepting AI inline suggestions may require a different key combinat
 
 ### Configuring Appearance
 
-Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Preferences` -> `Appearance`
+Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Settings` -> `Appearance`
 
 - `Theme`: `One Dark Night`
 - Check `Use custom font`
 - `Use custom font`: `.SF NS Text` (or `.AppleSystemUIFont`)
 - `Size`: `12.0`
 
-### Configuring Editor
-
-Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Preferences` -> `Editor` -> `Font`
+### Configure Editor
 
 #### Editor Font - First Setup
+
+Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Settings` -> `Editor` -> `Font`
 
 - `Font`: `Cascadia Mono`
 - `Size`: `20.5`
@@ -2890,15 +2890,47 @@ Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Preferen
 
 #### Editor Font - Second Setup
 
+Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Settings` -> `Editor` -> `Font`
+
 - `Font`: `Monospaced`
-- `Size`: `11`
+- `Size`: `16.5`
 - `Line height`: `1.1`
+
+#### Enable Soft Wrap in Editor
+
+- **Permanent**
+
+  Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Settings` -> `Editor` -> `General`
+  - `Soft Wraps` -> `Soft-wrap these files`: `*.md; *.txt; *.json; *.yaml; *.yml; *.xml; *.properties`
+
+- **Temporary**
+
+  Open up 'IntelliJ IDEA' -> Open up any project -> Click on `Help` on the menu bar -> `Find Action` -> Search for `soft wrap`
+  - `View | Active Editor: Soft-Wrap`: `OFF` -> `ON`
+
+### Configure Terminal
+
+#### Terminal Font
+
+Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Settings` -> `Tools` -> `Terminal`
+
+- `Font`: `MesloLGS NF`
+- `Fallback`: `Cascadia Code`
+- `Size`: `20.5`
+- `Line height`: `1.1`
+
+#### Enable Soft Wrap in Terminal
+
+Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Settings` -> `Editor` -> `General` -> `Console`
+
+- Check `Use soft wraps in console`
 
 ### Necessary Plugins for IntelliJ
 
-Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Preferences` -> `Plugins`
+Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Settings` -> `Plugins`
 
 - Atom Material Icons
+- Better Highlights
 - CodeGlance Pro
 - CodeSnap
 - Create TestNG XML
@@ -2907,8 +2939,7 @@ Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Preferen
 - Gherkin
 - GitHub Copilot
 - GraphQL
-- HighlightBracketPair
-- Indent Rainbow
+- HighlightBracketPair (Not required if "Better Highlights" is installed)
 - Maven Helper
 - One Dark Darker
 - One Dark Theme
@@ -2922,7 +2953,7 @@ Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Preferen
 
 ### Enable Auto-Import
 
-Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Preferences` -> `Editor` -> `General` -> `Auto Import`
+Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Settings` -> `Editor` -> `General` -> `Auto Import`
 
 - Check `Add unambiguous imports on the fly`
 - Check `Optimize imports on the fly`
@@ -2934,11 +2965,11 @@ Open up 'IntelliJ IDEA' -> Click on `File` on the menu bar -> `Project Structure
 - Under `Platform Settings` -> `SDK` -> Delete the old / unused / uninstalled SDK's and then click on the `+` button to add new SDK -> Provide a `Name` and the `JDK home path`
 - Under `Project Settings` -> `Project` -> `SDK`: Click on the dropdown and select any `Detected SDKs`. If the SDK of your choice is not available then select the `+ Add SDK` option and choose any option feasible to you. You may either go for `Download JDK` option or Click on `JDK` and locate a JDK from your local system.
 
-## Setting up PyCharm IDEA
+## Setting up PyCharm
 
 ### Configuring Appearance for PyCharm
 
-Open up 'PyCharm IDEA' -> Click on `PyCharm IDEA` on the menu bar -> `Preferences` -> `Appearance`
+Open up 'PyCharm' -> Click on `PyCharm` on the menu bar -> `Settings` -> `Appearance`
 
 - `Theme`: `One Dark Night`
 - Check `Use custom font`
@@ -2947,25 +2978,61 @@ Open up 'PyCharm IDEA' -> Click on `PyCharm IDEA` on the menu bar -> `Preference
 
 ### Configuring Editor for PyCharm
 
-Open up 'PyCharm IDEA' -> Click on `PyCharm IDEA` on the menu bar -> `Preferences` -> `Editor` -> `Font`
-
 #### Editor Font Setup for PyCharm
+
+Open up 'PyCharm' -> Click on `PyCharm` on the menu bar -> `Settings` -> `Editor` -> `Font`
 
 - `Font`: `Cascadia Mono`
 - `Size`: `20.5`
 - `Line height`: `1.1`
 
+#### Enable Soft Wrap in Editor for PyCharm
+
+- **Permanent**
+
+  Open up 'PyCharm' -> Click on `PyCharm` on the menu bar -> `Settings` -> `Editor` -> `General`
+  - `Soft Wraps` -> `Soft-wrap these files`: `*.md; *.txt; *.json; *.yaml; *.yml; *.properties; *.toml, *.ini`
+
+- **Temporary**
+
+  Open up 'PyCharm' -> Open up any project -> Click on `Help` on the menu bar -> `Find Action` -> Search for `soft wrap`
+  - `View | Active Editor: Soft-Wrap`: `OFF` -> `ON`
+
+### Configure Terminal for PyCharm
+
+#### Terminal Font for PyCharm
+
+Open up 'PyCharm' -> Click on `PyCharm` on the menu bar -> `Settings` -> `Tools` -> `Terminal`
+
+- `Font`: `MesloLGS NF`
+- `Fallback`: `Cascadia Code`
+- `Size`: `20.5`
+- `Line height`: `1.1`
+
+#### Enable Soft Wrap in Terminal for PyCharm
+
+Open up 'PyCharm' -> Click on `PyCharm` on the menu bar -> `Settings` -> `Editor` -> `General` -> `Console`
+
+- Check `Use soft wraps in console`
+
+### Disable Showing Non-Modal Welcome Screen
+
+Open up 'PyCharm' -> Click on `PyCharm` on the menu bar -> `Settings` -> `Advanced Settings` -> (At the end of all options) `Welcome Screen`
+
+- Uncheck `Show the Welcome screen in non-modal mode`
+
 ### Necessary Plugins for PyCharm
 
-Open up 'PyCharm IDEA' -> Click on `PyCharm IDEA` on the menu bar -> `Preferences` -> `Plugins`
+Open up 'PyCharm' -> Click on `PyCharm` on the menu bar -> `Settings` -> `Plugins`
 
 - Atom Materials Icons
+- Better Highlights
 - CodeGlance Pro
 - CodeSnap
 - ExcelEditor
 - GitHub Copilot
 - GraphQL
-- HighlightBracketPair
+- HighlightBracketPair (Not required if "Better Highlights" is installed)
 - Indent Rainbow
 - One Dark Darker
 - One Dark Theme
@@ -2976,11 +3043,11 @@ Open up 'PyCharm IDEA' -> Click on `PyCharm IDEA` on the menu bar -> `Preference
 - Space
 - VSCode Theme
 
-## Setting up WebStorm IDEA
+## Setting up WebStorm
 
 ### Configuring Appearance for WebStorm
 
-Open up 'WebStorm IDEA' -> Click on `WebStorm IDEA` on the menu bar -> `Preferences` -> `Appearance`
+Open up 'WebStorm' -> Click on `WebStorm` on the menu bar -> `Settings` -> `Appearance`
 
 - `Theme`: `One Dark Night`
 - Check `Use custom font`
@@ -2989,7 +3056,7 @@ Open up 'WebStorm IDEA' -> Click on `WebStorm IDEA` on the menu bar -> `Preferen
 
 ### Configuring Editor for WebStorm
 
-Open up 'WebStorm IDEA' -> Click on `WebStorm IDEA` on the menu bar -> `Preferences` -> `Editor` -> `Font`
+Open up 'WebStorm' -> Click on `WebStorm` on the menu bar -> `Settings` -> `Editor` -> `Font`
 
 #### Editor Font Setup for WebStorm
 
@@ -2997,18 +3064,48 @@ Open up 'WebStorm IDEA' -> Click on `WebStorm IDEA` on the menu bar -> `Preferen
 - `Size`: `20.5`
 - `Line height`: `1.1`
 
+#### Enable Soft Wrap in Editor for WebStorm
+
+- **Permanent**
+
+  Open up 'WebStorm' -> Click on `WebStorm` on the menu bar -> `Settings` -> `Editor` -> `General`
+  - `Soft Wraps` -> `Soft-wrap these files`: `*.md; *.txt; *.json; *.yaml; *.yml; *.properties; *.env`
+
+- **Temporary**
+
+  Open up 'WebStorm' -> Open up any project -> Click on `Help` on the menu bar -> `Find Action` -> Search for `soft wrap`
+  - `View | Active Editor: Soft-Wrap`: `OFF` -> `ON`
+
+### Configure Terminal for WebStorm
+
+#### Terminal Font for WebStorm
+
+Open up 'WebStorm' -> Click on `WebStorm` on the menu bar -> `Settings` -> `Tools` -> `Terminal`
+
+- `Font`: `MesloLGS NF`
+- `Fallback`: `Cascadia Code`
+- `Size`: `20.5`
+- `Line height`: `1.1`
+
+#### Enable Soft Wrap in Terminal for WebStorm
+
+Open up 'WebStorm' -> Click on `WebStorm` on the menu bar -> `Settings` -> `Editor` -> `General` -> `Console`
+
+- Check `Use soft wraps in console`
+
 ### Necessary Plugins for WebStorm
 
-Open up 'WebStorm IDEA' -> Click on `WebStorm IDEA` on the menu bar -> `Preferences` -> `Plugins`
+Open up 'WebStorm' -> Click on `WebStorm` on the menu bar -> `Settings` -> `Plugins`
 
 - .env files
+- Better Highlights
 - Catppuccin Icons
 - CodeGlance Pro
 - CodeSnap
 - ExcelEditor
 - GitHub Copilot
 - GraphQL
-- HighlightBracketPair
+- HighlightBracketPair (Not required if "Better Highlights" is installed)
 - Indent Rainbow
 - Jupyter
 - Notebook Files
