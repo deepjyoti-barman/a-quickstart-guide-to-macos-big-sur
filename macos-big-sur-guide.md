@@ -2286,24 +2286,21 @@ export FZF_DEFAULT_OPTS="--height 40% --layout reverse --info inline --border \
     --bind shift-up:preview-page-up,shift-down:preview-page-down \
     --color 'fg:#bbccdd,fg+:#ddeeff,bg:#334455,preview-bg:#223344,border:#778899' \
     --ansi"
-export GRADLE_HOME=/opt/homebrew/Cellar/gradle/8.1.1
-export M2_HOME=/opt/homebrew/Cellar/maven/3.9.2
-export SSHPASS='deep@$1234'
+export GRADLE_HOME=/opt/homebrew/Cellar/gradle/9.7.1
+export M2_HOME=/opt/homebrew/Cellar/maven/3.9.16
+export SSHPASS='abcd@1234'
 
 # Java environment variable configurations
 export JAVA8_HOME=$(/usr/libexec/java_home -v 1.8.0)
-export JAVA11_HOME=$(/usr/libexec/java_home -v 11)
 export JAVA21_HOME=$(/usr/libexec/java_home -v 21)
-export JAVA_HOME=$JAVA11_HOME
+export JAVA_HOME=$JAVA21_HOME
 alias java8='export JAVA_HOME=$JAVA8_HOME'
-alias java11='export JAVA_HOME=$JAVA11_HOME'
 alias java21='export JAVA_HOME=$JAVA21_HOME'
 
 export PATH=$PATH:$ALLURE_HOME/bin
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
 ```
 
 ## Installing sshpass - An excellent tool for non-interactive SSH login
@@ -2378,6 +2375,56 @@ The -a flag specifies any application you want, so it's applicable to any numb
 - -t  opens in the default editor (i.e. if you use BBEdit, TextMate, etc.)
 - -e will open the file specifically in TextEdit
 
+## Resolve `chpwd_recent_filehandler:29: no such file or directory` issue
+
+### Issue Details
+
+While using Zsh on macOS, the following error may appear when opening a terminal or changing directories:
+
+```text
+chpwd_recent_filehandler:29: no such file or directory: /Users/<username>/.local/share/zsh/chpwd-recent-dirs
+```
+
+For example:
+
+```text
+chpwd_recent_filehandler:29: no such file or directory: /Users/deepjyoti.barman/.local/share/zsh/chpwd-recent-dirs
+```
+
+### Actual Reason
+
+Zsh's `chpwd_recent_filehandler` function is configured to maintain a list of recently visited directories.
+
+It expects the following file to exist:
+
+```text
+~/.local/share/zsh/chpwd-recent-dirs
+```
+
+However, the required directory or file does not exist. This can happen when:
+
+- The `~/.local/share/zsh` directory has not been created.
+- The `chpwd-recent-dirs` file was deleted.
+- Zsh configuration was copied from another Mac or environment.
+- A Zsh plugin or configuration enables `chpwd_recent_dirs` without creating its required storage file.
+
+As a result, Zsh attempts to access the file whenever the current directory changes and reports the error.
+
+### Resolution
+
+```bash
+# Create the required directory
+mkdir -p ~/.local/share/zsh
+
+# Create the required file
+touch ~/.local/share/zsh/chpwd-recent-dirs
+
+# Reload the current Zsh session
+exec zsh
+```
+
+This creates the storage location expected by `chpwd_recent_filehandler` and allows Zsh to maintain its recent-directory history without displaying the error.
+
 ## Resolve: Keyboard is entering Rupee symbol and not Backtick on macOS
 
 This happens because your Mac is using the `ABC - India` keyboard layout, which maps the tilde/backtick key (\`) to the Rupee symbol (₹).
@@ -2432,7 +2479,7 @@ Recently the Github team has announced that for better protection and privacy us
 
 #### Tools required
 
-- JDK 11 or above to support latest TestNG
+- JDK 21 or above to support latest TestNG
 - Android Studio (For command line tools and emulator)
 - Node.js (For installing Appium CLI tool) via `brew install npm@18`
 - Appium Desktop (Outdated, as it is present for Appium v1.22.3, but not for v2.0.0-beta.55)
@@ -2440,7 +2487,21 @@ Recently the Github team has announced that for better protection and privacy us
 - uiautomator2 driver for Appium via `appium driver install uiautomator2` [verify installation and list all installed drivers via `appium driver list`]
 - Appium Inspector
 - Maven via `brew install mvn`
-- IntelliJ / Eclipse IDE
+- IntelliJ IDEA / Eclipse IDE
+
+#### Enabling Command Line Tools in Android Studio
+
+To enable Command Line Tools in Android Studio perform the following steps:
+
+- Open Android Studio and navigate to `Settings`
+- In the `Settings` menu expand `Languages & Frameworks`
+- Select `Android SDK`
+- Click on `SDK Tools` tab
+- Check `Android SDK Command-line Tools (latest)`
+- Click on `Apply` and install the package
+- Click on `OK`
+
+**NOTE**: On the same menu under `SDK Tools` you can check `Show Package Details` and search for old APIs, build-tools that are not being used any longer and uncheck them to remove and free up some space. Also you can update some packages if update is available.
 
 #### Environment variables configuration
 
@@ -2449,14 +2510,17 @@ Recently the Github team has announced that for better protection and privacy us
 - Paste the following content:
 
   ```sh
-  export ANDROID_HOME=/Users/<username>/Library/Android/sdk
-  export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.16.1.jdk/Contents/Home
-  export M2_HOME=/opt/homebrew/Cellar/maven/3.8.6
+  export ANDROID_HOME=$HOME/Library/Android/sdk
+  export JAVA8_HOME=$(/usr/libexec/java_home -v 1.8.0)
+  export JAVA21_HOME=$(/usr/libexec/java_home -v 21)
+  export JAVA_HOME=$JAVA21_HOME
+  alias java8='export JAVA_HOME=$JAVA8_HOME'
+  alias java21='export JAVA_HOME=$JAVA21_HOME'
+  export M2_HOME=/opt/homebrew/Cellar/maven/3.9.16
 
   export PATH=$PATH:$ANDROID_HOME/emulator
   export PATH=$PATH:$ANDROID_HOME/platform-tools
-  export PATH=$PATH:$ANDROID_HOME/tools
-  export PATH=$PATH:$ANDROID_HOME/tools/bin
+  export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
   ```
 
 #### Command to install Appium CLI Tool in Mac
@@ -2536,15 +2600,17 @@ sudo npm install -g appium --unsafe-perm=true --allow-root
 - Paste the following content in `~/.zshenv`:
 
   ```sh
-  export ANDROID_HOME=/Users/<username>/Library/Android/sdk
-  export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.16.1.jdk/Contents/Home
-  export M2_HOME=/opt/homebrew/Cellar/maven/3.8.6
+  export ANDROID_HOME=$HOME/Library/Android/sdk
+  export JAVA8_HOME=$(/usr/libexec/java_home -v 1.8.0)
+  export JAVA21_HOME=$(/usr/libexec/java_home -v 21)
+  export JAVA_HOME=$JAVA21_HOME
+  alias java8='export JAVA_HOME=$JAVA8_HOME'
+  alias java21='export JAVA_HOME=$JAVA21_HOME'
+  export M2_HOME=/opt/homebrew/Cellar/maven/3.9.16
 
   export PATH=$PATH:$ANDROID_HOME/emulator
   export PATH=$PATH:$ANDROID_HOME/platform-tools
-  export PATH=$PATH:$ANDROID_HOME/tools
-  export PATH=$PATH:$ANDROID_HOME/tools/bin
-  export PATH=$PATH:$JAVA_HOME/bin
+  export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
   ```
 
 - Install Node.js LTS via `brew install node@18`
