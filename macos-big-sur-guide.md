@@ -1,6 +1,151 @@
 # A Quickstart Guide to MacOS Big Sur
 
-## First things to check after purchase
+## Table of Contents
+
+- [A Quickstart Guide to MacOS Big Sur](#a-quickstart-guide-to-macos-big-sur)
+  - [Table of Contents](#table-of-contents)
+  - [Set Up MacOS, Resolve Issues and Tweaks](#set-up-macos-resolve-issues-and-tweaks)
+    - [First Things to Check After Purchase](#first-things-to-check-after-purchase)
+    - [The Necessary Trackpad Tweak](#the-necessary-trackpad-tweak)
+    - [Enable Zoom Feature](#enable-zoom-feature)
+    - [Enable Three Fingers Drag or Select Feature](#enable-three-fingers-drag-or-select-feature)
+    - [Invert Mouse Scroll Direction](#invert-mouse-scroll-direction)
+    - [Overwrite Behavior of CAPS LOCK key with ESC](#overwrite-behavior-of-caps-lock-key-with-esc)
+    - [Display All Sidebar Items in Finder](#display-all-sidebar-items-in-finder)
+    - [Changing Workspace](#changing-workspace)
+    - [Reinstall MacOS from MacOS Recovery](#reinstall-macos-from-macos-recovery)
+    - [Grant Microsoft Teams, Zoom and Other Applications Necessary Permissions](#grant-microsoft-teams-zoom-and-other-applications-necessary-permissions)
+    - [How to Format an External HDD in Mac](#how-to-format-an-external-hdd-in-mac)
+    - [Maven Installation (Manual)](#maven-installation-manual)
+    - [sshpass Installation](#sshpass-installation)
+    - [Uninstall Oracle JDK from Mac](#uninstall-oracle-jdk-from-mac)
+    - [Capture a Snapshot and Record Video in Mac](#capture-a-snapshot-and-record-video-in-mac)
+    - [Opening a File in TextEdit from Terminal](#opening-a-file-in-textedit-from-terminal)
+    - [Resolve: `chpwd_recent_filehandler` Issue](#resolve-chpwd_recent_filehandler-issue)
+    - [Resolve: Keyboard is Entering Rupee Symbol and not Backtick on macOS](#resolve-keyboard-is-entering-rupee-symbol-and-not-backtick-on-macos)
+    - [Resolve: ChromeDriver Opening Failure in Mac](#resolve-chromedriver-opening-failure-in-mac)
+    - [Change Github Username and Password used in Terminal](#change-github-username-and-password-used-in-terminal)
+  - [Useful MacOS Shortcuts](#useful-macos-shortcuts)
+  - [Useful MacOS Commands](#useful-macos-commands)
+  - [Applications and Tools Installation](#applications-and-tools-installation)
+    - [Applications](#applications)
+    - [Tools & Utilities](#tools-and-utilities)
+  - [Homebrew](#homebrew)
+    - [Homebrew Installation](#homebrew-installation)
+    - [Essential Homebrew Commands](#essential-homebrew-commands)
+    - [Homebrew Installed Packages](#homebrew-installed-packages)
+  - [SDKMan](#sdkman)
+    - [Overview of SDKMan](#overview-of-sdkman)
+    - [Supported Systems](#supported-systems)
+    - [Install Required Packages on macOS](#install-required-packages-on-macos)
+    - [Install SDKMan: Universal (Recommended)](#install-sdkman-universal-recommended)
+    - [Install SDKMan: macOS](#install-sdkman-macos)
+    - [Useful SDKMan Commands](#useful-sdkman-commands)
+    - [Quick Reference on SDKMan](#quick-reference-on-sdkman)
+  - [nvm](#nvm)
+    - [Commonly Used nvm Commands](#commonly-used-nvm-commands)
+    - [Installation and Configuration of nvm](#installation-and-configuration-of-nvm)
+  - [npm](#npm)
+    - [Global Installable Packages of npm](#global-installable-packages-of-npm)
+    - [NPM Commands Cheatsheet](#npm-commands-cheatsheet)
+  - [pyenv](#pyenv)
+    - [Commonly Used pyenv Commands](#commonly-used-pyenv-commands)
+    - [Installation and Configuration of pyenv](#installation-and-configuration-of-pyenv)
+  - [pip](#pip)
+    - [Global Installable Packages of pip](#global-installable-packages-of-pip)
+    - [Commonly Used pip Commands](#commonly-used-pip-commands)
+  - [uv](#uv)
+    - [Installation of uv](#installation-of-uv)
+    - [Commonly Used uv Commands](#commonly-used-uv-commands)
+  - [Create Virtual Environments](#create-virtual-environments)
+    - [Create Virtual Environment using VSCode Extension](#create-virtual-environment-using-vscode-extension)
+    - [Create Virtual Environment using pip](#create-virtual-environment-using-pip)
+    - [Create Virtual Environment using uv](#create-virtual-environment-using-uv)
+  - [Terminal Configuration](#terminal-configuration)
+  - [iTerm2 Configuration](#iterm2-configuration)
+    - [Install Powerline and Nerd Fonts](#install-powerline-and-nerd-fonts)
+    - [Oh-My-Zsh Plugin](#oh-my-zsh-plugin)
+    - [Install a Colorscheme for iTerm2](#install-a-colorscheme-for-iterm2)
+    - [General Configuration](#general-configuration)
+    - [Some Important iTerm2 Shortcuts](#some-important-iterm2-shortcuts)
+    - [Oh-My-Fish Plugin (Optional)](#oh-my-fish-plugin-optional)
+  - [Visual Studio Code](#visual-studio-code)
+    - [Necessary Extensions For VS Code](#necessary-extensions-for-vs-code)
+    - [VS Code Configuration](#vs-code-configuration)
+    - [Configure Inline Suggestion Shortcut in VS Code](#configure-inline-suggestion-shortcut-in-vs-code)
+    - [Create Custom User Snippets](#create-custom-user-snippets)
+  - [IntelliJ IDEA](#intellij-idea)
+    - [Configure Appearance for IntelliJ](#configure-appearance-for-intellij)
+    - [Configure Editor for IntelliJ](#configure-editor-for-intellij)
+    - [Configure Terminal for IntelliJ](#configure-terminal-for-intellij)
+    - [Necessary Plugins for IntelliJ](#necessary-plugins-for-intellij)
+    - [Enable Auto-Import](#enable-auto-import)
+    - [Changing Java SDK in a Project](#changing-java-sdk-in-a-project)
+  - [PyCharm](#pycharm)
+    - [Configure Appearance for PyCharm](#configure-appearance-for-pycharm)
+    - [Configure Editor for PyCharm](#configure-editor-for-pycharm)
+    - [Configure Terminal for PyCharm](#configure-terminal-for-pycharm)
+    - [Necessary Plugins for PyCharm](#necessary-plugins-for-pycharm)
+  - [WebStorm](#webstorm)
+    - [Configure Appearance for WebStorm](#configure-appearance-for-webstorm)
+    - [Configure Editor for WebStorm](#configure-editor-for-webstorm)
+    - [Configure Terminal for WebStorm](#configure-terminal-for-webstorm)
+    - [Necessary Plugins for WebStorm](#necessary-plugins-for-webstorm)
+  - [Sublime Text](#sublime-text)
+    - [Installing Package Control](#installing-package-control)
+    - [Sublime Text Configuration](#sublime-text-configuration)
+    - [Necessary Packages for Sublime Text](#necessary-packages-for-sublime-text)
+    - [Custom Build Systems](#custom-build-systems)
+  - [Zed](#zed)
+    - [Necessary Extensions for Zed](#necessary-extensions-for-zed)
+    - [Zed Configuration](#zed-configuration)
+  - [Micro](#micro)
+    - [Overview of Micro](#overview-of-micro)
+    - [Features of Micro](#features-of-micro)
+    - [Install Micro on MacOS](#install-micro-on-macos)
+    - [Basic Usage Command for Micro](#basic-usage-command-for-micro)
+    - [Plugin Management for Micro](#plugin-management-for-micro)
+    - [Necessary Plugins and Usages](#necessary-plugins-and-usages)
+    - [Keyboard Commands for Micro](#keyboard-commands-for-micro)
+    - [Open Command Prompt inside Micro](#open-command-prompt-inside-micro)
+    - [Useful Command Prompt Commands](#useful-command-prompt-commands)
+    - [Command Prompt Examples](#command-prompt-examples)
+    - [Navigation Keys for Micro](#navigation-keys-for-micro)
+    - [Quick Reference for Micro](#quick-reference-for-micro)
+  - [Vim](#vim)
+    - [Remap the Caps Lock Key to Esc](#remap-the-caps-lock-key-to-esc)
+    - [Vim Modes](#vim-modes)
+    - [Vim Key-strokes Guide](#vim-key-strokes-guide)
+    - [Configure Vim Like a Power User](#configure-vim-like-a-power-user)
+  - [Code Watchers](#code-watchers)
+    - [Nodemon](#nodemon)
+    - [Watchexec](#watchexec)
+    - [Entr](#entr)
+  - [Mobile Testing with Appium in Mac](#mobile-testing-with-appium-in-mac)
+    - [Android](#android)
+    - [iOS](#ios)
+  - [Ollama](#ollama)
+    - [Overview of Ollama](#overview-of-ollama)
+    - [Reason Behind the Popularity of Ollama](#reason-behind-the-popularity-of-ollama)
+    - [Popular Free Models Supported by Ollama](#popular-free-models-supported-by-ollama)
+    - [Install a Model](#install-a-model)
+    - [Commonly Used Ollama Commands](#commonly-used-ollama-commands)
+    - [Commands Available During Chat](#commands-available-during-chat)
+    - [Pro Tip for Ollama](#pro-tip-for-ollama)
+  - [Discord](#discord)
+    - [Plugins for Discord](#plugins-for-discord)
+    - [Themes for Discord](#themes-for-discord)
+    - [How to Install Plugins and Themes in Discord](#how-to-install-plugins-and-themes-in-discord)
+    - [Appearance Settings of Discord](#appearance-settings-of-discord)
+  - [Charles Proxy](#charles-proxy)
+    - [Register Charles](#register-charles)
+    - [Install Charles Root Certificate on Mac](#install-charles-root-certificate-on-mac)
+    - [Install Charles Root Certificate on Mobile](#install-charles-root-certificate-on-mobile)
+    - [Enable and Configure SSL Proxying Settings](#enable-and-configure-ssl-proxying-settings)
+
+## Set Up MacOS, Resolve Issues and Tweaks
+
+### First Things to Check After Purchase
 
 - You are connected to your apple id.
 - Your fingerprint has been recorded and registered with 'Touch ID' for easier unlocks and purchases on your Mac.
@@ -8,12 +153,423 @@
 - Updates from 'App Store' and 'Software Update' has been successfully installed if available.
 - Backup of your system has been taken by 'Time Machine'.
 
-## Applications to install
+### The Necessary Trackpad Tweak
 
-### General installations and homebrew packages
+- Click on the `Apple` menu -> Go to `System Preferences` -> `Trackpad`
+  1. Check `Tap to click`.
+  2. Increase tracking speed to 5.
+
+### Enable Zoom Feature
+
+- Click on the `Apple` menu -> Go to `System Preferences` -> `Accessibility` -> `Zoom`
+  1. Check `Use keyboard shortcuts to zoom`.
+  2. Check `Enable Hover Text` (check this only if its required).
+
+### Enable Three Fingers Drag or Select Feature
+
+- Click on the `Apple` menu -> Go to `System Preferences` -> `Accessibility` -> `Pointer Control`
+  1. Under `Mouse & Trackpad` click on `Trackpad Options...`
+  2. Enable `Use trackpad for dragging`
+  3. Select `Three-Finger Drag` from the drop down menu
+  4. Click on `OK` and close the menu
+
+### Invert Mouse Scroll Direction
+
+Click on the `Apple` menu -> Go to `System Preferences` -> `Mouse` -> Untick `Scroll direction: Natural`.
+
+### Overwrite Behavior of CAPS LOCK key with ESC
+
+- Click on the `Apple` menu -> Go to `System Settings...` -> `Keyboard`
+- Click on `Keyboard Shortcuts...`
+- Click on `Modifier Keys`
+- Select the keyboard of your choice from the dropdown and assign the following value:
+  - `Caps Lock Key`: `Escape`
+
+### Display All Sidebar Items in Finder
+
+Open up 'Finder' -> Click on `Finder` in the menu bar -> `Preferences` -> `Sidebar` -> Check all possible items you want to show on the sidebar.
+
+### Changing Workspace
+
+- Swipe left or right with three or four fingers on trackpad.
+- Swipe left or right with two fingers on magic mouse.
+- `Control + Right_Arrow` : To switch to the workspace on the right.
+- `Control + Left_Arrow` : To switch to the workspace on the left.
+- Open Mission Control by swiping up with three or four fingers to have an overview of all the workspaces running.
+
+### Reinstall MacOS from MacOS Recovery
+
+**Note**: Make sure you have an active internet connection, Mac is plugged into the power / charger and it's turned off.
+
+- Key combinations:
+  1. `Command + R`  
+     Reinstall the latest version of MacOS installed on your Mac (Recommended for most users).
+  2. `Command + Option + R`  
+     Upgrade to the latest version of MacOS compatible to your device.
+  3. `Command + Option + Shift + R`  
+     Reinstall the version of MacOS that came with your Mac.
+- Turn on your Mac and immediately press and hold the key combinations of your choice until you see an Apple logo.
+- Enter the admin password.
+- Click on `Next`.
+- Select `Reinstall MacOS` from 'MacOS Utilities'.
+- Click on `Continue`.
+- Follow the on-screen options.
+- When it's done you will see a login window, enter the password and continue with the prompts.
+
+**Tip**: When to do factory reset / reinstall MacOS?
+
+- When you are selling your Mac.
+- Changing admin name.
+- To fix software issues.
+
+### Grant Microsoft Teams, Zoom and Other Applications Necessary Permissions
+
+Following are the steps to grant 'Microsoft Teams' permission for 'Screen Recording'.
+
+- Click on `Apple` menu -> `System Preferences` -> `Security and Privacy`
+- Click on `Privacy` tab.
+- Click on `Screen Recording` from the LHS side bar.
+- Click on the lock icon to make changes.
+- Provide admin password / touch id.
+- Click on the checkbox next to 'Microsoft Teams'. If 'Microsoft Teams' is not there as an option then click on the '+' icon and add 'Microsoft Teams' from the Applications folder.
+- Click on the unlock icon to lock the changes you have made.
+- Close the `Security and Privacy` window.
+- Quit 'Microsoft Teams' and reopen it to enact the changes made.
+
+**Tip**: List of necessary permissions for apps,
+
+- Microsoft Teams: Accessibility, Camera, Microphone, Screen Recording.
+- Zoom: Accessibility, Screen Recording.
+- Terminal: Full Disk Access.
+- iTerm2: Full Disk Access.
+
+### How to Format an External HDD in Mac
+
+**Tip**: In this guide, we're using exFAT instead of FAT32, another filesystem that both Windows and Mac can read and write to, because FAT32 has a maximum 4GB file size limit whereas exFAT can work with files as large as 16EB (exabytes). exFAT also performs better than FAT32.
+
+You can format the drive from either Mac or Windows. However, if you want to use part of the drive for OS X's Time Machine backups, you should do this from the Mac, since there's an extra step to make the drive compatible for Time Machine.
+
+Formatting of the device can be done by following the steps given below:
+
+- Connect an external hard drive to your Mac.
+- Open 'Spotlight Search' by pressing `Command + Spacebar`, type in Disk Utility, and click the first option. This will open the Disk Utility app, where you will find all the internal and external drives that are connected to your Mac.
+- Choose `View` -> `Show All Devices`
+- In the sidebar, select the storage device you want to erase, then click the Erase button.
+- Click the Scheme pop-up menu, then choose GUID Partition Map.
+- Click the Format pop-up menu, then choose a file system format.
+- Enter a name.
+- (Optional) If available, click Security Options, use the slider to choose how many times to write over the erased data, then click OK.
+  [Note: Secure erase options are available only for some types of storage devices. If the Security Options button is not available, Disk Utility cannot perform a secure erase on the storage device.]
+- Click Erase, then click Done.
+
+### Maven Installation (Manual)
+
+- Maven requires Java to execute. So we will have to first install Java and then maven into our Mac OS. Verify the JDK installation by opening the Terminal and run `java -version` command.
+
+- Although Maven can be manually installed in the given way, but installing maven via brew `brew install maven` or SDKMan (Recommended) is highly encouraged.
+
+- Go to the Maven Download site: <https://maven.apache.org/download.cgi> and download the “Binary tar.gz archive”.
+
+- After downloading, extract it to '/opt' directory using the below command.  
+  `tar -xvzf apache-maven-3.6.3-bin.tar.gz -C /opt`
+
+- The next step is to set up the environment variables – M2_HOME and Path. We have to add the Maven bin directory to the Path variable.
+  1. On macOS 10.5 Catalina or later, the default shell is zsh, and we can create the environment variables MAVEN_HOME and update the PATH in ~/.zshenv. Create .zshenv and open the it in the default text editor by entering the following command:  
+     `touch ~/.zshenv && open ~/.zshenv`
+
+  2. For macOS 10.14 Mojave and before, the default Terminal shell is bash, and we can create the environment variables in ~/.bash_profile. Create .bash_profile and open the it in the default text editor by entering the following command:  
+     `touch ~/.bash_profile && open ~/.bash_profile`
+
+- Copy and paste the following content in the .zshenv / .bash_profile and save the changes:
+
+  ```bash
+  export M2_HOME=/opt/apache-maven/3.8.2
+  export PATH=$PATH:$M2_HOME/bin
+  ```
+
+- Source the ~/.zshenv or ~/.bash_profile to reflect the changes.
+  1. `source ~/.zshenv`
+  2. `source ~/.bash_profile`
+
+- Finally, run the `mvn -version` command to check if Maven is installed successfully.
+
+**Extras**: My all in one ~/.zshenv config is given below,
+
+```bash
+export ALLURE_HOME=/opt/allure-2.14.0
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export FZF_DEFAULT_COMMAND="fd --type=file --color=always --follow --hidden --exclude .git --exclude node_modules --exclude .m2"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_DEFAULT_OPTS="--height 40% --layout reverse --info inline --border \
+    --preview 'bat --color=always --style=numbers --line-range=:500 {}' \
+    --bind shift-up:preview-page-up,shift-down:preview-page-down \
+    --color 'fg:#bbccdd,fg+:#ddeeff,bg:#334455,preview-bg:#223344,border:#778899' \
+    --ansi"
+export GRADLE_HOME=/opt/homebrew/Cellar/gradle/9.7.1
+export M2_HOME=/opt/homebrew/Cellar/maven/3.9.16
+export SSHPASS='abcd@1234'
+
+# Java environment variable configurations
+export JAVA8_HOME=$(/usr/libexec/java_home -v 1.8.0)
+export JAVA21_HOME=$(/usr/libexec/java_home -v 21)
+export JAVA_HOME=$JAVA21_HOME
+alias java8='export JAVA_HOME=$JAVA8_HOME'
+alias java21='export JAVA_HOME=$JAVA21_HOME'
+
+export PATH=$PATH:$ALLURE_HOME/bin
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
+```
+
+### sshpass Installation
+
+In most cases, Linux system administrators login to remote Linux servers using SSH either by supplying a password, or passwordless SSH login, or keybased SSH authentication.
+
+sshpass is a simple and lightweight command line tool that enables us to provide password (non-interactive password authentication) to the command prompt itself, so that automated shell scripts can be executed.
+
+#### Command to Install sshpass in Mac
+
+We can install sshpass using any of the following command:
+
+```bash
+brew install hudochenkov/sshpass/sshpass
+```
+
+```bash
+brew install esolitos/ipa/sshpass
+```
+
+#### Different Ways of Login via sshpass
+
+```bash
+sshpass -p 'my_pass_here' ssh aaronkilik@10.42.0.1
+```
+
+```bash
+export SSHPASS='my_pass_here'
+sshpass -e ssh aaronkilik@10.42.0.1
+```
+
+```bash
+sshpass -f password_filename ssh aaronkilik@10.42.0.1
+```
+
+### Uninstall Oracle JDK from Mac
+
+To uninstall / remove Oracle JDK from Mac run the following commands one after another or delete these files and directories manually.
+
+- Removing JDK  
+  `sudo rm -rf "/Library/Java/JavaVirtualMachines/jdk(version).jdk"`
+
+- Remove Java applet plugin  
+  `sudo rm -rf "/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin"`
+
+- Remove Java control panel  
+  `sudo rm -rf "/Library/PreferencePanes/JavaControlPanel.prefPane"`
+
+- Remove Applet, Web Start and installation related caches  
+  `sudo rm -rf "~/Library/Application\ Support/Oracle/Java"`  
+  `sudo rm -rf "/Library/Application\ Support/Oracle/Java"`  
+  `sudo rm -rf "~/Library/Application\ Support/Java"`
+
+### Capture a Snapshot and Record Video in Mac
+
+- Open up 'Quick Time Player'.
+- Click on `File` -> `New Screen Recording`
+  1. Select `Capture Entire Screen` option if you want to take a snapshot of the entire screen.
+  2. Select `Record Entire Screen` option if you want to record the video and actions.
+- Once the camera icon is visible, click on the screen to take the snapshot / start the recording.
+- If you are recording the then click on the 'Stop' icon on menu bar to stop the video recording.
+- The video will be saved on the desktop. Meanwhile, if you have captured a snapshot of the screen then the prompt will come up and let you decide the format and the destination to save the image you've captured.
+
+### Opening a File in TextEdit from Terminal
+
+```bash
+open -a TextEdit 'filename'
+```
+
+The -a flag specifies any application you want, so it's applicable to any number of situations, including ones where TextEdit isn't the default editor. Other relevant options:
+
+- -t  opens in the default editor (i.e. if you use BBEdit, TextMate, etc.)
+- -e will open the file specifically in TextEdit
+
+### Resolve: `chpwd_recent_filehandler` Issue
+
+#### Issue Details
+
+While using Zsh on macOS, the following error may appear when opening a terminal or changing directories:
+
+```text
+chpwd_recent_filehandler:29: no such file or directory: /Users/<username>/.local/share/zsh/chpwd-recent-dirs
+```
+
+For example:
+
+```text
+chpwd_recent_filehandler:29: no such file or directory: /Users/deepjyoti.barman/.local/share/zsh/chpwd-recent-dirs
+```
+
+#### Actual Reason
+
+Zsh's `chpwd_recent_filehandler` function is configured to maintain a list of recently visited directories.
+
+It expects the following file to exist:
+
+```text
+~/.local/share/zsh/chpwd-recent-dirs
+```
+
+However, the required directory or file does not exist. This can happen when:
+
+- The `~/.local/share/zsh` directory has not been created.
+- The `chpwd-recent-dirs` file was deleted.
+- Zsh configuration was copied from another Mac or environment.
+- A Zsh plugin or configuration enables `chpwd_recent_dirs` without creating its required storage file.
+
+As a result, Zsh attempts to access the file whenever the current directory changes and reports the error.
+
+#### Resolution
+
+```bash
+# Create the required directory
+mkdir -p ~/.local/share/zsh
+
+# Create the required file
+touch ~/.local/share/zsh/chpwd-recent-dirs
+
+# Reload the current Zsh session
+exec zsh
+```
+
+This creates the storage location expected by `chpwd_recent_filehandler` and allows Zsh to maintain its recent-directory history without displaying the error.
+
+### Resolve: Keyboard is Entering Rupee Symbol and not Backtick on macOS
+
+This happens because your Mac is using the `ABC - India` keyboard layout, which maps the tilde/backtick key (\`) to the Rupee symbol (₹).
+
+To fix this and restore the standard backtick key, you need to switch your input source to the standard `U.S.` or `ABC` layout.
+
+How to Fix the Layout, follow these quick steps to switch your keyboard input:
+
+1. Go to `System Settings` from the Apple menu.
+2. Click on `Keyboard` in the left sidebar.
+3. Under the `Text Input` section, click `Edit` next to `Input Sources`.
+4. Click the `+ (Add)` button in the bottom-left corner to add a new layout.
+5. Search for and add `ABC` or `U.S.` from the list.
+6. Select the `ABC - India` layout and click the `- (Remove)` button to delete it.
+7. Click `Done` to save your changes.
+
+Alternatively, you can quickly toggle between your installed keyboards at any time by pressing `Control + Spacebar`.
+
+### Resolve: ChromeDriver Opening Failure in Mac
+
+Click on the `Apple` menu -> `System Preferences` -> `System and Security` -> `General` -> Message will be shown as 'ChromeDriver is blocked' -> Click on `Allow Anyway`.
+
+### Change Github Username and Password used in Terminal
+
+Recently the Github team has announced that for better protection and privacy users should not use their profile password to push or pull code changes from Github repositories instead they should start using Personal Access Tokens provided by Github. The following process will guide you how to replace your old password with new Personal Access Token generated from your own Github account.
+
+- Check whether credential helper is set or not.  
+  `> git config --list`  
+  `credential.helper = osxkeychain`
+
+- Update the credentials via Keychain Access.
+  1. Open up 'Spotlight Search' by clicking on the icon in the menu bar or pressing `Command + Spacebar`.
+  2. Type 'Keychain Access' and press `Enter` to launch the app.
+  3. In 'Keychain Access' search for 'github.com'.
+  4. Find the 'internet password' entry for 'github.com'.
+  5. Edit it by double clicking on it (you may delete it from here as well).
+  6. Click on 'Show Password' checkbox.
+  7. Enter your login password.
+  8. Replace the old password with new Personal Access Token once it's visible.
+  9. Save the changes.
+  10. Close the application.
+
+- Deleting your credentials via command line.  
+  `> git credential-osxkeychain erase`  
+  `host = github.com`  
+  `protocol = https`  
+  `> [Return]`
+
+## Useful MacOS Shortcuts
+
+- `Command + Space` : Open up 'Spotlight Search' for searching any application, document etc. on your system or on the web.
+- `Command + Q` : Quit the currently open application.
+- `Command + M` : Minimize the focused window.
+- `Command + Shift + 3` : Capture a full size screenshot of the window.
+- `Command + Shift + 4` : Capture a portion of the screen.
+- `Command + Tab` : Switch between applications.
+- `Command + Option + Esc` : Force quit applications.
+- `Command + Control + Q` : Lock screen.
+- `Command + H` : Hide current application.
+- `Command + Option + H` : Hide all other applications.
+- `Command + Delete` : **(Finder)** Move selected items to bin.
+- `Command + C` : **(Finder)** Copy the selected files and directories.
+- `Command + V` : **(Finder)** Paste files and directories that has been copied into the current location.
+- `Command + Option + V` : **(Finder)** Move files and directories that has been copied into the current location.
+- `Command + Down_Arrow` : **(Finder)** Go one level inside the directory hierarchy / open up a file or directory.
+- `Command + Up_Arrow` : **(Finder)** Go one level up in the directory hierarchy.
+- `Command + Control + T` : **(Finder)** Add the currently open directory in the sidebar.
+- `Command + Control + S`: **(Finder)** Show / Hide the sidebar.
+- `Command + Shift + .` : **(Finder)** Show / Hide all the hidden files and directories.
+- `Command + S` : **(Text Editor)** Save documents, files in text editor and IDEs.
+- `Command + Shift + Left_Arrow` : **(Text Editor)** Select text from the cursor location to the beginning of the line.
+- `Command + Shift + Right_Arrow` : **(Text Editor)** Select text from the cursor location to the end of the line.
+- `Delete` : **(Text Editor)** Deletes a single character on the left of the cursor.
+- `Fn + Delete` : **(Text Editor)** Deletes a single character on the right of the cursor.
+- `Option + Left_Arrow` : **(Text Editor)** Move to the beginning of each word on the left.
+- `Option + Right_Arrow` : **(Text Editor)** Move to the end of each word on the right.
+- `Control + A` : **(Terminal)** Move cursor to the beginning of the line.
+- `Control + E` : **(Terminal)** Move cursor to the end of the line.
+- `Esc + B` : **(Terminal)** Move cursor one word forward.
+- `Esc + F`: **(Terminal)** Move cursor one word backward.
+- `Control + W` : **(Terminal)** Delete word on the left.
+- `Esc + D` : **(Terminal)** Delete word on the right.
+- `Control + K` : **(Terminal)** Delete all characters to the right of the cursor.
+- `Control + D` : **(Terminal)** Delete the current character.
+- `Control + U` : **(Terminal)** Delete entire line.
+- `Control + C` : **(Terminal)** Cancel the current command.
+- `Control + L` : **(Terminal)** Clear the terminal screen.
+- `Control + R` : **(Terminal)** Search in previous commands (history).
+- `Mouse1_Double_Click` (on any text): **(iTerm2)** Select / highlight the text in iTerm2 and copy it to clipboard.
+- `Mouse3_Click` : **(iTerm2)** Paste the content from the clipboard in iTerm2.
+- `Command + D` : **(iTerm2)** Split the current tab vertically with current profile.
+- `Command + Shift + D` : **(iTerm2)** Split the current tab horizontally with current profile.
+- `Command + Option + Shift + V` : **(iTerm2)** Split the current tab vertically with a profile of your choice.
+- `Command + Option + Shift + H` : **(iTerm2)** Split the current tab horizontally with a profile of your choice.
+- `Command + Shift + Enter` : **(iTerm2)** Maximize active pane.
+- `iTerm2` -> `Window` -> `Arrange split panes evenly` : **(iTerm2)** Evenly split the panes present in current tab.
+- `Command + ]` : **(iTerm2)** Select next pane.
+- `Command + [` : **(iTerm2)** Select previous pane.
+- `Command + Option + Up_Arrow` : **(iTerm2)** Select pane above.
+- `Command + Option + Down_Arrow` : **(iTerm2)** Select pane below.
+- `Command + Option + Left_Arrow` : **(iTerm2)** Select pane on the left.
+- `Command + Option + Right_Arrow` : **(iTerm2)** Select pane on the right.
+- `Command + T` : **(iTerm2)** Open a new tab.
+- `Command + Shift + ]` / `Command + Right_Arrow` : **(iTerm2)** Select next tab.
+- `Command + Shift + [` / `Command + Left_Arrow` : **(iTerm2)** Select previous tab.
+- `iTerm2` -> `Preferences` -> `Keys` -> `Navigation Shortcuts`  
+  `Shortcut to select a tab`: `Option + Number`  
+  `Shortcut to choose a split pane`: `Command + Number`
+- `Option + Number-of-the-Tab` : **(iTerm2)** Select a tab by number (with previous shortcut configuration).
+- `Command + Number-of-the-Pane` : **(iTerm2)** Select a pane within a tab by number (with previous shortcut configuration).
+
+## Useful MacOS Commands
+
+- `sudo shutdown -h now` : Shuts down your system immediately.
+- `sudo shutdown -r now` : Restarts your system immediately.
+- `open .` : Open the current directory in Finder.
+- `ls > ~/Desktop/files.txt` : **(I/O Redirection)** Redirects the output of 'ls' command to 'files.txt', overwrites the existing content if the file already exists.
+- `ls >> ~/Desktop/files.txt` : **(I/O Redirection)** Redirects the output of 'ls' command to 'files.txt', appends to the existing content if the file already exists.
+- `ls | open -fe` : **(I/O Redirection)** Redirects the output of 'ls' command and opens it in default text editor of the system (i.e. TextEdit).
+- `ls | pbcopy` : **(I/O Redirection)** Redirects the output of 'ls' command to the clipboard.
+
+## Applications and Tools Installation
+
+### Applications
 
 - Adobe Acrobat Reader
-- [Aerospike Tools](https://download.aerospike.com/artifacts/aerospike-tools/9.2.1/)
 - Android Studio
 - AnyDesk
 - Apache JMeter
@@ -21,42 +577,25 @@
 - AppCleaner
 - Appium Inspector
 - Apple Configurator 2
-- [ag](https://www.cyberciti.biz/open-source/command-line-hacks/ag-supercharge-string-search-through-directory-hierarchy/) (install via `brew install the_silver_searcher`) (This tool required as a dependency for peco plugin)
 - allure (install via `brew install allure` / `npm install -g allure`)
 - Brave
 - Box (Optional)
-- [bat](https://github.com/sharkdp/bat) (install via `brew install bat`)
 - Charles
 - [ChatGPT for Desktop](https://openai.com/chatgpt/download/)
 - [Claude](https://claude.ai/download)
 - [Cursor](https://cursor.com/)
-- cmake (install via `brew install cmake`)
-- composer (install via `brew install composer`)
 - DBeaver Community Edition
 - Discord
-- exa: [exa-official](https://the.exa.website/), [exa-github](https://github.com/ogham/exa) (install via `brew install exa`)
-- Firefox
-- [Fish Shell](https://fishshell.com/) (install via `brew install fish`)
-- [fd](https://github.com/sharkdp/fd) (install via `brew install fd`)
-- [fzf](https://github.com/junegunn/fzf) (install via `brew install fzf`, install key-bindings via `$(brew --prefix)/opt/fzf/install`)
-- Ghostty
+- Ghostty (Optional)
 - GitHub Desktop
 - Google Chrome
 - Grammarly for Safari
-- git (install via `brew install git`)
-- go (install via `brew install go`)
-- gradle (install via `brew install gradle`)
-- groovy (install via `brew install groovy`)
-- Homebrew
 - IntelliJ IDEA Community Edition
-- iTerm2 (install via `brew install --cask iterm2`)
 - Java SE Development Kit 8
 - Java SE Development Kit 11
 - Java SE Development Kit 21
 - Java SE Development Kit 25
 - JetBrains Toolkit
-- jmeter (install via `brew install jmeter`)
-- K6 (install via `brew install k6`)
 - [LM Studio](https://lmstudio.ai/download) (You can install different LLMs locally via this)
 - MeetInOne
 - Microsoft Excel
@@ -64,44 +603,65 @@
 - Microsoft PowerPoint
 - Microsoft Teams
 - Microsoft Word
-- maven (install via `brew install maven`)
-- [micro](https://micro-editor.github.io/)
-- [mongodb-community](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/) (install via the following commands: `brew tap mongodb/brew`, `brew update`, `brew install mongodb-community`)
 - [Node.js](https://nodejs.org/en/download/) (recommended: install via nvm, `nvm install --lts`) (alternative installation via brew, `brew install node@20`) (alternatively, download the .pkg file for macOS and upgrade via the following commands: `sudo npm cache clean -f`, `sudo npm install -g n`, `sudo n stable`)
 - Notion
-- nvm (install via `brew install nvm`)
-- [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish)
-- [Oh My Zsh](https://ohmyz.sh/)
 - [Ollama](https://ollama.com/download) (You can install different LLMs locally via this)
 - OrbStack
 - Postman
 - PyCharm Community Edition
-- [peco](https://github.com/peco/peco) (install via `brew install peco`)
-- php (install via `brew install php`)
-- python@3.12 (recommended: install via pyenv, `pyenv install 3.12.2; pyenv global 3.12.2`) (alternative installation via brew, `brew install python@3.12`) (to access python from terminal create a symbolic link using `brew link --overwrite python@3.12`, another command to do the same is via creating the symbolic link using `ln -s /opt/homebrew/Cellar/python@3.12/3.12.2/bin/python3 /opt/homebrew/bin/`)
-- python-tk@3.12 (required to access `idle3` command from Terminal) (install via `brew install python-tk@3.12`)
-- [ripgrep](https://github.com/BurntSushi/ripgrep) (install via `brew install ripgrep`)
 - Splashy (Wallpaper changing tool)
 - Spotify
 - Studio 3T Community Edition
 - Sublime Text
-- [sdkman](https://sdkman.io/)
-- sshpass
 - The Unarchiver
-- tree (install via `brew install tree`)
-- uv (install via `brew install uv`)
 - Visual Studio Code
 - VNC Viewer
 - Vysor
-- vim (install via `brew install vim` - not recommended to use the vim that comes bundled with preinstalled macOS)
 - WPS Office
-- wget (install via `brew install wget`)
 - XAMPP
 - XCode
 - Warp
 - WebStrom
 - Zed
 - Zoom.us
+
+### Tools and Utilities
+
+- [Aerospike Tools](https://download.aerospike.com/artifacts/aerospike-tools/9.2.1/)
+- [ag](https://www.cyberciti.biz/open-source/command-line-hacks/ag-supercharge-string-search-through-directory-hierarchy/) (install via `brew install the_silver_searcher`) (This tool required as a dependency for peco plugin)
+- [bat](https://github.com/sharkdp/bat) (install via `brew install bat`)
+- cmake (install via `brew install cmake`)
+- composer (install via `brew install composer`)
+- exa: [exa-official](https://the.exa.website/), [exa-github](https://github.com/ogham/exa) (install via `brew install exa`)
+- Firefox
+- [Fish Shell](https://fishshell.com/) (install via `brew install fish`)
+- [fd](https://github.com/sharkdp/fd) (install via `brew install fd`)
+- [fzf](https://github.com/junegunn/fzf) (install via `brew install fzf`, install key-bindings via `$(brew --prefix)/opt/fzf/install`)
+- git (install via `brew install git`)
+- go (install via `brew install go`)
+- gradle (install via `brew install gradle`)
+- groovy (install via `brew install groovy`)
+- [homebrew](https://brew.sh/)
+- iTerm2 (install via `brew install --cask iterm2`)
+- jmeter (install via `brew install jmeter`)
+- K6 (install via `brew install k6`)
+- maven (install via `brew install maven`)
+- [micro](https://micro-editor.github.io/)
+- [mongodb-community](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/) (install via the following commands: `brew tap mongodb/brew`, `brew update`, `brew install mongodb-community`)
+- nvm (install via `brew install nvm`)
+- [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish)
+- [Oh My Zsh](https://ohmyz.sh/)
+- [peco](https://github.com/peco/peco) (install via `brew install peco`)
+- php (install via `brew install php`)
+- python@3.12 (recommended: install via pyenv, `pyenv install 3.12.2; pyenv global 3.12.2`) (alternative installation via brew, `brew install python@3.12`) (to access python from terminal create a symbolic link using `brew link --overwrite python@3.12`, another command to do the same is via creating the symbolic link using `ln -s /opt/homebrew/Cellar/python@3.12/3.12.2/bin/python3 /opt/homebrew/bin/`)
+- python-tk@3.12 (required to access `idle3` command from Terminal) (install via `brew install python-tk@3.12`)
+- [ripgrep](https://github.com/BurntSushi/ripgrep) (install via `brew install ripgrep`)
+- [sdkman](https://sdkman.io/)
+- sshpass (install via `brew install sshpass`)
+- tree (install via `brew install tree`)
+- uv (install via `brew install uv`)
+- vim (install via `brew install vim` - not recommended to use the vim that comes bundled with preinstalled macOS)
+- wget (install via `brew install wget`)
 - zero-mq (install via `brew install zeromq pkg-config`)(A required dependency for ijavascript npm package, which inturn is required to install JavaScript kernel for JavaScript based Jupyter notebooks)
 
 ## Homebrew
@@ -136,7 +696,7 @@
   - Active community maintaining thousands of up-to-date packages
   - Keeps installed software separate from system files
 
-### Installing Homebrew on Mac Intel and M1 chip
+### Homebrew Installation
 
 - `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 - Brew installation directory in Intel: /usr/local
@@ -148,9 +708,9 @@
   eval "$(/opt/homebrew/bin/brew shellenv)"
   ```
 
-### Essential Homebrew commands
+### Essential Homebrew Commands
 
-#### General commands
+#### General Commands
 
 - `brew --version` : Display the version of Homebrew.
 - `brew help` : Print help information.
@@ -165,7 +725,7 @@
 - `brew link <package-name>` : Create symbolic links for the given package.
 - `brew unlink <package-name>` : Remove symbolic links for the given package.
 
-#### Most commonly used brew commands
+#### Most Commonly Used brew Commands
 
 - `brew list`
 - `brew update`
@@ -177,14 +737,14 @@
 - `brew uninstall --ignore-dependencies <package-name>`
 - `brew link <package-name>`
 
-#### Cask commands
+#### Cask Commands
 
 - `brew list --cask` : List installed applications (Note: Cask commands are used for interacting with graphical applications i.e. Firefox).
 - `brew install --cask <package-name>` : Install the given package.
 - `brew uninstall --cask <package-name>` : Uninstall the given package.
 - `brew reinstall --cask <package-name>` : Reinstall the given package.
 
-#### Additional Homebrew commands
+#### Additional Homebrew Commands
 
 - `brew info <package-name>` : Display information about the package.
 - `brew cleanup` : Remove older versions of all installed packages.
@@ -192,7 +752,7 @@
 - `brew cleanup <package-name>` : Remove older versions of specified package.
 - `brew search <package-name>` : Perform a substring search of the package given.
 
-#### Global Homebrew commands
+#### Global Homebrew Commands
 
 - `brew update` : Fetch latest version of Homebrew, cask and packages installed.
 - `brew upgrade` : Upgrade all packages.
@@ -209,9 +769,9 @@
 
   ![brew-packages](resources/brew-packages.png)
 
-## SDKMan - Software Development Kit Manager
+## SDKMan
 
-### Overview
+### Overview of SDKMan
 
 SDKMan is a command-line tool used to install and manage multiple versions of development tools, especially JVM-based tools such as Java, Gradle, Maven, JMeter, Kotlin, Scala, and Tomcat.
 
@@ -219,7 +779,7 @@ It is useful when you need to switch between different Java versions for differe
 
 Official Home Page: [https://sdkman.io/](https://sdkman.io/)
 
-### Supported System
+### Supported Systems
 
 These commands are suitable for:
 
@@ -246,7 +806,7 @@ Install the required packages:
 brew install zip unzip
 ```
 
-### Install SDKMan: Universal (Linux/macOS)(Recommended)
+### Install SDKMan: Universal (Recommended)
 
 - Run the SDKMan installer:
 
@@ -410,7 +970,7 @@ If the `sdk` command works, SDKMan is installed successfully.
   sdk flush
   ```
 
-### Quick Reference
+### Quick Reference on SDKMan
 
 ```bash
 brew install zip unzip
@@ -452,7 +1012,7 @@ sdk install jmeter 5.6.3
 jmeter --version
 ```
 
-## nvm - Node Version Manager
+## nvm
 
 Node Version Manager (NVM) is a version management tool for Node.js that allows you to install and switch between multiple Node.js versions on the same machine
 
@@ -469,7 +1029,7 @@ Node Version Manager (NVM) is a version management tool for Node.js that allows 
   - Prevents version conflicts between projects
   - Easy rollback if a new Node.js version causes issues
 
-### Commonly used nvm commands
+### Commonly Used nvm Commands
 
 - Check the version of nvm installed:  
   `nvm -v`  
@@ -497,7 +1057,7 @@ Node Version Manager (NVM) is a version management tool for Node.js that allows 
 - To uninstall a specific Node.js version, run:  
   `nvm uninstall 14.18.1`
 
-### Installation and configuration of nvm and Node.js
+### Installation and Configuration of nvm
 
 ```bash
 # Install nvm via brew
@@ -523,7 +1083,7 @@ node --version
 npm --version
 ```
 
-## npm - Node Package Manager
+## npm
 
 Node Package Manager (NPM) is the default package manager for Node.js that manages JavaScript libraries and dependencies for projects
 
@@ -545,7 +1105,7 @@ Node Package Manager (NPM) is the default package manager for Node.js that manag
   - Handles transitive dependencies automatically
   - Integrates seamlessly with Node.js projects
 
-### npm - Global Packages
+### Global Installable Packages of npm
 
 - appium-doctor (optional)
 - appium
@@ -766,7 +1326,7 @@ Node Package Manager (NPM) is the default package manager for Node.js that manag
    npm outdated -g
    ```
 
-#### Cache Management
+#### Cache Management in npm
 
 1. **Clear Cache**
 
@@ -874,7 +1434,7 @@ Node Package Manager (NPM) is the default package manager for Node.js that manag
    npm version 1.2.0
    ```
 
-## pyenv - Simple Python Version Management tool
+## pyenv
 
 Python version management tool that allows you to install and switch between multiple Python versions on the same machine
 
@@ -894,7 +1454,7 @@ Python version management tool that allows you to install and switch between mul
   - Works without requiring sudo/administrator privileges
   - Supports virtual environments through pyenv-virtualenv plugin
 
-### Commonly used pyenv commands
+### Commonly Used pyenv Commands
 
 - `pyenv install --list`: This command lists all available python versions, you can use grep to find a specific Python version
 - `pyenv install --list | grep " 3\.[678]"`: List all the available CPython 3.6 through 3.8
@@ -905,7 +1465,7 @@ Python version management tool that allows you to install and switch between mul
 - `pyenv version`: This command is similar to versions but only shows you the current active Python version.
 - `pyenv which python`: The which command is helpful for determining the full path to a system executable. Because pyenv works by using shims, this command allows you to see the full path to the executable pyenv is running. The output displays the full system path for pip. This can be helpful when you’ve installed command-line applications.
 
-### Installation and configuration to support multiple Python versions
+### Installation and Configuration of pyenv
 
 ```bash
 # Install pyenv via brew
@@ -939,7 +1499,7 @@ pyenv which python3
 # /Users/deepjyoti.barman/.pyenv/versions/3.12.0/bin/python3
 ```
 
-## pip - Pip Installs Packages
+## pip
 
 Pip is the standard package manager for Python that installs and manages Python libraries and dependencies from the Python Package Index (PyPI)
 
@@ -960,7 +1520,7 @@ Pip is the standard package manager for Python that installs and manages Python 
   - Works seamlessly with virtual environments
   - Supports installation from various sources (PyPI, Git repositories, local files)
 
-### pip - Global Packages
+### Global Installable Packages of pip
 
 - pip
 - setuptools
@@ -968,7 +1528,7 @@ Pip is the standard package manager for Python that installs and manages Python 
 - wheel
 - pylint
 
-### Commonly used pip commands
+### Commonly Used pip Commands
 
 - `pip3 list`: List all the packages
 - `pip list`: List all the packages (sometimes output of pip3 and pip commands can be different in a mac machine)
@@ -1001,9 +1561,7 @@ UV is an extremely fast Python package and project manager written in Rust, desi
   - Better dependency resolution and conflict detection
   - Modern project management with pyproject.toml support
 
-### Commonly used uv commands
-
-#### Installation
+### Installation of uv
 
 ```bash
 # Install uv using pip
@@ -1015,6 +1573,8 @@ brew install uv
 # Install uv using curl (recommended)
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
+
+### Commonly Used uv Commands
 
 #### Project Initialization
 
@@ -1217,7 +1777,7 @@ uv help
 uv add --help
 ```
 
-#### Cache Management
+#### Cache Management in uv
 
 ```bash
 # Show cache directory
@@ -1288,7 +1848,7 @@ uv tool upgrade ruff
 
 ## Create Virtual Environments
 
-### Create virtual environment using VSCode extension
+### Create Virtual Environment using VSCode Extension
 
 - Install a VSCode extension called 'Python' from marketplace
 - Open up the directory where you want the virtual environment to be created in VSCode
@@ -1298,7 +1858,9 @@ uv tool upgrade ruff
 - Choose Python interpreter version
 - Virtual environment with the given Python interpreter version will be inside on the '.venv' directory
 
-### Create virtual environment using pip
+### Create Virtual Environment using pip
+
+#### Project Initialization with pip
 
 ```bash
 # Create and enter project directory
@@ -1329,9 +1891,38 @@ pip freeze > requirements.txt
 deactivate
 ```
 
-### Create virtual environment using uv
+#### pip: Set Up and Run a Python Project from GitHub Locally
 
-#### Without uv init
+```bash
+# Clone the project from GitHub
+git clone https://github.com/your-username/my-project.git
+cd my-project
+
+# Create virtual environment
+python -m venv .venv
+
+# macOS/Linux
+source .venv/bin/activate
+
+# Windows (PowerShell)
+# .venv\Scripts\Activate.ps1
+
+# Upgrade pip
+python -m pip install --upgrade pip
+
+# Install all project dependencies
+pip install -r requirements.txt
+
+# Start working on the project
+python your_file.py
+
+# Deactivate virtual environment when finished
+deactivate
+```
+
+### Create Virtual Environment using uv
+
+#### Project Initialization without `uv init`
 
 ```bash
 # Create and enter project directory
@@ -1360,7 +1951,7 @@ uv pip freeze > requirements.txt
 deactivate
 ```
 
-#### With uv init
+#### Project Initialization with `uv init`
 
 ```bash
 # Initialize a new project with uv (creates directory and pyproject.toml)
@@ -1378,9 +1969,6 @@ uv run python script.py
 
 # Or run any command in the project environment
 uv run locust
-
-# Sync or install all dependencies from pyproject.toml and uv.lock
-uv sync
 
 # To deactivate, just exit the uv run command or close terminal
 # (No manual deactivate needed since you're not manually activating)
@@ -1415,116 +2003,37 @@ Key points on committing code to repository:
 - `uv sync` automatically creates the virtual environment and installs all dependencies
 - The `uv.lock` file is crucial for reproducible installations - it locks exact package versions so everyone gets the same environment.
 
-## The necessary trackpad tweak
+#### uv: Set Up and Run a Python Project from GitHub Locally
 
-- Click on the `Apple` menu -> Go to `System Preferences` -> `Trackpad`
-  1. Check `Tap to click`.
-  2. Increase tracking speed to 5.
+```bash
+# Clone the project from GitHub
+git clone https://github.com/your-username/my-project.git
+cd my-project
 
-## Enable zoom feature
+# Install the project dependencies and create/update the virtual environment
+uv sync
 
-- Click on the `Apple` menu -> Go to `System Preferences` -> `Accessibility` -> `Zoom`
-  1. Check `Use keyboard shortcuts to zoom`.
-  2. Check `Enable Hover Text` (check this only if its required).
+# Run a Python script in the project environment
+uv run python script.py
 
-## Enable three finger drag or select feature
+# Or run any installed command in the project environment
+uv run locust
 
-- Click on the `Apple` menu -> Go to `System Preferences` -> `Accessibility` -> `Pointer Control`
-  1. Under `Mouse & Trackpad` click on `Trackpad Options...`
-  2. Enable `Use trackpad for dragging`
-  3. Select `Three-Finger Drag` from the drop down menu
-  4. Click on `OK` and close the menu
+# Optional: activate the virtual environment manually
+source .venv/bin/activate
 
-## Invert mouse scroll direction
+# Deactivate when manually activated
+deactivate
+```
 
-Click on the `Apple` menu -> Go to `System Preferences` -> `Mouse` -> Untick `Scroll direction: Natural`.
+#### Virtual Environment Activation with `uv`
 
-## Overwrite behavior of CAPS LOCK key with ESC
+| Approach                                    | Plus                                                                                                                                               | Minus                                                                                                           |
+| ------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| Don’t activate (Recommended) — use `uv run` | Explicit and reliable; automatically uses the project environment; avoids accidentally using the wrong Python or packages; good for scripts and CI | You must prefix commands with `uv run`                                                                          |
+| Activate — use `source .venv/bin/activate`  | Shorter commands, such as `python script.py` or `locust`; convenient for interactive work                                                          | Easy to forget which environment is active; may accidentally use another project’s or global Python environment |
 
-- Click on the `Apple` menu -> Go to `System Settings...` -> `Keyboard`
-- Click on `Keyboard Shortcuts...`
-- Click on `Modifier Keys`
-- Select the keyboard of your choice from the dropdown and assign the following value:
-  - `Caps Lock Key`: `Escape`
-
-## Display all sidebar items in Finder
-
-Open up 'Finder' -> Click on `Finder` in the menu bar -> `Preferences` -> `Sidebar` -> Check all possible items you want to show on the sidebar.
-
-## Changing workspace
-
-- Swipe left or right with three or four fingers on trackpad.
-- Swipe left or right with two fingers on magic mouse.
-- `Control + Right_Arrow` : To switch to the workspace on the right.
-- `Control + Left_Arrow` : To switch to the workspace on the left.
-- Open Mission Control by swiping up with three or four fingers to have an overview of all the workspaces running.
-
-## Reinstall MacOS from MacOS recovery
-
-**Note**: Make sure you have an active internet connection, Mac is plugged into the power / charger and it's turned off.
-
-- Key combinations:
-  1. `Command + R`  
-     Reinstall the latest version of MacOS installed on your Mac (Recommended for most users).
-  2. `Command + Option + R`  
-     Upgrade to the latest version of MacOS compatible to your device.
-  3. `Command + Option + Shift + R`  
-     Reinstall the version of MacOS that came with your Mac.
-- Turn on your Mac and immediately press and hold the key combinations of your choice until you see an Apple logo.
-- Enter the admin password.
-- Click on `Next`.
-- Select `Reinstall MacOS` from 'MacOS Utilities'.
-- Click on `Continue`.
-- Follow the on-screen options.
-- When it's done you will see a login window, enter the password and continue with the prompts.
-
-**Tip**: When to do factory reset / reinstall MacOS?
-
-- When you are selling your Mac.
-- Changing admin name.
-- To fix software issues.
-
-## Granting Microsoft Teams, Zoom and other softwares resource and device access permissions
-
-Following are the steps to grant 'Microsoft Teams' permission for 'Screen Recording'.
-
-- Click on `Apple` menu -> `System Preferences` -> `Security and Privacy`
-- Click on `Privacy` tab.
-- Click on `Screen Recording` from the LHS side bar.
-- Click on the lock icon to make changes.
-- Provide admin password / touch id.
-- Click on the checkbox next to 'Microsoft Teams'. If 'Microsoft Teams' is not there as an option then click on the '+' icon and add 'Microsoft Teams' from the Applications folder.
-- Click on the unlock icon to lock the changes you have made.
-- Close the `Security and Privacy` window.
-- Quit 'Microsoft Teams' and reopen it to enact the changes made.
-
-**Tip**: List of necessary permissions for apps,
-
-- Microsoft Teams: Accessibility, Camera, Microphone, Screen Recording.
-- Zoom: Accessibility, Screen Recording.
-- Terminal: Full Disk Access.
-- iTerm2: Full Disk Access.
-
-## How to format an external hard disk drive in Mac
-
-**Tip**: In this guide, we're using exFAT instead of FAT32, another filesystem that both Windows and Mac can read and write to, because FAT32 has a maximum 4GB file size limit whereas exFAT can work with files as large as 16EB (exabytes). exFAT also performs better than FAT32.
-
-You can format the drive from either Mac or Windows. However, if you want to use part of the drive for OS X's Time Machine backups, you should do this from the Mac, since there's an extra step to make the drive compatible for Time Machine.
-
-Formatting of the device can be done by following the steps given below:
-
-- Connect an external hard drive to your Mac.
-- Open 'Spotlight Search' by pressing `Command + Spacebar`, type in Disk Utility, and click the first option. This will open the Disk Utility app, where you will find all the internal and external drives that are connected to your Mac.
-- Choose `View` -> `Show All Devices`
-- In the sidebar, select the storage device you want to erase, then click the Erase button.
-- Click the Scheme pop-up menu, then choose GUID Partition Map.
-- Click the Format pop-up menu, then choose a file system format.
-- Enter a name.
-- (Optional) If available, click Security Options, use the slider to choose how many times to write over the erased data, then click OK.
-  [Note: Secure erase options are available only for some types of storage devices. If the Security Options button is not available, Disk Utility cannot perform a secure erase on the storage device.]
-- Click Erase, then click Done.
-
-## Terminal configuration
+## Terminal Configuration
 
 Open up 'Terminal' -> Click on `Terminal` in the menu bar -> `Preferences`
 
@@ -1542,9 +2051,9 @@ Open up 'Terminal' -> Click on `Terminal` in the menu bar -> `Preferences`
   2. `Window` tab
      - `Columns`: `200`, `Rows`: `61`
 
-## iTerm2 configuration
+## iTerm2 Configuration
 
-### Install Powerline and Nerd fonts
+### Install Powerline and Nerd Fonts
 
 - **Powerline** fonts GitHub page: [powerline/fonts](https://github.com/powerline/fonts)
 - **Nerd Fonts** official website: [NerdFonts](https://www.nerdfonts.com/)
@@ -1610,7 +2119,7 @@ Open up 'Terminal' -> Click on `Terminal` in the menu bar -> `Preferences`
 
 - Note: this installation is required to support sign and symbols present in oh-my-zsh / oh-my-fish themes.
 
-### Oh-My-Zsh plugin
+### Oh-My-Zsh Plugin
 
 #### Installation (omz)
 
@@ -1627,7 +2136,7 @@ Open up 'Terminal' -> Click on `Terminal` in the menu bar -> `Preferences`
 - Show the version of oh-my-zsh installed: `omz version`
 - Reload the current zsh session: `omz reload`
 
-#### Theme installation (omz)
+#### Theme Installation (omz)
 
 - Different type of themes can be downloaded from the following links:
   - [Current Themes](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes)
@@ -1676,7 +2185,7 @@ Open up 'Terminal' -> Click on `Terminal` in the menu bar -> `Preferences`
     Overwrite ~/.p10k.zsh?: Choose 'Yes'
     ```
 
-#### Plugin installation (omz)
+#### Plugin Installation (omz)
 
 - Plugin: `zsh-z`
   - Github page: [zsh-z](https://github.com/agkozak/zsh-z)
@@ -2093,7 +2602,7 @@ This jumps to the most frequently visited directory matching `projects`.
   [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
   ```
 
-### Install a colorscheme for iTerm2
+### Install a Colorscheme for iTerm2
 
 - Colorscheme 1: **Monokai Remastered**
   - Pay a visit to [Iterm2-color-schemes](https://iterm2colorschemes.com).
@@ -2112,7 +2621,7 @@ This jumps to the most frequently visited directory matching `projects`.
 - Close the `Preferences` dialog box.
 - **Resources**: The `coolnight.itermcolor` colorscheme file has been added in this repository.
 
-### General configuration
+### General Configuration
 
 Open up 'iTerm2' -> Click on `iTerm2` in the menu bar -> `Preferences`
 
@@ -2145,7 +2654,7 @@ Open up 'iTerm2' -> Click on `iTerm2` in the menu bar -> `Preferences`
   - `Shortcut to select a tab`: `Option + Number`
   - `Shortcut to choose a split pane`: `Command + Number`
 
-### Some important iTerm2 shortcuts
+### Some Important iTerm2 Shortcuts
 
 - Split Horizontally with Current Profile: `Command + Shift + D`
 - Split Vertically with Current Profile: `Command + D`
@@ -2155,7 +2664,7 @@ Open up 'iTerm2' -> Click on `iTerm2` in the menu bar -> `Preferences`
 - Switch Split Panes: `Command + Number`
 - Close Split Pane/Tab: `Command + W`
 
-### Fish shell and Oh-My-Fish plugin (Optional)
+### Oh-My-Fish Plugin (Optional)
 
 #### Installation (Fish shell)
 
@@ -2189,7 +2698,7 @@ Open up 'iTerm2' -> Click on `iTerm2` in the menu bar -> `Preferences`
 - Show installed version: `omf version`
 - Show information about a package: `omf describe <package>`
 
-#### Plugin/Theme installation
+#### Plugin/Theme Installation
 
 - [Oh-My-Fish Themes](https://github.com/oh-my-fish/oh-my-fish/blob/master/docs/Themes.md)
 - [Oh-My-Fish Plugins](https://github.com/orgs/oh-my-fish/repositories?type=all)
@@ -2199,7 +2708,7 @@ Open up 'iTerm2' -> Click on `iTerm2` in the menu bar -> `Preferences`
 - Install z plugin: `omf install z` [oh-my-fish/plugin-z](https://github.com/oh-my-fish/plugin-z) (This plugin is also available for zsh, for detailed documentation visit [agkozak/zsh-z](https://github.com/agkozak/zsh-z))
 - Download and install peco select functions for fish shell. Visit [takashabe/fish-peco](https://github.com/takashabe/fish-peco), clone or download zipped content of this repository. Copy all the .fish files present in this repository to `~/.config/fish/functions` directory.
 
-#### Additional theme configuration / startup options
+#### Additional Theme Configuration and Startup Options
 
 - You can add startup, custom theme configuration, custom plugin configuration commands in the configuration file `~/.config/fish/config.fish`.
 - You need to go through the documentation of fish shell, themes and plugins to get useful configuration commands.
@@ -2245,411 +2754,9 @@ Open up 'iTerm2' -> Click on `iTerm2` in the menu bar -> `Preferences`
   end
   ```
 
-## Install and configure tools like Maven / JMeter / Oracle JDK etc. on Mac
+## Visual Studio Code
 
-- Maven requires Java to execute. So we will have to first install Java and then maven into our Mac OS. Verify the JDK installation by opening the Terminal and run `java -version` command.
-
-- Go to the Maven Download site: <https://maven.apache.org/download.cgi> and download the “Binary tar.gz archive”.
-
-- After downloading, extract it to '/opt' directory using the below command.  
-  `tar -xvzf apache-maven-3.6.3-bin.tar.gz -C /opt`
-
-- The next step is to set up the environment variables – M2_HOME and Path. We have to add the Maven bin directory to the Path variable.
-  1. On macOS 10.5 Catalina or later, the default shell is zsh, and we can create the environment variables MAVEN_HOME and update the PATH in ~/.zshenv. Create .zshenv and open the it in the default text editor by entering the following command:  
-     `touch ~/.zshenv && open ~/.zshenv`
-
-  2. For macOS 10.14 Mojave and before, the default Terminal shell is bash, and we can create the environment variables in ~/.bash_profile. Create .bash_profile and open the it in the default text editor by entering the following command:  
-     `touch ~/.bash_profile && open ~/.bash_profile`
-
-- Copy and paste the following content in the .zshenv / .bash_profile and save the changes:
-
-  ```bash
-  export M2_HOME=/opt/apache-maven/3.8.2
-  export PATH=$PATH:$M2_HOME/bin
-  ```
-
-- Source the ~/.zshenv or ~/.bash_profile to reflect the changes.
-  1. `source ~/.zshenv`
-  2. `source ~/.bash_profile`
-
-- Finally, run the `mvn -version` command to check if Maven is installed successfully.
-
-**Extras**: My all in one ~/.zshenv config is given below,
-
-```bash
-export ALLURE_HOME=/opt/allure-2.14.0
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export FZF_DEFAULT_COMMAND="fd --type=file --color=always --follow --hidden --exclude .git --exclude node_modules --exclude .m2"
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_DEFAULT_OPTS="--height 40% --layout reverse --info inline --border \
-    --preview 'bat --color=always --style=numbers --line-range=:500 {}' \
-    --bind shift-up:preview-page-up,shift-down:preview-page-down \
-    --color 'fg:#bbccdd,fg+:#ddeeff,bg:#334455,preview-bg:#223344,border:#778899' \
-    --ansi"
-export GRADLE_HOME=/opt/homebrew/Cellar/gradle/9.7.1
-export M2_HOME=/opt/homebrew/Cellar/maven/3.9.16
-export SSHPASS='abcd@1234'
-
-# Java environment variable configurations
-export JAVA8_HOME=$(/usr/libexec/java_home -v 1.8.0)
-export JAVA21_HOME=$(/usr/libexec/java_home -v 21)
-export JAVA_HOME=$JAVA21_HOME
-alias java8='export JAVA_HOME=$JAVA8_HOME'
-alias java21='export JAVA_HOME=$JAVA21_HOME'
-
-export PATH=$PATH:$ALLURE_HOME/bin
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
-```
-
-## Installing sshpass - An excellent tool for non-interactive SSH login
-
-In most cases, Linux system administrators login to remote Linux servers using SSH either by supplying a password, or passwordless SSH login, or keybased SSH authentication.
-
-sshpass is a simple and lightweight command line tool that enables us to provide password (non-interactive password authentication) to the command prompt itself, so that automated shell scripts can be executed.
-
-### Command to install sshpass in Mac
-
-We can install sshpass using any of the following command:
-
-```bash
-brew install hudochenkov/sshpass/sshpass
-```
-
-```bash
-brew install esolitos/ipa/sshpass
-```
-
-### 3 ways of login via sshpass
-
-```bash
-sshpass -p 'my_pass_here' ssh aaronkilik@10.42.0.1
-```
-
-```bash
-export SSHPASS='my_pass_here'
-sshpass -e ssh aaronkilik@10.42.0.1
-```
-
-```bash
-sshpass -f password_filename ssh aaronkilik@10.42.0.1
-```
-
-## Uninstalling Oracle JDK from Mac
-
-To uninstall / remove Oracle JDK from Mac run the following commands one after another or delete these files and directories manually.
-
-- Removing JDK  
-  `sudo rm -rf "/Library/Java/JavaVirtualMachines/jdk(version).jdk"`
-
-- Remove Java applet plugin  
-  `sudo rm -rf "/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin"`
-
-- Remove Java control panel  
-  `sudo rm -rf "/Library/PreferencePanes/JavaControlPanel.prefPane"`
-
-- Remove Applet, Web Start and installation related caches  
-  `sudo rm -rf "~/Library/Application\ Support/Oracle/Java"`  
-  `sudo rm -rf "/Library/Application\ Support/Oracle/Java"`  
-  `sudo rm -rf "~/Library/Application\ Support/Java"`
-
-## Capture a snapshot / record video the entire screen and actions in Mac
-
-- Open up 'Quick Time Player'.
-- Click on `File` -> `New Screen Recording`
-  1. Select `Capture Entire Screen` option if you want to take a snapshot of the entire screen.
-  2. Select `Record Entire Screen` option if you want to record the video and actions.
-- Once the camera icon is visible, click on the screen to take the snapshot / start the recording.
-- If you are recording the then click on the 'Stop' icon on menu bar to stop the video recording.
-- The video will be saved on the desktop. Meanwhile, if you have captured a snapshot of the screen then the prompt will come up and let you decide the format and the destination to save the image you've captured.
-
-## Opening a file in TextEdit / any other application of our choice from Terminal
-
-```bash
-open -a TextEdit 'filename'
-```
-
-The -a flag specifies any application you want, so it's applicable to any number of situations, including ones where TextEdit isn't the default editor. Other relevant options:
-
-- -t  opens in the default editor (i.e. if you use BBEdit, TextMate, etc.)
-- -e will open the file specifically in TextEdit
-
-## Resolve `chpwd_recent_filehandler:29: no such file or directory` issue
-
-### Issue Details
-
-While using Zsh on macOS, the following error may appear when opening a terminal or changing directories:
-
-```text
-chpwd_recent_filehandler:29: no such file or directory: /Users/<username>/.local/share/zsh/chpwd-recent-dirs
-```
-
-For example:
-
-```text
-chpwd_recent_filehandler:29: no such file or directory: /Users/deepjyoti.barman/.local/share/zsh/chpwd-recent-dirs
-```
-
-### Actual Reason
-
-Zsh's `chpwd_recent_filehandler` function is configured to maintain a list of recently visited directories.
-
-It expects the following file to exist:
-
-```text
-~/.local/share/zsh/chpwd-recent-dirs
-```
-
-However, the required directory or file does not exist. This can happen when:
-
-- The `~/.local/share/zsh` directory has not been created.
-- The `chpwd-recent-dirs` file was deleted.
-- Zsh configuration was copied from another Mac or environment.
-- A Zsh plugin or configuration enables `chpwd_recent_dirs` without creating its required storage file.
-
-As a result, Zsh attempts to access the file whenever the current directory changes and reports the error.
-
-### Resolution
-
-```bash
-# Create the required directory
-mkdir -p ~/.local/share/zsh
-
-# Create the required file
-touch ~/.local/share/zsh/chpwd-recent-dirs
-
-# Reload the current Zsh session
-exec zsh
-```
-
-This creates the storage location expected by `chpwd_recent_filehandler` and allows Zsh to maintain its recent-directory history without displaying the error.
-
-## Resolve: Keyboard is entering Rupee symbol and not Backtick on macOS
-
-This happens because your Mac is using the `ABC - India` keyboard layout, which maps the tilde/backtick key (\`) to the Rupee symbol (₹).
-
-To fix this and restore the standard backtick key, you need to switch your input source to the standard `U.S.` or `ABC` layout.
-
-How to Fix the Layout, follow these quick steps to switch your keyboard input:
-
-1. Go to `System Settings` from the Apple menu.
-2. Click on `Keyboard` in the left sidebar.
-3. Under the `Text Input` section, click `Edit` next to `Input Sources`.
-4. Click the `+ (Add)` button in the bottom-left corner to add a new layout.
-5. Search for and add `ABC` or `U.S.` from the list.
-6. Select the `ABC - India` layout and click the `- (Remove)` button to delete it.
-7. Click `Done` to save your changes.
-
-Alternatively, you can quickly toggle between your installed keyboards at any time by pressing `Control + Spacebar`.
-
-## Resolve: ChromeDriver opening failure in Mac
-
-Click on the `Apple` menu -> `System Preferences` -> `System and Security` -> `General` -> Message will be shown as 'ChromeDriver is blocked' -> Click on `Allow Anyway`.
-
-## Change Github username and password which are being used from terminal
-
-Recently the Github team has announced that for better protection and privacy users should not use their profile password to push or pull code changes from Github repositories instead they should start using Personal Access Tokens provided by Github. The following process will guide you how to replace your old password with new Personal Access Token generated from your own Github account.
-
-- Check whether credential helper is set or not.  
-  `> git config --list`  
-  `credential.helper = osxkeychain`
-
-- Update the credentials via Keychain Access.
-  1. Open up 'Spotlight Search' by clicking on the icon in the menu bar or pressing `Command + Spacebar`.
-  2. Type 'Keychain Access' and press `Enter` to launch the app.
-  3. In 'Keychain Access' search for 'github.com'.
-  4. Find the 'internet password' entry for 'github.com'.
-  5. Edit it by double clicking on it (you may delete it from here as well).
-  6. Click on 'Show Password' checkbox.
-  7. Enter your login password.
-  8. Replace the old password with new Personal Access Token once it's visible.
-  9. Save the changes.
-  10. Close the application.
-
-- Deleting your credentials via command line.  
-  `> git credential-osxkeychain erase`  
-  `host = github.com`  
-  `protocol = https`  
-  `> [Return]`
-
-## Mobile Testing with Appium in Mac
-
-### Android
-
-#### Tools required
-
-- JDK 21 or above to support latest TestNG
-- Android Studio (For command line tools and emulator)
-- Node.js (For installing Appium CLI tool) via `brew install npm@18`
-- Appium Desktop (Outdated, as it is present for Appium v1.22.3, but not for v2.0.0-beta.55)
-- Appium - CLI tool present in NPM via `sudo npm install -g appium@next`
-- uiautomator2 driver for Appium via `appium driver install uiautomator2` [verify installation and list all installed drivers via `appium driver list`]
-- Appium Inspector
-- Maven via `brew install mvn`
-- IntelliJ IDEA / Eclipse IDE
-
-#### Enabling Command Line Tools in Android Studio
-
-To enable Command Line Tools in Android Studio perform the following steps:
-
-- Open Android Studio and navigate to `Settings`
-- In the `Settings` menu expand `Languages & Frameworks`
-- Select `Android SDK`
-- Click on `SDK Tools` tab
-- Check `Android SDK Command-line Tools (latest)`
-- Click on `Apply` and install the package
-- Click on `OK`
-
-**NOTE**: On the same menu under `SDK Tools` you can check `Show Package Details` and search for old APIs, build-tools that are not being used any longer and uncheck them to remove and free up some space. Also you can update some packages if update is available.
-
-#### Environment variables configuration
-
-- Check the current shell being used using command: `echo $SHELL`
-- If the shell is: `zsh`, open the file `.zshenv` using `vim ~/.zshenv` (create the file if not present)
-- Paste the following content:
-
-  ```sh
-  export ANDROID_HOME=$HOME/Library/Android/sdk
-  export JAVA8_HOME=$(/usr/libexec/java_home -v 1.8.0)
-  export JAVA21_HOME=$(/usr/libexec/java_home -v 21)
-  export JAVA_HOME=$JAVA21_HOME
-  alias java8='export JAVA_HOME=$JAVA8_HOME'
-  alias java21='export JAVA_HOME=$JAVA21_HOME'
-  export M2_HOME=/opt/homebrew/Cellar/maven/3.9.16
-
-  export PATH=$PATH:$ANDROID_HOME/emulator
-  export PATH=$PATH:$ANDROID_HOME/platform-tools
-  export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
-  ```
-
-#### Command to install Appium CLI Tool in Mac
-
-```bash
-sudo npm install -g appium --unsafe-perm=true --allow-root
-```
-
-#### Appium Inspector Configuration
-
-- `Remote Host`: 127.0.0.1 (default)
-- `Remote Port`: 4723 (default)
-- `Remote Path`: / (for Appium v2.0.0-beta.55), /wd/hub (for Appium 1.22.3)
-- `Desired Capabilities - Set 1`:
-
-  ```json
-  {
-    "platformName": "Android",
-    "appium:platformVersion": "12.0",
-    "appium:deviceName": "Redmi Note 10 Pro",
-    "appium:automationName": "UiAutomator2",
-    "appium:udid": "78aab321",
-    "appium:app": "/Users/deepjyoti.barman/Downloads/ApiDemos-debug.apk"
-  }
-  ```
-
-- `Desired Capabilites - Set 2`:
-
-  ```json
-  {
-    "platformName": "Android",
-    "platformVersion": "12.0",
-    "deviceName": "Redmi Note 10 Pro",
-    "automationName": "UiAutomator2",
-    "udid": "78aab321",
-    "appPackage": "com.flipkart.android",
-    "appActivity": "com.flipkart.android.activity.HomeFragmentHolderActivity",
-    "noReset": true
-  }
-  ```
-
-#### Fix for uiautomatorviewer2 in Mac
-
-- Search in Google 'Eclipse Project Downloads' or directly visit <https://download.eclipse.org/eclipse/downloads/>
-
-- Choose a 'Build Name' which has support for the Java version you have currently installed on your system.
-
-- Download the 'SWT Binary and Source' for 'Mac OSX (64 bit version)'
-  - Java 11 supported SWT: <https://download.eclipse.org/eclipse/downloads/drops4/R-4.21-202109060500/>
-  - Java 8 supported SWT: <https://archive.eclipse.org/eclipse/downloads/drops4/R-4.16-202006040540/>
-  - Site which has all different archive releases: <https://archive.eclipse.org/eclipse/downloads/>
-
-- Extract the file you have downloaded (e.g. 'swt-4.21-cocoa-macosx-x86_64.zip'), open the extracted directory and rename 'swt.jar' to 'swt2.jar'.
-
-- Copy and paste the 'swt2.jar' in '/Users/ins667/Library/Android/sdk/tools/lib/x86' and in '/Users/ins667/Library/Android/sdk/tools/lib/x86_64'
-
-- Launch 'uiautomatorviewer2' to verify whether it's running without any issues.
-
-#### Practice apps download
-
-- [Android_ApiDemos-debug.apk - Official](https://appium.io/docs/en/about-appium/getting-started/index.html#running-your-first-test)
-- [Android_ApiDemos-debug.apk - GitHub](https://github.com/appium/appium/tree/master/sample-code/apps)
-
-#### Important Commands
-
-- `adb devices` : Get the UDID of the devices connected.
-- `adb shell dumpsys window | grep -E 'CurrentFocus|FocusedApp'` : Get the appPackage and appActivity of an app.
-
-### iOS
-
-#### Installation Guide
-
-- Install JDK 11 or above to support latest version of TestNG
-- Install Maven via `brew install maven`
-- Check the current shell being used using command: `echo $SHELL`
-- If the shell is: `zsh`, open the file `.zshenv` using `vim ~/.zshenv` (create the file if not present)
-- Paste the following content in `~/.zshenv`:
-
-  ```sh
-  export ANDROID_HOME=$HOME/Library/Android/sdk
-  export JAVA8_HOME=$(/usr/libexec/java_home -v 1.8.0)
-  export JAVA21_HOME=$(/usr/libexec/java_home -v 21)
-  export JAVA_HOME=$JAVA21_HOME
-  alias java8='export JAVA_HOME=$JAVA8_HOME'
-  alias java21='export JAVA_HOME=$JAVA21_HOME'
-  export M2_HOME=/opt/homebrew/Cellar/maven/3.9.16
-
-  export PATH=$PATH:$ANDROID_HOME/emulator
-  export PATH=$PATH:$ANDROID_HOME/platform-tools
-  export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
-  ```
-
-- Install Node.js LTS via `brew install node@18`
-- Install Appium 2.0 via `sudo npm install -g appium@next`
-- Install xcuitest driver for Appium 2.0 via `appium driver install xcuitest`
-- Verify the installation of the driver by listing down all the drivers via `appium driver list`
-- Login with Apple ID and Install Xcode from 'App Store' (If facing any issues upgrade your OS to latest version going to `System Settings -> General -> Software Update`)
-- Install Xcode command line tools via `xcode-select --install`
-- Install Xcode output prettier tool via `sudo gem install xcpretty`
-- Install carthage via `brew install carthage`
-- Open up the iPhone simulator from XCode: `Xcode -> Open Developer Tool -> Simulator`
-- Get the UDID of the simulator via any of the following methods:
-  - `xcrun simctl list`
-  - `xcrun xctrace list driver`
-  - `Xcode -> Window -> Devices and Simulators -> Simulators -> Select the name of the simulator on the left pane, udid will 'Identifier' be on the right hand side`)
-- If the previous commands to fetch the UDID of the simulator are getting failed enter `sudo xcode-select --switch /Applications/XCode.app/Contents/Developer/`, this will resolve the issue
-- Download testing app 'https://github.com/appium/ios-uicatalog' and get the build via any of the following two methods:
-  - Build the project in Xcode and get the UiKitCatalog.app from the shortcut (dragging the app under Product to Desktop, from the shortcut you can go and get the actual app)
-  - Go the root directory of the project and enter the command `npm build` and get the app inside `ios-uicatalog/UiKitCatalog/build/Release-iphonesimulator/` directory
-- Install `Appium Inspector` and set the following configuration:
-  - `Remote Host`: 127.0.0.1 (default)
-  - `Remote Port`: 4723 (default)
-  - `Remote Path`: / (for Appium v2.0.0-beta.55), /wd/hub (for Appium 1.22.3)
-  - `Desired Capabilities - Set 1`:
-
-    ```json
-    {
-      "platformName": "iOS",
-      "appium:platformVersion": "15.2",
-      "appium:deviceName": "iPhone 13",
-      "appium:automationName": "XCUITest",
-      "appium:udid": "2D634EC5-CBF8-4FA7-8B57-FB221E3D66CF",
-      "appium:app": "/Users/ins667/Documents/UIKitCatalog.app"
-    }
-    ```
-
-## Setting up Visual Studio Code
-
-### Necessary extensions
+### Necessary Extensions for VS Code
 
 - \[Deprecated\] Browser Preview
 - Auto Import
@@ -2723,7 +2830,7 @@ sudo npm install -g appium --unsafe-perm=true --allow-root
 - vscode-pets
 - vscode-random
 
-### Configuration for settings.json
+### VS Code Configuration
 
 Click on the `Manage` (Screw) icon -> `Settings` (Shortcut: `Command + ,`) -> From the top right corner click on `Open Settings (JSON)`.
 
@@ -2911,11 +3018,11 @@ Click on the `Manage` (Screw) icon -> `Settings` (Shortcut: `Command + ,`) -> Fr
 
 ### Configure Inline Suggestion Shortcut in VS Code
 
-By default, accepting AI inline suggestions may require a different key combination. You can create a custom shortcut for quicker access.
+By default, accepting an AI inline suggestion may require a different key combination. You can create a custom shortcut for quicker access.
 
 #### Steps
 
-1. Open the Command Palette: `Ctrl + Shift + P`
+1. Open the Command Palette: `Command + Shift + P`
 2. Search for and select: `Preferences: Open Keyboard Shortcuts`
 3. In the Keyboard Shortcuts search box, search for: `Trigger Inline Suggestion`
 4. Click the Edit (pencil) icon or `+` icon next to the command.
@@ -2968,9 +3075,9 @@ By default, accepting AI inline suggestions may require a different key combinat
 }
 ```
 
-## Setting up IntelliJ IDEA
+## IntelliJ IDEA
 
-### Configuring Appearance
+### Configure Appearance for IntelliJ
 
 Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Settings` -> `Appearance`
 
@@ -2979,7 +3086,7 @@ Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Settings
 - `Use custom font`: `.SF NS Text` (or `.AppleSystemUIFont`)
 - `Size`: `12.0`
 
-### Configure Editor
+### Configure Editor for IntelliJ
 
 #### Editor Font - First Setup
 
@@ -3009,7 +3116,7 @@ Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Settings
   Open up 'IntelliJ IDEA' -> Open up any project -> Click on `Help` on the menu bar -> `Find Action` -> Search for `soft wrap`
   - `View | Active Editor: Soft-Wrap`: `OFF` -> `ON`
 
-### Configure Terminal
+### Configure Terminal for IntelliJ
 
 #### Terminal Font
 
@@ -3059,16 +3166,16 @@ Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Settings
 - Check `Add unambiguous imports on the fly`
 - Check `Optimize imports on the fly`
 
-### Changing Java SDK in a project
+### Changing Java SDK in a Project
 
 Open up 'IntelliJ IDEA' -> Click on `File` on the menu bar -> `Project Structure` -> `Project`
 
 - Under `Platform Settings` -> `SDK` -> Delete the old / unused / uninstalled SDK's and then click on the `+` button to add new SDK -> Provide a `Name` and the `JDK home path`
 - Under `Project Settings` -> `Project` -> `SDK`: Click on the dropdown and select any `Detected SDKs`. If the SDK of your choice is not available then select the `+ Add SDK` option and choose any option feasible to you. You may either go for `Download JDK` option or Click on `JDK` and locate a JDK from your local system.
 
-## Setting up PyCharm
+## PyCharm
 
-### Configuring Appearance for PyCharm
+### Configure Appearance for PyCharm
 
 Open up 'PyCharm' -> Click on `PyCharm` on the menu bar -> `Settings` -> `Appearance`
 
@@ -3077,7 +3184,7 @@ Open up 'PyCharm' -> Click on `PyCharm` on the menu bar -> `Settings` -> `Appear
 - `Use custom font`: `.SF NS Text` (or `.AppleSystemUIFont`)
 - `Size`: `12.0`
 
-### Configuring Editor for PyCharm
+### Configure Editor for PyCharm
 
 #### Editor Font Setup for PyCharm
 
@@ -3144,9 +3251,9 @@ Open up 'PyCharm' -> Click on `PyCharm` on the menu bar -> `Settings` -> `Plugin
 - Space
 - VSCode Theme
 
-## Setting up WebStorm
+## WebStorm
 
-### Configuring Appearance for WebStorm
+### Configure Appearance for WebStorm
 
 Open up 'WebStorm' -> Click on `WebStorm` on the menu bar -> `Settings` -> `Appearance`
 
@@ -3155,7 +3262,7 @@ Open up 'WebStorm' -> Click on `WebStorm` on the menu bar -> `Settings` -> `Appe
 - `Use custom font`: `.SF NS Text` (or `.AppleSystemUIFont`)
 - `Size`: `12.0`
 
-### Configuring Editor for WebStorm
+### Configure Editor for WebStorm
 
 Open up 'WebStorm' -> Click on `WebStorm` on the menu bar -> `Settings` -> `Editor` -> `Font`
 
@@ -3207,20 +3314,16 @@ Open up 'WebStorm' -> Click on `WebStorm` on the menu bar -> `Settings` -> `Plug
 - GitHub Copilot
 - GraphQL
 - HighlightBracketPair (Not required if "Better Highlights" is installed)
-- Indent Rainbow
-- Jupyter
-- Notebook Files
 - One Dark Darker
 - One Dark Theme
 - Qt
 - Rainbow Brackets
 - Rainbow CSV
 - SonarQube for IDE
-- Space
 - Subversion
 - VSCode Theme
 
-## Setting up Sublime Text
+## Sublime Text
 
 ### Installing Package Control
 
@@ -3230,7 +3333,7 @@ Open up 'WebStorm' -> Click on `WebStorm` on the menu bar -> `Settings` -> `Plug
 
 **Tip**: For manual installation of the plugin visit: <https://packagecontrol.io/installation>
 
-### Configuration for Preferences.sublime-settings.json
+### Sublime Text Configuration
 
 Open up 'Sublime Text' -> Click on `Sublime Text` on the menu bar -> `Preferences` -> `Settings` (Shortcut: `Command + ,`)
 
@@ -3245,7 +3348,7 @@ Open up 'Sublime Text' -> Click on `Sublime Text` on the menu bar -> `Preference
 }
 ```
 
-### Necessary packages
+### Necessary Packages for Sublime Text
 
 - A File Icon
 - All Autocomplete
@@ -3274,7 +3377,7 @@ Open up 'Sublime Text' -> Click on `Sublime Text` on the menu bar -> `Preference
 - Terminus
 - zzz A File Icon zzz
 
-### Custom build systems
+### Custom Build Systems
 
 Command to open the directory where all the user defined build systems are saved:
 `cd "~/Library/Application\ Support/Sublime\ Text/Packages/User" && open .`
@@ -3324,9 +3427,9 @@ javac-compile-run-terminus.sublime-build:
 }
 ```
 
-## Setting up Zed
+## Zed
 
-### Install Necessary Extensions
+### Necessary Extensions for Zed
 
 Click on 'Zed' on the apple menu bar -> 'Extensions' (`Shift + Command + X`)
 
@@ -3348,7 +3451,7 @@ Click on 'Zed' on the apple menu bar -> 'Extensions' (`Shift + Command + X`)
 - Rainbow CSV v1.1.0
 - SQL v1.1.8
 
-### Add Custom Settings
+### Zed Configuration
 
 Click on 'Zed' on the apple menu bar -> 'Settings' -> 'Open Settings' (`Command + ,`)
 
@@ -3387,7 +3490,769 @@ Click on 'Zed' on the apple menu bar -> 'Settings' -> 'Open Settings' (`Command 
 }
 ```
 
-## Setting up Code Watchers
+## Micro
+
+### Overview of Micro
+
+Micro is a modern terminal-based text editor designed to be easy to install, easy to use, and comfortable for people who edit files directly inside a terminal or over SSH.
+
+It is often described as a more modern, intuitive alternative to editors like `nano`, while still giving users more advanced editing features when needed.
+
+Official links:
+
+- Official home page: [https://micro-editor.github.io/](https://micro-editor.github.io/)
+- Plugin page: [https://micro-editor.github.io/plugins.html](https://micro-editor.github.io/plugins.html)
+- GitHub repository: [micro-editor/micro](https://github.com/micro-editor/micro)
+- Installation guide: [https://github.com/micro-editor/micro/wiki/Installing-Micro](https://github.com/micro-editor/micro/wiki/Installing-Micro)
+
+### Features of Micro
+
+- Runs directly in the terminal.
+- Distributed as a single static binary.
+- Simple installation with very few dependencies.
+- Uses familiar keyboard shortcuts such as `Ctrl+S`, `Ctrl+C`, `Ctrl+V`, and `Ctrl+Z`.
+- Supports syntax highlighting.
+- Supports multiple cursors.
+- Includes mouse support in many terminals.
+- Has built-in help.
+- Supports plugins.
+- Can be customized with settings, keybindings, colorschemes, and Lua plugins.
+
+### Install Micro on Linux
+
+- Download Micro using the install script:
+
+  ```bash
+  curl https://getmic.ro | bash
+  ```
+
+This downloads the `micro` binary into the current directory.
+
+- Make the binary owned by `root`:
+
+  ```bash
+  sudo chown root:root micro
+  ```
+
+- Move it into a system binary directory:
+
+  ```bash
+  sudo mv micro /usr/bin
+  ```
+
+- Check the installed version:
+
+  ```bash
+  micro --version
+  ```
+
+### Install Micro on MacOS
+
+- Install Micro using Homebrew:
+
+  ```bash
+  brew install micro
+  ```
+
+- Check the installed version:
+
+  ```bash
+  micro --version
+  ```
+
+### Basic Usage Command for Micro
+
+Start Micro with a file name:
+
+```bash
+micro filename.txt
+```
+
+If the file exists, Micro opens it. If the file does not exist, Micro creates a new buffer with that file name, and the file is written to disk when you save it.
+
+### Plugin Management for Micro
+
+Micro has a built-in plugin manager. You can install plugins from the shell:
+
+```bash
+micro -plugin install <plugin_name>
+```
+
+You can also install a plugin from inside Micro:
+
+```text
+Ctrl+E
+plugin install <plugin_name>
+Enter
+```
+
+After installing a plugin, restart Micro if the plugin does not appear immediately.
+
+Useful plugin commands:
+
+| Command                                      | Action                             |
+| -------------------------------------------- | ---------------------------------- |
+| `micro -plugin install <plugin_name>`        | Install a plugin from the terminal |
+| `micro -plugin remove <plugin_name>`         | Remove a plugin                    |
+| `micro -plugin update <plugin_name>`         | Update one plugin                  |
+| `micro -plugin update all`                   | Update all installed plugins       |
+| `Ctrl+E` then `plugin install <plugin_name>` | Install a plugin from inside Micro |
+| `Ctrl+E` then `help plugins`                 | Open Micro plugin help             |
+
+Official plugin page:
+
+- [https://micro-editor.github.io/plugins.html](https://micro-editor.github.io/plugins.html)
+
+### Necessary Plugins and Usages
+
+The following plugins were installed from your command output.
+
+| Plugin         | Install command                      | Usage                                                                                      |
+| -------------- | ------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `aspell`       | `micro -plugin install aspell`       | Spellchecking using GNU Aspell. Highlights misspelled words while editing.                 |
+| `autofmt`      | `micro -plugin install autofmt`      | Formats code on save. Can also format manually with the `fmt` command.                     |
+| `misspell`     | `micro -plugin install misspell`     | Corrects commonly misspelled English words. Useful for comments, Markdown, and text files. |
+| `runit`        | `micro -plugin install runit`        | Run the current file or project from inside Micro with function keys.                      |
+| `quoter`       | `micro -plugin install quoter`       | Surround selected text with quotes or brackets.                                            |
+| `monokai-dark` | `micro -plugin install monokai-dark` | Adds the `monokai-dark` color scheme.                                                      |
+| `jump`         | `micro -plugin install jump`         | Jump to functions, classes, symbols, or Markdown headings.                                 |
+| `filemanager`  | `micro -plugin install filemanager`  | Adds a file-tree/file-manager panel.                                                       |
+
+#### Plugin: `aspell`
+
+Purpose: Spellchecking inside Micro.
+
+Install:
+
+```bash
+micro -plugin install aspell
+```
+
+Important: The plugin requires the external `aspell` program to be installed and available in your `PATH`.
+
+Install Aspell on macOS:
+
+```bash
+brew install aspell
+```
+
+Install Aspell on Amazon Linux / RHEL-style systems:
+
+```bash
+sudo yum search aspell
+sudo yum install aspell
+```
+
+If `aspell` is not available from the enabled repositories, enable the appropriate repository for your system, such as EPEL, then try the install command again.
+
+Enable spellchecking manually:
+
+```text
+Ctrl+E
+set aspell.check on
+Enter
+```
+
+Useful commands:
+
+| Command                 | Action                                                     |
+| ----------------------- | ---------------------------------------------------------- |
+| `togglecheck`           | Turn spellchecking on or off                               |
+| `addpersonal`           | Add the word under the cursor to your personal dictionary  |
+| `acceptsug`             | Accept a spelling suggestion for the word under the cursor |
+| `set aspell.check on`   | Enable spellcheck                                          |
+| `set aspell.check off`  | Disable spellcheck                                         |
+| `set aspell.check auto` | Enable spellcheck automatically for supported file types   |
+| `set aspell.lang en`    | Set language to English                                    |
+| `set aspell.lang en_US` | Set language to US English                                 |
+
+Example:
+
+```text
+Ctrl+E
+set aspell.check on
+Enter
+```
+
+#### Plugin: `autofmt`
+
+Purpose: Run code formatters from Micro, usually on save.
+
+Install:
+
+```bash
+micro -plugin install autofmt
+```
+
+Usage:
+
+| Command                        | Action                                                       |
+| ------------------------------ | ------------------------------------------------------------ |
+| `fmt`                          | Format the current file using the selected/default formatter |
+| `fmt <formatter_name>`         | Format the current file with a specific formatter            |
+| `set autofmt.onsave false`     | Disable format-on-save                                       |
+| `set autofmt.onsave true`      | Enable format-on-save                                        |
+| `set autofmt.for-python ruff`  | Use `ruff` as the Python formatter                           |
+| `set autofmt.for-python black` | Use `black` as the Python formatter                          |
+
+Example:
+
+```text
+Ctrl+E
+fmt
+Enter
+```
+
+Notes:
+
+- `autofmt` does not install formatters for you.
+- Install the formatter used by your language, such as `prettier`, `gofmt`, `black`, `ruff`, `rustfmt`, or `clang-format`.
+
+#### Plugin: `misspell`
+
+Purpose: Correct commonly misspelled English words.
+
+Install:
+
+```bash
+micro -plugin install misspell
+```
+
+Usage:
+
+- Use it when editing prose, comments, Markdown files, or documentation.
+- It is helpful for common typos, but it is not a full grammar checker.
+- After installation, open plugin help inside Micro if you need plugin-specific commands:
+
+```text
+Ctrl+E
+help misspell
+Enter
+```
+
+#### Plugin: `runit`
+
+Purpose: Quickly run the file or project you are editing.
+
+Install:
+
+```bash
+micro -plugin install runit
+```
+
+Usage:
+
+| Key   | Action                                                |
+| ----- | ----------------------------------------------------- |
+| `F5`  | Save and run the current file                         |
+| `F12` | Run `make`, searching upward for a Makefile if needed |
+| `F9`  | Run `make` in the background                          |
+
+Notes:
+
+- `F5` supports Go, Go tests, Python 3, Lua, and executable scripts.
+- For a script file, make it executable first:
+
+```bash
+chmod u+x script.sh
+```
+
+#### Plugin: `quoter`
+
+Purpose: surround selected text with quotes or matching brackets.
+
+Install:
+
+```bash
+micro -plugin install quoter
+```
+
+Enable:
+
+```text
+Ctrl+E
+set quoter.enable on
+Enter
+```
+
+Usage:
+
+1. Select some text.
+2. Press a quote or bracket key, such as `"`, `'`, `(`, `[`, or `{`.
+3. The selected text is wrapped with matching quotes or brackets.
+
+#### Plugin: `monokai-dark`
+
+Purpose: Add a dark Monokai color scheme.
+
+Install:
+
+```bash
+micro -plugin install monokai-dark
+```
+
+Use the color scheme:
+
+```text
+Ctrl+E
+set colorscheme monokai-dark
+Enter
+```
+
+#### Plugin: `jump`
+
+Purpose: Jump to functions, classes, symbols, and Markdown headings.
+
+Install:
+
+```bash
+micro -plugin install jump
+```
+
+Recommended dependencies on Debian/Ubuntu-style systems:
+
+```bash
+sudo apt-get update
+sudo apt-get -y install fzf exuberant-ctags
+```
+
+Usage:
+
+| Key             | Action                                                   |
+| --------------- | -------------------------------------------------------- |
+| `F4`            | Open the jump selector                                   |
+| `Up/Down Arrow` | Move through matches                                     |
+| Type text       | Filter the symbol list                                   |
+| `Enter`         | Jump to the selected function, class, symbol, or heading |
+
+#### Plugin `filemanager`
+
+Purpose: Add a file-tree/file-manager panel inside Micro.
+
+Install:
+
+```bash
+micro -plugin install filemanager
+```
+
+Open or close the file tree:
+
+```text
+Ctrl+E
+tree
+Enter
+```
+
+Usage:
+
+| Command / Key            | Action                                                           |
+| ------------------------ | ---------------------------------------------------------------- |
+| `tree`                   | Open or close the file tree                                      |
+| `Tab`                    | Open a file or enter a directory                                 |
+| Mouse left click         | Open a file or enter a directory                                 |
+| `Right Arrow`            | Expand a directory                                               |
+| `Left Arrow`             | Collapse a directory                                             |
+| `Shift+Up Arrow`         | Go to the parent directory                                       |
+| `rm`                     | Delete the file or directory under the cursor after confirmation |
+| `rename <new_name>`      | Rename the file or directory under the cursor                    |
+| `touch <file_name>`      | Create a new file                                                |
+| `mkdir <directory_name>` | Create a new directory                                           |
+
+Examples:
+
+```text
+Ctrl+E
+tree
+Enter
+```
+
+```text
+Ctrl+E
+touch notes.txt
+Enter
+```
+
+```text
+Ctrl+E
+mkdir docs
+Enter
+```
+
+### Keyboard Commands for Micro
+
+| Command  | Action              |
+| -------- | ------------------- |
+| `Ctrl+S` | Save                |
+| `Ctrl+Q` | Quit                |
+| `Ctrl+O` | Open file           |
+| `Ctrl+F` | Find                |
+| `Ctrl+N` | Find next           |
+| `Ctrl+G` | Help                |
+| `Ctrl+Z` | Undo                |
+| `Ctrl+Y` | Redo                |
+| `Ctrl+C` | Copy                |
+| `Ctrl+X` | Cut                 |
+| `Ctrl+V` | Paste               |
+| `Ctrl+A` | Select all          |
+| `Ctrl+W` | Switch between tabs |
+| `Ctrl+E` | Open command prompt |
+
+### Open Command Prompt inside Micro
+
+Open the command prompt inside Micro with:
+
+```text
+Ctrl+E
+```
+
+Then type a command and press `Enter`.
+
+### Useful Command Prompt Commands
+
+| Command                         | Action                                  |
+| ------------------------------- | --------------------------------------- |
+| `goto 100`                      | Go to line 100                          |
+| `replace`                       | Find and replace                        |
+| `replaceall`                    | Find and replace all occurrences        |
+| `save`                          | Save file                               |
+| `quit`                          | Quit file                               |
+| `set softwrap on`               | Enable soft wrapping                    |
+| `set tabsize 4`                 | Set tab size to 4 spaces                |
+| `vsplit <file_name>`            | Open a file in a vertical split         |
+| `hsplit <file_name>`            | Open a file in a horizontal split       |
+| `set colorscheme <scheme_name>` | Set the editor colorscheme              |
+| `help defaultkeys`              | Show key combinations                   |
+| `help commands`                 | Show commands available in command mode |
+
+While typing commands such as `vsplit`, `hsplit`, or `set colorscheme`, press `Tab` to cycle through available file names or colorschemes.
+
+### Command Prompt Examples
+
+Go to line 100:
+
+```text
+Ctrl+E
+goto 100
+Enter
+```
+
+Replace all occurrences of `World` with `Youtube`:
+
+```text
+Ctrl+E
+replaceall World Youtube
+Enter
+```
+
+### Navigation Keys for Micro
+
+| Command          | Action                                  |
+| ---------------- | --------------------------------------- |
+| `Fn+Right Arrow` | Go to the end of the current line       |
+| `Fn+Left Arrow`  | Go to the beginning of the current line |
+| `Fn+Up Arrow`    | Move up the page by one fold/page       |
+| `Fn+Down Arrow`  | Move down the page by one fold/page     |
+
+### Quick Reference for Micro
+
+Install on Linux:
+
+```bash
+curl https://getmic.ro | bash
+sudo chown root:root micro
+sudo mv micro /usr/bin
+micro --version
+```
+
+Install on macOS:
+
+```bash
+brew install micro
+micro --version
+```
+
+Install useful plugins:
+
+```bash
+micro -plugin install aspell
+micro -plugin install autofmt
+micro -plugin install misspell
+micro -plugin install runit
+micro -plugin install quoter
+micro -plugin install monokai-dark
+micro -plugin install jump
+micro -plugin install filemanager
+```
+
+Open a file:
+
+```bash
+micro filename.txt
+```
+
+Save and quit:
+
+```text
+Ctrl+S
+Ctrl+Q
+```
+
+## Vim
+
+### Remap the Caps Lock Key to Esc
+
+As of macOS Sierra 10.12.1, the Caps Lock -> Escape remapping can be done natively in the Keyboard System Preferences pane! To remap without any 3rd party software, do the following:
+
+- Open `System Preferences` and click on `Keyboard`
+- Click on `Modifier Keys...`
+- For `Caps Lock` key, choose `Escape`
+- Click `OK`
+
+### Vim Modes
+
+- `Normal` mode:
+  - Vim starts up in `Normal` mode.
+  - This mode is used for navigating around the file, reading contents, go from one file to another file.
+  - Switch to `Normal` mode by pressing `Esc` while you are in any other mode.
+
+- `Insert` mode:
+  - This mode is used for entering text into vim's buffer.
+  - Switch to `Insert` mode by pressing the following keys while you are in `Normal` mode:
+    - `i` : Switch to the `Insert` mode and move your cursor to the left of the cursor’s current position.
+    - `I` : Switch to the `Insert` mode and move your cursor to the beginning of the line.
+    - `a` : Switch to the `Insert` mode and move your cursor to the right of the cursor’s current position.
+    - `A` : Switch to the `Insert` mode and move your cursor to the end of the line.
+    - `o` : Switch to the `Insert` mode and move your cursor to a newline after your cursor’s current position.
+    - `O` : Switch to the `Insert` mode and move your cursor to a newline before your cursor’s current position.
+
+- `Replace` mode:
+  - This mode allows you replace existing text by directly typing over it.
+  - Switch to `Replace` mode by pressing `R` (`Shift + r`) while you are in `Normal` mode.
+
+- `Visual` mode:
+  - This mode is used to make selections of text, similar to how clicking and dragging with a mouse behaves. Selecting text allows commands to apply only to the selection, such as copying, deleting, replacing, and so on.
+  - Switch to `Visual` mode by pressing `v` while you are in `Normal` mode.
+  - `Visual` mode has two different variants:
+    - `Visual Line` mode:
+      - This mode is used to make text selections by line.
+      - Switch to `Visual Line` mode by pressing `V` (`Shift + v`) while you are in `Normal` mode.
+    - `Visual Block` mode:
+      - This mode is used to make text selections by blocks; moving the cursor will make rectangle selections of the text.
+      - Switch to `Visual Block` mode by pressing `Control + v` while you are in `Normal` mode.
+
+- `Command` mode:
+  - Command mode has a wide variety of commands and can do things that normal mode can’t do as easily.
+  - Switch to `Command` mode by pressing `:` while you are in `Normal` mode.
+
+### Vim Key-strokes Guide
+
+#### Cheatsheets
+
+- To read the vim essenstials cheatsheet visit: [Josean - Vim Essenstials Cheatsheet](https://www.josean.com/posts/vim-essentials-cheatsheet)
+
+#### Getting out of Vim
+
+- `:q` / `:quit` : **\[COMMAND\]** Quit vim.
+- `:q!` / `:quit!` : **\[COMMAND\]** Quit vim without saving.
+- `:w` / `:write` : **\[COMMAND\]** Write into a file.
+- `:w!` / `:write!` : **\[COMMAND\]** Force write into a file even if the file has only read permission.
+- `:wq` : **\[COMMAND\]** Write into a file and quit vim.
+- `:wq!` : **\[COMMAND\]** Force write into a file and quit even if file has only read permission (i.e. if file does not have write permission).
+- `:x` / `:exit` : **\[COMMAND\]** Write into a file and quit vim (similar to `:wq`, but only write if there are changes).
+- `:qa` / `:quitall` : **\[COMMAND\]** Close all the instances/files open in vim.
+- `:qa!` / `:quitall!` : **\[COMMAND\]** Close all the instances/files open in vim abandoning the changes.
+- `:cq` : **\[COMMAND\]** Quit vim with an error code, so that the compiler will not compile the same file again.
+- `:wq <file-name>` : **\[COMMAND\]** Write into the given file and quit vim (Tip: Mostly used when you open vim without giving filename as arguments initially).
+- `:<line-no-beg>,<line-no-end>wq!` : **\[COMMAND\]** Write the text in between the line range given into a file, discarding other changes (e.g. `:5,10wq!` writes only the text from line no 5 to 10 into the file, discards other changes and exists vim).
+- `ZZ` : **\[NORMAL\]** Write into a file and quit vim when there are changes (same as `:x`).
+- `ZQ` : **\[NORMAL\]** Quit vim discarding changes (same as `:q!`).
+
+### Configure Vim Like a Power User
+
+#### Configuration for ~/.vimrc
+
+```vim
+set nocompatible                " Disable compatibility with vi which can cause unexpected issues.
+filetype on                     " Enable type file detection. Vim will be able to try to detect the type of file is use.
+filetype plugin on              " Enable plugins and load plugin for the detected file type.
+filetype indent on              " Load an indent file for the detected file type.
+
+
+syntax on                       " Turn syntax highlighting on.
+colorscheme onedark             " Select the 'Onedark' colorscheme for vim
+let g:lightline = {
+  \ 'colorscheme': 'onedark',
+  \ }
+highlight Normal guibg=NONE ctermbg=NONE
+
+set mouse=a                     " Enable mouse support for cursor movements within vim
+set noshowmode                  " Don't show what mode we're currently editing in
+set showcmd                     " Show partial command you type in the last line of the screen
+set laststatus=2                " 0, 1 or 2; when to use a status line for the last window
+set nowrap                      " Don't wrap lines
+set number                      " Add numbers to each line on the left-hand side
+set tabstop=4                   " A tab is four spaces
+set softtabstop=4               " When hitting <BS>, pretend like a tab is removed, even if spaces
+set shiftwidth=4                " Number of spaces to use for autoindenting
+set expandtab                   " Expand tabs by default (overloadable per file type later)
+set autoindent                  " Always set autoindenting on
+set copyindent                  " Copy the previous indentation on autoindenting
+set smartindent                 " Do clever auto indenting
+set backspace=indent,eol,start  " allow backspacing over everything in insert mode
+set exrc                        " Enable reading .vimrc/.exrc/.gvimrc in the current directory
+set hidden                      " Don't unload a buffer when no longer shown in a window
+set autowrite                   " Save on buffer switch
+set ignorecase                  " Ignore case when searching
+set smartcase                   " Ignore case if search pattern is all lowercase / override 'ignorecase' when pattern has upper case characters
+set noswapfile
+set nobackup
+set undodir=~/.vim/undodir      " List of directories for undo files
+set undofile                    " Automatically save and restore undo history
+set hlsearch                    " Use highlighting when doing a search
+set incsearch                   " Show match for partly typed search command
+set scrolloff=8                 " Number of screen lines to show around the cursor
+set signcolumn=auto             " Whether to show the signcolumn for error highlighting
+set colorcolumn=120             " Columns to highlight
+set visualbell                  " Don't beep
+set noerrorbells                " Don't beep
+set history=1000                " Set the commands to save in history default number is 20
+set encoding=utf8
+
+
+call plug#begin('~/.vim/plugged')         " Specify a directory for plugins
+
+Plug 'jiangmiao/auto-pairs'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'mattn/emmet-vim'
+Plug 'itchyny/lightline.vim'
+Plug 'preservim/nerdcommenter'
+Plug 'preservim/nerdtree'
+Plug 'farmergreg/vim-lastplace'
+Plug 'jremmen/vim-ripgrep'
+Plug 'mbbill/undotree'
+Plug 'ycm-core/YouCompleteMe'
+
+call plug#end()                           " Initialize plugin system
+
+
+" Configuring remaps to do extra key combinations
+let mapleader = " "
+let g:mapleader = " "
+
+" General remaps
+nnoremap <leader>w :w<cr>
+nnoremap <leader>q :q<cr>
+nnoremap <leader>e :q!<cr>
+nnoremap <leader>h :wincmd h<cr>
+nnoremap <leader>j :wincmd j<cr>
+nnoremap <leader>k :wincmd k<cr>
+nnoremap <leader>l :wincmd l<cr>
+nnoremap <silent><leader>+ :vertical resize +5<cr>
+nnoremap <silent><leader>- :vertical resize -5<cr>
+
+" General cofigs
+" Change cursor to 'blinking vertical bar' in INSERT mode
+" Change cursor to 'blinking underscore' in REPLACE mode
+" Change cursor to 'blinking block' in NORMAL mode
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+
+" 'nerdtree' remaps
+nnoremap <leader>n :NERDTreeToggle<cr>
+nnoremap <leader>f :NERDTreeFind<space>
+
+" 'nerdtree' config
+let g:NERDTreeIgnore = ['^node_modules$']
+
+" Start 'nerdtree' when Vim is started without file arguments
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
+
+" 'neardtree' note: Bring up NERDTree and navigate to the directory where you want to create the new file. Press m to bring up the NERDTree Filesystem Menu. This menu allows you to create, rename, and delete files and directories. Type a to add a child node and then simply enter the filename. You’re done! To create a directory follow the same steps but append a / to the filename.
+
+" 'undotree' remaps
+nnoremap <leader>u :UndotreeToggle<cr>
+
+" 'YouCompleteMe' remaps
+nnoremap <silent><leader>gd :YcmCompleter GoTo<cr>
+nnoremap <silent><leader>gf :YcmCompleter FixIt<cr>
+
+" 'ctrlp' remaps
+let g:ctrlp_map = '<leader>p'
+let g:ctrlp_cmd = 'CtrlP'
+
+" 'ctrlp' config
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+let g:ctrlp_root_markers = ['pom.xml', '.p4ignore', '.gitignore', '.project', '.idea', 'package.json', 'node_modules']
+let g:ctrlp_use_caching = 0
+let g:ctrlp_show_hidden = 0
+
+" 'ripgrep' remaps
+" 'ripgrep' note: Install 'ripgrep' on your system (mac) by entering the command `brew install ripgrep` before making a use of this plugin
+" 'ripgrep' issues and fixes: https://github.com/jremmen/vim-ripgrep/issues
+nnoremap <leader>ps :Rg<space>
+
+" 'ripgrep' config
+if executable('rg')
+    let g:rg_derive_root='true'
+endif
+
+" 'emmet' cofig
+" 'emmet' guidelines: https://raw.githubusercontent.com/mattn/emmet-vim/master/TUTORIAL
+let g:user_emmet_mode='a'
+let g:user_emmet_leader_key='<C-a>'
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+
+" 'nerdcommenter' remaps
+vmap <leader>/ <plug>NERDCommenterToggle
+nmap <leader>/ <plug>NERDCommenterToggle
+
+" 'nerdcommenter' config
+let g:NERDSpaceDelims = 1
+let g:NERDCompactSexyComs = 1
+let g:NERDDefaultAlign = 'left'
+let g:NERDCommentEmptyLines = 1
+let g:NERDTrimTrailingWhitespace = 1
+```
+
+#### Vim Plugin Manager installation
+
+- Vim-Plug official website: [vim-plug](https://github.com/junegunn/vim-plug)
+- Installation: [vim-plug#installation](https://github.com/junegunn/vim-plug?tab=readme-ov-file#unix)
+- Once we have the above configuration for .vimrc, we can use the following command to install the plugin manager:
+
+  ```bash
+   curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  ```
+
+- Reload .vimrc and use command `:PlugInstall` inside vim to install plugins
+
+#### Vim Theme installation
+
+- Onedark theme official website: [onedark.vim](https://github.com/joshdick/onedark.vim)
+- Once we have the above configuration for .vimrc, we can use the following steps to install the theme
+  - Installation via plugin manager
+  - Manual installation (recommended)
+    - Place `colors/onedark.vim` in your `~/.vim/colors/` directory
+    - Place `autoload/onedark.vim` in your `~/.vim/autoload/` directory
+
+#### Vim Plugin - 'YouCompleteMe' installation
+
+- YouCompleteMe plugin official website: [YouCompleteMe](https://github.com/ycm-core/YouCompleteMe)
+- Pre-requisites: cmake, python (3.8 or later), go, java17+ (should be directly accessible via command line), mono, node
+- Installation guide: [YouCompleteMe#installation](https://github.com/ycm-core/YouCompleteMe?tab=readme-ov-file#macos)
+- Install `YouCompleteMe` plugin via `Vim-Plug` plugin manager
+- Use the following commands to install the plugin:
+
+  ```bash
+  cd ~/.vim/plugged/YouCompleteMe
+  python3 install.py --all
+  ```
+
+## Code Watchers
 
 ### Nodemon
 
@@ -3829,15 +4694,189 @@ sudo apt-get remove entr
 sudo yum remove entr
 ```
 
-## Ollama - Quick Reference Guide
+## Mobile Testing with Appium in Mac
 
-### What is Ollama?
+### Android
+
+#### Tools required
+
+- JDK 21 or above to support latest TestNG
+- Android Studio (For command line tools and emulator)
+- Node.js (For installing Appium CLI tool) via `brew install npm@18`
+- Appium Desktop (Outdated, as it is present for Appium v1.22.3, but not for v2.0.0-beta.55)
+- Appium - CLI tool present in NPM via `sudo npm install -g appium@next`
+- uiautomator2 driver for Appium via `appium driver install uiautomator2` [verify installation and list all installed drivers via `appium driver list`]
+- Appium Inspector
+- Maven via `brew install mvn`
+- IntelliJ IDEA / Eclipse IDE
+
+#### Enabling Command Line Tools in Android Studio
+
+To enable Command Line Tools in Android Studio perform the following steps:
+
+- Open Android Studio and navigate to `Settings`
+- In the `Settings` menu expand `Languages & Frameworks`
+- Select `Android SDK`
+- Click on `SDK Tools` tab
+- Check `Android SDK Command-line Tools (latest)`
+- Click on `Apply` and install the package
+- Click on `OK`
+
+**NOTE**: On the same menu under `SDK Tools` you can check `Show Package Details` and search for old APIs, build-tools that are not being used any longer and uncheck them to remove and free up some space. Also you can update some packages if update is available.
+
+#### Environment variables configuration
+
+- Check the current shell being used using command: `echo $SHELL`
+- If the shell is: `zsh`, open the file `.zshenv` using `vim ~/.zshenv` (create the file if not present)
+- Paste the following content:
+
+  ```sh
+  export ANDROID_HOME=$HOME/Library/Android/sdk
+  export JAVA8_HOME=$(/usr/libexec/java_home -v 1.8.0)
+  export JAVA21_HOME=$(/usr/libexec/java_home -v 21)
+  export JAVA_HOME=$JAVA21_HOME
+  alias java8='export JAVA_HOME=$JAVA8_HOME'
+  alias java21='export JAVA_HOME=$JAVA21_HOME'
+  export M2_HOME=/opt/homebrew/Cellar/maven/3.9.16
+
+  export PATH=$PATH:$ANDROID_HOME/emulator
+  export PATH=$PATH:$ANDROID_HOME/platform-tools
+  export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
+  ```
+
+#### Command to install Appium CLI Tool in Mac
+
+```bash
+sudo npm install -g appium --unsafe-perm=true --allow-root
+```
+
+#### Appium Inspector Configuration
+
+- `Remote Host`: 127.0.0.1 (default)
+- `Remote Port`: 4723 (default)
+- `Remote Path`: / (for Appium v2.0.0-beta.55), /wd/hub (for Appium 1.22.3)
+- `Desired Capabilities - Set 1`:
+
+  ```json
+  {
+    "platformName": "Android",
+    "appium:platformVersion": "12.0",
+    "appium:deviceName": "Redmi Note 10 Pro",
+    "appium:automationName": "UiAutomator2",
+    "appium:udid": "78aab321",
+    "appium:app": "/Users/deepjyoti.barman/Downloads/ApiDemos-debug.apk"
+  }
+  ```
+
+- `Desired Capabilites - Set 2`:
+
+  ```json
+  {
+    "platformName": "Android",
+    "platformVersion": "12.0",
+    "deviceName": "Redmi Note 10 Pro",
+    "automationName": "UiAutomator2",
+    "udid": "78aab321",
+    "appPackage": "com.flipkart.android",
+    "appActivity": "com.flipkart.android.activity.HomeFragmentHolderActivity",
+    "noReset": true
+  }
+  ```
+
+#### Fix for uiautomatorviewer2 in Mac
+
+- Search in Google 'Eclipse Project Downloads' or directly visit <https://download.eclipse.org/eclipse/downloads/>
+
+- Choose a 'Build Name' which has support for the Java version you have currently installed on your system.
+
+- Download the 'SWT Binary and Source' for 'Mac OSX (64 bit version)'
+  - Java 11 supported SWT: <https://download.eclipse.org/eclipse/downloads/drops4/R-4.21-202109060500/>
+  - Java 8 supported SWT: <https://archive.eclipse.org/eclipse/downloads/drops4/R-4.16-202006040540/>
+  - Site which has all different archive releases: <https://archive.eclipse.org/eclipse/downloads/>
+
+- Extract the file you have downloaded (e.g. 'swt-4.21-cocoa-macosx-x86_64.zip'), open the extracted directory and rename 'swt.jar' to 'swt2.jar'.
+
+- Copy and paste the 'swt2.jar' in '/Users/ins667/Library/Android/sdk/tools/lib/x86' and in '/Users/ins667/Library/Android/sdk/tools/lib/x86_64'
+
+- Launch 'uiautomatorviewer2' to verify whether it's running without any issues.
+
+#### Practice apps download
+
+- [Android_ApiDemos-debug.apk - Official](https://appium.io/docs/en/about-appium/getting-started/index.html#running-your-first-test)
+- [Android_ApiDemos-debug.apk - GitHub](https://github.com/appium/appium/tree/master/sample-code/apps)
+
+#### Important Commands
+
+- `adb devices` : Get the UDID of the devices connected.
+- `adb shell dumpsys window | grep -E 'CurrentFocus|FocusedApp'` : Get the appPackage and appActivity of an app.
+
+### iOS
+
+#### Installation Guide
+
+- Install JDK 11 or above to support latest version of TestNG
+- Install Maven via `brew install maven`
+- Check the current shell being used using command: `echo $SHELL`
+- If the shell is: `zsh`, open the file `.zshenv` using `vim ~/.zshenv` (create the file if not present)
+- Paste the following content in `~/.zshenv`:
+
+  ```sh
+  export ANDROID_HOME=$HOME/Library/Android/sdk
+  export JAVA8_HOME=$(/usr/libexec/java_home -v 1.8.0)
+  export JAVA21_HOME=$(/usr/libexec/java_home -v 21)
+  export JAVA_HOME=$JAVA21_HOME
+  alias java8='export JAVA_HOME=$JAVA8_HOME'
+  alias java21='export JAVA_HOME=$JAVA21_HOME'
+  export M2_HOME=/opt/homebrew/Cellar/maven/3.9.16
+
+  export PATH=$PATH:$ANDROID_HOME/emulator
+  export PATH=$PATH:$ANDROID_HOME/platform-tools
+  export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
+  ```
+
+- Install Node.js LTS via `brew install node@18`
+- Install Appium 2.0 via `sudo npm install -g appium@next`
+- Install xcuitest driver for Appium 2.0 via `appium driver install xcuitest`
+- Verify the installation of the driver by listing down all the drivers via `appium driver list`
+- Login with Apple ID and Install Xcode from 'App Store' (If facing any issues upgrade your OS to latest version going to `System Settings -> General -> Software Update`)
+- Install Xcode command line tools via `xcode-select --install`
+- Install Xcode output prettier tool via `sudo gem install xcpretty`
+- Install carthage via `brew install carthage`
+- Open up the iPhone simulator from XCode: `Xcode -> Open Developer Tool -> Simulator`
+- Get the UDID of the simulator via any of the following methods:
+  - `xcrun simctl list`
+  - `xcrun xctrace list driver`
+  - `Xcode -> Window -> Devices and Simulators -> Simulators -> Select the name of the simulator on the left pane, udid will 'Identifier' be on the right hand side`)
+- If the previous commands to fetch the UDID of the simulator are getting failed enter `sudo xcode-select --switch /Applications/XCode.app/Contents/Developer/`, this will resolve the issue
+- Download testing app 'https://github.com/appium/ios-uicatalog' and get the build via any of the following two methods:
+  - Build the project in Xcode and get the UiKitCatalog.app from the shortcut (dragging the app under Product to Desktop, from the shortcut you can go and get the actual app)
+  - Go the root directory of the project and enter the command `npm build` and get the app inside `ios-uicatalog/UiKitCatalog/build/Release-iphonesimulator/` directory
+- Install `Appium Inspector` and set the following configuration:
+  - `Remote Host`: 127.0.0.1 (default)
+  - `Remote Port`: 4723 (default)
+  - `Remote Path`: / (for Appium v2.0.0-beta.55), /wd/hub (for Appium 1.22.3)
+  - `Desired Capabilities - Set 1`:
+
+    ```json
+    {
+      "platformName": "iOS",
+      "appium:platformVersion": "15.2",
+      "appium:deviceName": "iPhone 13",
+      "appium:automationName": "XCUITest",
+      "appium:udid": "2D634EC5-CBF8-4FA7-8B57-FB221E3D66CF",
+      "appium:app": "/Users/ins667/Documents/UIKitCatalog.app"
+    }
+    ```
+
+## Ollama
+
+### Overview of Ollama
 
 Ollama is a lightweight tool that allows you to download, run, and manage Large Language Models (LLMs) locally on your computer without requiring cloud services or internet access after the model is downloaded.
 
 It provides a simple command-line interface (CLI) for running AI models such as Llama, Gemma, Qwen, Mistral, DeepSeek, and many others.
 
-### Why is Ollama Popular
+### Reason Behind the Popularity of Ollama
 
 - Simple installation and setup.
 - Runs AI models completely on local hardware.
@@ -3867,7 +4906,7 @@ It provides a simple command-line interface (CLI) for running AI models such as 
 > - gemma3
 > - deepseek-r1
 
-### Installing a Model
+### Install a Model
 
 #### Download and Run a Model
 
@@ -3907,7 +4946,7 @@ text >>> Explain REST APIs
 
 ---
 
-### Common Ollama Commands
+### Commonly Used Ollama Commands
 
 - Download a model without running it:  
   `ollama pull <model>`
@@ -3953,26 +4992,26 @@ When inside an interactive model session:
 - Display available chat commands and help information:  
   `/?`
 
-### Pro Tip
+### Pro Tip for Ollama
 
 Models remain loaded in memory for a short period after use (default keep-alive timeout). If you need to immediately free system resources, use: `ollama stop <model>`. This unloads the model from RAM/VRAM immediately.
 
-## Setting up Discord
+## Discord
 
 - Download Discord from the given link [https://discord.com/download](https://discord.com/download)
 - Download BetterDiscord modification from the given link: [https://betterdiscord.app/](https://betterdiscord.app/)
 
-### Plugins
+### Plugins for Discord
 
 - [https://betterdiscord.app/plugin/ChannelTabs](https://betterdiscord.app/plugin/ChannelTabs)
 - [https://betterdiscord.app/plugin/PinDMs](https://betterdiscord.app/plugin/PinDMs)
 
-### Themes
+### Themes for Discord
 
 - [https://betterdiscord.app/theme/ClearVision](https://betterdiscord.app/theme/ClearVision)
 - [https://betterdiscord.app/theme/NotAnotherAnimeTheme](https://betterdiscord.app/theme/NotAnotherAnimeTheme)
 
-### How to install Plugins and Themes
+### How to Install Plugins and Themes in Discord
 
 - Click on 'Discord' on the Apple menu
 - Click on 'Settings'
@@ -3984,7 +5023,7 @@ Models remain loaded in memory for a short period after use (default keep-alive 
   - Once everything is done enable all the plugins clicking on the slider next to each plugin
 - Repeat the last step clicking on 'Themes' to install custom themes
 
-### Appearance Settings
+### Appearance Settings of Discord
 
 - Click on 'Discord' on the Apple menu
 - Click on 'Settings'
@@ -3994,7 +5033,7 @@ Models remain loaded in memory for a short period after use (default keep-alive 
   - Space Between Message Groups: 16px
   - Zoom Level: 80
 
-## Setting up Charles
+## Charles Proxy
 
 ### Register Charles
 
@@ -4003,7 +5042,7 @@ Models remain loaded in memory for a short period after use (default keep-alive 
 - Click on `OK`.
 - Restart 'Charles'.
 
-### Installing Charles Root Certificate on your Mac
+### Install Charles Root Certificate on Mac
 
 - Open up 'Charles' -> `Help` -> `SSL Proxying` -> `Install Charles Root Certificate`
 - Following the above step will open up 'Keychain Access'.
@@ -4013,7 +5052,7 @@ Models remain loaded in memory for a short period after use (default keep-alive 
 - You will be asked to enter your computer / admin password -> `Update settings`
 - Once the changes are done close the window.
 
-### Installing Charles Root Certificate on your Mobile
+### Install Charles Root Certificate on Mobile
 
 - Before installing 'Charles Root Certificate' on your mobile make sure that your laptop and your mobile is connected to the same WiFi network and proxying settings are setup correctly. To configure the proxying settings follow the given steps:
   - While 'Charles' is open go to `Help` -> `Local IP Address` -> Get the `IP Address` for `Network Interface`: `en0` -> Close the window
@@ -4032,7 +5071,7 @@ Models remain loaded in memory for a short period after use (default keep-alive 
   `Used for`: `VPN and apps`
 - Click on `OK` button.
 
-### Enable and configure SSL Proxying Settings
+### Enable and Configure SSL Proxying Settings
 
 - Open up 'Charles' -> `Proxy` -> `SSL Proxying Settings`
 - Click on `Enable SSL Proxying`.
@@ -4042,838 +5081,3 @@ Models remain loaded in memory for a short period after use (default keep-alive 
   - If you want to monitor only a specific set of traffic related to your host then enter `*hostname.extension` (i.e. `*github.com`).
 - In the `Port` field you may either enter `*` or enter `443`, anything of your choice.
 - Click on `OK` -> `OK`
-
-## Micro - command line text editor
-
-### What is micro
-
-Micro is a modern terminal-based text editor designed to be easy to install, easy to use, and comfortable for people who edit files directly inside a terminal or over SSH.
-
-It is often described as a more modern, intuitive alternative to editors like `nano`, while still giving users more advanced editing features when needed.
-
-Official links:
-
-- Official home page: [https://micro-editor.github.io/](https://micro-editor.github.io/)
-- Plugin page: [https://micro-editor.github.io/plugins.html](https://micro-editor.github.io/plugins.html)
-- GitHub repository: [micro-editor/micro](https://github.com/micro-editor/micro)
-- Installation guide: [https://github.com/micro-editor/micro/wiki/Installing-Micro](https://github.com/micro-editor/micro/wiki/Installing-Micro)
-
-### What makes micro different?
-
-- Runs directly in the terminal.
-- Distributed as a single static binary.
-- Simple installation with very few dependencies.
-- Uses familiar keyboard shortcuts such as `Ctrl+S`, `Ctrl+C`, `Ctrl+V`, and `Ctrl+Z`.
-- Supports syntax highlighting.
-- Supports multiple cursors.
-- Includes mouse support in many terminals.
-- Has built-in help.
-- Supports plugins.
-- Can be customized with settings, keybindings, colorschemes, and Lua plugins.
-
-### Installation - Linux (Amazon Linux/CentOS etc.)
-
-- Download Micro using the install script:
-
-  ```bash
-  curl https://getmic.ro | bash
-  ```
-
-This downloads the `micro` binary into the current directory.
-
-- Make the binary owned by `root`:
-
-  ```bash
-  sudo chown root:root micro
-  ```
-
-- Move it into a system binary directory:
-
-  ```bash
-  sudo mv micro /usr/bin
-  ```
-
-- Check the installed version:
-
-  ```bash
-  micro --version
-  ```
-
-### Installation - macOS
-
-- Install Micro using Homebrew:
-
-  ```bash
-  brew install micro
-  ```
-
-- Check the installed version:
-
-  ```bash
-  micro --version
-  ```
-
-### Basic Usage
-
-Start Micro with a file name:
-
-```bash
-micro filename.txt
-```
-
-If the file exists, Micro opens it. If the file does not exist, Micro creates a new buffer with that file name, and the file is written to disk when you save it.
-
-### Plugin Management
-
-Micro has a built-in plugin manager. You can install plugins from the shell:
-
-```bash
-micro -plugin install <plugin_name>
-```
-
-You can also install a plugin from inside Micro:
-
-```text
-Ctrl+E
-plugin install <plugin_name>
-Enter
-```
-
-After installing a plugin, restart Micro if the plugin does not appear immediately.
-
-Useful plugin commands:
-
-| Command                                      | Action                             |
-| -------------------------------------------- | ---------------------------------- |
-| `micro -plugin install <plugin_name>`        | Install a plugin from the terminal |
-| `micro -plugin remove <plugin_name>`         | Remove a plugin                    |
-| `micro -plugin update <plugin_name>`         | Update one plugin                  |
-| `micro -plugin update all`                   | Update all installed plugins       |
-| `Ctrl+E` then `plugin install <plugin_name>` | Install a plugin from inside Micro |
-| `Ctrl+E` then `help plugins`                 | Open Micro plugin help             |
-
-Official plugin page:
-
-- [https://micro-editor.github.io/plugins.html](https://micro-editor.github.io/plugins.html)
-
-### Installed Plugins and Usage
-
-The following plugins were installed from your command output.
-
-| Plugin         | Install command                      | Usage                                                                                      |
-| -------------- | ------------------------------------ | ------------------------------------------------------------------------------------------ |
-| `aspell`       | `micro -plugin install aspell`       | Spellchecking using GNU Aspell. Highlights misspelled words while editing.                 |
-| `autofmt`      | `micro -plugin install autofmt`      | Formats code on save. Can also format manually with the `fmt` command.                     |
-| `misspell`     | `micro -plugin install misspell`     | Corrects commonly misspelled English words. Useful for comments, Markdown, and text files. |
-| `runit`        | `micro -plugin install runit`        | Run the current file or project from inside Micro with function keys.                      |
-| `quoter`       | `micro -plugin install quoter`       | Surround selected text with quotes or brackets.                                            |
-| `monokai-dark` | `micro -plugin install monokai-dark` | Adds the `monokai-dark` color scheme.                                                      |
-| `jump`         | `micro -plugin install jump`         | Jump to functions, classes, symbols, or Markdown headings.                                 |
-| `filemanager`  | `micro -plugin install filemanager`  | Adds a file-tree/file-manager panel.                                                       |
-
-#### Plugin: `aspell`
-
-Purpose: Spellchecking inside Micro.
-
-Install:
-
-```bash
-micro -plugin install aspell
-```
-
-Important: The plugin requires the external `aspell` program to be installed and available in your `PATH`.
-
-Install Aspell on macOS:
-
-```bash
-brew install aspell
-```
-
-Install Aspell on Amazon Linux / RHEL-style systems:
-
-```bash
-sudo yum search aspell
-sudo yum install aspell
-```
-
-If `aspell` is not available from the enabled repositories, enable the appropriate repository for your system, such as EPEL, then try the install command again.
-
-Enable spellchecking manually:
-
-```text
-Ctrl+E
-set aspell.check on
-Enter
-```
-
-Useful commands:
-
-| Command                 | Action                                                     |
-| ----------------------- | ---------------------------------------------------------- |
-| `togglecheck`           | Turn spellchecking on or off                               |
-| `addpersonal`           | Add the word under the cursor to your personal dictionary  |
-| `acceptsug`             | Accept a spelling suggestion for the word under the cursor |
-| `set aspell.check on`   | Enable spellcheck                                          |
-| `set aspell.check off`  | Disable spellcheck                                         |
-| `set aspell.check auto` | Enable spellcheck automatically for supported file types   |
-| `set aspell.lang en`    | Set language to English                                    |
-| `set aspell.lang en_US` | Set language to US English                                 |
-
-Example:
-
-```text
-Ctrl+E
-set aspell.check on
-Enter
-```
-
-#### Plugin: `autofmt`
-
-Purpose: Run code formatters from Micro, usually on save.
-
-Install:
-
-```bash
-micro -plugin install autofmt
-```
-
-Usage:
-
-| Command                        | Action                                                       |
-| ------------------------------ | ------------------------------------------------------------ |
-| `fmt`                          | Format the current file using the selected/default formatter |
-| `fmt <formatter_name>`         | Format the current file with a specific formatter            |
-| `set autofmt.onsave false`     | Disable format-on-save                                       |
-| `set autofmt.onsave true`      | Enable format-on-save                                        |
-| `set autofmt.for-python ruff`  | Use `ruff` as the Python formatter                           |
-| `set autofmt.for-python black` | Use `black` as the Python formatter                          |
-
-Example:
-
-```text
-Ctrl+E
-fmt
-Enter
-```
-
-Notes:
-
-- `autofmt` does not install formatters for you.
-- Install the formatter used by your language, such as `prettier`, `gofmt`, `black`, `ruff`, `rustfmt`, or `clang-format`.
-
-#### Plugin: `misspell`
-
-Purpose: Correct commonly misspelled English words.
-
-Install:
-
-```bash
-micro -plugin install misspell
-```
-
-Usage:
-
-- Use it when editing prose, comments, Markdown files, or documentation.
-- It is helpful for common typos, but it is not a full grammar checker.
-- After installation, open plugin help inside Micro if you need plugin-specific commands:
-
-```text
-Ctrl+E
-help misspell
-Enter
-```
-
-#### Plugin: `runit`
-
-Purpose: Quickly run the file or project you are editing.
-
-Install:
-
-```bash
-micro -plugin install runit
-```
-
-Usage:
-
-| Key   | Action                                                |
-| ----- | ----------------------------------------------------- |
-| `F5`  | Save and run the current file                         |
-| `F12` | Run `make`, searching upward for a Makefile if needed |
-| `F9`  | Run `make` in the background                          |
-
-Notes:
-
-- `F5` supports Go, Go tests, Python 3, Lua, and executable scripts.
-- For a script file, make it executable first:
-
-```bash
-chmod u+x script.sh
-```
-
-#### Plugin: `quoter`
-
-Purpose: surround selected text with quotes or matching brackets.
-
-Install:
-
-```bash
-micro -plugin install quoter
-```
-
-Enable:
-
-```text
-Ctrl+E
-set quoter.enable on
-Enter
-```
-
-Usage:
-
-1. Select some text.
-2. Press a quote or bracket key, such as `"`, `'`, `(`, `[`, or `{`.
-3. The selected text is wrapped with matching quotes or brackets.
-
-#### Plugin: `monokai-dark`
-
-Purpose: Add a dark Monokai color scheme.
-
-Install:
-
-```bash
-micro -plugin install monokai-dark
-```
-
-Use the color scheme:
-
-```text
-Ctrl+E
-set colorscheme monokai-dark
-Enter
-```
-
-#### Plugin: `jump`
-
-Purpose: Jump to functions, classes, symbols, and Markdown headings.
-
-Install:
-
-```bash
-micro -plugin install jump
-```
-
-Recommended dependencies on Debian/Ubuntu-style systems:
-
-```bash
-sudo apt-get update
-sudo apt-get -y install fzf exuberant-ctags
-```
-
-Usage:
-
-| Key             | Action                                                   |
-| --------------- | -------------------------------------------------------- |
-| `F4`            | Open the jump selector                                   |
-| `Up/Down Arrow` | Move through matches                                     |
-| Type text       | Filter the symbol list                                   |
-| `Enter`         | Jump to the selected function, class, symbol, or heading |
-
-#### Plugin `filemanager`
-
-Purpose: Add a file-tree/file-manager panel inside Micro.
-
-Install:
-
-```bash
-micro -plugin install filemanager
-```
-
-Open or close the file tree:
-
-```text
-Ctrl+E
-tree
-Enter
-```
-
-Usage:
-
-| Command / Key            | Action                                                           |
-| ------------------------ | ---------------------------------------------------------------- |
-| `tree`                   | Open or close the file tree                                      |
-| `Tab`                    | Open a file or enter a directory                                 |
-| Mouse left click         | Open a file or enter a directory                                 |
-| `Right Arrow`            | Expand a directory                                               |
-| `Left Arrow`             | Collapse a directory                                             |
-| `Shift+Up Arrow`         | Go to the parent directory                                       |
-| `rm`                     | Delete the file or directory under the cursor after confirmation |
-| `rename <new_name>`      | Rename the file or directory under the cursor                    |
-| `touch <file_name>`      | Create a new file                                                |
-| `mkdir <directory_name>` | Create a new directory                                           |
-
-Examples:
-
-```text
-Ctrl+E
-tree
-Enter
-```
-
-```text
-Ctrl+E
-touch notes.txt
-Enter
-```
-
-```text
-Ctrl+E
-mkdir docs
-Enter
-```
-
-### Keyboard Commands
-
-| Command  | Action              |
-| -------- | ------------------- |
-| `Ctrl+S` | Save                |
-| `Ctrl+Q` | Quit                |
-| `Ctrl+O` | Open file           |
-| `Ctrl+F` | Find                |
-| `Ctrl+N` | Find next           |
-| `Ctrl+G` | Help                |
-| `Ctrl+Z` | Undo                |
-| `Ctrl+Y` | Redo                |
-| `Ctrl+C` | Copy                |
-| `Ctrl+X` | Cut                 |
-| `Ctrl+V` | Paste               |
-| `Ctrl+A` | Select all          |
-| `Ctrl+W` | Switch between tabs |
-| `Ctrl+E` | Open command prompt |
-
-### Command Prompt
-
-Open the command prompt inside Micro with:
-
-```text
-Ctrl+E
-```
-
-Then type a command and press `Enter`.
-
-### Useful Command Prompt Commands
-
-| Command                         | Action                                  |
-| ------------------------------- | --------------------------------------- |
-| `goto 100`                      | Go to line 100                          |
-| `replace`                       | Find and replace                        |
-| `replaceall`                    | Find and replace all occurrences        |
-| `save`                          | Save file                               |
-| `quit`                          | Quit file                               |
-| `set softwrap on`               | Enable soft wrapping                    |
-| `set tabsize 4`                 | Set tab size to 4 spaces                |
-| `vsplit <file_name>`            | Open a file in a vertical split         |
-| `hsplit <file_name>`            | Open a file in a horizontal split       |
-| `set colorscheme <scheme_name>` | Set the editor colorscheme              |
-| `help defaultkeys`              | Show key combinations                   |
-| `help commands`                 | Show commands available in command mode |
-
-While typing commands such as `vsplit`, `hsplit`, or `set colorscheme`, press `Tab` to cycle through available file names or colorschemes.
-
-### Command Prompt Examples
-
-Go to line 100:
-
-```text
-Ctrl+E
-goto 100
-Enter
-```
-
-Replace all occurrences of `World` with `Youtube`:
-
-```text
-Ctrl+E
-replaceall World Youtube
-Enter
-```
-
-### Navigation Keys
-
-| Command          | Action                                  |
-| ---------------- | --------------------------------------- |
-| `Fn+Right Arrow` | Go to the end of the current line       |
-| `Fn+Left Arrow`  | Go to the beginning of the current line |
-| `Fn+Up Arrow`    | Move up the page by one fold/page       |
-| `Fn+Down Arrow`  | Move down the page by one fold/page     |
-
-### Quick Reference
-
-Install on Linux:
-
-```bash
-curl https://getmic.ro | bash
-sudo chown root:root micro
-sudo mv micro /usr/bin
-micro --version
-```
-
-Install on macOS:
-
-```bash
-brew install micro
-micro --version
-```
-
-Install useful plugins:
-
-```bash
-micro -plugin install aspell
-micro -plugin install autofmt
-micro -plugin install misspell
-micro -plugin install runit
-micro -plugin install quoter
-micro -plugin install monokai-dark
-micro -plugin install jump
-micro -plugin install filemanager
-```
-
-Open a file:
-
-```bash
-micro filename.txt
-```
-
-Save and quit:
-
-```text
-Ctrl+S
-Ctrl+Q
-```
-
-## Vim - the ubiquitous and most powerful command line editor
-
-### Remapping the Caps Lock key to Escape in macOS Sierra for easier access
-
-As of macOS Sierra 10.12.1, the Caps Lock -> Escape remapping can be done natively in the Keyboard System Preferences pane! To remap without any 3rd party software, do the following:
-
-- Open `System Preferences` and click on `Keyboard`
-- Click on `Modifier Keys...`
-- For `Caps Lock` key, choose `Escape`
-- Click `OK`
-
-### Vim modes
-
-- `Normal` mode:
-  - Vim starts up in `Normal` mode.
-  - This mode is used for navigating around the file, reading contents, go from one file to another file.
-  - Switch to `Normal` mode by pressing `Esc` while you are in any other mode.
-
-- `Insert` mode:
-  - This mode is used for entering text into vim's buffer.
-  - Switch to `Insert` mode by pressing the following keys while you are in `Normal` mode:
-    - `i` : Switch to the `Insert` mode and move your cursor to the left of the cursor’s current position.
-    - `I` : Switch to the `Insert` mode and move your cursor to the beginning of the line.
-    - `a` : Switch to the `Insert` mode and move your cursor to the right of the cursor’s current position.
-    - `A` : Switch to the `Insert` mode and move your cursor to the end of the line.
-    - `o` : Switch to the `Insert` mode and move your cursor to a newline after your cursor’s current position.
-    - `O` : Switch to the `Insert` mode and move your cursor to a newline before your cursor’s current position.
-
-- `Replace` mode:
-  - This mode allows you replace existing text by directly typing over it.
-  - Switch to `Replace` mode by pressing `R` (`Shift + r`) while you are in `Normal` mode.
-
-- `Visual` mode:
-  - This mode is used to make selections of text, similar to how clicking and dragging with a mouse behaves. Selecting text allows commands to apply only to the selection, such as copying, deleting, replacing, and so on.
-  - Switch to `Visual` mode by pressing `v` while you are in `Normal` mode.
-  - `Visual` mode has two different variants:
-    - `Visual Line` mode:
-      - This mode is used to make text selections by line.
-      - Switch to `Visual Line` mode by pressing `V` (`Shift + v`) while you are in `Normal` mode.
-    - `Visual Block` mode:
-      - This mode is used to make text selections by blocks; moving the cursor will make rectangle selections of the text.
-      - Switch to `Visual Block` mode by pressing `Control + v` while you are in `Normal` mode.
-
-- `Command` mode:
-  - Command mode has a wide variety of commands and can do things that normal mode can’t do as easily.
-  - Switch to `Command` mode by pressing `:` while you are in `Normal` mode.
-
-### Vim key-strokes guide
-
-#### Cheatsheets
-
-- To read the vim essenstials cheatsheet visit: [Josean - Vim Essenstials Cheatsheet](https://www.josean.com/posts/vim-essentials-cheatsheet)
-
-#### Getting out of vim
-
-- `:q` / `:quit` : **\[COMMAND\]** Quit vim.
-- `:q!` / `:quit!` : **\[COMMAND\]** Quit vim without saving.
-- `:w` / `:write` : **\[COMMAND\]** Write into a file.
-- `:w!` / `:write!` : **\[COMMAND\]** Force write into a file even if the file has only read permission.
-- `:wq` : **\[COMMAND\]** Write into a file and quit vim.
-- `:wq!` : **\[COMMAND\]** Force write into a file and quit even if file has only read permission (i.e. if file does not have write permission).
-- `:x` / `:exit` : **\[COMMAND\]** Write into a file and quit vim (similar to `:wq`, but only write if there are changes).
-- `:qa` / `:quitall` : **\[COMMAND\]** Close all the instances/files open in vim.
-- `:qa!` / `:quitall!` : **\[COMMAND\]** Close all the instances/files open in vim abandoning the changes.
-- `:cq` : **\[COMMAND\]** Quit vim with an error code, so that the compiler will not compile the same file again.
-- `:wq <file-name>` : **\[COMMAND\]** Write into the given file and quit vim (Tip: Mostly used when you open vim without giving filename as arguments initially).
-- `:<line-no-beg>,<line-no-end>wq!` : **\[COMMAND\]** Write the text in between the line range given into a file, discarding other changes (e.g. `:5,10wq!` writes only the text from line no 5 to 10 into the file, discards other changes and exists vim).
-- `ZZ` : **\[NORMAL\]** Write into a file and quit vim when there are changes (same as `:x`).
-- `ZQ` : **\[NORMAL\]** Quit vim discarding changes (same as `:q!`).
-
-### Configuring vim like a real power user
-
-#### Configuration for ~/.vimrc
-
-```vim
-set nocompatible                " Disable compatibility with vi which can cause unexpected issues.
-filetype on                     " Enable type file detection. Vim will be able to try to detect the type of file is use.
-filetype plugin on              " Enable plugins and load plugin for the detected file type.
-filetype indent on              " Load an indent file for the detected file type.
-
-
-syntax on                       " Turn syntax highlighting on.
-colorscheme onedark             " Select the 'Onedark' colorscheme for vim
-let g:lightline = {
-  \ 'colorscheme': 'onedark',
-  \ }
-highlight Normal guibg=NONE ctermbg=NONE
-
-set mouse=a                     " Enable mouse support for cursor movements within vim
-set noshowmode                  " Don't show what mode we're currently editing in
-set showcmd                     " Show partial command you type in the last line of the screen
-set laststatus=2                " 0, 1 or 2; when to use a status line for the last window
-set nowrap                      " Don't wrap lines
-set number                      " Add numbers to each line on the left-hand side
-set tabstop=4                   " A tab is four spaces
-set softtabstop=4               " When hitting <BS>, pretend like a tab is removed, even if spaces
-set shiftwidth=4                " Number of spaces to use for autoindenting
-set expandtab                   " Expand tabs by default (overloadable per file type later)
-set autoindent                  " Always set autoindenting on
-set copyindent                  " Copy the previous indentation on autoindenting
-set smartindent                 " Do clever auto indenting
-set backspace=indent,eol,start  " allow backspacing over everything in insert mode
-set exrc                        " Enable reading .vimrc/.exrc/.gvimrc in the current directory
-set hidden                      " Don't unload a buffer when no longer shown in a window
-set autowrite                   " Save on buffer switch
-set ignorecase                  " Ignore case when searching
-set smartcase                   " Ignore case if search pattern is all lowercase / override 'ignorecase' when pattern has upper case characters
-set noswapfile
-set nobackup
-set undodir=~/.vim/undodir      " List of directories for undo files
-set undofile                    " Automatically save and restore undo history
-set hlsearch                    " Use highlighting when doing a search
-set incsearch                   " Show match for partly typed search command
-set scrolloff=8                 " Number of screen lines to show around the cursor
-set signcolumn=auto             " Whether to show the signcolumn for error highlighting
-set colorcolumn=120             " Columns to highlight
-set visualbell                  " Don't beep
-set noerrorbells                " Don't beep
-set history=1000                " Set the commands to save in history default number is 20
-set encoding=utf8
-
-
-call plug#begin('~/.vim/plugged')         " Specify a directory for plugins
-
-Plug 'jiangmiao/auto-pairs'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'mattn/emmet-vim'
-Plug 'itchyny/lightline.vim'
-Plug 'preservim/nerdcommenter'
-Plug 'preservim/nerdtree'
-Plug 'farmergreg/vim-lastplace'
-Plug 'jremmen/vim-ripgrep'
-Plug 'mbbill/undotree'
-Plug 'ycm-core/YouCompleteMe'
-
-call plug#end()                           " Initialize plugin system
-
-
-" Configuring remaps to do extra key combinations
-let mapleader = " "
-let g:mapleader = " "
-
-" General remaps
-nnoremap <leader>w :w<cr>
-nnoremap <leader>q :q<cr>
-nnoremap <leader>e :q!<cr>
-nnoremap <leader>h :wincmd h<cr>
-nnoremap <leader>j :wincmd j<cr>
-nnoremap <leader>k :wincmd k<cr>
-nnoremap <leader>l :wincmd l<cr>
-nnoremap <silent><leader>+ :vertical resize +5<cr>
-nnoremap <silent><leader>- :vertical resize -5<cr>
-
-" General cofigs
-" Change cursor to 'blinking vertical bar' in INSERT mode
-" Change cursor to 'blinking underscore' in REPLACE mode
-" Change cursor to 'blinking block' in NORMAL mode
-let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-let &t_SR = "\<Esc>]50;CursorShape=2\x7"
-let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-
-" 'nerdtree' remaps
-nnoremap <leader>n :NERDTreeToggle<cr>
-nnoremap <leader>f :NERDTreeFind<space>
-
-" 'nerdtree' config
-let g:NERDTreeIgnore = ['^node_modules$']
-
-" Start 'nerdtree' when Vim is started without file arguments
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
-
-" 'neardtree' note: Bring up NERDTree and navigate to the directory where you want to create the new file. Press m to bring up the NERDTree Filesystem Menu. This menu allows you to create, rename, and delete files and directories. Type a to add a child node and then simply enter the filename. You’re done! To create a directory follow the same steps but append a / to the filename.
-
-" 'undotree' remaps
-nnoremap <leader>u :UndotreeToggle<cr>
-
-" 'YouCompleteMe' remaps
-nnoremap <silent><leader>gd :YcmCompleter GoTo<cr>
-nnoremap <silent><leader>gf :YcmCompleter FixIt<cr>
-
-" 'ctrlp' remaps
-let g:ctrlp_map = '<leader>p'
-let g:ctrlp_cmd = 'CtrlP'
-
-" 'ctrlp' config
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-let g:ctrlp_root_markers = ['pom.xml', '.p4ignore', '.gitignore', '.project', '.idea', 'package.json', 'node_modules']
-let g:ctrlp_use_caching = 0
-let g:ctrlp_show_hidden = 0
-
-" 'ripgrep' remaps
-" 'ripgrep' note: Install 'ripgrep' on your system (mac) by entering the command `brew install ripgrep` before making a use of this plugin
-" 'ripgrep' issues and fixes: https://github.com/jremmen/vim-ripgrep/issues
-nnoremap <leader>ps :Rg<space>
-
-" 'ripgrep' config
-if executable('rg')
-    let g:rg_derive_root='true'
-endif
-
-" 'emmet' cofig
-" 'emmet' guidelines: https://raw.githubusercontent.com/mattn/emmet-vim/master/TUTORIAL
-let g:user_emmet_mode='a'
-let g:user_emmet_leader_key='<C-a>'
-let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
-
-" 'nerdcommenter' remaps
-vmap <leader>/ <plug>NERDCommenterToggle
-nmap <leader>/ <plug>NERDCommenterToggle
-
-" 'nerdcommenter' config
-let g:NERDSpaceDelims = 1
-let g:NERDCompactSexyComs = 1
-let g:NERDDefaultAlign = 'left'
-let g:NERDCommentEmptyLines = 1
-let g:NERDTrimTrailingWhitespace = 1
-```
-
-#### Vim Plugin Manager installation
-
-- Vim-Plug official website: [vim-plug](https://github.com/junegunn/vim-plug)
-- Installation: [vim-plug#installation](https://github.com/junegunn/vim-plug?tab=readme-ov-file#unix)
-- Once we have the above configuration for .vimrc, we can use the following command to install the plugin manager:
-
-  ```bash
-   curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  ```
-
-- Reload .vimrc and use command `:PlugInstall` inside vim to install plugins
-
-#### Vim Theme installation
-
-- Onedark theme official website: [onedark.vim](https://github.com/joshdick/onedark.vim)
-- Once we have the above configuration for .vimrc, we can use the following steps to install the theme
-  - Installation via plugin manager
-  - Manual installation (recommended)
-    - Place `colors/onedark.vim` in your `~/.vim/colors/` directory
-    - Place `autoload/onedark.vim` in your `~/.vim/autoload/` directory
-
-#### Vim Plugin - 'YouCompleteMe' installation
-
-- YouCompleteMe plugin official website: [YouCompleteMe](https://github.com/ycm-core/YouCompleteMe)
-- Pre-requisites: cmake, python (3.8 or later), go, java17+ (should be directly accessible via command line), mono, node
-- Installation guide: [YouCompleteMe#installation](https://github.com/ycm-core/YouCompleteMe?tab=readme-ov-file#macos)
-- Install `YouCompleteMe` plugin via `Vim-Plug` plugin manager
-- Use the following commands to install the plugin:
-
-  ```bash
-  cd ~/.vim/plugged/YouCompleteMe
-  python3 install.py --all
-  ```
-
-## Shortcuts
-
-- `Command + Space` : Open up 'Spotlight Search' for searching any application, document etc. on your system or on the web.
-- `Command + Q` : Quit the currently open application.
-- `Command + M` : Minimize the focused window.
-- `Command + Shift + 3` : Capture a full size screenshot of the window.
-- `Command + Shift + 4` : Capture a portion of the screen.
-- `Command + Tab` : Switch between applications.
-- `Command + Option + Esc` : Force quit applications.
-- `Command + Control + Q` : Lock screen.
-- `Command + H` : Hide current application.
-- `Command + Option + H` : Hide all other applications.
-- `Command + Delete` : **(Finder)** Move selected items to bin.
-- `Command + C` : **(Finder)** Copy the selected files and directories.
-- `Command + V` : **(Finder)** Paste files and directories that has been copied into the current location.
-- `Command + Option + V` : **(Finder)** Move files and directories that has been copied into the current location.
-- `Command + Down_Arrow` : **(Finder)** Go one level inside the directory hierarchy / open up a file or directory.
-- `Command + Up_Arrow` : **(Finder)** Go one level up in the directory hierarchy.
-- `Command + Control + T` : **(Finder)** Add the currently open directory in the sidebar.
-- `Command + Control + S`: **(Finder)** Show / Hide the sidebar.
-- `Command + Shift + .` : **(Finder)** Show / Hide all the hidden files and directories.
-- `Command + S` : **(Text Editor)** Save documents, files in text editor and IDEs.
-- `Command + Shift + Left_Arrow` : **(Text Editor)** Select text from the cursor location to the beginning of the line.
-- `Command + Shift + Right_Arrow` : **(Text Editor)** Select text from the cursor location to the end of the line.
-- `Delete` : **(Text Editor)** Deletes a single character on the left of the cursor.
-- `Fn + Delete` : **(Text Editor)** Deletes a single character on the right of the cursor.
-- `Option + Left_Arrow` : **(Text Editor)** Move to the beginning of each word on the left.
-- `Option + Right_Arrow` : **(Text Editor)** Move to the end of each word on the right.
-- `Control + A` : **(Terminal)** Move cursor to the beginning of the line.
-- `Control + E` : **(Terminal)** Move cursor to the end of the line.
-- `Esc + B` : **(Terminal)** Move cursor one word forward.
-- `Esc + F`: **(Terminal)** Move cursor one word backward.
-- `Control + W` : **(Terminal)** Delete word on the left.
-- `Esc + D` : **(Terminal)** Delete word on the right.
-- `Control + K` : **(Terminal)** Delete all characters to the right of the cursor.
-- `Control + D` : **(Terminal)** Delete the current character.
-- `Control + U` : **(Terminal)** Delete entire line.
-- `Control + C` : **(Terminal)** Cancel the current command.
-- `Control + L` : **(Terminal)** Clear the terminal screen.
-- `Control + R` : **(Terminal)** Search in previous commands (history).
-- `Mouse1_Double_Click` (on any text): **(iTerm2)** Select / highlight the text in iTerm2 and copy it to clipboard.
-- `Mouse3_Click` : **(iTerm2)** Paste the content from the clipboard in iTerm2.
-- `Command + D` : **(iTerm2)** Split the current tab vertically with current profile.
-- `Command + Shift + D` : **(iTerm2)** Split the current tab horizontally with current profile.
-- `Command + Option + Shift + V` : **(iTerm2)** Split the current tab vertically with a profile of your choice.
-- `Command + Option + Shift + H` : **(iTerm2)** Split the current tab horizontally with a profile of your choice.
-- `Command + Shift + Enter` : **(iTerm2)** Maximize active pane.
-- `iTerm2` -> `Window` -> `Arrange split panes evenly` : **(iTerm2)** Evenly split the panes present in current tab.
-- `Command + ]` : **(iTerm2)** Select next pane.
-- `Command + [` : **(iTerm2)** Select previous pane.
-- `Command + Option + Up_Arrow` : **(iTerm2)** Select pane above.
-- `Command + Option + Down_Arrow` : **(iTerm2)** Select pane below.
-- `Command + Option + Left_Arrow` : **(iTerm2)** Select pane on the left.
-- `Command + Option + Right_Arrow` : **(iTerm2)** Select pane on the right.
-- `Command + T` : **(iTerm2)** Open a new tab.
-- `Command + Shift + ]` / `Command + Right_Arrow` : **(iTerm2)** Select next tab.
-- `Command + Shift + [` / `Command + Left_Arrow` : **(iTerm2)** Select previous tab.
-- `iTerm2` -> `Preferences` -> `Keys` -> `Navigation Shortcuts`  
-  `Shortcut to select a tab`: `Option + Number`  
-  `Shortcut to choose a split pane`: `Command + Number`
-- `Option + Number-of-the-Tab` : **(iTerm2)** Select a tab by number (with previous shortcut configuration).
-- `Command + Number-of-the-Pane` : **(iTerm2)** Select a pane within a tab by number (with previous shortcut configuration).
-
-## Commands
-
-- `sudo shutdown -h now` : Shuts down your system immediately.
-- `sudo shutdown -r now` : Restarts your system immediately.
-- `open .` : Open the current directory in Finder.
-- `ls > ~/Desktop/files.txt` : **(I/O Redirection)** Redirects the output of 'ls' command to 'files.txt', overwrites the existing content if the file already exists.
-- `ls >> ~/Desktop/files.txt` : **(I/O Redirection)** Redirects the output of 'ls' command to 'files.txt', appends to the existing content if the file already exists.
-- `ls | open -fe` : **(I/O Redirection)** Redirects the output of 'ls' command and opens it in default text editor of the system (i.e. TextEdit).
-- `ls | pbcopy` : **(I/O Redirection)** Redirects the output of 'ls' command to the clipboard.
