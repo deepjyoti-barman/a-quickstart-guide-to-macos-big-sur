@@ -69,6 +69,10 @@
     - [General Configuration](#general-configuration)
     - [Some Important iTerm2 Shortcuts](#some-important-iterm2-shortcuts)
     - [Oh-My-Fish Plugin (Optional)](#oh-my-fish-plugin-optional)
+  - [Zsh Environment & Shell Configuration](#zsh-environment--shell-configuration)
+    - [File: ~/.zshenv](#file-zshenv)
+    - [File: ~/.zshrc](#file-zshrc)
+    - [File: ~/aliases.zsh](#file-aliaseszsh)
   - [Visual Studio Code](#visual-studio-code)
     - [Necessary Extensions For VS Code](#necessary-extensions-for-vs-code)
     - [VS Code Configuration](#vs-code-configuration)
@@ -142,6 +146,13 @@
     - [Install Charles Root Certificate on Mac](#install-charles-root-certificate-on-mac)
     - [Install Charles Root Certificate on Mobile](#install-charles-root-certificate-on-mobile)
     - [Enable and Configure SSL Proxying Settings](#enable-and-configure-ssl-proxying-settings)
+  - [Modern Terminal Tools](#modern-terminal-tools)
+    - [Neovim](#neovim)
+    - [Eza](#eza)
+    - [Bat](#bat)
+    - [Fd](#fd)
+    - [Ripgrep](#ripgrep)
+    - [Lf](#lf)
 
 ## Set Up MacOS, Resolve Issues and Tweaks
 
@@ -296,7 +307,6 @@ Formatting of the device can be done by following the steps given below:
 **Extras**: My all in one ~/.zshenv config is given below,
 
 ```bash
-export ALLURE_HOME=/opt/allure-2.14.0
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export FZF_DEFAULT_COMMAND="fd --type=file --color=always --follow --hidden --exclude .git --exclude node_modules --exclude .m2"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
@@ -306,7 +316,7 @@ export FZF_DEFAULT_OPTS="--height 40% --layout reverse --info inline --border \
     --color 'fg:#bbccdd,fg+:#ddeeff,bg:#334455,preview-bg:#223344,border:#778899' \
     --ansi"
 export GRADLE_HOME=/opt/homebrew/Cellar/gradle/9.7.1
-export M2_HOME=/opt/homebrew/Cellar/maven/3.9.16
+export MAVEN_HOME=/opt/homebrew/Cellar/maven/3.9.16
 export SSHPASS='abcd@1234'
 
 # Java environment variable configurations
@@ -316,7 +326,6 @@ export JAVA_HOME=$JAVA21_HOME
 alias java8='export JAVA_HOME=$JAVA8_HOME'
 alias java21='export JAVA_HOME=$JAVA21_HOME'
 
-export PATH=$PATH:$ALLURE_HOME/bin
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
@@ -629,34 +638,37 @@ Recently the Github team has announced that for better protection and privacy us
 
 - [Aerospike Tools](https://download.aerospike.com/artifacts/aerospike-tools/9.2.1/)
 - [ag](https://www.cyberciti.biz/open-source/command-line-hacks/ag-supercharge-string-search-through-directory-hierarchy/) (install via `brew install the_silver_searcher`) (This tool required as a dependency for peco plugin)
-- [bat](https://github.com/sharkdp/bat) (install via `brew install bat`)
+- allure (install via `brew install allure`)
+- [bat-documentation](#bat) | [bat-github](https://github.com/sharkdp/bat) (install via `brew install bat`)
 - cmake (install via `brew install cmake`)
 - composer (install via `brew install composer`)
-- exa: [exa-official](https://the.exa.website/), [exa-github](https://github.com/ogham/exa) (install via `brew install exa`)
+- [eza-documentation](#eza) | [eza-official](https://eza.rocks/) | [eza-github](https://github.com/eza-community/eza) (install via `brew install exa`)
 - Firefox
-- [Fish Shell](https://fishshell.com/) (install via `brew install fish`)
-- [fd](https://github.com/sharkdp/fd) (install via `brew install fd`)
-- [fzf](https://github.com/junegunn/fzf) (install via `brew install fzf`, install key-bindings via `$(brew --prefix)/opt/fzf/install`)
+- [fish-official](https://fishshell.com/) (install via `brew install fish`)
+- [fd-documentation](#fd) | [fd-github](https://github.com/sharkdp/fd) (install via `brew install fd`)
+- [fzf-github](https://github.com/junegunn/fzf) (install via `brew install fzf`, install key-bindings via `$(brew --prefix)/opt/fzf/install`)
 - git (install via `brew install git`)
 - go (install via `brew install go`)
 - gradle (install via `brew install gradle`)
 - groovy (install via `brew install groovy`)
-- [homebrew](https://brew.sh/)
+- [homebrew-official](https://brew.sh/)
 - iTerm2 (install via `brew install --cask iterm2`)
 - jmeter (install via `brew install jmeter`)
 - K6 (install via `brew install k6`)
+- [lf-documentation](#lf) (install via `brew install lf`)
 - maven (install via `brew install maven`)
-- [micro](https://micro-editor.github.io/)
-- [mongodb-community](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/) (install via the following commands: `brew tap mongodb/brew`, `brew update`, `brew install mongodb-community`)
+- [micro-official](https://micro-editor.github.io/)
+- [mongodb-community-official](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/) (install via the following commands: `brew tap mongodb/brew`, `brew update`, `brew install mongodb-community`)
+- [neovim-documentation](#neovim) (install via `brew install neovim`)
 - nvm (install via `brew install nvm`)
-- [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish)
-- [Oh My Zsh](https://ohmyz.sh/)
-- [peco](https://github.com/peco/peco) (install via `brew install peco`)
+- [oh-my-fish-github](https://github.com/oh-my-fish/oh-my-fish)
+- [oh-my-zsh-official](https://ohmyz.sh/)
+- [peco-github](https://github.com/peco/peco) (install via `brew install peco`)
 - php (install via `brew install php`)
 - python@3.12 (recommended: install via pyenv, `pyenv install 3.12.2; pyenv global 3.12.2`) (alternative installation via brew, `brew install python@3.12`) (to access python from terminal create a symbolic link using `brew link --overwrite python@3.12`, another command to do the same is via creating the symbolic link using `ln -s /opt/homebrew/Cellar/python@3.12/3.12.2/bin/python3 /opt/homebrew/bin/`)
 - python-tk@3.12 (required to access `idle3` command from Terminal) (install via `brew install python-tk@3.12`)
-- [ripgrep](https://github.com/BurntSushi/ripgrep) (install via `brew install ripgrep`)
-- [sdkman](https://sdkman.io/)
+- [ripgrep-documentation](#ripgrep) | [ripgrep-github](https://github.com/BurntSushi/ripgrep) (install via `brew install ripgrep`)
+- [sdkman-official](https://sdkman.io/)
 - sshpass (install via `brew install sshpass`)
 - tree (install via `brew install tree`)
 - uv (install via `brew install uv`)
@@ -884,6 +896,15 @@ If the `sdk` command works, SDKMan is installed successfully.
   sdk list gradle
   sdk list maven
   sdk list jmeter
+  ```
+
+- List the candidates and their respective versions installed:
+
+  ```bash
+  # NOTE: tree must be installed
+  # macOS: brew install tree
+  # Ubuntu: sudo apt install tree
+  tree ~/.sdkman/candidates -L 2
   ```
 
 - List versions for a specific candidate that is installed:
@@ -2462,18 +2483,9 @@ This jumps to the most frequently visited directory matching `projects`.
 - Configure your `~/.zshrc` as the following:
 
   ```zsh
-  # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-  # Initialization code that may require console input (password prompts, [y/n]
-  # confirmations, etc.) must go above this block; everything else may go below.
-  if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-  fi
-
-  # If you come from bash you might have to change your $PATH.
-  # export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-  # Path to your oh-my-zsh installation.
-  export ZSH="/Users/deepjyoti.barman/.oh-my-zsh"
+  # =========================================================
+  # Oh-my-zsh Theme
+  # =========================================================
 
   # Set name of the theme to load --- if set to "random", it will
   # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -2482,61 +2494,9 @@ This jumps to the most frequently visited directory matching `projects`.
   # ZSH_THEME="passion"
   ZSH_THEME="powerlevel10k/powerlevel10k"
 
-  # Set list of themes to pick from when loading at random
-  # Setting this variable when ZSH_THEME=random will cause zsh to load
-  # a theme from this variable instead of looking in $ZSH/themes/
-  # If set to an empty array, this variable will have no effect.
-  # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
-  # Uncomment the following line to use case-sensitive completion.
-  # CASE_SENSITIVE="true"
-
-  # Uncomment the following line to use hyphen-insensitive completion.
-  # Case-sensitive completion must be off. _ and - will be interchangeable.
-  # HYPHEN_INSENSITIVE="true"
-
-  # Uncomment the following line to disable bi-weekly auto-update checks.
-  DISABLE_AUTO_UPDATE="true"
-
-  # Uncomment the following line to automatically update without prompting.
-  DISABLE_UPDATE_PROMPT="true"
-
-  # Uncomment the following line to change how often to auto-update (in days).
-  # export UPDATE_ZSH_DAYS=13
-
-  # Uncomment the following line if pasting URLs and other text is messed up.
-  # DISABLE_MAGIC_FUNCTIONS="true"
-
-  # Uncomment the following line to disable colors in ls.
-  # DISABLE_LS_COLORS="true"
-
-  # Uncomment the following line to disable auto-setting terminal title.
-  # DISABLE_AUTO_TITLE="true"
-
-  # Uncomment the following line to enable command auto-correction.
-  # ENABLE_CORRECTION="true"
-
-  # Uncomment the following line to display red dots whilst waiting for completion.
-  # You can also set it to another string to have that shown instead of the default red dots.
-  # e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
-  # Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
-  # COMPLETION_WAITING_DOTS="true"
-
-  # Uncomment the following line if you want to disable marking untracked files
-  # under VCS as dirty. This makes repository status check for large repositories
-  # much, much faster.
-  # DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-  # Uncomment the following line if you want to change the command execution time
-  # stamp shown in the history command output.
-  # You can set one of the optional three formats:
-  # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-  # or set a custom format using the strftime function format specifications,
-  # see 'man strftime' for details.
-  # HIST_STAMPS="mm/dd/yyyy"
-
-  # Would you like to use another custom folder than $ZSH/custom?
-  # ZSH_CUSTOM=/path/to/new-custom-folder
+  # =========================================================
+  # Oh-my-zsh Plugins
+  # =========================================================
 
   # Which plugins would you like to load?
   # Standard plugins can be found in $ZSH/plugins/
@@ -2547,59 +2507,29 @@ This jumps to the most frequently visited directory matching `projects`.
       docker
       docker-compose
       extract
+      fast-syntax-highlighting
       git
       sublime
       web-search
       z
+      zsh-autocomplete
       zsh-autosuggestions
-      zsh-syntax-highlighting
   )
 
   source $ZSH/oh-my-zsh.sh
 
-  # User configuration
+  # =========================================================
+  # Config to Auto-load Tools on Startup
+  # =========================================================
 
-  # export MANPATH="/usr/local/man:$MANPATH"
-
-  # You may need to manually set your language environment
-  # export LANG=en_US.UTF-8
-
-  # Preferred editor for local and remote sessions
-  # if [[ -n $SSH_CONNECTION ]]; then
-  #   export EDITOR='vim'
-  # else
-  #   export EDITOR='mvim'
-  # fi
-
-  # Compilation flags
-  # export ARCHFLAGS="-arch x86_64"
-
-  # Set personal aliases, overriding those provided by oh-my-zsh libs,
-  # plugins, and themes. Aliases can be placed here, though oh-my-zsh
-  # users are encouraged to define aliases within the ZSH_CUSTOM folder.
-  # For a full list of active aliases, run `alias`.
-  #
-  # Example aliases
-  # alias zshconfig="mate ~/.zshrc"
-  # alias ohmyzsh="mate ~/.oh-my-zsh"
-
+  # Path configuration | Package: homebrew
   # Auto-load brew as a shell environment variable at startup
   eval "$(/opt/homebrew/bin/brew shellenv)"
 
-  # Path configuration | Package: pyenv
-  export PATH=$(pyenv root)/shims:$PATH
-
-  # Path configuration | Package: nvm
-  export NVM_DIR=~/.nvm
-  source $(brew --prefix nvm)/nvm.sh
-
+  # Path configuration | Package: powerlevel10k
   # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
   [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
   ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
-
-  # Path configuration | Package: sdkman
-  export SDKMAN_DIR="$HOME/.sdkman"
-  [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
   ```
 
 ### Install a Colorscheme for iTerm2
@@ -2754,6 +2684,310 @@ Open up 'iTerm2' -> Click on `iTerm2` in the menu bar -> `Preferences`
   end
   ```
 
+## Zsh Environment & Shell Configuration
+
+### File: `~/.zshenv`
+
+```zsh
+# =========================================================
+# XDG base directories
+# =========================================================
+
+# Use standard locations for user-specific config, cache, data, and state.
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_STATE_HOME=$HOME/.local/state
+
+# =========================================================
+# Pager Colorization
+# =========================================================
+
+# This shell snippet configures man to use bat (or Debian/Ubuntu’s batcat) as its pager,
+# giving man pages syntax highlighting and cleaner formatting.
+
+if command -v bat >/dev/null 2>&1; then
+  export MANPAGER="col -bx | bat -l man -p"
+elif command -v batcat >/dev/null 2>&1; then
+  export MANPAGER="col -bx | batcat -l man -p"
+fi
+
+# =========================================================
+# Editor
+# =========================================================
+
+# Sets Neovim as the default editor for CLI tools like git, crontab etc.
+# VISUAL generally indicates your preferred full-screen/interactive editor,
+# while EDITOR is the more general fallback.
+if command -v nvim >/dev/null 2>&1; then
+  export EDITOR="nvim"
+  export VISUAL="nvim"
+fi
+
+# =========================================================
+# Android Studio
+# =========================================================
+
+export ANDROID_HOME=$HOME/Library/Android/sdk
+
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
+
+# =========================================================
+# SDKMan Default Exports
+# =========================================================
+# export GRADLE_HOME=$HOME/.sdkman/candidates/gradle/current
+# export JAVA_HOME=$HOME/.sdkman/candidates/java/current
+# export JMETER_HOME=$HOME/.sdkman/candidates/jmeter/current
+# export MAVEN_HOME=$HOME/.sdkman/candidates/maven/current
+```
+
+### File: `~/.zshrc`
+
+```zsh
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Path to your oh-my-zsh installation.
+export ZSH="/Users/deepjyoti.barman/.oh-my-zsh"
+
+# =========================================================
+# Oh-my-zsh Theme
+# =========================================================
+
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+# ZSH_THEME="passion"
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in $ZSH/themes/
+# If set to an empty array, this variable will have no effect.
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line to automatically update without prompting.
+DISABLE_UPDATE_PROMPT="true"
+
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS="true"
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# =========================================================
+# Oh-my-zsh Plugins
+# =========================================================
+
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(
+    docker
+    docker-compose
+    extract
+    fast-syntax-highlighting
+    git
+    sublime
+    web-search
+    z
+    zsh-autocomplete
+    zsh-autosuggestions
+)
+
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# =========================================================
+# Config to Auto-load Tools on Startup
+# =========================================================
+
+# Path configuration | Package: homebrew
+# Auto-load brew as a shell environment variable at startup
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Path configuration | Package: pyenv
+export PATH=$(pyenv root)/shims:$PATH
+
+# Path configuration | Package: nvm
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
+# Path configuration | Package: powerlevel10k
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
+
+# Path configuration | Package: sdkman
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# =========================================================
+# History
+# =========================================================
+
+# Keeps a persistent, shared zsh history while avoiding common duplicates.
+mkdir -p "$XDG_STATE_HOME/zsh"
+HISTFILE="$XDG_STATE_HOME/zsh/history"
+HISTSIZE=50000
+SAVEHIST=50000
+
+setopt SHARE_HISTORY
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+
+# =========================================================
+# Modular Config Files
+# =========================================================
+
+# Aliases
+source "$HOME/aliases.zsh"
+```
+
+### File: `~/aliases.zsh`
+
+```zsh
+# =========================================================
+# CLI tools
+# =========================================================
+
+# Better ls
+alias ls='eza --icons=auto'
+
+# Detailed listing
+alias ll='eza -lh --icons=auto --git'
+
+# Detailed listing including hidden files
+alias la='eza -lah --icons=auto --git'
+
+# Tree view
+alias tree='eza --tree --icons=auto'
+
+# Reuse ls completions for eza (avoids defining a separate completion function)
+compdef eza=ls
+
+# Better cat
+# alias cat='bat'
+
+# =========================================================
+# Core utilities
+# =========================================================
+
+alias grep='rg --color=auto'
+alias diff='diff --color=auto'
+alias df='df -h'
+
+# =========================================================
+# Navigation
+# =========================================================
+
+# Jump back to the previous directory with `-`
+# -- prevents - being parsed as a flag
+alias -- -='cd -'
+
+# Launch lf and follow its last visited directory when you quit.
+lf() {
+    tmp=$(mktemp)
+    command lf -last-dir-path="$tmp" "$@"
+    if [ -f "$tmp" ]; then
+        dir=$(cat "$tmp")
+        rm -f "$tmp"
+        [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
+    fi
+}
+
+# =========================================================
+# Editor
+# =========================================================
+
+# alias vim='nvim'
+```
+
+Finally one should execute the following commands to make all of them sync and work:
+
+```zsh
+source .zshenv
+source .zshrc
+```
+
 ## Visual Studio Code
 
 ### Necessary Extensions for VS Code
@@ -2845,6 +3079,7 @@ Click on the `Manage` (Screw) icon -> `Settings` (Shortcut: `Command + ,`) -> Fr
     "--skip-string-normalization"
   ],
 
+  "chat.tips.enabled": false,
   "chat.viewSessions.orientation": "stacked",
 
   "code-runner.clearPreviousOutput": true,
@@ -2863,7 +3098,7 @@ Click on the `Manage` (Screw) icon -> `Settings` (Shortcut: `Command + ,`) -> Fr
 
   "diffEditor.ignoreTrimWhitespace": false,
 
-  "editor.fontSize": 18,
+  "editor.fontSize": 14,
   "editor.suggestSelection": "first",
   "editor.rulers": [100],
   "editor.wordWrap": "on",
@@ -2899,6 +3134,8 @@ Click on the `Manage` (Screw) icon -> `Settings` (Shortcut: `Command + ,`) -> Fr
     "markdown": false,
     "scminput": false
   },
+
+  "java.project.importOnFirstTimeStartup": "disabled",
 
   "liveServer.settings.donotShowInfoMsg": true,
   "liveServer.settings.port": 5500,
@@ -2951,6 +3188,10 @@ Click on the `Manage` (Screw) icon -> `Settings` (Shortcut: `Command + ,`) -> Fr
   // "prettier.singleQuote": false,
   // "prettier.tabWidth": 4,
 
+  "security.workspace.trust.banner": "never",
+  "security.workspace.trust.emptyWindow": true,
+  "security.workspace.trust.enabled": false,
+  "security.workspace.trust.startupPrompt": "never",
   "security.workspace.trust.untrustedFiles": "open",
 
   "terminal.integrated.fontFamily": "MesloLGS NF, Monaco",
@@ -2965,6 +3206,7 @@ Click on the `Manage` (Screw) icon -> `Settings` (Shortcut: `Command + ,`) -> Fr
 
   "workbench.colorTheme": "One Dark Darker",
   "workbench.iconTheme": "material-icon-theme",
+  "workbench.startupEditor": "none",
 
   // Configuration for extension "Language Support for Java(TM) by Red Hat"
   "redhat.telemetry.enabled": true,
@@ -3011,8 +3253,7 @@ Click on the `Manage` (Screw) icon -> `Settings` (Shortcut: `Command + ,`) -> Fr
     "prettier.useTabs": false,
     "prettier.printWidth": 80,
     "prettier.semi": true
-  },
-  "chat.tips.enabled": false
+  }
 }
 ```
 
@@ -4230,6 +4471,14 @@ let g:NERDTrimTrailingWhitespace = 1
 
 - Reload .vimrc and use command `:PlugInstall` inside vim to install plugins
 
+#### Updating Plugins with vim-plug
+
+- **Update all plugins:** Run `:PlugUpdate` inside Vim to pull the latest versions from GitHub for all installed packages.
+- **Update a specific plugin:** Run `:PlugUpdate plugin-name` (replacing `plugin-name` with the actual name of your plugin) if you only want to update one item.
+- **Upgrade the plugin manager itself:** Run `:PlugUpgrade` to update vim-plug to its latest version.
+- **Review changes:** Press `D` inside the update window to see the recent changes made to the plugins.
+- **Cleaning up old plugins:** If you delete a plugin line from your `.vimrc` file, `vim-plug` does not automatically delete the files from your computer. You must run `:PlugClean` – This scans your `.vimrc`, finds any plugin folders that are no longer listed, and asks you for permission to delete them.
+
 #### Vim Theme installation
 
 - Onedark theme official website: [onedark.vim](https://github.com/joshdick/onedark.vim)
@@ -4731,13 +4980,11 @@ To enable Command Line Tools in Android Studio perform the following steps:
 - Paste the following content:
 
   ```sh
+  # =========================================================
+  # Android Studio
+  # =========================================================
+
   export ANDROID_HOME=$HOME/Library/Android/sdk
-  export JAVA8_HOME=$(/usr/libexec/java_home -v 1.8.0)
-  export JAVA21_HOME=$(/usr/libexec/java_home -v 21)
-  export JAVA_HOME=$JAVA21_HOME
-  alias java8='export JAVA_HOME=$JAVA8_HOME'
-  alias java21='export JAVA_HOME=$JAVA21_HOME'
-  export M2_HOME=/opt/homebrew/Cellar/maven/3.9.16
 
   export PATH=$PATH:$ANDROID_HOME/emulator
   export PATH=$PATH:$ANDROID_HOME/platform-tools
@@ -4821,13 +5068,11 @@ sudo npm install -g appium --unsafe-perm=true --allow-root
 - Paste the following content in `~/.zshenv`:
 
   ```sh
+  # =========================================================
+  # Android Studio
+  # =========================================================
+
   export ANDROID_HOME=$HOME/Library/Android/sdk
-  export JAVA8_HOME=$(/usr/libexec/java_home -v 1.8.0)
-  export JAVA21_HOME=$(/usr/libexec/java_home -v 21)
-  export JAVA_HOME=$JAVA21_HOME
-  alias java8='export JAVA_HOME=$JAVA8_HOME'
-  alias java21='export JAVA_HOME=$JAVA21_HOME'
-  export M2_HOME=/opt/homebrew/Cellar/maven/3.9.16
 
   export PATH=$PATH:$ANDROID_HOME/emulator
   export PATH=$PATH:$ANDROID_HOME/platform-tools
@@ -5081,3 +5326,404 @@ Models remain loaded in memory for a short period after use (default keep-alive 
   - If you want to monitor only a specific set of traffic related to your host then enter `*hostname.extension` (i.e. `*github.com`).
 - In the `Port` field you may either enter `*` or enter `443`, anything of your choice.
 - Click on `OK` -> `OK`
+
+## Modern Terminal Tools
+
+Here is a practical overview of six useful terminal tools: `nvim`, `eza`, `bat`, `fd`, `rg`, and `lf`
+
+### Neovim
+
+#### Neovim: Overview
+
+Neovim (`nvim`) is a modern, extensible terminal text editor based on Vim. It can be used for everything from editing config files to full software development.
+
+#### Neovim: Why It Is Useful
+
+- Edit files directly from the terminal.
+- Extremely fast and keyboard-driven.
+- Powerful search, navigation, and editing.
+- Highly customizable through Lua configuration.
+- Great for programming with plugins and language servers.
+
+#### Neovim: Simple Examples
+
+```bash
+nvim file.txt          # Open a file
+nvim ~/.zshrc          # Edit your zsh config
+nvim .                 # Open the current directory
+```
+
+#### Neovim: Essential Keystrokes
+
+| Key      | Action                |
+| -------- | --------------------- |
+| `i`      | Insert/edit text      |
+| `Esc`    | Return to normal mode |
+| `:w`     | Save                  |
+| `:q`     | Quit                  |
+| `:wq`    | Save and quit         |
+| `:q!`    | Quit without saving   |
+| `dd`     | Delete line           |
+| `yy`     | Copy line             |
+| `p`      | Paste                 |
+| `u`      | Undo                  |
+| `Ctrl+r` | Redo                  |
+| `/text`  | Search for text       |
+| `n`      | Next search result    |
+| `gg`     | Go to top             |
+| `G`      | Go to bottom          |
+| `0`      | Start of line         |
+| `$`      | End of line           |
+
+#### Neovim: Important Concept
+
+Neovim has different modes. The two you will use constantly are:
+
+- Normal mode: commands and navigation.
+- Insert mode: typing and editing text.
+
+### Eza
+
+#### Eza: Overview
+
+`eza` is a modern replacement for `ls` with better colors, icons, Git integration, and more readable output.
+
+#### Eza: Why It Is Useful
+
+- Makes directory listings easier to read.
+- Shows file types with colors and icons.
+- Can display Git status.
+- Has better formatting than traditional `ls`.
+
+#### Eza: Simple Examples
+
+```bash
+eza                    # List files
+eza -l                 # Detailed listing
+eza -a                 # Include hidden files
+eza -la                # Detailed + hidden files
+eza -l --git           # Show Git status
+eza --tree             # Show directory as a tree
+eza --icons            # Show file icons
+```
+
+#### Eza: Useful Aliases
+
+```bash
+alias ls='eza'
+alias ll='eza -la'
+alias tree='eza --tree'
+```
+
+#### Eza: Keystrokes
+
+None. `eza` is a command-line program, not an interactive application.
+
+### Bat
+
+#### Bat: Overview
+
+`bat` is a modern replacement for `cat` that displays files with syntax highlighting, line numbers, and Git changes.
+
+#### Bat: Why It Is Useful
+
+- Much easier to read source code and config files.
+- Provides syntax highlighting.
+- Shows line numbers.
+- Automatically handles paging for long files.
+- Useful for quickly inspecting files.
+
+#### Bat: Simple Examples
+
+```bash
+bat file.txt
+bat ~/.zshrc
+bat script.py
+```
+
+Show a specific range:
+
+```bash
+bat --line-range 1:30 file.txt
+```
+
+Show multiple files:
+
+```bash
+bat file1.txt file2.txt
+```
+
+Use it as a replacement for `cat`:
+
+```bash
+alias cat='bat'
+```
+
+#### Bat: Keystrokes
+
+When `bat` opens a long file, it uses a pager.
+
+| Key          | Action    |
+| ------------ | --------- |
+| `Up` / `k`   | Move up   |
+| `Down` / `j` | Move down |
+| `Space`      | Page down |
+| `b`          | Page up   |
+| `/text`      | Search    |
+| `q`          | Quit      |
+
+For short files, `bat` may simply print the contents and return to your shell.
+
+### Fd
+
+#### Fd: Overview
+
+`fd` is a fast, user-friendly replacement for `find` for locating files and directories.
+
+#### Fd: Why It Is Useful
+
+- Much simpler syntax than `find`.
+- Very fast.
+- Respects `.gitignore` by default.
+- Great for finding files by name or type.
+- Works especially well with tools like `fzf` and `nvim`.
+
+#### Fd: Simple Examples
+
+Find files by name:
+
+```bash
+fd config
+```
+
+Find a specific filename:
+
+```bash
+fd package.json
+```
+
+Find only directories:
+
+```bash
+fd -t d projects
+```
+
+Find only files:
+
+```bash
+fd -t f '\.md$'
+```
+
+Search from a specific directory:
+
+```bash
+fd config ~/Documents
+```
+
+Include hidden files:
+
+```bash
+fd -H config
+```
+
+#### Fd: Mental Model
+
+```text
+find -> powerful but complicated
+fd   -> simple and fast
+```
+
+#### Fd: Keystrokes
+
+None. `fd` runs a search and returns the results.
+
+### Ripgrep
+
+#### Ripgrep: Overview
+
+`rg`, also called ripgrep, is a very fast replacement for `grep`, designed especially for searching text across directories and source-code projects.
+
+#### Ripgrep: Why It Is Useful
+
+- Extremely fast.
+- Searches entire projects easily.
+- Understands `.gitignore`.
+- Supports regular expressions.
+- Great for finding where something is used in a codebase.
+
+#### Ripgrep: Simple Examples
+
+Search for text in the current directory:
+
+```bash
+rg "hello"
+```
+
+Search for a word:
+
+```bash
+rg "TODO"
+```
+
+Search a specific directory:
+
+```bash
+rg "TODO" ~/projects
+```
+
+Search only Python files:
+
+```bash
+rg "import" -t py
+```
+
+Search hidden files:
+
+```bash
+rg "secret" -uu
+```
+
+Show filenames only:
+
+```bash
+rg -l "TODO"
+```
+
+Search case-insensitively:
+
+```bash
+rg -i "hello"
+```
+
+#### Ripgrep: Mental Model
+
+```text
+grep -> search text
+rg   -> search text, but much faster and nicer
+```
+
+#### Ripgrep: Keystrokes
+
+None. Like `grep`, it prints results and exits.
+
+### Lf
+
+#### Lf: Overview
+
+`lf` is a terminal-based file manager that lets you navigate directories and manage files using the keyboard.
+
+#### Lf: Why It Is Useful
+
+- Navigate directories without constantly typing `cd` and `ls`.
+- Quickly open, copy, move, rename, and delete files.
+- Very fast and keyboard-driven.
+- An `lf()` shell wrapper can automatically `cd` into the directory you were viewing when you quit.
+
+#### Lf: Simple Examples
+
+Start `lf`:
+
+```bash
+lf
+```
+
+Start in a specific directory:
+
+```bash
+lf ~/Downloads
+```
+
+With an `lf()` wrapper:
+
+```bash
+lf
+```
+
+Navigate to another directory and press `q`; your shell follows you there.
+
+#### Lf: Essential Keystrokes
+
+| Key           | Action                 |
+| ------------- | ---------------------- |
+| `j` / `Down`  | Move down              |
+| `k` / `Up`    | Move up                |
+| `h` / `Left`  | Go to parent directory |
+| `l` / `Right` | Enter directory        |
+| `Enter`       | Open/enter             |
+| `q`           | Quit                   |
+| `Space`       | Select file            |
+| `y`           | Yank/copy              |
+| `p`           | Paste                  |
+| `d`           | Delete                 |
+| `r`           | Rename                 |
+| `/`           | Search                 |
+| `:`           | Enter an `lf` command  |
+| `g`           | Go to a location/menu  |
+
+#### Lf: Navigation Pattern
+
+```text
+        k / Up
+           ^
+h / Left [you] l / Right
+           v
+        j / Down
+```
+
+Think of it as:
+
+```text
+h = back
+l = enter
+j = down
+k = up
+```
+
+### How These Tools Fit Together
+
+These tools are not really competing with each other. They complement each other.
+
+```text
+                 Your Terminal
+                      |
+        --------------+--------------
+        |             |             |
+      eza            lf           nvim
+    list files    navigate       edit files
+        |             |             |
+        --------------+--------------
+                      |
+              --------+--------
+              |               |
+             fd              rg
+         find files       find text
+              |               |
+              --------+--------
+                      |
+                     bat
+                  read files
+```
+
+### Typical Workflow
+
+```bash
+eza -la              # What is here?
+fd package.json      # Where is the file?
+rg "DATABASE_URL"    # Where is this used?
+bat config.py        # Inspect the file
+nvim config.py       # Edit it
+lf                   # Browse/manage files visually
+```
+
+### Modern Unix Toolkit Mental Model
+
+| Tool   | Think of it as  | Main job       |
+| ------ | --------------- | -------------- |
+| `eza`  | `ls`            | List files     |
+| `bat`  | `cat`           | Read files     |
+| `fd`   | `find`          | Find files     |
+| `rg`   | `grep`          | Find text      |
+| `lf`   | Finder/Explorer | Navigate files |
+| `nvim` | VS Code/editor  | Edit files     |
+
+Once you get comfortable with these six tools, a huge amount of everyday terminal work becomes much faster.
