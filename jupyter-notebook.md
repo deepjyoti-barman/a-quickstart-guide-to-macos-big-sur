@@ -1,12 +1,78 @@
 # Jupyter Notebook
 
+## Table of Contents
+
+- [Jupyter Notebook](#jupyter-notebook)
+  - [Table of Contents](#table-of-contents)
+  - [Install Jupyter Notebook Package](#install-jupyter-notebook-package)
+    - [Python: Install Jupyter Notebook](#python-install-jupyter-notebook)
+      - [Python: Create a New Project](#python-create-a-new-project)
+      - [Python: Clone an Existing Project from GitHub](#python-clone-an-existing-project-from-github)
+    - [Java: Install Jupyter Notebook](#java-install-jupyter-notebook)
+      - [Java: Create a New Project](#java-create-a-new-project)
+      - [Java: Clone an Existing Project from GitHub](#java-clone-an-existing-project-from-github)
+    - [TypeScript: Install Jupyter Notebook](#typescript-install-jupyter-notebook)
+      - [TypeScript: Create a New Project](#typescript-create-a-new-project)
+      - [TypeScript: Clone an Existing Project from GitHub](#typescript-clone-an-existing-project-from-github)
+    - [JavaScript: Install Jupyter Notebook](#javascript-install-jupyter-notebook)
+      - [JavaScript: Create a New Project](#javascript-create-a-new-project)
+      - [JavaScript: Clone an Existing Project from GitHub](#javascript-clone-an-existing-project-from-github)
+    - [Golang: Install Jupyter Notebook](#golang-install-jupyter-notebook)
+      - [Golang: Create a New Project](#golang-create-a-new-project)
+      - [Golang: Clone an Existing Project from GitHub](#golang-clone-an-existing-project-from-github)
+  - [Jupyter Packages Comparison](#jupyter-packages-comparison)
+  - [Recommendation for the Right Jupyter Packages](#recommendation-for-the-right-jupyter-packages)
+  - [Installation Commands for Jupyter Packages](#installation-commands-for-jupyter-packages)
+  - [Visual Comparison of Jupyter Packages](#visual-comparison-of-jupyter-packages)
+  - [Modes in Jupyter Notebook](#modes-in-jupyter-notebook)
+  - [Command Mode Shortcuts](#command-mode-shortcuts-press-esc-first)
+    - [Navigation](#navigation)
+    - [Cell Operations](#cell-operations)
+    - [Cell Type Conversion](#cell-type-conversion)
+    - [Running Cells](#running-cells)
+    - [View and Interface](#view-and-interface)
+    - [Kernel Operations](#kernel-operations)
+    - [Selection and Search](#selection-and-search)
+    - [Help and Other](#help-and-other)
+  - [Edit Mode Shortcuts](#edit-mode-shortcuts-press-enter-first)
+    - [Basic Editing](#basic-editing)
+    - [Code Manipulation](#code-manipulation)
+    - [Running Code](#running-code)
+    - [Switching Modes](#switching-modes)
+  - [JupyterLab-Specific Shortcuts](#jupyterlab-specific-shortcuts)
+    - [Additional JupyterLab Features](#additional-jupyterlab-features)
+    - [Tab Management](#tab-management-jupyterlab)
+  - [Magic Commands](#magic-commands-type-in-cell)
+    - [Timing and Profiling](#timing-and-profiling)
+    - [Environment and Variables](#environment-and-variables)
+    - [Code Execution](#code-execution)
+    - [Debugging](#debugging)
+    - [System Commands](#system-commands)
+    - [Other Useful Magic](#other-useful-magic)
+  - [Markdown Shortcuts](#markdown-shortcuts-in-markdown-cells)
+    - [Headers](#headers)
+    - [Text Formatting](#text-formatting)
+    - [Lists](#lists)
+    - [Links and Images](#links-and-images)
+    - [Code Blocks](#code-blocks)
+    - [Math (LaTeX)](#math-latex)
+  - [Pro Tips](#pro-tips)
+    - [Quick Tips](#quick-tips)
+    - [Productivity Hacks](#productivity-hacks)
+    - [Common Workflows](#common-workflows)
+  - [macOS-Specific Key Notes](#macos-specific-key-notes)
+  - [Customizing Shortcuts](#customizing-shortcuts)
+  - [Essential Shortcuts Summary](#essential-shortcuts-summary-most-used)
+
 ## Install Jupyter Notebook Package
 
 ![installation](resources/venv-and-pip-vs-uv-p1.png)
 ![additional-operations](resources/venv-and-pip-vs-uv-p2.png)
 ![key-differences](resources/venv-and-pip-vs-uv-p3.png)
 
-### uv - Jupyter Notebook for Python
+### Python: Install Jupyter Notebook
+
+#### Python: Create a New Project
 
 ```bash
 # Check if Python is installed on your system
@@ -47,7 +113,54 @@ $ code .
 # Choose: 'Python Environments...' -> python-notebook (Python 3.14.2) .venv/bin/python
 ```
 
-### uv - Jupyter Notebook for Java
+#### Python: Clone an Existing Project from GitHub
+
+```bash
+# Check if Python is installed on your system
+$ python --version
+
+# If an old version of python is installed, update python to the latest version
+$ brew update
+$ brew upgrade python
+
+# Install uv globally (macOS)
+$ brew install uv
+
+# Clone the existing project from GitHub
+$ git clone <GITHUB_REPOSITORY_URL>
+
+# Navigate inside the cloned project
+$ cd <PROJECT_NAME>
+
+# Install the project's dependencies and create the virtual environment
+$ uv sync
+
+# (Optional) Launch Jupyter Notebook and check if it is installed correctly
+$ uv run jupyter notebook
+
+# Open up the project in VSCode
+$ code .
+
+# Install the following VSCode extensions
+# 1. Black Formatter (Optional)
+# 2. Jupyter
+# 3. Pylance
+# 4. Python
+# 5. Python Debugger
+# 6. Python Environments
+
+# Once asked to select a Kernel
+# Choose: 'Python Environments...' -> <PROJECT_NAME> (Python <VERSION>) .venv/bin/python
+
+# If the existing project doesn't already have Jupyter Notebook as a dependency, then add it with: uv add notebook
+# Then launch it with: $ uv run jupyter notebook
+
+# Workflow: GitHub → git clone → cd project → uv sync → code . → select .venv kernel
+```
+
+### Java: Install Jupyter Notebook
+
+#### Java: Create a New Project
 
 ```bash
 # Check if Java is installed on your system
@@ -101,7 +214,66 @@ $ code .
 # Choose: 'Jupyter Kernel...' -> Java /java
 ```
 
-### uv - Jupyter Notebook for TypeScript
+#### Java: Clone an Existing Project from GitHub
+
+```bash
+# Check if Java is installed on your system
+$ java --version
+$ javac --version
+
+# If Java is not installed, install the latest LTS version of Java (Java 11+):
+$ brew update
+$ brew install openjdk@21
+
+# Install uv globally (macOS)
+$ brew install uv
+
+# Clone the existing project from GitHub
+$ git clone <GITHUB_REPOSITORY_URL>
+
+# Navigate inside the cloned project
+$ cd <PROJECT_NAME>
+
+# Install the project's dependencies and create the virtual environment
+$ uv sync
+
+# (Optional) Install Jupyter Notebook as a dependency if it is not already present
+# If the cloned project already has notebook declared in pyproject.toml, you can skip
+$ uv add notebook
+
+# Install IJava using pre-built installer
+$ curl -L -o ijava.zip https://github.com/SpencerPark/IJava/releases/download/v1.3.0/IJava-1.3.0.zip
+
+# Unzip it and navigate to the extracted directory
+$ unzip ijava.zip -d ijava
+$ cd ijava
+
+# Run the installer with the --user flag to install the kernel
+# NOTE: Installs the kernel inside ~/Library/Jupyter/kernels/java
+$ uv run python install.py --user
+
+# Verify the kernel installation
+$ uv run jupyter kernelspec list
+
+# (Optional) Launch and check if jupyter notebook is installed correctly
+$ uv run jupyter notebook
+
+# Open up the project in VSCode
+$ code .
+
+# Install the following VSCode extensions
+# 1. Prettier (Optional)
+# 2. Jupyter
+# 3. Java (Recommended) (by Oracle Corporation)
+# 4. Extension Pack for Java (Optional if #3 is installed)
+
+# Once asked to select a Kernel
+# Choose: 'Jupyter Kernel...' -> Java /java
+```
+
+### TypeScript: Install Jupyter Notebook
+
+#### TypeScript: Create a New Project
 
 ```bash
 # Check if Node.js is installed on your system (preferably the LTS version)
@@ -152,7 +324,63 @@ $ code .
 # Choose: 'Jupyter Kernel...' -> Deno /opt/homebrew/bin/deno
 ```
 
-### uv - Jupyter Notebook for JavaScript
+#### TypeScript: Clone an Existing Project from GitHub
+
+```bash
+# Check if Node.js is installed on your system (preferably the LTS version)
+$ node -v
+$ npm -v
+
+# If Node.js in not installed then install the latest LTS version of Node.js via nvm
+$ brew install nvm
+$ nvm list
+$ nvm install 20
+
+# Install uv globally (macOS)
+$ brew install uv
+
+# Clone the existing project from GitHub
+$ git clone <GITHUB_REPOSITORY_URL>
+
+# Navigate inside the cloned project
+$ cd <PROJECT_NAME>
+
+# Install the project's dependencies and create the virtual environment
+$ uv sync
+
+# (Optional) Install Jupyter Notebook as a dependency if it is not already present
+# If the cloned project already has notebook declared in pyproject.toml, you can skip
+$ uv add notebook
+
+# Install Deno
+$ brew install deno
+
+# Install the Deno Jupyter kernel
+# NOTE: Installs the kernel inside ~/Library/Jupyter/kernels/deno
+$ deno jupyter --install
+
+# Verify the kernel installation
+$ uv run jupyter kernelspec list
+
+# (Optional) Launch and check if jupyter notebook is installed correctly
+$ uv run jupyter notebook
+
+# Open up the project in VSCode
+$ code .
+
+# Install the following VSCode extensions
+# 1. Prettier (Optional)
+# 2. Jupyter
+# 3. ESLint
+# 4. Babel JavaScript
+
+# Once asked to select a Kernel
+# Choose: 'Jupyter Kernel...' -> Deno /opt/homebrew/bin/deno
+```
+
+### JavaScript: Install Jupyter Notebook
+
+#### JavaScript: Create a New Project
 
 ```bash
 # Even though IJavaScript is the stable JavaScript kernel based on Node.js for Jupyter
@@ -240,7 +468,100 @@ $ code .
 # Choose: 'Jupyter Kernel...' -> JavaScript (Node.js) ~/.nvm/versions/node/v20.19.6/bin/node
 ```
 
-### uv - Jupyter Notebook for Golang
+#### JavaScript: Clone an Existing Project from GitHub
+
+```bash
+# Even though IJavaScript is the stable JavaScript kernel based on Node.js for Jupyter
+# But we are not recommending it because of complexity of setup + it does not support TypeScript
+
+# Check if Node.js is installed on your system (preferably the LTS version)
+$ node -v
+$ npm -v
+
+# Date: December 10, 2025
+# Check the installed Node.js version, if the Node.js version is greater than 24 then install Node.js 20 (LTS) via nvm
+# Since the latest Node.js 24 (LTS) version is not supported by ijavascript package
+# Also do the same if your don't have any version of Node.js installed on your system
+$ brew install nvm
+$ nvm list
+$ nvm install 20
+
+# Install uv globally (macOS)
+$ brew install uv
+
+# Clone the existing project from GitHub
+$ git clone <GITHUB_REPOSITORY_URL>
+
+# Navigate inside the cloned project
+$ cd <PROJECT_NAME>
+
+# Install the project's dependencies and create the virtual environment
+$ uv sync
+
+# (Optional) Add Jupyter Notebook as a dependency if it is not already present
+# If the cloned project already has notebook declared in pyproject.toml, you can skip
+$ uv add notebook
+
+# Install ZeroMQ and pkg-config (Required dependency for IJavascript package)
+$ brew install zeromq pkg-config
+
+# Install IJavascript globally
+$ npm install -g ijavascript
+
+# Install the kernel locally
+# NOTE: Installs the kernel inside ~/Library/Jupyter/kernels/javascript
+$ uv run ijsinstall --install=local
+
+# Verify the kernel installation
+$ uv run jupyter kernelspec list
+
+# Update the correct executable in the kernel.json
+$ vim ~/Library/Jupyter/kernels/javascript/kernel.json
+
+# Original content of kernel.json
+{
+  "argv": [
+    "ijskernel",
+    "--hide-undefined",
+    "{connection_file}",
+    "--protocol=5.1"
+  ],
+  "display_name": "JavaScript (Node.js)",
+  "language": "javascript"
+}
+
+# Updated content of kernel.json
+{
+  "argv": [
+    "/Users/<USERNAME>/.nvm/versions/node/v20.x.x/bin/node",
+    "/Users/<USERNAME>/.nvm/versions/node/v20.x.x/bin/ijskernel",
+    "--hide-undefined",
+    "{connection_file}",
+    "--protocol=5.1"
+  ],
+  "display_name": "JavaScript (Node.js)",
+  "language": "javascript"
+}
+
+# (Optional) Launch and check if jupyter notebook is installed correctly
+$ uv run jupyter notebook
+
+# Open up the project in VSCode
+$ code .
+
+# Install the following VSCode extensions
+# 1. Prettier (Optional)
+# 2. Jupyter
+# 3. ESLint
+# 4. Babel JavaScript
+
+# Once asked to select a Kernel
+# Choose: 'Jupyter Kernel...' -> JavaScript (Node.js) ~/.nvm/versions/node/v20.x.x/bin/node
+```
+
+### Golang: Install Jupyter Notebook
+
+#### Golang: Create a New Project
 
 ```bash
 # Make sure you already have Go installed
@@ -296,6 +617,65 @@ $ code .
 # Choose: 'Jupyter Kernel...' -> Go (gonb)  ~/go/bin/gonb
 ```
 
+#### Golang: Clone an Existing Project from GitHub
+
+```bash
+# Make sure you already have Go installed
+$ go version
+
+# Install uv globally and verify the installation (macOS)
+$ brew install uv
+# uv --version
+
+# Clone the existing project from GitHub
+$ git clone <GITHUB_REPOSITORY_URL>
+
+# Navigate inside the cloned project
+$ cd <PROJECT_NAME>
+
+# Install the project's dependencies and create the virtual environment
+$ uv sync
+
+# (Optional) Add Jupyter Notebook as a dependency if it is not already present
+# If the cloned project already has notebook declared in pyproject.toml, you can skip
+$ uv add notebook
+
+# Install Go Jupyter Kernel (Gophernotes)
+# This installs the binary into: $HOME/go/bin/gonb
+$ go install github.com/janpfeifer/gonb@latest
+
+# Add gonb to PATH
+# Append the following line in ~/.zshenv
+$ vim ~/.zshenv
+export PATH=$HOME/go/bin
+$ source ~/.zshenv
+
+# Install Go kernel into Jupyter
+$ gonb --install
+
+# Verify the kernel installation
+$ uv run jupyter kernelspec list
+
+# (Recommended) Install useful Go packages
+# Improves autocomplete & analysis
+$ go install golang.org/x/tools/cmd/goimports@latest
+$ go install golang.org/x/tools/gopls@latest
+
+# (Optional) Launch and check if jupyter notebook is installed correctly
+$ uv run jupyter notebook
+
+# Open up the project in VSCode
+$ code .
+
+# Install the following VSCode extensions
+# 1. Prettier (Optional)
+# 2. Jupyter
+# 3. Go
+
+# Once asked to select a Kernel
+# Choose: 'Jupyter Kernel...' -> Go (gonb) ~/go/bin/gonb
+```
+
 ## Jupyter Packages Comparison
 
 | Feature                          | `uv add jupyter`                                            | `uv add notebook`             | `uv add jupyterlab`                   |
@@ -317,7 +697,7 @@ $ code .
 | **Performance**                  | Standard                                                    | Standard                      | Faster & more responsive              |
 | **Recommended for new projects** | No (bloated)                                                | Only if you prefer classic UI | Yes (modern standard)                 |
 
-## Recommendations
+## Recommendation for the Right Jupyter Packages
 
 ### Choose `jupyterlab` if
 
@@ -340,7 +720,7 @@ $ code .
 - ⚠️ Working with very old projects
 - ❌ Generally not recommended for new projects (unnecessary bloat)
 
-## Installation Commands
+## Installation Commands for Jupyter Packages
 
 ```bash
 # Recommended: JupyterLab (modern)
@@ -357,7 +737,7 @@ uv add jupyter
 uv run jupyter notebook  # or jupyter lab if installed
 ```
 
-## Visual Comparison
+## Visual Comparison of Jupyter Packages
 
 ### Classic Notebook (`notebook`)
 
@@ -431,7 +811,7 @@ Jupyter notebooks have two modes:
 | `Option + Enter` | Run cell and insert below |
 | `Cmd + S`        | Save notebook             |
 
-### View & Interface
+### View and Interface
 
 | Shortcut        | Action                           |
 | --------------- | -------------------------------- |
@@ -449,7 +829,7 @@ Jupyter notebooks have two modes:
 | `I, I` (press I twice) | Interrupt kernel |
 | `0, 0` (press 0 twice) | Restart kernel   |
 
-### Selection & Search
+### Selection and Search
 
 | Shortcut                   | Action                             |
 | -------------------------- | ---------------------------------- |
@@ -458,7 +838,7 @@ Jupyter notebooks have two modes:
 | `Cmd + F`                  | Find and replace                   |
 | `F`                        | Find and replace (in Command mode) |
 
-### Help & Other
+### Help and Other
 
 | Shortcut | Action                       |
 | -------- | ---------------------------- |
@@ -540,7 +920,7 @@ Jupyter notebooks have two modes:
 
 ## Magic Commands (Type in cell)
 
-### Timing & Profiling
+### Timing and Profiling
 
 | Command    | Action                                        |
 | ---------- | --------------------------------------------- |
@@ -550,7 +930,7 @@ Jupyter notebooks have two modes:
 | `%%timeit` | Time repeated execution of entire cell        |
 | `%prun`    | Profile code with cProfile                    |
 
-### Environment & Variables
+### Environment and Variables
 
 | Command  | Action                                 |
 | -------- | -------------------------------------- |
@@ -638,7 +1018,7 @@ Jupyter notebooks have two modes:
    1. Nested numbered
 ```
 
-### Links & Images
+### Links and Images
 
 ```markdown
 [Link text](https://example.com) ![Image alt text](image.png)
