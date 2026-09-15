@@ -2944,9 +2944,6 @@ alias tree='eza --tree --icons=auto'
 # Reuse ls completions for eza (avoids defining a separate completion function)
 compdef eza=ls
 
-# Better cat
-# alias cat='bat'
-
 # =========================================================
 # Core utilities
 # =========================================================
@@ -2954,6 +2951,11 @@ compdef eza=ls
 alias grep='rg --color=auto'
 alias diff='diff --color=auto'
 alias df='df -h'
+alias f='fd'
+alias cat='bat -p'
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
 
 # =========================================================
 # Navigation
