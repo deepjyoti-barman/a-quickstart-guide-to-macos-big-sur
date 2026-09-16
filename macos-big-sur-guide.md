@@ -164,17 +164,23 @@
 - Updates from 'App Store' and 'Software Update' has been successfully installed if available.
 - Backup of your system has been taken by 'Time Machine'.
 
+---
+
 ### The Necessary Trackpad Tweak
 
 - Click on the `Apple` menu -> Go to `System Preferences` -> `Trackpad`
   1. Check `Tap to click`.
   2. Increase tracking speed to 5.
 
+---
+
 ### Enable Zoom Feature
 
 - Click on the `Apple` menu -> Go to `System Preferences` -> `Accessibility` -> `Zoom`
   1. Check `Use keyboard shortcuts to zoom`.
   2. Check `Enable Hover Text` (check this only if its required).
+
+---
 
 ### Enable Three Fingers Drag or Select Feature
 
@@ -184,9 +190,13 @@
   3. Select `Three-Finger Drag` from the drop down menu
   4. Click on `OK` and close the menu
 
+---
+
 ### Invert Mouse Scroll Direction
 
 Click on the `Apple` menu -> Go to `System Preferences` -> `Mouse` -> Untick `Scroll direction: Natural`.
+
+---
 
 ### Overwrite Behavior of CAPS LOCK key with ESC
 
@@ -196,9 +206,13 @@ Click on the `Apple` menu -> Go to `System Preferences` -> `Mouse` -> Untick `Sc
 - Select the keyboard of your choice from the dropdown and assign the following value:
   - `Caps Lock Key`: `Escape`
 
+---
+
 ### Display All Sidebar Items in Finder
 
 Open up 'Finder' -> Click on `Finder` in the menu bar -> `Preferences` -> `Sidebar` -> Check all possible items you want to show on the sidebar.
+
+---
 
 ### Changing Workspace
 
@@ -207,6 +221,8 @@ Open up 'Finder' -> Click on `Finder` in the menu bar -> `Preferences` -> `Sideb
 - `Control + Right_Arrow` : To switch to the workspace on the right.
 - `Control + Left_Arrow` : To switch to the workspace on the left.
 - Open Mission Control by swiping up with three or four fingers to have an overview of all the workspaces running.
+
+---
 
 ### Reinstall MacOS from MacOS Recovery
 
@@ -233,6 +249,8 @@ Open up 'Finder' -> Click on `Finder` in the menu bar -> `Preferences` -> `Sideb
 - Changing admin name.
 - To fix software issues.
 
+---
+
 ### Grant Microsoft Teams, Zoom and Other Applications Necessary Permissions
 
 Following are the steps to grant 'Microsoft Teams' permission for 'Screen Recording'.
@@ -254,6 +272,8 @@ Following are the steps to grant 'Microsoft Teams' permission for 'Screen Record
 - Terminal: Full Disk Access.
 - iTerm2: Full Disk Access.
 
+---
+
 ### How to Format an External HDD in Mac
 
 **Tip**: In this guide, we're using exFAT instead of FAT32, another filesystem that both Windows and Mac can read and write to, because FAT32 has a maximum 4GB file size limit whereas exFAT can work with files as large as 16EB (exabytes). exFAT also performs better than FAT32.
@@ -272,6 +292,8 @@ Formatting of the device can be done by following the steps given below:
 - (Optional) If available, click Security Options, use the slider to choose how many times to write over the erased data, then click OK.
   [Note: Secure erase options are available only for some types of storage devices. If the Security Options button is not available, Disk Utility cannot perform a secure erase on the storage device.]
 - Click Erase, then click Done.
+
+---
 
 ### Maven Installation (Manual)
 
@@ -331,6 +353,8 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
 ```
 
+---
+
 ### sshpass Installation
 
 In most cases, Linux system administrators login to remote Linux servers using SSH either by supplying a password, or passwordless SSH login, or keybased SSH authentication.
@@ -364,6 +388,8 @@ sshpass -e ssh aaronkilik@10.42.0.1
 sshpass -f password_filename ssh aaronkilik@10.42.0.1
 ```
 
+---
+
 ### Uninstall Oracle JDK from Mac
 
 To uninstall / remove Oracle JDK from Mac run the following commands one after another or delete these files and directories manually.
@@ -382,6 +408,8 @@ To uninstall / remove Oracle JDK from Mac run the following commands one after a
   `sudo rm -rf "/Library/Application\ Support/Oracle/Java"`  
   `sudo rm -rf "~/Library/Application\ Support/Java"`
 
+---
+
 ### Capture a Snapshot and Record Video in Mac
 
 - Open up 'Quick Time Player'.
@@ -391,6 +419,8 @@ To uninstall / remove Oracle JDK from Mac run the following commands one after a
 - Once the camera icon is visible, click on the screen to take the snapshot / start the recording.
 - If you are recording the then click on the 'Stop' icon on menu bar to stop the video recording.
 - The video will be saved on the desktop. Meanwhile, if you have captured a snapshot of the screen then the prompt will come up and let you decide the format and the destination to save the image you've captured.
+
+---
 
 ### Opening a File in TextEdit from Terminal
 
@@ -403,9 +433,11 @@ The -a flag specifies any application you want, so it's applicable to any numb
 - -t  opens in the default editor (i.e. if you use BBEdit, TextMate, etc.)
 - -e will open the file specifically in TextEdit
 
+---
+
 ### Resolve: `chpwd_recent_filehandler` Issue
 
-#### Issue Details
+#### chpwd_recent_filehandler: Issue Details
 
 While using Zsh on macOS, the following error may appear when opening a terminal or changing directories:
 
@@ -413,13 +445,7 @@ While using Zsh on macOS, the following error may appear when opening a terminal
 chpwd_recent_filehandler:29: no such file or directory: /Users/<username>/.local/share/zsh/chpwd-recent-dirs
 ```
 
-For example:
-
-```text
-chpwd_recent_filehandler:29: no such file or directory: /Users/deepjyoti.barman/.local/share/zsh/chpwd-recent-dirs
-```
-
-#### Actual Reason
+#### chpwd_recent_filehandler: Root Cause
 
 Zsh's `chpwd_recent_filehandler` function is configured to maintain a list of recently visited directories.
 
@@ -438,7 +464,7 @@ However, the required directory or file does not exist. This can happen when:
 
 As a result, Zsh attempts to access the file whenever the current directory changes and reports the error.
 
-#### Resolution
+#### chpwd_recent_filehandler: Resolution
 
 ```bash
 # Create the required directory
@@ -452,6 +478,131 @@ exec zsh
 ```
 
 This creates the storage location expected by `chpwd_recent_filehandler` and allows Zsh to maintain its recent-directory history without displaying the error.
+
+---
+
+### Resolve: zsh-autocomplete Startup Error
+
+#### zsh-autocomplete Startup Error: Issue Details
+
+After installing `zsh-autocomplete`, every new terminal session showed errors like:
+
+```zsh
+autocomplete:_main_complete:old:138: command not found: _autocomplete__history_lines
+autocomplete:_main_complete:new:post:3: command not found: _autocomplete__unambiguous
+```
+
+Running this manually fixed the current shell:
+
+```zsh
+exec zsh
+```
+
+But the same error returned whenever a brand-new terminal window was opened.
+
+#### zsh-autocomplete Startup Error: Root Cause
+
+`zsh-autocomplete` has internal helper completion functions, including:
+
+```zsh
+_autocomplete__history_lines
+_autocomplete__unambiguous
+```
+
+Those helper files live inside:
+
+```zsh
+~/.oh-my-zsh/custom/plugins/zsh-autocomplete/Completions
+```
+
+Oh My Zsh runs `compinit` while loading its main configuration. `compinit` initializes Zsh's command-completion system and creates a completion dump file to cache completion definitions for faster shell startup.
+
+The dump file is usually stored in the user's home directory and has a name similar to:
+
+```zsh
+~/.zcompdump-<hostname>-<zsh-version>
+```
+
+The issue was that the `zsh-autocomplete/Completions` directory was not visible in `fpath` before Oh My Zsh ran `compinit`.
+
+So zsh-autocomplete itself loaded, but its helper completion functions were missing from the completion lookup path. That caused the `command not found` errors.
+
+`exec zsh` temporarily fixed it because the shell restarted after some state had already been refreshed, but it did not fix the startup order permanently.
+
+#### zsh-autocomplete Startup Error: Resolution
+
+The fix is to add the plugin's (`zsh-autocomplete`) nested `Completions` directory to Zsh's function search path (`fpath`) before Oh My Zsh is loaded.
+
+This ensures that `compinit`, which Oh My Zsh runs during startup, can find and register the completion functions provided by `zsh-autocomplete`.
+
+**Step 1:** Add the following configuration near the top of `~/.zshrc`, immediately after defining `ZSH` variable:
+
+```zsh
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_CUSTOM="${ZSH_CUSTOM:-$ZSH/custom}"
+
+# zsh-autocomplete ships helper completions in a nested Completions directory.
+# Oh My Zsh runs compinit before it sources plugin scripts, so expose these
+# helpers to fpath before OMZ initializes completion.
+if [[ -d "$ZSH_CUSTOM/plugins/zsh-autocomplete/Completions" ]]; then
+  fpath=("$ZSH_CUSTOM/plugins/zsh-autocomplete/Completions" $fpath)
+fi
+```
+
+**Step 2:** `zsh-autocomplete` should not be listed inside the Oh My Zsh `plugins=(...)` array in this setup, because it will loaded separately with an explicit `source` command.
+
+The plugins section should look like this:
+
+```zsh
+plugins=(
+  docker
+  docker-compose
+  extract
+  git
+  sublime
+  web-search
+  z
+  zsh-autosuggestions
+  fast-syntax-highlighting
+)
+```
+
+Notice that `zsh-autocomplete` is intentionally not included there. This matters because loading `zsh-autocomplete` through the Oh My Zsh `plugins=(...)` array does not expose its nested helper directory early enough:
+
+```zsh
+~/.oh-my-zsh/custom/plugins/zsh-autocomplete/Completions
+```
+
+**Step 3:** Load the `zsh-autocomplete` manually after Oh My Zsh:
+
+```zsh
+source "$ZSH/oh-my-zsh.sh"
+
+# Load zsh-autocomplete manually, after OMZ
+source "$ZSH_CUSTOM/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh"
+```
+
+**Step 4:** Clear stale completion caches or dump files so that zsh could rebuild completion metadata with the corrected `fpath`:
+
+```zsh
+rm ~/.zcompdump(N) ~/.zcompdump-*(N) ~/.zcompdump*.zwc(N)
+```
+
+This uses zsh's `(N)` glob qualifier, which means "expand to nothing if there are no matches." That makes the command safe to run even if some cache files do not exist.
+
+**Step 5:** Restart the shell:
+
+```zsh
+exec zsh
+```
+
+#### zsh-autocomplete Startup Error: Short Summary of the Fix
+
+The problem was not that `zsh-autocomplete` was missing. The problem was startup order.
+
+Oh My Zsh initialized completions before plugins's (`zsh-autocomplete`) helper completion directory was available. Adding that directory to `fpath` before Oh My Zsh runs `compinit`, then clearing the stale completion cache, fixed the issue permanently.
+
+---
 
 ### Resolve: Keyboard is Entering Rupee Symbol and not Backtick on macOS
 
@@ -471,9 +622,13 @@ How to Fix the Layout, follow these quick steps to switch your keyboard input:
 
 Alternatively, you can quickly toggle between your installed keyboards at any time by pressing `Control + Spacebar`.
 
+---
+
 ### Resolve: ChromeDriver Opening Failure in Mac
 
 Click on the `Apple` menu -> `System Preferences` -> `System and Security` -> `General` -> Message will be shown as 'ChromeDriver is blocked' -> Click on `Allow Anyway`.
+
+---
 
 ### Change Github Username and Password used in Terminal
 
@@ -500,6 +655,8 @@ Recently the Github team has announced that for better protection and privacy us
   `host = github.com`  
   `protocol = https`  
   `> [Return]`
+
+---
 
 ## Useful MacOS Shortcuts
 
