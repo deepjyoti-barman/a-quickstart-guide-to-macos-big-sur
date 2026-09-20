@@ -3740,11 +3740,12 @@ Open up 'Sublime Text' -> Click on `Sublime Text` on the menu bar -> `Preference
 ```json
 {
   "ignored_packages": ["Vintage"],
-  "color_scheme": "Packages/ayu/ayu-dark.sublime-color-scheme",
-  "theme": "ayu-dark.sublime-theme",
-  "font_size": 10,
+  "color_scheme": "Packages/ayu/ayu-mirage.sublime-color-scheme",
+  "theme": "ayu-mirage.sublime-theme",
+  "font_size": 12,
   "spell_check": true,
-  "dictionary": "Packages/Language - English/en_US.dic"
+  "dictionary": "Packages/Language - English/en_US.dic",
+  "index_files": true
 }
 ```
 
@@ -3835,10 +3836,10 @@ Click on 'Zed' on the apple menu bar -> 'Extensions' (`Shift + Command + X`)
 
 - Dockerfile v0.3.0
 - Docker Compose v0.1.0
-- GraphQL v1.0.5 (Optional)
+- GraphQL v1.0.6 (Optional)
 - Go Snippets v0.1.5
-- HTML v0.3.1
-- Java v6.8.26
+- HTML v0.3.2
+- Java v6.8.27
 - Java with Eclipse JDTLS v0.2.5
 - JavaScript Snippets v0.1.0
 - LOG v0.0.7
@@ -3848,6 +3849,7 @@ Click on 'Zed' on the apple menu bar -> 'Extensions' (`Shift + Command + X`)
 - One Dark Pro Max v0.0.2
 - One Dark Pro Monokai Darker Theme v0.1.1
 - Python Snippets v0.1.3
+- PHP v0.5.3
 - Rainbow CSV v1.1.0
 - SQL v1.1.8
 
@@ -3865,28 +3867,32 @@ Click on 'Zed' on the apple menu bar -> 'Settings' -> 'Open Settings' (`Command 
 // custom settings, run zed: open default settings from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "buffer_font_family": "Cascadia Mono",
+  "buffer_font_size": 15,
+  "ui_font_size": 17,
   "icon_theme": "Material Icon Theme",
   "autosave": "off",
-  "ui_font_size": 15,
-  "buffer_font_size": 15,
+  "soft_wrap": "editor_width",
+  "auto_indent_on_paste": true,
+  "use_autoclose": true,
+  "project_panel": {
+    "dock": "left"
+  },
   "terminal": {
     "dock": "right",
     "font_family": "MesloLGS NF",
-    "font_size": 12
+    "font_size": 15
   },
   "theme": {
     "mode": "system",
     "light": "One Dark Pro Glass",
-    "dark": "One Dark Pro Max"
+    "dark": "One Dark Pro Glass"
   },
   "telemetry": {
-    "metrics": false,
     "diagnostics": false,
+    "metrics": false,
     "anthropic_retention": false
-  },
-  "soft_wrap": "editor_width",
-  "auto_indent_on_paste": true,
-  "use_autoclose": true
+  }
 }
 ```
 
