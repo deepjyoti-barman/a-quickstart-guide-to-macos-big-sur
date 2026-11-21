@@ -3509,7 +3509,7 @@ Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Settings
 - **Permanent**
 
   Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Settings` -> `Editor` -> `General`
-  - `Soft Wraps` -> `Soft-wrap these files`: `*.md; *.txt; *.json; *.yaml; *.yml; *.xml; *.properties`
+  - `Soft Wraps` -> `Soft-wrap these files`: `*.md; *.txt; *.json; *.yaml; *.yml; *.xml; *.properties; *.env; *.feature`
 
 - **Temporary**
 
@@ -3532,6 +3532,26 @@ Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Settings
 Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Settings` -> `Editor` -> `General` -> `Console`
 
 - Check `Use soft wraps in console`
+
+### Disable Showing the Non-Modal Welcome Screen for IntelliJ
+
+Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Settings` -> `Advanced Settings` -> Scroll down until you find the `IDE` sub-section
+
+- Uncheck `Show Home window when the last project is closed`
+
+### Enable Auto-Import
+
+Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Settings` -> `Editor` -> `General` -> `Auto Import`
+
+- Check `Add unambiguous imports on the fly`
+- Check `Optimize imports on the fly`
+
+### Changing Java SDK in a Project
+
+Open up 'IntelliJ IDEA' -> Click on `File` on the menu bar -> `Project Structure` -> `Project`
+
+- Under `Platform Settings` -> `SDK` -> Delete the old / unused / uninstalled SDK's and then click on the `+` button to add new SDK -> Provide a `Name` and the `JDK home path`
+- Under `Project Settings` -> `Project` -> `SDK`: Click on the dropdown and select any `Detected SDKs`. If the SDK of your choice is not available then select the `+ Add SDK` option and choose any option feasible to you. You may either go for `Download JDK` option or Click on `JDK` and locate a JDK from your local system.
 
 ### Necessary Plugins for IntelliJ
 
@@ -3558,20 +3578,6 @@ Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Settings
 - Spring Initializer (Paid)
 - Subversion
 - VSCode Theme
-
-### Enable Auto-Import
-
-Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Settings` -> `Editor` -> `General` -> `Auto Import`
-
-- Check `Add unambiguous imports on the fly`
-- Check `Optimize imports on the fly`
-
-### Changing Java SDK in a Project
-
-Open up 'IntelliJ IDEA' -> Click on `File` on the menu bar -> `Project Structure` -> `Project`
-
-- Under `Platform Settings` -> `SDK` -> Delete the old / unused / uninstalled SDK's and then click on the `+` button to add new SDK -> Provide a `Name` and the `JDK home path`
-- Under `Project Settings` -> `Project` -> `SDK`: Click on the dropdown and select any `Detected SDKs`. If the SDK of your choice is not available then select the `+ Add SDK` option and choose any option feasible to you. You may either go for `Download JDK` option or Click on `JDK` and locate a JDK from your local system.
 
 ## PyCharm
 
@@ -3623,11 +3629,11 @@ Open up 'PyCharm' -> Click on `PyCharm` on the menu bar -> `Settings` -> `Editor
 
 - Check `Use soft wraps in console`
 
-### Disable Showing Non-Modal Welcome Screen
+### Disable Showing the Non-Modal Welcome Screen for PyCharm
 
-Open up 'PyCharm' -> Click on `PyCharm` on the menu bar -> `Settings` -> `Advanced Settings` -> (At the end of all options) `Welcome Screen`
+Open up 'PyCharm' -> Click on `PyCharm` on the menu bar -> `Settings` -> `Advanced Settings` -> Scroll down until you find the `IDE` sub-section
 
-- Uncheck `Show the Welcome screen in non-modal mode`
+- Uncheck `Show Home window when the last project is closed`
 
 ### Necessary Plugins for PyCharm
 
