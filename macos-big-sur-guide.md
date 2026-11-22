@@ -136,6 +136,22 @@
     - [Commonly Used Ollama Commands](#commonly-used-ollama-commands)
     - [Commands Available During Chat](#commands-available-during-chat)
     - [Pro Tip for Ollama](#pro-tip-for-ollama)
+  - [GitHub Copilot App](#github-copilot-app-github-copilot)
+    - [GitHub Copilot App: Overview](#github-copilot-app-overview)
+    - [GitHub Copilot App: Why it's useful](#github-copilot-app-why-its-useful)
+    - [GitHub Copilot App: Installation and Verification Commands](#github-copilot-app-installation-and-verification-commands)
+    - [GitHub Copilot App: Simple Examples](#github-copilot-app-simple-examples)
+    - [GitHub Copilot App: Essential Keystrokes](#github-copilot-app-essential-keystrokes)
+    - [GitHub Copilot App: Important Concepts](#github-copilot-app-important-concepts)
+    - [GitHub Copilot App: Official Resources](#github-copilot-app-official-resources)
+  - [GitHub Copilot CLI](#github-copilot-cli-copilot)
+    - [GitHub Copilot CLI: Overview](#github-copilot-cli-overview)
+    - [GitHub Copilot CLI: Why it's useful](#github-copilot-cli-why-its-useful)
+    - [GitHub Copilot CLI: Installation and Verification Commands](#github-copilot-cli-installation-and-verification-commands)
+    - [GitHub Copilot CLI: Simple Examples](#github-copilot-cli-simple-examples)
+    - [GitHub Copilot CLI: Essential Keystrokes and Commands](#github-copilot-cli-essential-keystrokes-and-commands)
+    - [GitHub Copilot CLI: Important Concepts](#github-copilot-cli-important-concepts)
+    - [GitHub Copilot CLI: Official Resources](#github-copilot-cli-official-resources)
   - [Discord](#discord)
     - [Plugins for Discord](#plugins-for-discord)
     - [Themes for Discord](#themes-for-discord)
@@ -3481,27 +3497,19 @@ By default, accepting an AI inline suggestion may require a different key combin
 
 Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Settings` -> `Appearance`
 
-- `Theme`: `One Dark Night`
+- `Theme`: `One Dark Darker`
 - Check `Use custom font`
 - `Use custom font`: `.SF NS Text` (or `.AppleSystemUIFont`)
-- `Size`: `12.0`
+- `Size`: `12`
 
 ### Configure Editor for IntelliJ
 
-#### Editor Font - First Setup
+#### Editor Font Setup
 
 Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Settings` -> `Editor` -> `Font`
 
 - `Font`: `Cascadia Mono`
-- `Size`: `20.5`
-- `Line height`: `1.1`
-
-#### Editor Font - Second Setup
-
-Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Settings` -> `Editor` -> `Font`
-
-- `Font`: `Monospaced`
-- `Size`: `16.5`
+- `Size`: `16.0`
 - `Line height`: `1.1`
 
 #### Enable Soft Wrap in Editor
@@ -3523,9 +3531,10 @@ Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Settings
 Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Settings` -> `Tools` -> `Terminal`
 
 - `Font`: `MesloLGS NF`
-- `Fallback`: `Cascadia Code`
-- `Size`: `20.5`
+- `Fallback`: `JetBrains Mono`
+- `Size`: `15.0`
 - `Line height`: `1.1`
+- `Column width`: `1.0`
 
 #### Enable Soft Wrap in Terminal
 
@@ -3557,13 +3566,15 @@ Open up 'IntelliJ IDEA' -> Click on `File` on the menu bar -> `Project Structure
 
 Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Settings` -> `Plugins`
 
+- .ignore
 - Atom Material Icons
 - Better Highlights
+- CSVEditor
 - CodeGlance Pro
 - CodeSnap
 - Create TestNG XML
 - Cucumber for Java
-- ExcelReader
+- ExcelEditor
 - Gherkin
 - GitHub Copilot
 - GraphQL
@@ -3574,9 +3585,6 @@ Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Settings
 - Rainbow Brackets
 - Rainbow CSV
 - SonarQube for IDE
-- Spring Boot Helper (Paid) / Spring Boot Assistant (Free)
-- Spring Initializer (Paid)
-- Subversion
 - VSCode Theme
 
 ## PyCharm
@@ -3585,10 +3593,10 @@ Open up 'IntelliJ IDEA' -> Click on `IntelliJ IDEA` on the menu bar -> `Settings
 
 Open up 'PyCharm' -> Click on `PyCharm` on the menu bar -> `Settings` -> `Appearance`
 
-- `Theme`: `One Dark Night`
+- `Theme`: `VSCode Light Modern`
 - Check `Use custom font`
 - `Use custom font`: `.SF NS Text` (or `.AppleSystemUIFont`)
-- `Size`: `12.0`
+- `Size`: `12`
 
 ### Configure Editor for PyCharm
 
@@ -3597,7 +3605,7 @@ Open up 'PyCharm' -> Click on `PyCharm` on the menu bar -> `Settings` -> `Appear
 Open up 'PyCharm' -> Click on `PyCharm` on the menu bar -> `Settings` -> `Editor` -> `Font`
 
 - `Font`: `Cascadia Mono`
-- `Size`: `20.5`
+- `Size`: `16.0`
 - `Line height`: `1.1`
 
 #### Enable Soft Wrap in Editor for PyCharm
@@ -3605,7 +3613,7 @@ Open up 'PyCharm' -> Click on `PyCharm` on the menu bar -> `Settings` -> `Editor
 - **Permanent**
 
   Open up 'PyCharm' -> Click on `PyCharm` on the menu bar -> `Settings` -> `Editor` -> `General`
-  - `Soft Wraps` -> `Soft-wrap these files`: `*.md; *.txt; *.json; *.yaml; *.yml; *.properties; *.toml, *.ini`
+  - `Soft Wraps` -> `Soft-wrap these files`: `*.md; *.txt; *.json; *.yaml; *.yml; *.properties; *.toml; *.ini; *.env; *.feature`
 
 - **Temporary**
 
@@ -3619,9 +3627,10 @@ Open up 'PyCharm' -> Click on `PyCharm` on the menu bar -> `Settings` -> `Editor
 Open up 'PyCharm' -> Click on `PyCharm` on the menu bar -> `Settings` -> `Tools` -> `Terminal`
 
 - `Font`: `MesloLGS NF`
-- `Fallback`: `Cascadia Code`
-- `Size`: `20.5`
+- `Fallback`: `JetBrains Mono`
+- `Size`: `15.0`
 - `Line height`: `1.1`
+- `Column width`: `1.0`
 
 #### Enable Soft Wrap in Terminal for PyCharm
 
@@ -3639,22 +3648,22 @@ Open up 'PyCharm' -> Click on `PyCharm` on the menu bar -> `Settings` -> `Advanc
 
 Open up 'PyCharm' -> Click on `PyCharm` on the menu bar -> `Settings` -> `Plugins`
 
+- .ignore
 - Atom Materials Icons
 - Better Highlights
+- CSV Editor
 - CodeGlance Pro
 - CodeSnap
 - ExcelEditor
-- GitHub Copilot
+- GitHub Copilot - Your AI Pair Programmer
 - GraphQL
 - HighlightBracketPair (Not required if "Better Highlights" is installed)
 - Indent Rainbow
 - One Dark Darker
 - One Dark Theme
-- Qt
 - Rainbow Brackets
 - Rainbow CSV
 - SonarQube for IDE
-- Space
 - VSCode Theme
 
 ## WebStorm
@@ -3663,10 +3672,10 @@ Open up 'PyCharm' -> Click on `PyCharm` on the menu bar -> `Settings` -> `Plugin
 
 Open up 'WebStorm' -> Click on `WebStorm` on the menu bar -> `Settings` -> `Appearance`
 
-- `Theme`: `One Dark Night`
+- `Theme`: `One Dark Darker`
 - Check `Use custom font`
 - `Use custom font`: `.SF NS Text` (or `.AppleSystemUIFont`)
-- `Size`: `12.0`
+- `Size`: `12`
 
 ### Configure Editor for WebStorm
 
@@ -3675,7 +3684,7 @@ Open up 'WebStorm' -> Click on `WebStorm` on the menu bar -> `Settings` -> `Edit
 #### Editor Font Setup for WebStorm
 
 - `Font`: `Cascadia Mono`
-- `Size`: `20.5`
+- `Size`: `16.0`
 - `Line height`: `1.1`
 
 #### Enable Soft Wrap in Editor for WebStorm
@@ -3683,7 +3692,7 @@ Open up 'WebStorm' -> Click on `WebStorm` on the menu bar -> `Settings` -> `Edit
 - **Permanent**
 
   Open up 'WebStorm' -> Click on `WebStorm` on the menu bar -> `Settings` -> `Editor` -> `General`
-  - `Soft Wraps` -> `Soft-wrap these files`: `*.md; *.txt; *.json; *.yaml; *.yml; *.properties; *.env`
+  - `Soft Wraps` -> `Soft-wrap these files`: `*.md; *.txt; *.json; *.yaml; *.yml; *.properties; *.env; *.feature`
 
 - **Temporary**
 
@@ -3697,9 +3706,10 @@ Open up 'WebStorm' -> Click on `WebStorm` on the menu bar -> `Settings` -> `Edit
 Open up 'WebStorm' -> Click on `WebStorm` on the menu bar -> `Settings` -> `Tools` -> `Terminal`
 
 - `Font`: `MesloLGS NF`
-- `Fallback`: `Cascadia Code`
-- `Size`: `20.5`
+- `Fallback`: `JetBrains Mono`
+- `Size`: `15.0`
 - `Line height`: `1.1`
+- `Column width`: `1.0`
 
 #### Enable Soft Wrap in Terminal for WebStorm
 
@@ -3711,22 +3721,22 @@ Open up 'WebStorm' -> Click on `WebStorm` on the menu bar -> `Settings` -> `Edit
 
 Open up 'WebStorm' -> Click on `WebStorm` on the menu bar -> `Settings` -> `Plugins`
 
+- .ignore
 - .env files
 - Better Highlights
+- CSV Editor
 - Catppuccin Icons
 - CodeGlance Pro
 - CodeSnap
 - ExcelEditor
-- GitHub Copilot
+- GitHub Copilot - Your AI Pair Programmer
 - GraphQL
 - HighlightBracketPair (Not required if "Better Highlights" is installed)
 - One Dark Darker
 - One Dark Theme
-- Qt
 - Rainbow Brackets
 - Rainbow CSV
 - SonarQube for IDE
-- Subversion
 - VSCode Theme
 
 ## Sublime Text
@@ -5411,6 +5421,221 @@ When inside an interactive model session:
 ### Pro Tip for Ollama
 
 Models remain loaded in memory for a short period after use (default keep-alive timeout). If you need to immediately free system resources, use: `ollama stop <model>`. This unloads the model from RAM/VRAM immediately.
+
+## GitHub Copilot App (`github-copilot`)
+
+### GitHub Copilot App: Overview
+
+GitHub Copilot app is a desktop application for agent-driven software development across GitHub repositories. It lets you start, monitor, and steer coding work, then review and land the resulting changes.
+
+### GitHub Copilot App: Why it's useful
+
+- Provides a desktop workspace for GitHub Copilot coding agents.
+- Helps manage several development tasks or workstreams.
+- Connects agent work with GitHub repositories and pull requests.
+- Supports reviewing changes before merging them.
+- Complements an IDE and Git tools; you should still review code and understand the Git workflow.
+
+### GitHub Copilot App: Installation and Verification Commands
+
+Download the GitHub Copilot app for macOS from [GitHub Copilot](https://github.com/features/copilot). Select the installer that matches your Mac’s processor architecture, such as Apple Silicon or Intel.
+
+1. Open the downloaded `.dmg` file.
+2. Drag **GitHub Copilot** to the **Applications** folder.
+3. Open the app from **Applications**, Spotlight, or Launchpad.
+4. Sign in with your GitHub account and complete the setup prompts.
+
+You can open the installed app from Terminal:
+
+```sh
+open -a "GitHub Copilot"
+```
+
+Verify that Git is installed, as it is required to work with repositories:
+
+```sh
+git --version
+```
+
+The GitHub Copilot app is a graphical macOS application, so it does not provide a documented terminal version command such as `github-copilot --version`.
+
+### GitHub Copilot App: Simple Examples
+
+```text
+# Open GitHub Copilot app from your desktop applications menu
+
+# Select a GitHub repository and start a coding task
+
+# Give the agent instructions, inspect its changes, and steer its work
+
+# Review the final changes before accepting them or creating a pull request
+```
+
+### GitHub Copilot App: Essential Keystrokes
+
+GitHub Copilot app shortcuts may vary by operating system and app version. Use the app menus or its keyboard-shortcuts reference to see the current bindings.
+
+| Key                             | Action                                |
+| ------------------------------- | ------------------------------------- |
+| `Ctrl + N` or `Cmd + N`         | Start a new session, where supported  |
+| `Ctrl + Enter` or `Cmd + Enter` | Submit a task prompt, where supported |
+| `Ctrl + ,` or `Cmd + ,`         | Open settings, where supported        |
+| `Ctrl + K` or `Cmd + K`         | Open command search, where supported  |
+
+### GitHub Copilot App: Important Concepts
+
+- `Coding agent`: An AI agent that performs coding tasks in a repository.
+- `Session`: A conversation and work area for one agent-driven task.
+- `Workstream`: A development task that you can start, monitor, and steer.
+- `Repository`: A Git-tracked project folder hosted locally or on GitHub.
+- `Pull request`: A GitHub workflow for reviewing proposed changes before merging.
+- `GitHub Copilot app vs GitHub Desktop`: GitHub Copilot app focuses on agent-driven software work. GitHub Desktop focuses on Git operations such as committing, pushing, pulling, and managing branches.
+
+### GitHub Copilot App: Official Resources
+
+- [Official Features and Download Page](https://github.com/features/copilot)
+- [Official Releases and Builds Page](https://github.com/github/app/releases)
+- [App Documentation](https://docs.github.com/en/copilot/how-tos/github-copilot-app)
+- [GitHub Repository Page](https://github.com/github/app)
+
+---
+
+## GitHub Copilot CLI (`copilot`)
+
+### GitHub Copilot CLI: Overview
+
+GitHub Copilot CLI is a command-line coding agent that lets you work with GitHub Copilot directly from a terminal. You can ask questions, assign coding tasks, review files, run commands, and work within a local Git repository.
+
+### GitHub Copilot CLI: Why it's useful
+
+- Lets you use GitHub Copilot without leaving the terminal.
+- Helps with coding, debugging, explaining code, and automating development tasks.
+- Works with local project folders and Git repositories.
+- Supports interactive prompts and commands for controlling agent work.
+- Complements your editor and Git tools; review commands and code changes before accepting them.
+
+### GitHub Copilot CLI: Installation and Verification Commands
+
+GitHub Copilot CLI requires an active GitHub Copilot subscription. If your subscription is managed by an organization, its administrator must enable Copilot CLI.
+
+Install using one of the following methods.
+
+#### Official Install Script (Recommended)
+
+```sh
+curl -fsSL https://gh.io/copilot-install | bash
+```
+
+```sh
+# Install system-wide as root
+curl -fsSL https://gh.io/copilot-install | sudo bash
+```
+
+The script installs to `~/.local/bin` for a standard user. When run as root, it installs to `/usr/local/bin`. Ensure the chosen directory is included in your `PATH`.
+
+#### Installation via npm
+
+Node.js 22 or later is required.
+
+```sh
+npm install -g @github/copilot
+```
+
+If your `~/.npmrc` contains `ignore-scripts=true`, use:
+
+```sh
+npm_config_ignore_scripts=false npm install -g @github/copilot
+```
+
+#### Installation via Homebrew
+
+```sh
+brew install --cask copilot-cli
+```
+
+#### Verify Installation
+
+```sh
+copilot --version
+copilot
+```
+
+On first launch, enter `/login` when prompted and follow the authentication steps in your browser.
+
+### GitHub Copilot CLI: Simple Examples
+
+```sh
+# Shows the installed Copilot CLI version
+copilot --version
+
+# Starts an interactive Copilot CLI session in the current project
+copilot
+
+# Starts a session and asks Copilot to explain the current project
+copilot -p "Explain the structure and purpose of this project."
+
+# Starts a session and asks Copilot to find and fix a test failure
+copilot -p "Run the test suite, identify any failures, and propose a fix."
+
+# Starts a new interactive session in the current project directory
+copilot --continue
+
+# Displays command-line help and available Copilot CLI commands
+copilot help
+
+# Updates Copilot CLI to the latest version
+copilot update
+```
+
+### GitHub Copilot CLI: Essential Keystrokes and Commands
+
+GitHub Copilot CLI is interactive:
+
+| Command or Key                                  | Action                                                                                                      |
+| ----------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `copilot`                                       | Starts an interactive Copilot CLI session                                                                   |
+| `/login`                                        | Signs in to GitHub or Microsoft Entra                                                                       |
+| `?`                                             | Opens quick help when the prompt is empty                                                                   |
+| `Shift + Tab`                                   | Switches tabs in the sidebar or settings dialog                                                             |
+| `/help`                                         | Shows help for interactive commands                                                                         |
+| `/usage`                                        | Displays session usage metrics, including per-model token totals and AI credit consumption where applicable |
+| `/model`                                        | Opens the model picker for the current session                                                              |
+| `/model <MODEL_ID>`                             | Sets the model for the current session                                                                      |
+| `/model --global <MODEL_ID>`                    | Sets the default model for future sessions                                                                  |
+| `/model --repo <MODEL_ID>`                      | Sets the default model for the current repository                                                           |
+| `/model auto`                                   | Lets Copilot select the model automatically                                                                 |
+| `copilot --plan --model <MODEL_ID>`             | Starts plan mode with a selected model                                                                      |
+| `copilot --model fusion --fusion-tier standard` | Starts a session with Copilot Fusion at the Standard effort level                                           |
+| `@ filename`                                    | Includes a file’s contents in the prompt context                                                            |
+| `# number`                                      | Includes a GitHub issue or pull request in the prompt context                                               |
+| `! command`                                     | Runs a local shell command without adding its output to the Copilot conversation                            |
+| `Ctrl + Enter` or `Ctrl + Q`                    | Queues a message while Copilot is busy                                                                      |
+| `Esc`                                           | Cancels the current operation                                                                               |
+| `Ctrl + C`                                      | Cancels an operation or clears the current input; press twice to exit                                       |
+| `Ctrl + D`                                      | Shuts down Copilot CLI                                                                                      |
+| `Ctrl + L`                                      | Clears the terminal screen                                                                                  |
+| `Ctrl + R`                                      | Searches command history in reverse                                                                         |
+| `Shift + Enter`                                 | Inserts a new line in a prompt                                                                              |
+| `/clear`, `/new`, or `/reset`                   | Starts a new conversation                                                                                   |
+| `/diff`                                         | Opens the changes view for reviewing file diffs                                                             |
+| `/resume`                                       | Opens the session picker to continue a previous session                                                     |
+| `/exit` or `/quit`                              | Closes the current session                                                                                  |
+| `/plan`                                         | Starts a planning session that prevents changes to project files until you approve the plan                 |
+
+### GitHub Copilot CLI: Important Concepts
+
+- `Copilot CLI`: The standalone GitHub Copilot application for the terminal.
+- `Interactive session`: A terminal conversation where you give Copilot tasks and instructions.
+- `Coding agent`: An AI agent that can inspect, modify, and help work with code in your project.
+- `Repository`: A Git-tracked project folder.
+- `Authentication`: Signing in with a GitHub account or a Microsoft Entra account.
+- `Personal access token`: An alternative authentication method for headless or SSH environments. Use a fine-grained token with the `Copilot Requests` permission and export it as `COPILOT_GITHUB_TOKEN`, `GH_TOKEN`, or `GITHUB_TOKEN`.
+- `GitHub Copilot CLI vs GitHub Copilot app`: Copilot CLI runs in the terminal. The GitHub Copilot app provides a graphical desktop environment for agent-driven development work.
+
+### GitHub Copilot CLI: Official Resources
+
+- [Install GitHub Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/install-copilot-cli)
+- [GitHub Copilot CLI Documentation](https://docs.github.com/en/copilot/concepts/about-copilot/what-is-github-copilot-cli)
 
 ## Discord
 
